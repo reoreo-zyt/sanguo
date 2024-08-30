@@ -34,6 +34,8 @@ func get_skill_desc(nameId):
 	for i in Global.characters_select[nameId].skillIds:
 		if(Global.skills[i].type == "normal"):
 			skillsDesc += "[color=#91c2d5][u][url]"+  Global.skills[i].name +"[/url][/u][/color]" + " "
-		else:
+		if(Global.skills[i].type == "self"):
 			skillsDesc += "[color=#ffe219][u][url]"+  Global.skills[i].name +"[/url][/u][/color]" + " "
+		if(Global.skills[i].type == "self_bad"):
+			skillsDesc += "[color=#ff5437][u][url]"+  Global.skills[i].name +"[/url][/u][/color]" + " "
 	return skillsDesc

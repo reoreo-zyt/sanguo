@@ -764,6 +764,8 @@ layout_mode = 2
 layout_mode = 2
 theme_override_fonts/font = ExtResource("9_lny1d")
 text = "孙策"
+script = ExtResource("12_g0dfm")
+name_id = 4
 
 [node name="CityNum" type="TextureRect" parent="Map/SelectHero/CharacterSelect/HCContainer/SunCe"]
 material = SubResource("ShaderMaterial_2ca7k")
@@ -785,6 +787,8 @@ layout_mode = 2
 layout_mode = 2
 theme_override_fonts/font = ExtResource("9_lny1d")
 text = "董卓"
+script = ExtResource("12_g0dfm")
+name_id = 5
 
 [node name="CityNum" type="TextureRect" parent="Map/SelectHero/CharacterSelect/HCContainer/DongZhuo"]
 material = SubResource("ShaderMaterial_0k0qe")
@@ -807,6 +811,8 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("9_lny1d")
 text = "刘璋
 "
+script = ExtResource("12_g0dfm")
+name_id = 6
 
 [node name="CityNum" type="TextureRect" parent="Map/SelectHero/CharacterSelect/HCContainer/LiuZhang"]
 material = SubResource("ShaderMaterial_6axdc")
@@ -828,6 +834,8 @@ layout_mode = 2
 layout_mode = 2
 theme_override_fonts/font = ExtResource("9_lny1d")
 text = "马腾"
+script = ExtResource("12_g0dfm")
+name_id = 7
 
 [node name="CityNum" type="TextureRect" parent="Map/SelectHero/CharacterSelect/HCContainer/MaTeng"]
 material = SubResource("ShaderMaterial_60uir")
@@ -1350,6 +1358,10 @@ offset_bottom = 329.64
 [connection signal="pressed" from="Map/SelectHero/CharacterSelect/HCContainer/LiuBei/Name" to="Map/SelectHero/CharacterSelect/HCContainer/LiuBei/Name" method="_on_pressed"]
 [connection signal="pressed" from="Map/SelectHero/CharacterSelect/HCContainer/CaoCao/Name" to="Map/SelectHero/CharacterSelect/HCContainer/CaoCao/Name" method="_on_pressed"]
 [connection signal="pressed" from="Map/SelectHero/CharacterSelect/HCContainer/YuanShao/Name" to="Map/SelectHero/CharacterSelect/HCContainer/YuanShao/Name" method="_on_pressed"]
+[connection signal="pressed" from="Map/SelectHero/CharacterSelect/HCContainer/SunCe/Name" to="Map/SelectHero/CharacterSelect/HCContainer/SunCe/Name" method="_on_pressed"]
+[connection signal="pressed" from="Map/SelectHero/CharacterSelect/HCContainer/DongZhuo/Name" to="Map/SelectHero/CharacterSelect/HCContainer/DongZhuo/Name" method="_on_pressed"]
+[connection signal="pressed" from="Map/SelectHero/CharacterSelect/HCContainer/LiuZhang/Name" to="Map/SelectHero/CharacterSelect/HCContainer/LiuZhang/Name" method="_on_pressed"]
+[connection signal="pressed" from="Map/SelectHero/CharacterSelect/HCContainer/MaTeng/Name" to="Map/SelectHero/CharacterSelect/HCContainer/MaTeng/Name" method="_on_pressed"]
 [connection signal="meta_hover_ended" from="Map/SelectHero/CharacterSelect/CharacterAttr/Name/RichTextLabel" to="Map/SelectHero/CharacterSelect/CharacterAttr/Name/RichTextLabel" method="_on_meta_hover_ended"]
 [connection signal="meta_hover_started" from="Map/SelectHero/CharacterSelect/CharacterAttr/Name/RichTextLabel" to="Map/SelectHero/CharacterSelect/CharacterAttr/Name/RichTextLabel" method="_on_meta_hover_started"]
 [connection signal="meta_hover_ended" from="Map/SelectHero/CharacterSelect/CharacterAttr/Wu/RichTextLabel" to="Map/SelectHero/CharacterSelect/CharacterAttr/Wu/RichTextLabel" method="_on_meta_hover_ended"]

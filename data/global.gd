@@ -76,9 +76,14 @@ var text_message = {
 	"抢运": "武将所在城池往其他城池运送物资不需要消耗指令",
 
 	# 新增特技
-	"跃马檀溪": "如果你拥有宝物的卢，那么撤退战场只会损失少量体力。",
-	"三顾茅庐": "你登庸人才的概率大幅度提升。",
-	"治世之能臣，乱世之奸雄": "内政效果大幅度提升。登庸人才的概率小幅度提升。"
+	"惟贤惟德，能服于人": "",
+	"治世之能臣，乱世之奸雄": "",
+	"四世三公": "",
+	"小霸王": "",
+	"酒池肉林": "",
+	"宽柔无威": "",
+	"勇冠四州": "",
+	"经汤莫若": ""
 }
 
 ######### 武器
@@ -90,6 +95,15 @@ var weapons = {
 	},
 	"716f6a59-c241-0f0e-831f-ed8eb2cf107b": {
 		"name": "青钢剑",
+	},
+	"8bc8766e-804f-770d-281a-600b7bcbebcb": {
+		"name": "倚天剑",
+	},
+	"cb670c15-b222-f01c-9fa7-6173826f77c0": {
+		"name": "龙牙刀"
+	},
+	"e7911e0f-5360-0b88-785e-be47f99f4680": {
+		"name": "七星剑"
 	}
 }
 
@@ -102,6 +116,12 @@ var armors = {
 	},
 	"dceaf567-ca94-2a19-01d9-efbb9844ffc6": {
 		"name": "甲胄",
+	},
+	"c1a0342c-4bce-79ef-8425-285723a9b6fa": {
+		"name": "硬皮"
+	},
+	"b06f5ac3-d5e6-32f6-90c4-659c0e78fd0e": {
+		"name": "纶巾"
 	}
 }
 
@@ -308,18 +328,43 @@ var skills = {
 	},
 
 	"0602b27f-98fb-7c3b-23f0-b43a622c5476": {
-		"name": "跃马檀溪",
-		"desc": text_message["跃马檀溪"],
-		"type": "self",
-	},
-	"7b8f7d3f-9b9c-8e9d-8a9b-7a8a6b5c4d3e": {
-		"name": "三顾茅庐",
-		"desc": text_message["三顾茅庐"],
+		"name": "惟贤惟德，能服于人",
+		"desc": text_message["惟贤惟德，能服于人"],
 		"type": "self",
 	},
 	"f065ded1-72df-0d63-8479-5cc38e77bee8": {
 		"name": "治世之能臣，乱世之奸雄",
 		"desc": text_message["治世之能臣，乱世之奸雄"],
+		"type": "self",
+	},
+	"5ec6b2fd-7559-e832-05f9-aa5be4e0c502": {
+		"name": "四世三公",
+		"desc": text_message["四世三公"],
+		"type": "self",
+	},
+	"3e096696-4a2c-533e-1ed6-dc5c03d88a25": {
+		"name": "小霸王",
+		"desc": text_message["小霸王"],
+		"type": "self",
+	},
+	"335ba8c3-916a-20e7-5a61-563202e99805": {
+		"name": "酒池肉林",
+		"desc": text_message["酒池肉林"],
+		"type": "self",
+	},
+	"f555fb3a-8dc8-9f15-2a39-be6555714dcf": {
+		"name": "宽柔无威",
+		"desc": text_message["宽柔无威"],
+		"type": "self_bad",
+	},
+	"b4950dc9-1472-3a65-539a-539175e4bf4c": {
+		"name": "勇冠四州",
+		"desc": text_message["勇冠四州"],
+		"type": "self",
+	},
+	"337a5371-fd68-d7df-3565-a3e6177bb13d": {
+		"name": "经汤莫若",
+		"desc": text_message["经汤莫若"],
 		"type": "self",
 	}
 }
@@ -358,7 +403,6 @@ var characters_select = {
 		"armorId": "9758bc13-633b-b16f-adf4-37003b972b85",
 		"skillIds": [
 			"0602b27f-98fb-7c3b-23f0-b43a622c5476",
-			"7b8f7d3f-9b9c-8e9d-8a9b-7a8a6b5c4d3e",
 			"b3e63ced-2bc7-a75c-4a1c-2d9efc8d7020",
 			"feb8d909-2a8b-1db4-3b54-1329f9ee1730",
 			"d140202d-55d6-1709-7675-35b80263f6a6",
@@ -412,6 +456,8 @@ var characters_select = {
 	3: {
 		"name": "袁绍",
 		"headImg": "res://assets/texture/profile/003.jpg",
+		"weaponId": "cb670c15-b222-f01c-9fa7-6173826f77c0",
+		"armorId": "c1a0342c-4bce-79ef-8425-285723a9b6fa",
 		"city_material": {
 			"green_blue": false,
 			"green_red": true,
@@ -421,22 +467,18 @@ var characters_select = {
 			"red": 0.2
 		},
 		"skillIds": [
-			"f065ded1-72df-0d63-8479-5cc38e77bee8",
-			"9ea2890f-47cf-c9c6-00a4-5218d675dae6",
-			"be437047-2f70-655e-5a15-25d0f1965db8",
-			"62fec892-6287-ffc9-3ace-345fd50c18a3",
-			"997c2db0-2dec-a7d4-5923-75b7f9f5c500",
-			"b3e63ced-2bc7-a75c-4a1c-2d9efc8d7020",
-			"6d7b87b6-4023-7b80-24f8-734d583e06d7"
+			"5ec6b2fd-7559-e832-05f9-aa5be4e0c502",
+			"976bce1c-7f84-0fad-f6f5-57f133e80766",
+			"48193d31-df5a-2535-2e63-53aa517b679d"
 		],
 		"attrs": {
-			"level": 30,
-			"command": 97,
-			"politics": 94,
-			"force": 71,
-			"intelligence": 91,
+			"level": 40,
+			"command": 81,
+			"politics": 82,
+			"force": 69,
+			"intelligence": 70,
 			"physical_strength": 100,
-			"morality": 96,
+			"morality": 87,
 			"speed": 80
 		}
 	},
@@ -449,6 +491,26 @@ var characters_select = {
 			"blue": 0,
 			"green": 0.1,
 			"red": 0.4
+		},
+		"headImg": "res://assets/texture/profile/004.jpg",
+		"weaponId": "cb670c15-b222-f01c-9fa7-6173826f77c0",
+		"armorId": "c1a0342c-4bce-79ef-8425-285723a9b6fa",
+		"skillIds": [
+			"3e096696-4a2c-533e-1ed6-dc5c03d88a25",
+			"7e1823d0-f790-5fb1-d171-81fb6d7ca747",
+			"88752da3-9ce2-7ffb-318d-fa9a8a55732b",
+			"976bce1c-7f84-0fad-f6f5-57f133e80766",
+			"48193d31-df5a-2535-2e63-53aa517b679d"
+		],
+		"attrs": {
+			"level": 40,
+			"command": 92,
+			"politics": 70,
+			"force": 92,
+			"intelligence": 68,
+			"physical_strength": 100,
+			"morality": 90,
+			"speed": 80
 		}
 	},
 	5: {
@@ -460,6 +522,24 @@ var characters_select = {
 			"blue": 0.8,
 			"green": 0.1,
 			"red": 0
+		},
+		"headImg": "res://assets/texture/profile/005.jpg",
+		"weaponId": "e7911e0f-5360-0b88-785e-be47f99f4680",
+		"armorId": "c1a0342c-4bce-79ef-8425-285723a9b6fa",
+		"skillIds": [
+			"335ba8c3-916a-20e7-5a61-563202e99805",
+			"a091a2c4-2033-3c31-d86c-27866f38e90d",
+			"976bce1c-7f84-0fad-f6f5-57f133e80766"
+		],
+		"attrs": {
+			"level": 50,
+			"command": 81,
+			"politics": 34,
+			"force": 87,
+			"intelligence": 69,
+			"physical_strength": 100,
+			"morality": 25,
+			"speed": 80
 		}
 	},
 	6: {
@@ -471,6 +551,23 @@ var characters_select = {
 			"blue": 0,
 			"green": 0.6,
 			"red": 1
+		},
+		"headImg": "res://assets/texture/profile/006.jpg",
+		"weaponId": "cb670c15-b222-f01c-9fa7-6173826f77c0",
+		"armorId": "b06f5ac3-d5e6-32f6-90c4-659c0e78fd0e",
+		"skillIds": [
+			"f555fb3a-8dc8-9f15-2a39-be6555714dcf",
+			"e0f6c8e3-5c8a-7c9f-7b6b-9b6a4e8e8d9f"
+		],
+		"attrs": {
+			"level": 20,
+			"command": 27,
+			"politics": 68,
+			"force": 31,
+			"intelligence": 44,
+			"physical_strength": 100,
+			"morality": 84,
+			"speed": 80
 		}
 	},
 	7: {
@@ -482,6 +579,25 @@ var characters_select = {
 			"blue": 1,
 			"green": 1,
 			"red": 1
+		},
+		"headImg": "res://assets/texture/profile/007.jpg",
+		"weaponId": "8bc8766e-804f-770d-281a-600b7bcbebcb",
+		"armorId": "c1a0342c-4bce-79ef-8425-285723a9b6fa",
+		"skillIds": [
+			"b4950dc9-1472-3a65-539a-539175e4bf4c",
+			"337a5371-fd68-d7df-3565-a3e6177bb13d",
+			"7e1823d0-f790-5fb1-d171-81fb6d7ca747",
+			"48193d31-df5a-2535-2e63-53aa517b679d"
+		],
+		"attrs": {
+			"level": 40,
+			"command": 82,
+			"politics": 59,
+			"force": 80,
+			"intelligence": 51,
+			"physical_strength": 100,
+			"morality": 89,
+			"speed": 80
 		}
 	}
 }
