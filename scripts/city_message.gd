@@ -6,5 +6,20 @@ func _ready():
 func _on_close_pressed() -> void:
 	$".".hide()
 
-func _on_show_city_info(text):
-	$CityMessage/CityPanel/RichTextLabel.text = "[center][color=#91c2d5][u][url]" + text + "[/url][/u][/color] "
+func _on_show_city_info(name, cityId):
+	var city_data = Global.citys[cityId]
+	$CityMessage/CityPanel/RichTextLabel.text = "[center][color=#91c2d5][u][url]" + name + "[/url][/u][/color]"
+	$CityMessage/MasterPanel/RichTextLabel.text = "[center][color=#91c2d5][u][url]" + Global.characters[city_data.lordId].name + "[/url][/u][/color]"
+	$CityMessage/TongPanel/RichTextLabel.text = set_color(city_data.tong)
+	$CityMessageMore/ScrollContainer/VBoxContainer/RenContainer/RenPanel/RichTextLabel.text = set_color(city_data.ren)
+	$CityMessageMore/ScrollContainer/VBoxContainer/JiangContainer/JangPanel/RichTextLabel.text = set_color(city_data.jiang.size())
+	$CityMessageMore/ScrollContainer/VBoxContainer/BingContainer/BingPanel/RichTextLabel.text = set_color(city_data.bing)
+	$CityMessageMore/ScrollContainer/VBoxContainer/KaiContainer/KaiPanel/RichTextLabel.text = set_color(city_data.nong)
+	$CityMessageMore/ScrollContainer/VBoxContainer/ShangContainer/ShangPanel/RichTextLabel.text = set_color(city_data.shang)
+	$CityMessageMore/ScrollContainer/VBoxContainer/ShangContainer/ShangPanel/RichTextLabel.text = set_color(city_data.shang)
+	$CityMessageMore/ScrollContainer/VBoxContainer/ZhiContainer/ZhiPanel/RichTextLabel.text = set_color(city_data.zhi)
+	$CityMessageMore/ScrollContainer/VBoxContainer/JinContainer/JinPanel/RichTextLabel.text = set_color(city_data.jin)
+	$CityMessageMore/ScrollContainer/VBoxContainer/LiangContainer/LiangPanel/RichTextLabel.text = set_color(city_data.liang)
+
+func set_color(str):
+	return "[center][color=#91c2d5]" + str(str) + "[/color]"

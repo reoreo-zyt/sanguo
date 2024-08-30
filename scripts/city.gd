@@ -4,6 +4,7 @@ extends Node
 @export var texture_path = "res://assets/texture/citys/1_1.png"
 @export var text_name = ""
 @export var character_number = 0
+@export var city_code = ""
 
 var show_text_ui = false
 
@@ -19,7 +20,8 @@ func _ready() -> void:
 	$Icon.material.set_shader_parameter("red", city_material["red"])
 
 func _on_icon_pressed() -> void:
-	SignalBus.emit_signal("show_city_info", text_name)
+	Global.cur_city = city_code
+	SignalBus.emit_signal("show_city_info", text_name, city_code)
 	if(show_text_ui):
 		show_text_ui = false
 		$"../../CityMessage".hide()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://coeuv1kg0usol"]
+[gd_scene load_steps=52 format=3 uid="uid://coeuv1kg0usol"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_7ijmt"]
 [ext_resource type="PackedScene" uid="uid://1yhkkygysjvv" path="res://scenes/fog.tscn" id="1_njvu3"]
@@ -32,7 +32,9 @@
 [ext_resource type="Texture2D" uid="uid://dv771xvleepn2" path="res://assets/texture/force/Zhong.png" id="28_gr5id"]
 [ext_resource type="Texture2D" uid="uid://dor1lq83o5e5i" path="res://assets/texture/force/Jin.png" id="29_7x036"]
 [ext_resource type="Texture2D" uid="uid://bdj6nddrvyugm" path="res://assets/texture/force/Ti.png" id="29_dongr"]
+[ext_resource type="Script" path="res://scripts/hero_scroll_container.gd" id="30_q0s5f"]
 [ext_resource type="Texture2D" uid="uid://br3y7a3whqp8" path="res://assets/texture/force/e88dd331-d8cb-4827-90b5-f4fa4626acc1.png" id="30_swif7"]
+[ext_resource type="PackedScene" uid="uid://b2krug8ss4rwg" path="res://scenes/hero_list_item.tscn" id="31_g8j7j"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_e0x5k"]
 render_priority = 0
@@ -243,6 +245,7 @@ theme_override_styles/panel = SubResource("StyleBoxEmpty_1k5yt")
 position = Vector2(86, 272)
 text_name = "凉州武威"
 character_number = 7
+city_code = "61b9c512-225d-d918-086c-e2da4edb860f"
 
 [node name="LiangZhouJingCheng" parent="Map/CityContainer" instance=ExtResource("5_eycq6")]
 position = Vector2(118, 309)
@@ -676,7 +679,7 @@ script = ExtResource("10_b3kvj")
 custom_minimum_size = Vector2(0, 33)
 offset_left = 8.0
 offset_top = 653.0
-offset_right = 530.0
+offset_right = 534.0
 offset_bottom = 952.0
 script = ExtResource("11_g114o")
 
@@ -858,9 +861,9 @@ text = "3"
 
 [node name="CharacterAttr" parent="Map/SelectHero/CharacterSelect" instance=ExtResource("15_lqbkq")]
 layout_mode = 0
-offset_left = 112.0
+offset_left = 98.0
 offset_top = 15.0
-offset_right = 509.0
+offset_right = 517.0
 offset_bottom = 284.0
 
 [node name="Menu" type="Panel" parent="Map/SelectHero"]
@@ -1543,6 +1546,7 @@ texture = ExtResource("25_i24qe")
 expand_mode = 2
 
 [node name="ZhongLabel" type="Panel" parent="Map/CityMessage/HeroList/Attr"]
+layout_mode = 0
 offset_left = 190.0
 offset_top = 5.0
 offset_right = 218.0
@@ -1566,6 +1570,7 @@ texture = ExtResource("28_gr5id")
 expand_mode = 2
 
 [node name="TiLabel" type="Panel" parent="Map/CityMessage/HeroList/Attr"]
+layout_mode = 0
 offset_left = 276.0
 offset_top = 5.0
 offset_right = 304.0
@@ -1593,439 +1598,32 @@ layout_mode = 0
 offset_top = 49.0
 offset_right = 365.0
 offset_bottom = 413.0
+script = ExtResource("30_q0s5f")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Map/CityMessage/HeroList/HeroScrollContainer"]
 custom_minimum_size = Vector2(30, 16)
 layout_mode = 2
 size_flags_horizontal = 0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer"]
+[node name="HBoxContainer" parent="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer" instance=ExtResource("31_g8j7j")]
+visible = false
 layout_mode = 2
-
-[node name="NameTextLabel" type="RichTextLabel" parent="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer"]
-custom_minimum_size = Vector2(80, 29)
-layout_mode = 2
-theme_override_fonts/normal_font = ExtResource("9_lny1d")
-bbcode_enabled = true
-text = "[center][color=#91c2d5][u][url]赵云[/url][/u][/color] "
-script = ExtResource("10_b3kvj")
-
-[node name="BingTextLabel" type="RichTextLabel" parent="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer"]
-custom_minimum_size = Vector2(80, 29)
-layout_mode = 2
-theme_override_fonts/normal_font = ExtResource("9_lny1d")
-bbcode_enabled = true
-text = "[center][color=#91c2d5][u][url]3000[/url][/u][/color] "
-script = ExtResource("10_b3kvj")
-
-[node name="ZhongTextLabel" type="RichTextLabel" parent="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer"]
-custom_minimum_size = Vector2(80, 29)
-layout_mode = 2
-theme_override_fonts/normal_font = ExtResource("9_lny1d")
-bbcode_enabled = true
-text = "[center][color=#91c2d5][u][url]98[/url][/u][/color] "
-script = ExtResource("10_b3kvj")
-
-[node name="TiTextLabel" type="RichTextLabel" parent="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer"]
-custom_minimum_size = Vector2(80, 29)
-layout_mode = 2
-theme_override_fonts/normal_font = ExtResource("9_lny1d")
-bbcode_enabled = true
-text = "[center][color=#91c2d5][u][url]99[/url][/u][/color] "
-script = ExtResource("10_b3kvj")
-
-[node name="HBoxContainer2" type="HBoxContainer" parent="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer"]
-layout_mode = 2
-
-[node name="NameTextLabel" type="RichTextLabel" parent="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer2"]
-custom_minimum_size = Vector2(80, 29)
-layout_mode = 2
-theme_override_fonts/normal_font = ExtResource("9_lny1d")
-bbcode_enabled = true
-text = "[center][color=#91c2d5][u][url]赵云[/url][/u][/color] "
-script = ExtResource("10_b3kvj")
-
-[node name="BingTextLabel" type="RichTextLabel" parent="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer2"]
-custom_minimum_size = Vector2(80, 29)
-layout_mode = 2
-theme_override_fonts/normal_font = ExtResource("9_lny1d")
-bbcode_enabled = true
-text = "[center][color=#91c2d5][u][url]3000[/url][/u][/color] "
-script = ExtResource("10_b3kvj")
-
-[node name="ZhongTextLabel" type="RichTextLabel" parent="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer2"]
-custom_minimum_size = Vector2(80, 29)
-layout_mode = 2
-theme_override_fonts/normal_font = ExtResource("9_lny1d")
-bbcode_enabled = true
-text = "[center][color=#91c2d5][u][url]98[/url][/u][/color] "
-script = ExtResource("10_b3kvj")
-
-[node name="TiTextLabel" type="RichTextLabel" parent="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer2"]
-custom_minimum_size = Vector2(80, 29)
-layout_mode = 2
-theme_override_fonts/normal_font = ExtResource("9_lny1d")
-bbcode_enabled = true
-text = "[center][color=#91c2d5][u][url]99[/url][/u][/color] "
-script = ExtResource("10_b3kvj")
-
-[node name="HBoxContainer3" type="HBoxContainer" parent="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer"]
-layout_mode = 2
-
-[node name="NameTextLabel" type="RichTextLabel" parent="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer3"]
-custom_minimum_size = Vector2(80, 29)
-layout_mode = 2
-theme_override_fonts/normal_font = ExtResource("9_lny1d")
-bbcode_enabled = true
-text = "[center][color=#91c2d5][u][url]赵云[/url][/u][/color] "
-script = ExtResource("10_b3kvj")
-
-[node name="BingTextLabel" type="RichTextLabel" parent="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer3"]
-custom_minimum_size = Vector2(80, 29)
-layout_mode = 2
-theme_override_fonts/normal_font = ExtResource("9_lny1d")
-bbcode_enabled = true
-text = "[center][color=#91c2d5][u][url]3000[/url][/u][/color] "
-script = ExtResource("10_b3kvj")
-
-[node name="ZhongTextLabel" type="RichTextLabel" parent="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer3"]
-custom_minimum_size = Vector2(80, 29)
-layout_mode = 2
-theme_override_fonts/normal_font = ExtResource("9_lny1d")
-bbcode_enabled = true
-text = "[center][color=#91c2d5][u][url]98[/url][/u][/color] "
-script = ExtResource("10_b3kvj")
-
-[node name="TiTextLabel" type="RichTextLabel" parent="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer3"]
-custom_minimum_size = Vector2(80, 29)
-layout_mode = 2
-theme_override_fonts/normal_font = ExtResource("9_lny1d")
-bbcode_enabled = true
-text = "[center][color=#91c2d5][u][url]99[/url][/u][/color] "
-script = ExtResource("10_b3kvj")
-
-[node name="HBoxContainer4" type="HBoxContainer" parent="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer"]
-layout_mode = 2
-
-[node name="NameTextLabel" type="RichTextLabel" parent="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer4"]
-custom_minimum_size = Vector2(80, 29)
-layout_mode = 2
-theme_override_fonts/normal_font = ExtResource("9_lny1d")
-bbcode_enabled = true
-text = "[center][color=#91c2d5][u][url]赵云[/url][/u][/color] "
-script = ExtResource("10_b3kvj")
-
-[node name="BingTextLabel" type="RichTextLabel" parent="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer4"]
-custom_minimum_size = Vector2(80, 29)
-layout_mode = 2
-theme_override_fonts/normal_font = ExtResource("9_lny1d")
-bbcode_enabled = true
-text = "[center][color=#91c2d5][u][url]3000[/url][/u][/color] "
-script = ExtResource("10_b3kvj")
-
-[node name="ZhongTextLabel" type="RichTextLabel" parent="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer4"]
-custom_minimum_size = Vector2(80, 29)
-layout_mode = 2
-theme_override_fonts/normal_font = ExtResource("9_lny1d")
-bbcode_enabled = true
-text = "[center][color=#91c2d5][u][url]98[/url][/u][/color] "
-script = ExtResource("10_b3kvj")
-
-[node name="TiTextLabel" type="RichTextLabel" parent="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer4"]
-custom_minimum_size = Vector2(80, 29)
-layout_mode = 2
-theme_override_fonts/normal_font = ExtResource("9_lny1d")
-bbcode_enabled = true
-text = "[center][color=#91c2d5][u][url]99[/url][/u][/color] "
-script = ExtResource("10_b3kvj")
-
-[node name="HBoxContainer5" type="HBoxContainer" parent="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer"]
-layout_mode = 2
-
-[node name="NameTextLabel" type="RichTextLabel" parent="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer5"]
-custom_minimum_size = Vector2(80, 29)
-layout_mode = 2
-theme_override_fonts/normal_font = ExtResource("9_lny1d")
-bbcode_enabled = true
-text = "[center][color=#91c2d5][u][url]赵云[/url][/u][/color] "
-script = ExtResource("10_b3kvj")
-
-[node name="BingTextLabel" type="RichTextLabel" parent="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer5"]
-custom_minimum_size = Vector2(80, 29)
-layout_mode = 2
-theme_override_fonts/normal_font = ExtResource("9_lny1d")
-bbcode_enabled = true
-text = "[center][color=#91c2d5][u][url]3000[/url][/u][/color] "
-script = ExtResource("10_b3kvj")
-
-[node name="ZhongTextLabel" type="RichTextLabel" parent="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer5"]
-custom_minimum_size = Vector2(80, 29)
-layout_mode = 2
-theme_override_fonts/normal_font = ExtResource("9_lny1d")
-bbcode_enabled = true
-text = "[center][color=#91c2d5][u][url]98[/url][/u][/color] "
-script = ExtResource("10_b3kvj")
-
-[node name="TiTextLabel" type="RichTextLabel" parent="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer5"]
-custom_minimum_size = Vector2(80, 29)
-layout_mode = 2
-theme_override_fonts/normal_font = ExtResource("9_lny1d")
-bbcode_enabled = true
-text = "[center][color=#91c2d5][u][url]99[/url][/u][/color] "
-script = ExtResource("10_b3kvj")
-
-[node name="HBoxContainer6" type="HBoxContainer" parent="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer"]
-layout_mode = 2
-
-[node name="NameTextLabel" type="RichTextLabel" parent="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer6"]
-custom_minimum_size = Vector2(80, 29)
-layout_mode = 2
-theme_override_fonts/normal_font = ExtResource("9_lny1d")
-bbcode_enabled = true
-text = "[center][color=#91c2d5][u][url]赵云[/url][/u][/color] "
-script = ExtResource("10_b3kvj")
-
-[node name="BingTextLabel" type="RichTextLabel" parent="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer6"]
-custom_minimum_size = Vector2(80, 29)
-layout_mode = 2
-theme_override_fonts/normal_font = ExtResource("9_lny1d")
-bbcode_enabled = true
-text = "[center][color=#91c2d5][u][url]3000[/url][/u][/color] "
-script = ExtResource("10_b3kvj")
-
-[node name="ZhongTextLabel" type="RichTextLabel" parent="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer6"]
-custom_minimum_size = Vector2(80, 29)
-layout_mode = 2
-theme_override_fonts/normal_font = ExtResource("9_lny1d")
-bbcode_enabled = true
-text = "[center][color=#91c2d5][u][url]98[/url][/u][/color] "
-script = ExtResource("10_b3kvj")
-
-[node name="TiTextLabel" type="RichTextLabel" parent="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer6"]
-custom_minimum_size = Vector2(80, 29)
-layout_mode = 2
-theme_override_fonts/normal_font = ExtResource("9_lny1d")
-bbcode_enabled = true
-text = "[center][color=#91c2d5][u][url]99[/url][/u][/color] "
-script = ExtResource("10_b3kvj")
-
-[node name="HBoxContainer7" type="HBoxContainer" parent="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer"]
-layout_mode = 2
-
-[node name="NameTextLabel" type="RichTextLabel" parent="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer7"]
-custom_minimum_size = Vector2(80, 29)
-layout_mode = 2
-theme_override_fonts/normal_font = ExtResource("9_lny1d")
-bbcode_enabled = true
-text = "[center][color=#91c2d5][u][url]赵云[/url][/u][/color] "
-script = ExtResource("10_b3kvj")
-
-[node name="BingTextLabel" type="RichTextLabel" parent="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer7"]
-custom_minimum_size = Vector2(80, 29)
-layout_mode = 2
-theme_override_fonts/normal_font = ExtResource("9_lny1d")
-bbcode_enabled = true
-text = "[center][color=#91c2d5][u][url]3000[/url][/u][/color] "
-script = ExtResource("10_b3kvj")
-
-[node name="ZhongTextLabel" type="RichTextLabel" parent="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer7"]
-custom_minimum_size = Vector2(80, 29)
-layout_mode = 2
-theme_override_fonts/normal_font = ExtResource("9_lny1d")
-bbcode_enabled = true
-text = "[center][color=#91c2d5][u][url]98[/url][/u][/color] "
-script = ExtResource("10_b3kvj")
-
-[node name="TiTextLabel" type="RichTextLabel" parent="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer7"]
-custom_minimum_size = Vector2(80, 29)
-layout_mode = 2
-theme_override_fonts/normal_font = ExtResource("9_lny1d")
-bbcode_enabled = true
-text = "[center][color=#91c2d5][u][url]99[/url][/u][/color] "
-script = ExtResource("10_b3kvj")
-
-[node name="HBoxContainer8" type="HBoxContainer" parent="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer"]
-layout_mode = 2
-
-[node name="NameTextLabel" type="RichTextLabel" parent="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer8"]
-custom_minimum_size = Vector2(80, 29)
-layout_mode = 2
-theme_override_fonts/normal_font = ExtResource("9_lny1d")
-bbcode_enabled = true
-text = "[center][color=#91c2d5][u][url]赵云[/url][/u][/color] "
-script = ExtResource("10_b3kvj")
-
-[node name="BingTextLabel" type="RichTextLabel" parent="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer8"]
-custom_minimum_size = Vector2(80, 29)
-layout_mode = 2
-theme_override_fonts/normal_font = ExtResource("9_lny1d")
-bbcode_enabled = true
-text = "[center][color=#91c2d5][u][url]3000[/url][/u][/color] "
-script = ExtResource("10_b3kvj")
-
-[node name="ZhongTextLabel" type="RichTextLabel" parent="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer8"]
-custom_minimum_size = Vector2(80, 29)
-layout_mode = 2
-theme_override_fonts/normal_font = ExtResource("9_lny1d")
-bbcode_enabled = true
-text = "[center][color=#91c2d5][u][url]98[/url][/u][/color] "
-script = ExtResource("10_b3kvj")
-
-[node name="TiTextLabel" type="RichTextLabel" parent="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer8"]
-custom_minimum_size = Vector2(80, 29)
-layout_mode = 2
-theme_override_fonts/normal_font = ExtResource("9_lny1d")
-bbcode_enabled = true
-text = "[center][color=#91c2d5][u][url]99[/url][/u][/color] "
-script = ExtResource("10_b3kvj")
-
-[node name="HBoxContainer9" type="HBoxContainer" parent="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer"]
-layout_mode = 2
-
-[node name="NameTextLabel" type="RichTextLabel" parent="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer9"]
-custom_minimum_size = Vector2(80, 29)
-layout_mode = 2
-theme_override_fonts/normal_font = ExtResource("9_lny1d")
-bbcode_enabled = true
-text = "[center][color=#91c2d5][u][url]赵云[/url][/u][/color] "
-script = ExtResource("10_b3kvj")
-
-[node name="BingTextLabel" type="RichTextLabel" parent="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer9"]
-custom_minimum_size = Vector2(80, 29)
-layout_mode = 2
-theme_override_fonts/normal_font = ExtResource("9_lny1d")
-bbcode_enabled = true
-text = "[center][color=#91c2d5][u][url]3000[/url][/u][/color] "
-script = ExtResource("10_b3kvj")
-
-[node name="ZhongTextLabel" type="RichTextLabel" parent="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer9"]
-custom_minimum_size = Vector2(80, 29)
-layout_mode = 2
-theme_override_fonts/normal_font = ExtResource("9_lny1d")
-bbcode_enabled = true
-text = "[center][color=#91c2d5][u][url]98[/url][/u][/color] "
-script = ExtResource("10_b3kvj")
-
-[node name="TiTextLabel" type="RichTextLabel" parent="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer9"]
-custom_minimum_size = Vector2(80, 29)
-layout_mode = 2
-theme_override_fonts/normal_font = ExtResource("9_lny1d")
-bbcode_enabled = true
-text = "[center][color=#91c2d5][u][url]99[/url][/u][/color] "
-script = ExtResource("10_b3kvj")
-
-[node name="HBoxContainer10" type="HBoxContainer" parent="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer"]
-layout_mode = 2
-
-[node name="NameTextLabel" type="RichTextLabel" parent="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer10"]
-custom_minimum_size = Vector2(80, 29)
-layout_mode = 2
-theme_override_fonts/normal_font = ExtResource("9_lny1d")
-bbcode_enabled = true
-text = "[center][color=#91c2d5][u][url]赵云[/url][/u][/color] "
-script = ExtResource("10_b3kvj")
-
-[node name="BingTextLabel" type="RichTextLabel" parent="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer10"]
-custom_minimum_size = Vector2(80, 29)
-layout_mode = 2
-theme_override_fonts/normal_font = ExtResource("9_lny1d")
-bbcode_enabled = true
-text = "[center][color=#91c2d5][u][url]3000[/url][/u][/color] "
-script = ExtResource("10_b3kvj")
-
-[node name="ZhongTextLabel" type="RichTextLabel" parent="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer10"]
-custom_minimum_size = Vector2(80, 29)
-layout_mode = 2
-theme_override_fonts/normal_font = ExtResource("9_lny1d")
-bbcode_enabled = true
-text = "[center][color=#91c2d5][u][url]98[/url][/u][/color] "
-script = ExtResource("10_b3kvj")
-
-[node name="TiTextLabel" type="RichTextLabel" parent="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer10"]
-custom_minimum_size = Vector2(80, 29)
-layout_mode = 2
-theme_override_fonts/normal_font = ExtResource("9_lny1d")
-bbcode_enabled = true
-text = "[center][color=#91c2d5][u][url]99[/url][/u][/color] "
-script = ExtResource("10_b3kvj")
-
-[node name="HBoxContainer11" type="HBoxContainer" parent="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer"]
-layout_mode = 2
-
-[node name="NameTextLabel" type="RichTextLabel" parent="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer11"]
-custom_minimum_size = Vector2(80, 29)
-layout_mode = 2
-theme_override_fonts/normal_font = ExtResource("9_lny1d")
-bbcode_enabled = true
-text = "[center][color=#91c2d5][u][url]赵云[/url][/u][/color] "
-script = ExtResource("10_b3kvj")
-
-[node name="BingTextLabel" type="RichTextLabel" parent="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer11"]
-custom_minimum_size = Vector2(80, 29)
-layout_mode = 2
-theme_override_fonts/normal_font = ExtResource("9_lny1d")
-bbcode_enabled = true
-text = "[center][color=#91c2d5][u][url]3000[/url][/u][/color] "
-script = ExtResource("10_b3kvj")
-
-[node name="ZhongTextLabel" type="RichTextLabel" parent="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer11"]
-custom_minimum_size = Vector2(80, 29)
-layout_mode = 2
-theme_override_fonts/normal_font = ExtResource("9_lny1d")
-bbcode_enabled = true
-text = "[center][color=#91c2d5][u][url]98[/url][/u][/color] "
-script = ExtResource("10_b3kvj")
-
-[node name="TiTextLabel" type="RichTextLabel" parent="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer11"]
-custom_minimum_size = Vector2(80, 29)
-layout_mode = 2
-theme_override_fonts/normal_font = ExtResource("9_lny1d")
-bbcode_enabled = true
-text = "[center][color=#91c2d5][u][url]99[/url][/u][/color] "
-script = ExtResource("10_b3kvj")
-
-[node name="HBoxContainer12" type="HBoxContainer" parent="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer"]
-layout_mode = 2
-
-[node name="NameTextLabel" type="RichTextLabel" parent="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer12"]
-custom_minimum_size = Vector2(80, 29)
-layout_mode = 2
-theme_override_fonts/normal_font = ExtResource("9_lny1d")
-bbcode_enabled = true
-text = "[center][color=#91c2d5][u][url]赵云[/url][/u][/color] "
-script = ExtResource("10_b3kvj")
-
-[node name="BingTextLabel" type="RichTextLabel" parent="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer12"]
-custom_minimum_size = Vector2(80, 29)
-layout_mode = 2
-theme_override_fonts/normal_font = ExtResource("9_lny1d")
-bbcode_enabled = true
-text = "[center][color=#91c2d5][u][url]3000[/url][/u][/color] "
-script = ExtResource("10_b3kvj")
-
-[node name="ZhongTextLabel" type="RichTextLabel" parent="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer12"]
-custom_minimum_size = Vector2(80, 29)
-layout_mode = 2
-theme_override_fonts/normal_font = ExtResource("9_lny1d")
-bbcode_enabled = true
-text = "[center][color=#91c2d5][u][url]98[/url][/u][/color] "
-script = ExtResource("10_b3kvj")
-
-[node name="TiTextLabel" type="RichTextLabel" parent="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer12"]
-custom_minimum_size = Vector2(80, 29)
-layout_mode = 2
-theme_override_fonts/normal_font = ExtResource("9_lny1d")
-bbcode_enabled = true
-text = "[center][color=#91c2d5][u][url]99[/url][/u][/color] "
-script = ExtResource("10_b3kvj")
 
 [node name="CharacterAttr" parent="Map/CityMessage/HeroList" instance=ExtResource("15_lqbkq")]
-visible = false
 layout_mode = 0
 offset_left = -18.0
 offset_top = 148.0
 offset_right = 379.0
 offset_bottom = 417.0
+
+[node name="Button" type="Button" parent="Map/CityMessage/HeroList/CharacterAttr"]
+layout_mode = 0
+offset_left = 354.0
+offset_top = 2.0
+offset_right = 394.0
+offset_bottom = 29.0
+theme_override_fonts/font = ExtResource("9_lny1d")
+text = "关闭"
 
 [node name="Menu" type="Node2D" parent="."]
 visible = false
@@ -2152,100 +1750,5 @@ offset_bottom = 329.64
 [connection signal="meta_hover_started" from="Map/CityMessage/CityMessageMore/ScrollContainer/VBoxContainer/JinContainer/JinPanel/RichTextLabel" to="Map/CityMessage/CityMessageMore/ScrollContainer/VBoxContainer/JinContainer/JinPanel/RichTextLabel" method="_on_meta_hover_started"]
 [connection signal="meta_hover_ended" from="Map/CityMessage/CityMessageMore/ScrollContainer/VBoxContainer/LiangContainer/LiangPanel/RichTextLabel" to="Map/CityMessage/CityMessageMore/ScrollContainer/VBoxContainer/LiangContainer/LiangPanel/RichTextLabel" method="_on_meta_hover_ended"]
 [connection signal="meta_hover_started" from="Map/CityMessage/CityMessageMore/ScrollContainer/VBoxContainer/LiangContainer/LiangPanel/RichTextLabel" to="Map/CityMessage/CityMessageMore/ScrollContainer/VBoxContainer/LiangContainer/LiangPanel/RichTextLabel" method="_on_meta_hover_started"]
-[connection signal="meta_hover_ended" from="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer/NameTextLabel" to="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer/NameTextLabel" method="_on_meta_hover_ended"]
-[connection signal="meta_hover_started" from="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer/NameTextLabel" to="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer/NameTextLabel" method="_on_meta_hover_started"]
-[connection signal="meta_hover_ended" from="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer/BingTextLabel" to="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer/BingTextLabel" method="_on_meta_hover_ended"]
-[connection signal="meta_hover_started" from="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer/BingTextLabel" to="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer/BingTextLabel" method="_on_meta_hover_started"]
-[connection signal="meta_hover_ended" from="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer/ZhongTextLabel" to="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer/ZhongTextLabel" method="_on_meta_hover_ended"]
-[connection signal="meta_hover_started" from="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer/ZhongTextLabel" to="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer/ZhongTextLabel" method="_on_meta_hover_started"]
-[connection signal="meta_hover_ended" from="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer/TiTextLabel" to="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer/TiTextLabel" method="_on_meta_hover_ended"]
-[connection signal="meta_hover_started" from="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer/TiTextLabel" to="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer/TiTextLabel" method="_on_meta_hover_started"]
-[connection signal="meta_hover_ended" from="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer2/NameTextLabel" to="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer2/NameTextLabel" method="_on_meta_hover_ended"]
-[connection signal="meta_hover_started" from="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer2/NameTextLabel" to="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer2/NameTextLabel" method="_on_meta_hover_started"]
-[connection signal="meta_hover_ended" from="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer2/BingTextLabel" to="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer2/BingTextLabel" method="_on_meta_hover_ended"]
-[connection signal="meta_hover_started" from="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer2/BingTextLabel" to="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer2/BingTextLabel" method="_on_meta_hover_started"]
-[connection signal="meta_hover_ended" from="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer2/ZhongTextLabel" to="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer2/ZhongTextLabel" method="_on_meta_hover_ended"]
-[connection signal="meta_hover_started" from="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer2/ZhongTextLabel" to="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer2/ZhongTextLabel" method="_on_meta_hover_started"]
-[connection signal="meta_hover_ended" from="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer2/TiTextLabel" to="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer2/TiTextLabel" method="_on_meta_hover_ended"]
-[connection signal="meta_hover_started" from="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer2/TiTextLabel" to="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer2/TiTextLabel" method="_on_meta_hover_started"]
-[connection signal="meta_hover_ended" from="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer3/NameTextLabel" to="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer3/NameTextLabel" method="_on_meta_hover_ended"]
-[connection signal="meta_hover_started" from="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer3/NameTextLabel" to="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer3/NameTextLabel" method="_on_meta_hover_started"]
-[connection signal="meta_hover_ended" from="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer3/BingTextLabel" to="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer3/BingTextLabel" method="_on_meta_hover_ended"]
-[connection signal="meta_hover_started" from="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer3/BingTextLabel" to="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer3/BingTextLabel" method="_on_meta_hover_started"]
-[connection signal="meta_hover_ended" from="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer3/ZhongTextLabel" to="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer3/ZhongTextLabel" method="_on_meta_hover_ended"]
-[connection signal="meta_hover_started" from="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer3/ZhongTextLabel" to="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer3/ZhongTextLabel" method="_on_meta_hover_started"]
-[connection signal="meta_hover_ended" from="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer3/TiTextLabel" to="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer3/TiTextLabel" method="_on_meta_hover_ended"]
-[connection signal="meta_hover_started" from="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer3/TiTextLabel" to="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer3/TiTextLabel" method="_on_meta_hover_started"]
-[connection signal="meta_hover_ended" from="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer4/NameTextLabel" to="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer4/NameTextLabel" method="_on_meta_hover_ended"]
-[connection signal="meta_hover_started" from="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer4/NameTextLabel" to="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer4/NameTextLabel" method="_on_meta_hover_started"]
-[connection signal="meta_hover_ended" from="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer4/BingTextLabel" to="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer4/BingTextLabel" method="_on_meta_hover_ended"]
-[connection signal="meta_hover_started" from="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer4/BingTextLabel" to="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer4/BingTextLabel" method="_on_meta_hover_started"]
-[connection signal="meta_hover_ended" from="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer4/ZhongTextLabel" to="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer4/ZhongTextLabel" method="_on_meta_hover_ended"]
-[connection signal="meta_hover_started" from="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer4/ZhongTextLabel" to="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer4/ZhongTextLabel" method="_on_meta_hover_started"]
-[connection signal="meta_hover_ended" from="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer4/TiTextLabel" to="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer4/TiTextLabel" method="_on_meta_hover_ended"]
-[connection signal="meta_hover_started" from="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer4/TiTextLabel" to="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer4/TiTextLabel" method="_on_meta_hover_started"]
-[connection signal="meta_hover_ended" from="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer5/NameTextLabel" to="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer5/NameTextLabel" method="_on_meta_hover_ended"]
-[connection signal="meta_hover_started" from="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer5/NameTextLabel" to="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer5/NameTextLabel" method="_on_meta_hover_started"]
-[connection signal="meta_hover_ended" from="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer5/BingTextLabel" to="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer5/BingTextLabel" method="_on_meta_hover_ended"]
-[connection signal="meta_hover_started" from="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer5/BingTextLabel" to="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer5/BingTextLabel" method="_on_meta_hover_started"]
-[connection signal="meta_hover_ended" from="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer5/ZhongTextLabel" to="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer5/ZhongTextLabel" method="_on_meta_hover_ended"]
-[connection signal="meta_hover_started" from="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer5/ZhongTextLabel" to="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer5/ZhongTextLabel" method="_on_meta_hover_started"]
-[connection signal="meta_hover_ended" from="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer5/TiTextLabel" to="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer5/TiTextLabel" method="_on_meta_hover_ended"]
-[connection signal="meta_hover_started" from="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer5/TiTextLabel" to="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer5/TiTextLabel" method="_on_meta_hover_started"]
-[connection signal="meta_hover_ended" from="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer6/NameTextLabel" to="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer6/NameTextLabel" method="_on_meta_hover_ended"]
-[connection signal="meta_hover_started" from="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer6/NameTextLabel" to="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer6/NameTextLabel" method="_on_meta_hover_started"]
-[connection signal="meta_hover_ended" from="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer6/BingTextLabel" to="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer6/BingTextLabel" method="_on_meta_hover_ended"]
-[connection signal="meta_hover_started" from="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer6/BingTextLabel" to="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer6/BingTextLabel" method="_on_meta_hover_started"]
-[connection signal="meta_hover_ended" from="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer6/ZhongTextLabel" to="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer6/ZhongTextLabel" method="_on_meta_hover_ended"]
-[connection signal="meta_hover_started" from="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer6/ZhongTextLabel" to="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer6/ZhongTextLabel" method="_on_meta_hover_started"]
-[connection signal="meta_hover_ended" from="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer6/TiTextLabel" to="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer6/TiTextLabel" method="_on_meta_hover_ended"]
-[connection signal="meta_hover_started" from="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer6/TiTextLabel" to="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer6/TiTextLabel" method="_on_meta_hover_started"]
-[connection signal="meta_hover_ended" from="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer7/NameTextLabel" to="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer7/NameTextLabel" method="_on_meta_hover_ended"]
-[connection signal="meta_hover_started" from="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer7/NameTextLabel" to="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer7/NameTextLabel" method="_on_meta_hover_started"]
-[connection signal="meta_hover_ended" from="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer7/BingTextLabel" to="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer7/BingTextLabel" method="_on_meta_hover_ended"]
-[connection signal="meta_hover_started" from="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer7/BingTextLabel" to="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer7/BingTextLabel" method="_on_meta_hover_started"]
-[connection signal="meta_hover_ended" from="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer7/ZhongTextLabel" to="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer7/ZhongTextLabel" method="_on_meta_hover_ended"]
-[connection signal="meta_hover_started" from="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer7/ZhongTextLabel" to="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer7/ZhongTextLabel" method="_on_meta_hover_started"]
-[connection signal="meta_hover_ended" from="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer7/TiTextLabel" to="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer7/TiTextLabel" method="_on_meta_hover_ended"]
-[connection signal="meta_hover_started" from="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer7/TiTextLabel" to="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer7/TiTextLabel" method="_on_meta_hover_started"]
-[connection signal="meta_hover_ended" from="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer8/NameTextLabel" to="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer8/NameTextLabel" method="_on_meta_hover_ended"]
-[connection signal="meta_hover_started" from="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer8/NameTextLabel" to="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer8/NameTextLabel" method="_on_meta_hover_started"]
-[connection signal="meta_hover_ended" from="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer8/BingTextLabel" to="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer8/BingTextLabel" method="_on_meta_hover_ended"]
-[connection signal="meta_hover_started" from="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer8/BingTextLabel" to="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer8/BingTextLabel" method="_on_meta_hover_started"]
-[connection signal="meta_hover_ended" from="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer8/ZhongTextLabel" to="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer8/ZhongTextLabel" method="_on_meta_hover_ended"]
-[connection signal="meta_hover_started" from="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer8/ZhongTextLabel" to="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer8/ZhongTextLabel" method="_on_meta_hover_started"]
-[connection signal="meta_hover_ended" from="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer8/TiTextLabel" to="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer8/TiTextLabel" method="_on_meta_hover_ended"]
-[connection signal="meta_hover_started" from="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer8/TiTextLabel" to="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer8/TiTextLabel" method="_on_meta_hover_started"]
-[connection signal="meta_hover_ended" from="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer9/NameTextLabel" to="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer9/NameTextLabel" method="_on_meta_hover_ended"]
-[connection signal="meta_hover_started" from="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer9/NameTextLabel" to="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer9/NameTextLabel" method="_on_meta_hover_started"]
-[connection signal="meta_hover_ended" from="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer9/BingTextLabel" to="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer9/BingTextLabel" method="_on_meta_hover_ended"]
-[connection signal="meta_hover_started" from="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer9/BingTextLabel" to="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer9/BingTextLabel" method="_on_meta_hover_started"]
-[connection signal="meta_hover_ended" from="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer9/ZhongTextLabel" to="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer9/ZhongTextLabel" method="_on_meta_hover_ended"]
-[connection signal="meta_hover_started" from="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer9/ZhongTextLabel" to="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer9/ZhongTextLabel" method="_on_meta_hover_started"]
-[connection signal="meta_hover_ended" from="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer9/TiTextLabel" to="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer9/TiTextLabel" method="_on_meta_hover_ended"]
-[connection signal="meta_hover_started" from="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer9/TiTextLabel" to="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer9/TiTextLabel" method="_on_meta_hover_started"]
-[connection signal="meta_hover_ended" from="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer10/NameTextLabel" to="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer10/NameTextLabel" method="_on_meta_hover_ended"]
-[connection signal="meta_hover_started" from="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer10/NameTextLabel" to="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer10/NameTextLabel" method="_on_meta_hover_started"]
-[connection signal="meta_hover_ended" from="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer10/BingTextLabel" to="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer10/BingTextLabel" method="_on_meta_hover_ended"]
-[connection signal="meta_hover_started" from="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer10/BingTextLabel" to="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer10/BingTextLabel" method="_on_meta_hover_started"]
-[connection signal="meta_hover_ended" from="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer10/ZhongTextLabel" to="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer10/ZhongTextLabel" method="_on_meta_hover_ended"]
-[connection signal="meta_hover_started" from="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer10/ZhongTextLabel" to="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer10/ZhongTextLabel" method="_on_meta_hover_started"]
-[connection signal="meta_hover_ended" from="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer10/TiTextLabel" to="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer10/TiTextLabel" method="_on_meta_hover_ended"]
-[connection signal="meta_hover_started" from="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer10/TiTextLabel" to="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer10/TiTextLabel" method="_on_meta_hover_started"]
-[connection signal="meta_hover_ended" from="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer11/NameTextLabel" to="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer11/NameTextLabel" method="_on_meta_hover_ended"]
-[connection signal="meta_hover_started" from="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer11/NameTextLabel" to="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer11/NameTextLabel" method="_on_meta_hover_started"]
-[connection signal="meta_hover_ended" from="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer11/BingTextLabel" to="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer11/BingTextLabel" method="_on_meta_hover_ended"]
-[connection signal="meta_hover_started" from="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer11/BingTextLabel" to="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer11/BingTextLabel" method="_on_meta_hover_started"]
-[connection signal="meta_hover_ended" from="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer11/ZhongTextLabel" to="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer11/ZhongTextLabel" method="_on_meta_hover_ended"]
-[connection signal="meta_hover_started" from="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer11/ZhongTextLabel" to="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer11/ZhongTextLabel" method="_on_meta_hover_started"]
-[connection signal="meta_hover_ended" from="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer11/TiTextLabel" to="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer11/TiTextLabel" method="_on_meta_hover_ended"]
-[connection signal="meta_hover_started" from="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer11/TiTextLabel" to="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer11/TiTextLabel" method="_on_meta_hover_started"]
-[connection signal="meta_hover_ended" from="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer12/NameTextLabel" to="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer12/NameTextLabel" method="_on_meta_hover_ended"]
-[connection signal="meta_hover_started" from="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer12/NameTextLabel" to="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer12/NameTextLabel" method="_on_meta_hover_started"]
-[connection signal="meta_hover_ended" from="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer12/BingTextLabel" to="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer12/BingTextLabel" method="_on_meta_hover_ended"]
-[connection signal="meta_hover_started" from="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer12/BingTextLabel" to="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer12/BingTextLabel" method="_on_meta_hover_started"]
-[connection signal="meta_hover_ended" from="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer12/ZhongTextLabel" to="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer12/ZhongTextLabel" method="_on_meta_hover_ended"]
-[connection signal="meta_hover_started" from="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer12/ZhongTextLabel" to="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer12/ZhongTextLabel" method="_on_meta_hover_started"]
-[connection signal="meta_hover_ended" from="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer12/TiTextLabel" to="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer12/TiTextLabel" method="_on_meta_hover_ended"]
-[connection signal="meta_hover_started" from="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer12/TiTextLabel" to="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer/HBoxContainer12/TiTextLabel" method="_on_meta_hover_started"]
+[connection signal="pressed" from="Map/CityMessage/HeroList/CharacterAttr/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Menu/MainContainer/ButtonContainer/VBoxContainer/Start" to="." method="_on_start_pressed"]

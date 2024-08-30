@@ -20,7 +20,7 @@ func _on_show_hero_info(nameId):
 		has_chart_scene = false
 	if(!has_chart_scene):
 		var RadarChartStats = RadarChartStatsScene.instantiate()
-		RadarChartStats.position = Vector2(268, 80)
+		RadarChartStats.position = Vector2(296, 80)
 		RadarChartStats.stats = [attrs["command"], attrs["force"], attrs["intelligence"], attrs["politics"], attrs["morality"], attrs["physical_strength"], attrs["speed"], attrs["level"]]
 		$CharacterAttr.add_child(RadarChartStats)
 		has_chart_scene = true
