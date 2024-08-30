@@ -11,4 +11,6 @@ TODO:
 
 - 凉州武威 城池 将领
 
-![alt text](./1.png)
+![alt text](./images/1.png)
+
+![alt text](./images/2.png)
