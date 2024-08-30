@@ -359,7 +359,7 @@ var characters_select = {
 		"skillIds": [
 			"0602b27f-98fb-7c3b-23f0-b43a622c5476",
 			"7b8f7d3f-9b9c-8e9d-8a9b-7a8a6b5c4d3e",
-			"a36c11e5-caab-80b6-591b-0c289059ad6c",
+			"b3e63ced-2bc7-a75c-4a1c-2d9efc8d7020",
 			"feb8d909-2a8b-1db4-3b54-1329f9ee1730",
 			"d140202d-55d6-1709-7675-35b80263f6a6",
 			"48193d31-df5a-2535-2e63-53aa517b679d",
@@ -395,7 +395,7 @@ var characters_select = {
 			"be437047-2f70-655e-5a15-25d0f1965db8",
 			"62fec892-6287-ffc9-3ace-345fd50c18a3",
 			"997c2db0-2dec-a7d4-5923-75b7f9f5c500",
-			"a36c11e5-caab-80b6-591b-0c289059ad6c",
+			"b3e63ced-2bc7-a75c-4a1c-2d9efc8d7020",
 			"6d7b87b6-4023-7b80-24f8-734d583e06d7"
 		],
 		"attrs": {
@@ -426,7 +426,7 @@ var characters_select = {
 			"be437047-2f70-655e-5a15-25d0f1965db8",
 			"62fec892-6287-ffc9-3ace-345fd50c18a3",
 			"997c2db0-2dec-a7d4-5923-75b7f9f5c500",
-			"a36c11e5-caab-80b6-591b-0c289059ad6c",
+			"b3e63ced-2bc7-a75c-4a1c-2d9efc8d7020",
 			"6d7b87b6-4023-7b80-24f8-734d583e06d7"
 		],
 		"attrs": {
