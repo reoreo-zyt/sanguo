@@ -22,11 +22,9 @@ func _on_icon_pressed() -> void:
 	SignalBus.emit_signal("show_city_info", text_name)
 	if(show_text_ui):
 		show_text_ui = false
-		# $Panel.hide()
 		$"../../CityMessage".hide()
 	else:
 		show_text_ui = true
-		# $Panel.show()
 		$"../../CityMessage".show()
 
 func set_texture(texture_path: String) -> void:
