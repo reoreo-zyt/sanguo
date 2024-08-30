@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://vdesnw6vhdmt"]
+
+[ext_resource type="Script" path="res://scripts/easy_clock.gd" id="1_yp73v"]
+
+[node name="EasyClock" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 9.0
+offset_top = 8.0
+offset_right = 56.0
+offset_bottom = 61.0
+script = ExtResource("1_yp73v")

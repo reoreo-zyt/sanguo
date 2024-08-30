@@ -1,0 +1,28 @@
+[gd_scene load_steps=2 format=3 uid="uid://ctq6idevpfqpi"]
+
+[ext_resource type="FontFile" uid="uid://ccc7h37nygjqu" path="res://assets/fonts/方正隶书简体.TTF" id="1_1qqn2"]
+
+[node name="LabelStats" type="Node2D"]
+
+[node name="Label" type="Label" parent="."]
+visible = false
+anchors_preset = -1
+anchor_right = 0.291139
+anchor_bottom = 0.25
+offset_right = 68.0
+offset_bottom = 49.0
+theme_override_fonts/font = ExtResource("1_1qqn2")
+theme_override_font_sizes/font_size = 48
+text = "Atk"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_right = 105.0
+offset_bottom = 61.0
+theme_override_fonts/normal_font = ExtResource("1_1qqn2")
+theme_override_font_sizes/normal_font_size = 48
+bbcode_enabled = true
+text = "[color=#91c2d5][u][url]ATK[/url][/u][/color]
+"
+fit_content = true

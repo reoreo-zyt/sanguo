@@ -1,0 +1,66 @@
+[gd_scene load_steps=4 format=3 uid="uid://b2amgjjo5xexb"]
+
+[ext_resource type="Texture2D" uid="uid://bri1mvk023yyp" path="res://assets/texture/background/sanguo.png" id="1_pf12x"]
+[ext_resource type="Script" path="res://scripts/start_game.gd" id="2_ve1xq"]
+[ext_resource type="Texture2D" uid="uid://bv74kmvkuhrvt" path="res://assets/texture/background/GuanYu.png" id="3_fa3mw"]
+
+[node name="Menu" type="Node2D"]
+
+[node name="Mask" type="Panel" parent="."]
+offset_right = 540.0
+offset_bottom = 960.0
+
+[node name="MainContainer" type="VBoxContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -2.0
+offset_right = 540.0
+offset_bottom = 962.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TitleText" type="HBoxContainer" parent="MainContainer"]
+layout_mode = 2
+
+[node name="TitleBg" type="TextureRect" parent="MainContainer/TitleText"]
+custom_minimum_size = Vector2(540, 400)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture = ExtResource("1_pf12x")
+expand_mode = 1
+
+[node name="ButtonContainer" type="HBoxContainer" parent="MainContainer"]
+custom_minimum_size = Vector2(0, 560)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainContainer/ButtonContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Start" type="Button" parent="MainContainer/ButtonContainer/VBoxContainer"]
+layout_mode = 2
+text = "开创霸业"
+script = ExtResource("2_ve1xq")
+
+[node name="Continute" type="Button" parent="MainContainer/ButtonContainer/VBoxContainer"]
+layout_mode = 2
+text = "再续征程"
+
+[node name="AddHero" type="Button" parent="MainContainer/ButtonContainer/VBoxContainer"]
+layout_mode = 2
+text = "自建武将"
+
+[node name="GameHelp" type="Button" parent="MainContainer/ButtonContainer/VBoxContainer"]
+layout_mode = 2
+text = "游戏百科
+"
+
+[node name="GuanYu" type="Sprite2D" parent="."]
+position = Vector2(395, 763)
+scale = Vector2(0.732143, 0.58151)
+texture = ExtResource("3_fa3mw")

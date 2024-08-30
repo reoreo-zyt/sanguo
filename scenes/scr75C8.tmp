@@ -1,0 +1,638 @@
+[gd_scene load_steps=26 format=3 uid="uid://coeuv1kg0usol"]
+
+[ext_resource type="Script" path="res://scripts/game.gd" id="1_7ijmt"]
+[ext_resource type="PackedScene" uid="uid://1yhkkygysjvv" path="res://scenes/fog.tscn" id="1_njvu3"]
+[ext_resource type="Texture2D" uid="uid://blkxuwx41exbr" path="res://assets/texture/background/map_pixel.png" id="1_r56x3"]
+[ext_resource type="PackedScene" uid="uid://bpm4p72m452h4" path="res://scenes/rain.tscn" id="2_d24yw"]
+[ext_resource type="Shader" path="res://shaders/map_pixel.gdshader" id="2_tjku0"]
+[ext_resource type="PackedScene" uid="uid://du6ko4ea4nfh8" path="res://scenes/city.tscn" id="5_eycq6"]
+[ext_resource type="Texture2D" uid="uid://bv74kmvkuhrvt" path="res://assets/texture/background/GuanYu.png" id="6_krf3x"]
+[ext_resource type="Texture2D" uid="uid://oiri753spwsi" path="res://assets/texture/drama/qxtd.png" id="7_dh5dd"]
+[ext_resource type="Texture2D" uid="uid://bri1mvk023yyp" path="res://assets/texture/background/sanguo.png" id="7_jqdx8"]
+[ext_resource type="Texture2D" uid="uid://ygyu3gpdnu2i" path="res://assets/texture/drama/qxtd_text.png" id="8_338p3"]
+[ext_resource type="Script" path="res://scripts/start_game.gd" id="8_r5q5y"]
+[ext_resource type="Script" path="res://scripts/selectHero.gd" id="9_hwpys"]
+[ext_resource type="FontFile" uid="uid://ccc7h37nygjqu" path="res://assets/fonts/方正隶书简体.TTF" id="9_lny1d"]
+[ext_resource type="Texture2D" uid="uid://fpqvlmu5bwus" path="res://assets/texture/citys/city_temp.png" id="9_ofk0u"]
+[ext_resource type="Script" path="res://scripts/rich_text_label.gd" id="10_b3kvj"]
+[ext_resource type="Texture2D" uid="uid://c5a0bauotspsd" path="res://assets/texture/force/Shu.png" id="12_5uatg"]
+[ext_resource type="Texture2D" uid="uid://d3kq570icudni" path="res://assets/texture/profile/001.jpg" id="14_uxee3"]
+[ext_resource type="PackedScene" uid="uid://dnmgsf1bvwkdq" path="res://scenes/RadarChartStats.tscn" id="15_jvq1n"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_e0x5k"]
+render_priority = 0
+shader = ExtResource("2_tjku0")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1k5yt"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0vkf5"]
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+
+[sub_resource type="Animation" id="Animation_d4ae1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Menu/GuanYu:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(694, 763)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Menu/TitleBg:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-3, -2)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Menu/MainContainer:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_u1kqp"]
+resource_name = "fade_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Menu/GuanYu:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(694, 763), Vector2(500, 763), Vector2(387, 763)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Menu/TitleBg:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, -400), Vector2(0, -200), Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Menu/MainContainer:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="Animation" id="Animation_x6xo1"]
+resource_name = "fade_out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Menu/GuanYu:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 0,
+"values": []
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mrha4"]
+_data = {
+"RESET": SubResource("Animation_d4ae1"),
+"fade_in": SubResource("Animation_u1kqp"),
+"fade_out": SubResource("Animation_x6xo1")
+}
+
+[node name="screens" type="CanvasLayer"]
+script = ExtResource("1_7ijmt")
+
+[node name="Weather" type="Node2D" parent="."]
+
+[node name="fog" parent="Weather" instance=ExtResource("1_njvu3")]
+
+[node name="rain" parent="Weather" instance=ExtResource("2_d24yw")]
+visible = false
+
+[node name="Map" type="Node2D" parent="."]
+
+[node name="MapPixel" type="Sprite2D" parent="Map"]
+material = SubResource("ShaderMaterial_e0x5k")
+position = Vector2(270, 480)
+texture = ExtResource("1_r56x3")
+
+[node name="CityContainer" type="PanelContainer" parent="Map"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_1k5yt")
+
+[node name="LiangZhouWuWei" parent="Map/CityContainer" instance=ExtResource("5_eycq6")]
+position = Vector2(86, 272)
+
+[node name="LiangZhouJingCheng" parent="Map/CityContainer" instance=ExtResource("5_eycq6")]
+position = Vector2(118, 309)
+texture_path = "res://assets/texture/citys/1_2.png"
+
+[node name="LiangZhouWudu" parent="Map/CityContainer" instance=ExtResource("5_eycq6")]
+position = Vector2(140, 337)
+texture_path = "res://assets/texture/citys/1_3.png"
+
+[node name="YiZhouHanZhong" parent="Map/CityContainer" instance=ExtResource("5_eycq6")]
+position = Vector2(172, 362)
+texture_path = "res://assets/texture/citys/2_1.png"
+
+[node name="YiZhouBaXi" parent="Map/CityContainer" instance=ExtResource("5_eycq6")]
+position = Vector2(140, 401)
+texture_path = "res://assets/texture/citys/2_2.png"
+
+[node name="YiZhouChengDu" parent="Map/CityContainer" instance=ExtResource("5_eycq6")]
+position = Vector2(104, 439)
+texture_path = "res://assets/texture/citys/2_3.png"
+
+[node name="YiZhouBaJun" parent="Map/CityContainer" instance=ExtResource("5_eycq6")]
+position = Vector2(178, 434)
+texture_path = "res://assets/texture/citys/2_4.png"
+
+[node name="YiZhouJiangYang" parent="Map/CityContainer" instance=ExtResource("5_eycq6")]
+position = Vector2(95, 482)
+texture_path = "res://assets/texture/citys/2_5.png"
+
+[node name="YiZhouPeiLin" parent="Map/CityContainer" instance=ExtResource("5_eycq6")]
+position = Vector2(156, 486)
+texture_path = "res://assets/texture/citys/2_6.png"
+
+[node name="YiZhouZangKe" parent="Map/CityContainer" instance=ExtResource("5_eycq6")]
+position = Vector2(133, 537)
+texture_path = "res://assets/texture/citys/2_7.png"
+
+[node name="YiZhouYunNan" parent="Map/CityContainer" instance=ExtResource("5_eycq6")]
+position = Vector2(86, 561)
+texture_path = "res://assets/texture/citys/2_8.png"
+
+[node name="JiaoZhouYunNan" parent="Map/CityContainer" instance=ExtResource("5_eycq6")]
+position = Vector2(45, 525)
+texture_path = "res://assets/texture/citys/3_1.png"
+
+[node name="JiaoZhouJiaoChi" parent="Map/CityContainer" instance=ExtResource("5_eycq6")]
+position = Vector2(131, 596)
+texture_path = "res://assets/texture/citys/3_2.png"
+
+[node name="JiaoZhouYuLin" parent="Map/CityContainer" instance=ExtResource("5_eycq6")]
+position = Vector2(190, 576)
+texture_path = "res://assets/texture/citys/3_3.png"
+
+[node name="JiaoZhouHePu" parent="Map/CityContainer" instance=ExtResource("5_eycq6")]
+position = Vector2(229, 678)
+texture_path = "res://assets/texture/citys/3_4.png"
+
+[node name="JiaoZhouGaoLiang" parent="Map/CityContainer" instance=ExtResource("5_eycq6")]
+position = Vector2(276, 611)
+texture_path = "res://assets/texture/citys/3_5.png"
+
+[node name="JiaoZhouCangWu" parent="Map/CityContainer" instance=ExtResource("5_eycq6")]
+position = Vector2(238, 558)
+texture_path = "res://assets/texture/citys/3_6.png"
+
+[node name="JiaoZhouNanHai" parent="Map/CityContainer" instance=ExtResource("5_eycq6")]
+position = Vector2(327, 590)
+texture_path = "res://assets/texture/citys/3_7.png"
+
+[node name="YongZhouAnDing" parent="Map/CityContainer" instance=ExtResource("5_eycq6")]
+position = Vector2(183, 299)
+texture_path = "res://assets/texture/citys/4_1.png"
+
+[node name="YongZhouChangAn" parent="Map/CityContainer" instance=ExtResource("5_eycq6")]
+position = Vector2(206, 343)
+texture_path = "res://assets/texture/citys/4_2.png"
+
+[node name="BingZhouShuoFang" parent="Map/CityContainer" instance=ExtResource("5_eycq6")]
+position = Vector2(192, 245)
+texture_path = "res://assets/texture/citys/5_1.png"
+
+[node name="BingZhouXiHe" parent="Map/CityContainer" instance=ExtResource("5_eycq6")]
+position = Vector2(256, 284)
+texture_path = "res://assets/texture/citys/5_2.png"
+
+[node name="BingZhouTaiYuan" parent="Map/CityContainer" instance=ExtResource("5_eycq6")]
+position = Vector2(295, 284)
+texture_path = "res://assets/texture/citys/5_3.png"
+
+[node name="BingZhouShangDang" parent="Map/CityContainer" instance=ExtResource("5_eycq6")]
+position = Vector2(291, 315)
+texture_path = "res://assets/texture/citys/5_4.png"
+
+[node name="BingZhouYanMen" parent="Map/CityContainer" instance=ExtResource("5_eycq6")]
+position = Vector2(308, 252)
+texture_path = "res://assets/texture/citys/5_5.png"
+
+[node name="YouZhouDaiJun" parent="Map/CityContainer" instance=ExtResource("5_eycq6")]
+position = Vector2(354, 234)
+texture_path = "res://assets/texture/citys/5_5.png"
+
+[node name="YouZhouBeiPing" parent="Map/CityContainer" instance=ExtResource("5_eycq6")]
+position = Vector2(406, 235)
+texture_path = "res://assets/texture/citys/5_5.png"
+
+[node name="YouZhouLiaoXi" parent="Map/CityContainer" instance=ExtResource("5_eycq6")]
+position = Vector2(484, 203)
+texture_path = "res://assets/texture/citys/5_5.png"
+
+[node name="SelectHero" type="Node2D" parent="Map"]
+
+[node name="MarginContainer" type="MarginContainer" parent="Map/SelectHero"]
+offset_right = 549.0
+offset_bottom = 960.0
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="DContainer" type="VBoxContainer" parent="Map/SelectHero/MarginContainer"]
+layout_mode = 2
+
+[node name="DHContainer" type="HBoxContainer" parent="Map/SelectHero/MarginContainer/DContainer"]
+layout_mode = 2
+
+[node name="pic" type="TextureRect" parent="Map/SelectHero/MarginContainer/DContainer/DHContainer"]
+custom_minimum_size = Vector2(291, 200)
+layout_mode = 2
+texture = ExtResource("7_dh5dd")
+expand_mode = 2
+
+[node name="text" type="TextureRect" parent="Map/SelectHero/MarginContainer/DContainer/DHContainer/pic"]
+custom_minimum_size = Vector2(200, 100)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -145.5
+offset_top = 7.0
+offset_right = 1314.5
+offset_bottom = 477.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("8_338p3")
+
+[node name="TextPanel" type="Panel" parent="Map/SelectHero/MarginContainer/DContainer/DHContainer"]
+custom_minimum_size = Vector2(229, 0)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Map/SelectHero/MarginContainer/DContainer/DHContainer/TextPanel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Map/SelectHero/MarginContainer/DContainer/DHContainer/TextPanel/MarginContainer"]
+custom_minimum_size = Vector2(221, 189)
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("9_lny1d")
+bbcode_enabled = true
+text = "经历了[color=#91c2d5][u][url]黄巾之乱[/url][/u][/color]，汉室威信受挫，权力下放，各地方[color=#91c2d5][u][url]诸侯[/url][/u][/color]自组势力，而宦官[color=#91c2d5][u][url]十常侍[/url][/u][/color]与外戚[color=#91c2d5][u][url]何进[/url][/u][/color] 的争斗也日益加剧。终于在[color=#91c2d5][u][url]中平六年[/url][/u][/color]（189年）四月，[color=#91c2d5][u][url]汉灵帝[/url][/u][/color]驾崩后，戚宦再次相争，[color=#91c2d5][u][url]何进[/url][/u][/color]被杀。虽然[color=#91c2d5][u][url]何进[/url][/u][/color]部将[color=#91c2d5][u][url]袁绍[/url][/u][/color]率领部曲入宫尽杀宦官，但皇帝[color=#91c2d5][u][url]刘辩[/url][/u][/color]和皇弟[color=#91c2d5][u][url]刘协[/url][/u][/color]却被宦官挟持出宫，然后被[color=#91c2d5][u][url]何进[/url][/u][/color]召进京、准备讨伐宦官的[color=#91c2d5][u][url]董卓[/url][/u][/color]抢先找到并控制。[color=#91c2d5][u][url]董卓[/url][/u][/color]想废掉少帝[color=#91c2d5][u][url]刘辩[/url][/u][/color]，拥立其弟陈留王[color=#91c2d5][u][url]刘协[/url][/u][/color]为帝，于是用计壮大自己的势力，并铲除反对者，如诱使[color=#91c2d5][u][url]丁原[/url][/u][/color]部下[color=#91c2d5][u][url]吕布[/url][/u][/color]杀死[color=#91c2d5][u][url]丁原[/url][/u][/color]以夺其兵马，和逼走反对者[color=#91c2d5][u][url]袁绍[/url][/u][/color]。一切准备好后，便于九月甲戌日废少帝为弘农王，而推[color=#91c2d5][u][url]刘协[/url][/u][/color]为献帝，至丙子日，更鸩杀了[color=#91c2d5][u][url]何太后[/url][/u][/color]，成为汉室实际控制人，担任相国。他在洛阳实行恐怖统治，纵容士兵奸淫掳掠，连皇室、公主、宫人也不能幸免，百姓对他恨之入骨，也激起各地群雄的痛恨。不过，[color=#91c2d5][u][url]董卓[/url][/u][/color]受[color=#91c2d5][u][url]周毖[/url][/u][/color]、[color=#91c2d5][u][url]伍琼[/url][/u][/color]之言，为收纳名望和平息反对，重新任用党人，[color=#91c2d5][u][url]荀爽[/url][/u][/color]、[color=#91c2d5][u][url]陈纪[/url][/u][/color]、[color=#91c2d5][u][url]韩融[/url][/u][/color]都不自愿地受到任用，又以[color=#91c2d5][u][url]袁绍[/url][/u][/color]为勃海太守、[color=#91c2d5][u][url]韩馥[/url][/u][/color]为冀州牧、[color=#91c2d5][u][url]刘岱[/url][/u][/color]为兖州刺史、[color=#91c2d5][u][url]孔伷[/url][/u][/color]为豫州刺史、[color=#91c2d5][u][url]张邈[/url][/u][/color]为陈留太守、[color=#91c2d5][u][url]张咨[/url][/u][/color]为南阳太守等。但这些举动也不能平息各地愤恨。在京师的[color=#91c2d5][u][url]袁术[/url][/u][/color]因畏惧[color=#91c2d5][u][url]董卓[/url][/u][/color]而逃到南阳，而[color=#91c2d5][u][url]曹操[/url][/u][/color]认为[color=#91c2d5][u][url]董卓[/url][/u][/color]必定会败亡，遂逃出京都。"
+script = ExtResource("10_b3kvj")
+
+[node name="CharacterSelect" type="Panel" parent="Map/SelectHero"]
+custom_minimum_size = Vector2(0, 33)
+offset_left = 8.0
+offset_top = 679.0
+offset_right = 530.0
+offset_bottom = 952.0
+
+[node name="HCContainer" type="VBoxContainer" parent="Map/SelectHero/CharacterSelect"]
+custom_minimum_size = Vector2(100, 200)
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 6.0
+offset_top = -103.5
+offset_right = 106.0
+offset_bottom = 113.5
+grow_vertical = 2
+
+[node name="LiuBei" type="HBoxContainer" parent="Map/SelectHero/CharacterSelect/HCContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+script = ExtResource("9_hwpys")
+
+[node name="Name" type="Button" parent="Map/SelectHero/CharacterSelect/HCContainer/LiuBei"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("9_lny1d")
+text = "刘备"
+
+[node name="CityNum" type="TextureRect" parent="Map/SelectHero/CharacterSelect/HCContainer/LiuBei"]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("9_ofk0u")
+stretch_mode = 2
+
+[node name="CityText" type="Label" parent="Map/SelectHero/CharacterSelect/HCContainer/LiuBei"]
+layout_mode = 2
+text = "1"
+
+[node name="CaoCao" type="HBoxContainer" parent="Map/SelectHero/CharacterSelect/HCContainer"]
+layout_mode = 2
+script = ExtResource("9_hwpys")
+
+[node name="Name" type="Button" parent="Map/SelectHero/CharacterSelect/HCContainer/CaoCao"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("9_lny1d")
+text = "曹操"
+
+[node name="CityNum" type="TextureRect" parent="Map/SelectHero/CharacterSelect/HCContainer/CaoCao"]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("9_ofk0u")
+stretch_mode = 2
+
+[node name="CityText" type="Label" parent="Map/SelectHero/CharacterSelect/HCContainer/CaoCao"]
+layout_mode = 2
+text = "3"
+
+[node name="YuanShao" type="HBoxContainer" parent="Map/SelectHero/CharacterSelect/HCContainer"]
+layout_mode = 2
+script = ExtResource("9_hwpys")
+
+[node name="Name" type="Button" parent="Map/SelectHero/CharacterSelect/HCContainer/YuanShao"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("9_lny1d")
+text = "袁绍"
+
+[node name="CityNum" type="TextureRect" parent="Map/SelectHero/CharacterSelect/HCContainer/YuanShao"]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("9_ofk0u")
+stretch_mode = 2
+
+[node name="CityText" type="Label" parent="Map/SelectHero/CharacterSelect/HCContainer/YuanShao"]
+layout_mode = 2
+text = "6"
+
+[node name="SunCe" type="HBoxContainer" parent="Map/SelectHero/CharacterSelect/HCContainer"]
+layout_mode = 2
+script = ExtResource("9_hwpys")
+
+[node name="Name" type="Button" parent="Map/SelectHero/CharacterSelect/HCContainer/SunCe"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("9_lny1d")
+text = "孙策"
+
+[node name="CityNum" type="TextureRect" parent="Map/SelectHero/CharacterSelect/HCContainer/SunCe"]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("9_ofk0u")
+stretch_mode = 2
+
+[node name="CityText" type="Label" parent="Map/SelectHero/CharacterSelect/HCContainer/SunCe"]
+layout_mode = 2
+text = "4"
+
+[node name="DongZhuo" type="HBoxContainer" parent="Map/SelectHero/CharacterSelect/HCContainer"]
+layout_mode = 2
+script = ExtResource("9_hwpys")
+
+[node name="Name" type="Button" parent="Map/SelectHero/CharacterSelect/HCContainer/DongZhuo"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("9_lny1d")
+text = "董卓"
+
+[node name="CityNum" type="TextureRect" parent="Map/SelectHero/CharacterSelect/HCContainer/DongZhuo"]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("9_ofk0u")
+stretch_mode = 2
+
+[node name="CityText" type="Label" parent="Map/SelectHero/CharacterSelect/HCContainer/DongZhuo"]
+layout_mode = 2
+text = "3"
+
+[node name="LiuZhang" type="HBoxContainer" parent="Map/SelectHero/CharacterSelect/HCContainer"]
+layout_mode = 2
+script = ExtResource("9_hwpys")
+
+[node name="Name" type="Button" parent="Map/SelectHero/CharacterSelect/HCContainer/LiuZhang"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("9_lny1d")
+text = "刘璋
+"
+
+[node name="CityNum" type="TextureRect" parent="Map/SelectHero/CharacterSelect/HCContainer/LiuZhang"]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("9_ofk0u")
+stretch_mode = 2
+
+[node name="CityText" type="Label" parent="Map/SelectHero/CharacterSelect/HCContainer/LiuZhang"]
+layout_mode = 2
+text = "3"
+
+[node name="MaTeng" type="HBoxContainer" parent="Map/SelectHero/CharacterSelect/HCContainer"]
+layout_mode = 2
+script = ExtResource("9_hwpys")
+
+[node name="Name" type="Button" parent="Map/SelectHero/CharacterSelect/HCContainer/MaTeng"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("9_lny1d")
+text = "马腾"
+
+[node name="CityNum" type="TextureRect" parent="Map/SelectHero/CharacterSelect/HCContainer/MaTeng"]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("9_ofk0u")
+stretch_mode = 2
+
+[node name="CityText" type="Label" parent="Map/SelectHero/CharacterSelect/HCContainer/MaTeng"]
+layout_mode = 2
+text = "3"
+
+[node name="CharacterAttr" type="Panel" parent="Map/SelectHero/CharacterSelect"]
+layout_mode = 0
+offset_left = 108.0
+offset_top = 26.0
+offset_right = 505.0
+offset_bottom = 265.0
+
+[node name="Head" type="TextureRect" parent="Map/SelectHero/CharacterSelect/CharacterAttr"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 6.0
+offset_right = 119.0
+offset_bottom = 109.0
+texture = ExtResource("14_uxee3")
+expand_mode = 2
+
+[node name="Panel" type="Panel" parent="Map/SelectHero/CharacterSelect/CharacterAttr"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 115.0
+offset_right = 121.0
+offset_bottom = 142.0
+
+[node name="Panel" type="Panel" parent="Map/SelectHero/CharacterSelect/CharacterAttr/Panel"]
+layout_mode = 0
+offset_left = -1.0
+offset_right = 29.0
+offset_bottom = 28.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_0vkf5")
+
+[node name="force" type="TextureRect" parent="Map/SelectHero/CharacterSelect/CharacterAttr/Panel/Panel"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 2.0
+offset_right = 27.0
+offset_bottom = 28.0
+texture = ExtResource("12_5uatg")
+expand_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Map/SelectHero/CharacterSelect/CharacterAttr/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.795
+anchor_top = 0.5
+anchor_right = 0.795
+anchor_bottom = 0.5
+offset_left = -23.04
+offset_top = -11.5
+offset_right = 22.96
+offset_bottom = 11.5
+grow_horizontal = 0
+grow_vertical = 2
+bbcode_enabled = true
+text = "[color=#91c2d5][u][url]刘备[/url][/u][/color] "
+
+[node name="RadarChartStats" parent="Map/SelectHero/CharacterSelect/CharacterAttr" instance=ExtResource("15_jvq1n")]
+layout_mode = 1
+offset_left = 214.69
+offset_top = 39.0
+offset_right = 214.69
+offset_bottom = 39.0
+
+[node name="Menu" type="Node2D" parent="."]
+visible = false
+
+[node name="Mask" type="Panel" parent="Menu"]
+visible = false
+offset_right = 540.0
+offset_bottom = 960.0
+
+[node name="MainContainer" type="VBoxContainer" parent="Menu"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 540.0
+offset_bottom = 960.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="ButtonContainer" type="HBoxContainer" parent="Menu/MainContainer"]
+custom_minimum_size = Vector2(0, 960)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Menu/MainContainer/ButtonContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Start" type="Button" parent="Menu/MainContainer/ButtonContainer/VBoxContainer"]
+layout_mode = 2
+text = "开创霸业"
+script = ExtResource("8_r5q5y")
+
+[node name="Continute" type="Button" parent="Menu/MainContainer/ButtonContainer/VBoxContainer"]
+layout_mode = 2
+text = "再续征程"
+
+[node name="AddHero" type="Button" parent="Menu/MainContainer/ButtonContainer/VBoxContainer"]
+layout_mode = 2
+text = "自建武将"
+
+[node name="GameHelp" type="Button" parent="Menu/MainContainer/ButtonContainer/VBoxContainer"]
+layout_mode = 2
+text = "游戏百科
+"
+
+[node name="GuanYu" type="Sprite2D" parent="Menu"]
+position = Vector2(694, 763)
+scale = Vector2(0.732143, 0.58151)
+texture = ExtResource("6_krf3x")
+
+[node name="TitleBg" type="TextureRect" parent="Menu"]
+custom_minimum_size = Vector2(540, 400)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -3.0
+offset_top = -2.0
+offset_right = 537.0
+offset_bottom = 398.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture = ExtResource("7_jqdx8")
+expand_mode = 1
+
+[node name="UIAnimation" type="AnimationPlayer" parent="Menu"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_mrha4")
+}
+
+[connection signal="meta_hover_started" from="Map/SelectHero/MarginContainer/DContainer/DHContainer/TextPanel/MarginContainer/RichTextLabel" to="Map/SelectHero/MarginContainer/DContainer/DHContainer/TextPanel/MarginContainer/RichTextLabel" method="_on_meta_hover_started"]
+[connection signal="pressed" from="Menu/MainContainer/ButtonContainer/VBoxContainer/Start" to="." method="_on_start_pressed"]
