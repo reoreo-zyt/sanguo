@@ -5,7 +5,6 @@ extends ScrollContainer
 var hero_list_item = preload("res://scenes/hero_list_item.tscn")
 
 func _ready() -> void:
-	# create_characters()
 	SignalBus.connect("show_city_info", _on_show_city_info)
 
 func create_characters(textname, cityCode):

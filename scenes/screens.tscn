@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=3 uid="uid://coeuv1kg0usol"]
+[gd_scene load_steps=53 format=3 uid="uid://coeuv1kg0usol"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_7ijmt"]
 [ext_resource type="PackedScene" uid="uid://1yhkkygysjvv" path="res://scenes/fog.tscn" id="1_njvu3"]
@@ -35,6 +35,7 @@
 [ext_resource type="Script" path="res://scripts/hero_scroll_container.gd" id="30_q0s5f"]
 [ext_resource type="Texture2D" uid="uid://br3y7a3whqp8" path="res://assets/texture/force/e88dd331-d8cb-4827-90b5-f4fa4626acc1.png" id="30_swif7"]
 [ext_resource type="PackedScene" uid="uid://b2krug8ss4rwg" path="res://scenes/hero_list_item.tscn" id="31_g8j7j"]
+[ext_resource type="Script" path="res://scripts/city_character_attr.gd" id="32_pcofb"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_e0x5k"]
 render_priority = 0
@@ -865,6 +866,7 @@ offset_left = 98.0
 offset_top = 15.0
 offset_right = 517.0
 offset_bottom = 284.0
+is_show_close = false
 
 [node name="Menu" type="Panel" parent="Map/SelectHero"]
 anchors_preset = 1
@@ -895,6 +897,7 @@ theme_override_fonts/font = ExtResource("9_lny1d")
 text = "中止"
 
 [node name="CityMessage" type="Panel" parent="Map"]
+visible = false
 offset_left = 8.0
 offset_top = 286.0
 offset_right = 530.0
@@ -1610,20 +1613,13 @@ visible = false
 layout_mode = 2
 
 [node name="CharacterAttr" parent="Map/CityMessage/HeroList" instance=ExtResource("15_lqbkq")]
+visible = false
 layout_mode = 0
-offset_left = -18.0
-offset_top = 148.0
+offset_left = -42.0
+offset_top = 129.0
 offset_right = 379.0
-offset_bottom = 417.0
-
-[node name="Button" type="Button" parent="Map/CityMessage/HeroList/CharacterAttr"]
-layout_mode = 0
-offset_left = 354.0
-offset_top = 2.0
-offset_right = 394.0
-offset_bottom = 29.0
-theme_override_fonts/font = ExtResource("9_lny1d")
-text = "关闭"
+offset_bottom = 398.0
+script = ExtResource("32_pcofb")
 
 [node name="Menu" type="Node2D" parent="."]
 visible = false
@@ -1750,5 +1746,4 @@ offset_bottom = 329.64
 [connection signal="meta_hover_started" from="Map/CityMessage/CityMessageMore/ScrollContainer/VBoxContainer/JinContainer/JinPanel/RichTextLabel" to="Map/CityMessage/CityMessageMore/ScrollContainer/VBoxContainer/JinContainer/JinPanel/RichTextLabel" method="_on_meta_hover_started"]
 [connection signal="meta_hover_ended" from="Map/CityMessage/CityMessageMore/ScrollContainer/VBoxContainer/LiangContainer/LiangPanel/RichTextLabel" to="Map/CityMessage/CityMessageMore/ScrollContainer/VBoxContainer/LiangContainer/LiangPanel/RichTextLabel" method="_on_meta_hover_ended"]
 [connection signal="meta_hover_started" from="Map/CityMessage/CityMessageMore/ScrollContainer/VBoxContainer/LiangContainer/LiangPanel/RichTextLabel" to="Map/CityMessage/CityMessageMore/ScrollContainer/VBoxContainer/LiangContainer/LiangPanel/RichTextLabel" method="_on_meta_hover_started"]
-[connection signal="pressed" from="Map/CityMessage/HeroList/CharacterAttr/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Menu/MainContainer/ButtonContainer/VBoxContainer/Start" to="." method="_on_start_pressed"]

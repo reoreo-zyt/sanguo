@@ -1,6 +1,8 @@
 extends CanvasLayer
 
 func _ready() -> void:
+	SignalBus.connect("show_city_hero_info", _on_show_city_hero_info)
+	SignalBus.connect("hide_city_hero_info", _on_hide_city_hero_info)
 	$Menu/UIAnimation.play('fade_in')
 
 func _on_start_pressed() -> void:
@@ -21,4 +23,11 @@ func _on_decide_pressed() -> void:
 	$Map/SelectHero/MarginContainer.hide()
 
 func _on_button_pressed() -> void:
+	$Map/CityMessage/HeroList/CharacterAttr.hide()
+
+func _on_show_city_hero_info():
+	$Map/CityMessage/HeroList/CharacterAttr.show()
+
+func _on_hide_city_hero_info():
+	print(111)
 	$Map/CityMessage/HeroList/CharacterAttr.hide()

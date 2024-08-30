@@ -393,6 +393,9 @@ var skills = {
 # 当前选择的城池
 var cur_city = "61b9c512-225d-d918-086c-e2da4edb860f"
 
+# 当前选择的人物
+var cur_hero_id = 100
+
 ######### 187 剧本城池数据
 #########
 var citys = {

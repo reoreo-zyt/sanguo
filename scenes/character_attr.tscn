@@ -1,5 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://t75w08daqljg"]
+[gd_scene load_steps=10 format=3 uid="uid://t75w08daqljg"]
 
+[ext_resource type="Script" path="res://scripts/city_character_attr_custom.gd" id="1_ablh7"]
 [ext_resource type="Texture2D" uid="uid://cfeq5m3hga03c" path="res://assets/texture/profile/？？？？_117.jpg" id="1_s8hhc"]
 [ext_resource type="Texture2D" uid="uid://c7k54vbipqqo" path="res://assets/texture/force/fffea5e6-96bc-e1e0-b465-8491edda9c84.png" id="2_8pgst"]
 [ext_resource type="FontFile" uid="uid://ccc7h37nygjqu" path="res://assets/fonts/方正隶书简体.TTF" id="3_bjp46"]
@@ -19,6 +20,7 @@ offset_left = 97.0
 offset_top = 26.0
 offset_right = 510.0
 offset_bottom = 295.0
+script = ExtResource("1_ablh7")
 
 [node name="Head" type="TextureRect" parent="."]
 layout_mode = 0
@@ -214,6 +216,15 @@ bbcode_enabled = true
 text = "[center][color=#91c2d5][u][url]请先选择主公[/url][/u][/color] "
 script = ExtResource("4_3opgj")
 
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 368.0
+offset_top = 5.0
+offset_right = 408.0
+offset_bottom = 32.0
+theme_override_fonts/font = ExtResource("3_bjp46")
+text = "关闭"
+
 [connection signal="meta_hover_ended" from="Name/RichTextLabel" to="Name/RichTextLabel" method="_on_meta_hover_ended"]
 [connection signal="meta_hover_started" from="Name/RichTextLabel" to="Name/RichTextLabel" method="_on_meta_hover_started"]
 [connection signal="meta_hover_ended" from="Wu/RichTextLabel" to="Wu/RichTextLabel" method="_on_meta_hover_ended"]
@@ -222,3 +233,4 @@ script = ExtResource("4_3opgj")
 [connection signal="meta_hover_started" from="Fang/RichTextLabel" to="Fang/RichTextLabel" method="_on_meta_hover_started"]
 [connection signal="meta_hover_ended" from="Skill/RichTextLabel" to="Skill/RichTextLabel" method="_on_meta_hover_ended"]
 [connection signal="meta_hover_started" from="Skill/RichTextLabel" to="Skill/RichTextLabel" method="_on_meta_hover_started"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
