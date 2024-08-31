@@ -253,12 +253,14 @@ position = Vector2(118, 309)
 texture_path = "res://assets/texture/citys/1_2.png"
 text_name = "凉州金城"
 character_number = 7
+city_code = "95ef07b8-a83a-5216-1772-e1636cc1487b"
 
-[node name="LiangZhouWudu" parent="Map/CityContainer" instance=ExtResource("5_eycq6")]
+[node name="LiangZhouTianShui" parent="Map/CityContainer" instance=ExtResource("5_eycq6")]
 position = Vector2(140, 337)
 texture_path = "res://assets/texture/citys/1_3.png"
-text_name = "凉州武都"
+text_name = "凉州天水"
 character_number = 7
+city_code = "055a5ee1-332d-6889-c21a-5e06d3aa1a04"
 
 [node name="YiZhouHanZhong" parent="Map/CityContainer" instance=ExtResource("5_eycq6")]
 position = Vector2(172, 362)

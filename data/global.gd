@@ -85,7 +85,8 @@ var text_message = {
 	"勇冠四州": "",
 	"经汤莫若": "",
 	"忠义尽节": "",
-	"马超八健将": ""
+	"马超八健将": "",
+	"潜袭": "",
 }
 
 ######### 武器
@@ -387,6 +388,11 @@ var skills = {
 		"name": "马超八健将",
 		"desc": text_message["马超八健将"],
 		"type": "self",
+	},
+	"aac701bf-f18d-3677-7ee6-1f63446cd2b4": {
+		"name": "潜袭",
+		"desc": text_message["潜袭"],
+		"type": "self",
 	}
 }
 
@@ -402,10 +408,11 @@ var citys = {
 	"61b9c512-225d-d918-086c-e2da4edb860f": {
 		"name": "凉州武威",
 		"ownerId": 7,
-		"lordId": 100,
+		"lordId": 7,
 		"tong": 60,
 		"ren": 20000,
 		"jiang": [
+			7,
 			100,
 			101,
 			102,
@@ -421,6 +428,53 @@ var citys = {
 		"zhi": 60,
 		"jin": 300,
 		"liang": 600
+	},
+	"95ef07b8-a83a-5216-1772-e1636cc1487b": {
+		"name": "凉州金城",
+		"ownerId": 7,
+		"lordId": 108,
+		"tong": 60,
+		"ren": 16500,
+		"jiang": [
+			108,
+			109,
+		],
+		"bing": 13450,
+		"nong": 35,
+		"shang": 15,
+		"zhi": 72,
+		"jin": 450,
+		"liang": 550
+	},
+	"055a5ee1-332d-6889-c21a-5e06d3aa1a04": {
+		"name": "凉州武都",
+		"ownerId": 7,
+		"lordId": 108,
+		"tong": 60,
+		"ren": 16500,
+		"jiang": [
+			110,
+			111,
+			112,
+			113,
+			114,
+			115,
+			116,
+			117,
+			118,
+			119,
+			120,
+			121,
+			122,
+			123,
+			124,
+		],
+		"bing": 13450,
+		"nong": 35,
+		"shang": 15,
+		"zhi": 72,
+		"jin": 450,
+		"liang": 550
 	}
 }
 
@@ -428,6 +482,31 @@ var citys = {
 ######### 。。。用数字100累加表示，0-7 是君主
 var characters = {
 	# 除了君主以外的其他将领
+	7: {
+		"name": "马腾",
+		"headImg": "res://assets/texture/profile/马腾 Ma Teng.jpg",
+		"weaponId": "002e7d6a-c5f3-8ebf-2694-6b032a458a26",
+		"armorId": "b179eeaf-ff6d-5e8b-dc6d-1ff3a6848649",
+		"skillIds": [
+			"44037d60-ee22-4bd8-4e04-f966f0af082d"
+		],
+		"attrs": {
+			"level": 40,
+			"command": 82,
+			"force": 80,
+			"intelligence": 51,
+			"politics": 59,
+			"morality": 89,
+			"physical_strength": 100,
+			"speed": 80,
+
+			"lorty": 99,
+			"curr_physical_strength": 100,
+		},
+		"work": 184,
+		"born": 149,
+		"dead": 211
+	},
 	100: {
 		"name": "成公英",
 		"headImg": "res://assets/texture/profile/成公英 cheng gong ying.jpg",
@@ -552,7 +631,10 @@ var characters = {
 		"headImg": "res://assets/texture/profile/马岱 Ma Dai.jpg",
 		"weaponId": "002e7d6a-c5f3-8ebf-2694-6b032a458a26",
 		"armorId": "dceaf567-ca94-2a19-01d9-efbb9844ffc6",
-		"skillIds": [],
+		"skillIds": [
+			"aac701bf-f18d-3677-7ee6-1f63446cd2b4",
+			"7e1823d0-f790-5fb1-d171-81fb6d7ca747"
+		],
 		"attrs": {
 			"level": 30,
 			"command": 81,
@@ -616,6 +698,397 @@ var characters = {
 		"born": 178,
 		"dead": 211
 	},
+	108: {
+		"name": "韩遂",
+		"headImg": "res://assets/texture/profile/韩遂 han Sui.jpg",
+		"weaponId": "002e7d6a-c5f3-8ebf-2694-6b032a458a26",
+		"armorId": "b179eeaf-ff6d-5e8b-dc6d-1ff3a6848649",
+		"skillIds": [],
+		"attrs": {
+			"level": 40,
+			"command": 89,
+			"force": 70,
+			"intelligence": 77,
+			"politics": 61,
+			"morality": 80,
+			"physical_strength": 100,
+			"speed": 80,
+
+			"lorty": 92,
+			"curr_physical_strength": 100,
+		},
+		"work": 184,
+		"born": 142,
+		"dead": 215
+	},
+	109: {
+		"name": "阎行",
+		"headImg": "res://assets/texture/profile/阎行 Yan Xing.jpg",
+		"weaponId": "002e7d6a-c5f3-8ebf-2694-6b032a458a26",
+		"armorId": "b179eeaf-ff6d-5e8b-dc6d-1ff3a6848649",
+		"skillIds": [],
+		"attrs": {
+			"level": 20,
+			"command": 72,
+			"force": 84,
+			"intelligence": 61,
+			"politics": 58,
+			"morality": 69,
+			"physical_strength": 100,
+			"speed": 80,
+
+			"lorty": 92,
+			"curr_physical_strength": 100,
+		},
+		"work": 184,
+		"born": 159,
+		"dead": 222
+	},
+	110: {
+		"name": "姜维",
+		"headImg": "res://assets/texture/profile/姜维 Jiang Wei.jpg",
+		"weaponId": "002e7d6a-c5f3-8ebf-2694-6b032a458a26",
+		"armorId": "b179eeaf-ff6d-5e8b-dc6d-1ff3a6848649",
+		"skillIds": [],
+		"attrs": {
+			"level": 40,
+			"command": 90,
+			"force": 89,
+			"intelligence": 90,
+			"politics": 67,
+			"morality": 80,
+			"physical_strength": 100,
+			"speed": 80,
+
+			"lorty": 92,
+			"curr_physical_strength": 100,
+		},
+		"work": 225,
+		"born": 202,
+		"dead": 264
+	},
+	111: {
+		"name": "费诗",
+		"headImg": "res://assets/texture/profile/费诗 Fei Shi.jpg",
+		"weaponId": "002e7d6a-c5f3-8ebf-2694-6b032a458a26",
+		"armorId": "b179eeaf-ff6d-5e8b-dc6d-1ff3a6848649",
+		"skillIds": [],
+		"attrs": {
+			"level": 20,
+			"command": 15,
+			"force": 28,
+			"intelligence": 64,
+			"politics": 74,
+			"morality": 66,
+			"physical_strength": 100,
+			"speed": 80,
+
+			"lorty": 92,
+			"curr_physical_strength": 100,
+		},
+		"work": 195,
+		"born": 176,
+		"dead": 240
+	},
+	112: {
+		"name": "费耀",
+		"headImg": "res://assets/texture/profile/费耀 Fei Yao.jpg",
+		"weaponId": "002e7d6a-c5f3-8ebf-2694-6b032a458a26",
+		"armorId": "b179eeaf-ff6d-5e8b-dc6d-1ff3a6848649",
+		"skillIds": [],
+		"attrs": {
+			"level": 20,
+			"command": 70,
+			"force": 66,
+			"intelligence": 73,
+			"politics": 62,
+			"morality": 67,
+			"physical_strength": 100,
+			"speed": 80,
+
+			"lorty": 92,
+			"curr_physical_strength": 100,
+		},
+		"work": 195,
+		"born": 176,
+		"dead": 240
+	},
+	113: {
+		"name": "费耀",
+		"headImg": "res://assets/texture/profile/费耀 Fei Yao.jpg",
+		"weaponId": "002e7d6a-c5f3-8ebf-2694-6b032a458a26",
+		"armorId": "b179eeaf-ff6d-5e8b-dc6d-1ff3a6848649",
+		"skillIds": [],
+		"attrs": {
+			"level": 20,
+			"command": 70,
+			"force": 66,
+			"intelligence": 73,
+			"politics": 62,
+			"morality": 67,
+			"physical_strength": 100,
+			"speed": 80,
+
+			"lorty": 92,
+			"curr_physical_strength": 100,
+		},
+		"work": 195,
+		"born": 174,
+		"dead": 240
+	},
+	114: {
+		"name": "侯选",
+		"headImg": "res://assets/texture/profile/侯选 Hou Xuan.jpg",
+		"weaponId": "002e7d6a-c5f3-8ebf-2694-6b032a458a26",
+		"armorId": "b179eeaf-ff6d-5e8b-dc6d-1ff3a6848649",
+		"skillIds": [],
+		"attrs": {
+			"level": 20,
+			"command": 63,
+			"force": 66,
+			"intelligence": 34,
+			"politics": 55,
+			"morality": 52,
+			"physical_strength": 100,
+			"speed": 80,
+
+			"lorty": 92,
+			"curr_physical_strength": 100,
+		},
+		"work": 194,
+		"born": 175,
+		"dead": 228
+	},
+	115: {
+		"name": "胡车儿",
+		"headImg": "res://assets/texture/profile/胡车儿 Hu Che Er.jpg",
+		"weaponId": "002e7d6a-c5f3-8ebf-2694-6b032a458a26",
+		"armorId": "b179eeaf-ff6d-5e8b-dc6d-1ff3a6848649",
+		"skillIds": [],
+		"attrs": {
+			"level": 20,
+			"command": 26,
+			"force": 82,
+			"intelligence": 41,
+			"politics": 2,
+			"morality": 30,
+			"physical_strength": 100,
+			"speed": 80,
+
+			"lorty": 92,
+			"curr_physical_strength": 100,
+		},
+		"work": 188,
+		"born": 164,
+		"dead": 206
+	},
+	116: {
+		"name": "华雄",
+		"headImg": "res://assets/texture/profile/华雄 Hua Xiong.jpg",
+		"weaponId": "002e7d6a-c5f3-8ebf-2694-6b032a458a26",
+		"armorId": "b179eeaf-ff6d-5e8b-dc6d-1ff3a6848649",
+		"skillIds": [],
+		"attrs": {
+			"level": 40,
+			"command": 81,
+			"force": 92,
+			"intelligence": 56,
+			"politics": 40,
+			"morality": 57,
+			"physical_strength": 100,
+			"speed": 80,
+
+			"lorty": 92,
+			"curr_physical_strength": 100,
+		},
+		"work": 184,
+		"born": 155,
+		"dead": 190
+	},
+	117: {
+		"name": "梁绪",
+		"headImg": "res://assets/texture/profile/梁绪 Liang Xu.jpg",
+		"weaponId": "002e7d6a-c5f3-8ebf-2694-6b032a458a26",
+		"armorId": "b179eeaf-ff6d-5e8b-dc6d-1ff3a6848649",
+		"skillIds": [],
+		"attrs": {
+			"level": 20,
+			"command": 56,
+			"force": 52,
+			"intelligence": 66,
+			"politics": 68,
+			"morality": 58,
+			"physical_strength": 100,
+			"speed": 80,
+
+			"lorty": 92,
+			"curr_physical_strength": 100,
+		},
+		"work": 217,
+		"born": 198,
+		"dead": 260
+	},
+	118: {
+		"name": "尹赏",
+		"headImg": "res://assets/texture/profile/尹赏 Yi Shang.jpg",
+		"weaponId": "002e7d6a-c5f3-8ebf-2694-6b032a458a26",
+		"armorId": "b179eeaf-ff6d-5e8b-dc6d-1ff3a6848649",
+		"skillIds": [],
+		"attrs": {
+			"level": 20,
+			"command": 51,
+			"force": 44,
+			"intelligence": 61,
+			"politics": 66,
+			"morality": 53,
+			"physical_strength": 100,
+			"speed": 80,
+
+			"lorty": 92,
+			"curr_physical_strength": 100,
+		},
+		"work": 213,
+		"born": 194,
+		"dead": 260
+	},
+	119: {
+		"name": "杨阜",
+		"headImg": "res://assets/texture/profile/杨阜 Yang Fu.jpg",
+		"weaponId": "002e7d6a-c5f3-8ebf-2694-6b032a458a26",
+		"armorId": "b179eeaf-ff6d-5e8b-dc6d-1ff3a6848649",
+		"skillIds": [],
+		"attrs": {
+			"level": 30,
+			"command": 67,
+			"force": 50,
+			"intelligence": 83,
+			"politics": 78,
+			"morality": 77,
+			"physical_strength": 100,
+			"speed": 80,
+
+			"lorty": 92,
+			"curr_physical_strength": 100,
+		},
+		"work": 197,
+		"born": 178,
+		"dead": 239
+	},
+	120: {
+		"name": "王异",
+		"headImg": "res://assets/texture/profile/王异 Wang Yi.jpg",
+		"weaponId": "002e7d6a-c5f3-8ebf-2694-6b032a458a26",
+		"armorId": "b179eeaf-ff6d-5e8b-dc6d-1ff3a6848649",
+		"skillIds": [],
+		"attrs": {
+			"level": 30,
+			"command": 58,
+			"force": 26,
+			"intelligence": 82,
+			"politics": 68,
+			"morality": 78,
+			"physical_strength": 100,
+			"speed": 80,
+
+			"lorty": 92,
+			"curr_physical_strength": 100,
+		},
+		"work": 190,
+		"born": 171,
+		"dead": 230
+	},
+	121: {
+		"name": "王韬",
+		"headImg": "res://assets/texture/profile/王韬 Wang Tao.jpg",
+		"weaponId": "002e7d6a-c5f3-8ebf-2694-6b032a458a26",
+		"armorId": "b179eeaf-ff6d-5e8b-dc6d-1ff3a6848649",
+		"skillIds": [],
+		"attrs": {
+			"level": 20,
+			"command": 46,
+			"force": 59,
+			"intelligence": 72,
+			"politics": 51,
+			"morality": 49,
+			"physical_strength": 100,
+			"speed": 80,
+
+			"lorty": 92,
+			"curr_physical_strength": 100,
+		},
+		"work": 229,
+		"born": 210,
+		"dead": 269
+	},
+	122: {
+		"name": "马遵",
+		"headImg": "res://assets/texture/profile/马遵 Ma Zun.jpg",
+		"weaponId": "002e7d6a-c5f3-8ebf-2694-6b032a458a26",
+		"armorId": "b179eeaf-ff6d-5e8b-dc6d-1ff3a6848649",
+		"skillIds": [],
+		"attrs": {
+			"level": 20,
+			"command": 38,
+			"force": 52,
+			"intelligence": 31,
+			"politics": 51,
+			"morality": 48,
+			"physical_strength": 100,
+			"speed": 80,
+
+			"lorty": 92,
+			"curr_physical_strength": 100,
+		},
+		"work": 215,
+		"born": 196,
+		"dead": 260
+	},
+	123: {
+		"name": "宁随",
+		"headImg": "res://assets/texture/profile/宁随 Ning Sui.jpg",
+		"weaponId": "002e7d6a-c5f3-8ebf-2694-6b032a458a26",
+		"armorId": "b179eeaf-ff6d-5e8b-dc6d-1ff3a6848649",
+		"skillIds": [],
+		"attrs": {
+			"level": 20,
+			"command": 67,
+			"force": 69,
+			"intelligence": 72,
+			"politics": 44,
+			"morality": 52,
+			"physical_strength": 100,
+			"speed": 80,
+
+			"lorty": 92,
+			"curr_physical_strength": 100,
+		},
+		"work": 253,
+		"born": 234,
+		"dead": 264
+	},
+	124: {
+		"name": "王双",
+		"headImg": "res://assets/texture/profile/王双 Wang Shuang.jpg",
+		"weaponId": "002e7d6a-c5f3-8ebf-2694-6b032a458a26",
+		"armorId": "b179eeaf-ff6d-5e8b-dc6d-1ff3a6848649",
+		"skillIds": [],
+		"attrs": {
+			"level": 20,
+			"command": 64,
+			"force": 88,
+			"intelligence": 19,
+			"politics": 22,
+			"morality": 27,
+			"physical_strength": 100,
+			"speed": 80,
+
+			"lorty": 92,
+			"curr_physical_strength": 100,
+		},
+		"work": 219,
+		"born": 195,
+		"dead": 228
+	}
 }
 
 ######### 初始剧本数据
