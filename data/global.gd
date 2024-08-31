@@ -1,7 +1,7 @@
 extends Node
 
 # 默认文本提示
-var current_message_title = '黄巾之乱'
+var current_message_title = ''
 
 # 文本说明
 var text_message = {}
@@ -23,6 +23,7 @@ func _ready():
 	# 获取文本说明
 	var text_sheet = workbook.get_sheet(4)
 	var text_data = text_sheet.get_table_data()
+	current_message_title = text_data[2][1]
 	for i in text_data:
 		if(i!=1):
 			text_message[text_data[i][1]] = text_data[i][2]

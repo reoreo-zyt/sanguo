@@ -705,6 +705,7 @@ text = "经历了[color=#91c2d5][u][url]黄巾之乱[/url][/u][/color]，汉室�
 script = ExtResource("10_b3kvj")
 
 [node name="CharacterSelect" type="Panel" parent="Map/SelectHero"]
+visible = false
 custom_minimum_size = Vector2(0, 33)
 offset_left = 8.0
 offset_top = 653.0
@@ -897,6 +898,7 @@ offset_bottom = 284.0
 is_show_close = false
 
 [node name="Menu" type="Panel" parent="Map/SelectHero"]
+visible = false
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
