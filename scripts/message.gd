@@ -7,6 +7,8 @@ func _ready() -> void:
 
 func set_tex():
 	if(Global.text_message.has(Global.current_message_title)):
+		print(Global.text_message)
+		print(Global.current_message_title)
 		$Panel/RichTextLabel.text = Global.text_message[Global.current_message_title]
 		$".".show()
 

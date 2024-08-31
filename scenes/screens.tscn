@@ -266,12 +266,12 @@ city_code = "055a5ee1-332d-6889-c21a-5e06d3aa1a04"
 position = Vector2(172, 362)
 texture_path = "res://assets/texture/citys/2_1.png"
 text_name = "益州汉中"
-character_number = 5
+city_code = "e42f21b7-9cd3-8148-907b-d77faa3d1ef5"
 
-[node name="YiZhouBaXi" parent="Map/CityContainer" instance=ExtResource("5_eycq6")]
+[node name="YiZhouZiTong" parent="Map/CityContainer" instance=ExtResource("5_eycq6")]
 position = Vector2(140, 401)
 texture_path = "res://assets/texture/citys/2_2.png"
-text_name = "益州巴西"
+text_name = "益州梓潼"
 character_number = 6
 
 [node name="YiZhouChengDu" parent="Map/CityContainer" instance=ExtResource("5_eycq6")]
@@ -283,7 +283,7 @@ character_number = 6
 [node name="YiZhouBaJun" parent="Map/CityContainer" instance=ExtResource("5_eycq6")]
 position = Vector2(178, 434)
 texture_path = "res://assets/texture/citys/2_4.png"
-text_name = "益州巴郡"
+text_name = "益州江州"
 character_number = 6
 
 [node name="YiZhouJiangYang" parent="Map/CityContainer" instance=ExtResource("5_eycq6")]
@@ -303,7 +303,7 @@ texture_path = "res://assets/texture/citys/2_7.png"
 text_name = "益州牂柯"
 
 [node name="YiZhouYunNan" parent="Map/CityContainer" instance=ExtResource("5_eycq6")]
-position = Vector2(86, 561)
+position = Vector2(68, 549)
 texture_path = "res://assets/texture/citys/2_8.png"
 text_name = "益州云南"
 
@@ -313,7 +313,7 @@ texture_path = "res://assets/texture/citys/2_4.png"
 text_name = "益州巴东"
 
 [node name="JiaoZhouYunNan" parent="Map/CityContainer" instance=ExtResource("5_eycq6")]
-position = Vector2(45, 525)
+position = Vector2(35, 520)
 texture_path = "res://assets/texture/citys/3_1.png"
 text_name = "交州云南"
 
@@ -323,7 +323,7 @@ texture_path = "res://assets/texture/citys/3_2.png"
 text_name = "交州交趾"
 
 [node name="JiaoZhouYuLin" parent="Map/CityContainer" instance=ExtResource("5_eycq6")]
-position = Vector2(190, 576)
+position = Vector2(174, 582)
 texture_path = "res://assets/texture/citys/3_3.png"
 text_name = "交州榆林"
 
@@ -338,9 +338,9 @@ texture_path = "res://assets/texture/citys/3_5.png"
 text_name = "交州高凉"
 
 [node name="JiaoZhouCangWu" parent="Map/CityContainer" instance=ExtResource("5_eycq6")]
-position = Vector2(238, 558)
+position = Vector2(248, 574)
 texture_path = "res://assets/texture/citys/3_6.png"
-text_name = "高州苍梧"
+text_name = "交州苍梧"
 
 [node name="JiaoZhouNanHai" parent="Map/CityContainer" instance=ExtResource("5_eycq6")]
 position = Vector2(327, 590)
@@ -351,27 +351,30 @@ text_name = "交州南海"
 position = Vector2(183, 299)
 texture_path = "res://assets/texture/citys/4_1.png"
 text_name = "雍州安庆"
+city_code = "e556187f-fdc8-8478-01b7-700e929bf82b"
 
 [node name="YongZhouChangAn" parent="Map/CityContainer" instance=ExtResource("5_eycq6")]
 position = Vector2(206, 343)
 texture_path = "res://assets/texture/citys/4_2.png"
 text_name = "雍州长安"
 character_number = 5
+city_code = "bd1ded71-00b0-98b6-9bc4-ffd19583f7ab"
 
 [node name="BingZhouShuoFang" parent="Map/CityContainer" instance=ExtResource("5_eycq6")]
 position = Vector2(192, 245)
 texture_path = "res://assets/texture/citys/5_1.png"
 text_name = "并州朔方"
+city_code = "19f4f683-b564-5c14-b6b0-ddce7f229b91"
 
 [node name="BingZhouXiHe" parent="Map/CityContainer" instance=ExtResource("5_eycq6")]
 position = Vector2(256, 284)
 texture_path = "res://assets/texture/citys/5_2.png"
 text_name = "并州西河"
 
-[node name="BingZhouTaiYuan" parent="Map/CityContainer" instance=ExtResource("5_eycq6")]
+[node name="BingZhouJingYang" parent="Map/CityContainer" instance=ExtResource("5_eycq6")]
 position = Vector2(295, 284)
 texture_path = "res://assets/texture/citys/5_3.png"
-text_name = "并州太原"
+text_name = "并州晋阳"
 
 [node name="BingZhouShangDang" parent="Map/CityContainer" instance=ExtResource("5_eycq6")]
 position = Vector2(291, 315)
@@ -392,13 +395,19 @@ character_number = 3
 [node name="YouZhouBeiPing" parent="Map/CityContainer" instance=ExtResource("5_eycq6")]
 position = Vector2(406, 235)
 texture_path = "res://assets/texture/citys/5_5.png"
-text_name = "幽州北平"
+text_name = " "
 character_number = 3
 
-[node name="YouZhouLiaoXi" parent="Map/CityContainer" instance=ExtResource("5_eycq6")]
+[node name="YouZhouXiangPing" parent="Map/CityContainer" instance=ExtResource("5_eycq6")]
 position = Vector2(484, 203)
 texture_path = "res://assets/texture/citys/5_5.png"
-text_name = "幽州辽西"
+text_name = "幽州襄平"
+
+[node name="YouZhouJi" parent="Map/CityContainer" instance=ExtResource("5_eycq6")]
+position = Vector2(433, 211)
+texture_path = "res://assets/texture/citys/5_5.png"
+text_name = " 幽州蓟"
+character_number = 3
 
 [node name="SiZhouHeDong" parent="Map/CityContainer" instance=ExtResource("5_eycq6")]
 position = Vector2(246, 322)
@@ -420,28 +429,28 @@ text_name = "司州河内"
 [node name="JingZhouShangYong" parent="Map/CityContainer" instance=ExtResource("5_eycq6")]
 position = Vector2(220, 384)
 texture_path = "res://assets/texture/citys/4_2.png"
-text_name = "荆州上庸"
+text_name = " "
 
 [node name="JingZhouXiangYang" parent="Map/CityContainer" instance=ExtResource("5_eycq6")]
 position = Vector2(260, 399)
 texture_path = "res://assets/texture/citys/4_2.png"
 text_name = "荆州襄阳"
 
-[node name="JingZhouNanYang" parent="Map/CityContainer" instance=ExtResource("5_eycq6")]
-position = Vector2(289, 376)
+[node name="JingZhouWan" parent="Map/CityContainer" instance=ExtResource("5_eycq6")]
+position = Vector2(293, 395)
 texture_path = "res://assets/texture/citys/4_2.png"
-text_name = "荆州南阳"
+text_name = "  荆州宛 "
 
 [node name="JingZhouJiangLing" parent="Map/CityContainer" instance=ExtResource("5_eycq6")]
 position = Vector2(288, 430)
 texture_path = "res://assets/texture/citys/4_2.png"
-text_name = "荆州江陵"
+text_name = " "
 character_number = 1
 
 [node name="JingZhouJiangXia" parent="Map/CityContainer" instance=ExtResource("5_eycq6")]
 position = Vector2(321, 440)
 texture_path = "res://assets/texture/citys/4_2.png"
-text_name = "荆州江夏"
+text_name = " "
 
 [node name="YuZhouYunNan" parent="Map/CityContainer" instance=ExtResource("5_eycq6")]
 position = Vector2(319, 405)
@@ -453,26 +462,26 @@ position = Vector2(334, 380)
 texture_path = "res://assets/texture/citys/4_2.png"
 text_name = "豫州陈郡"
 
-[node name="YuZhouYingChuan" parent="Map/CityContainer" instance=ExtResource("5_eycq6")]
+[node name="YuZhouXuChang" parent="Map/CityContainer" instance=ExtResource("5_eycq6")]
 position = Vector2(317, 345)
 texture_path = "res://assets/texture/citys/4_2.png"
-text_name = "豫州颍川"
+text_name = " "
 character_number = 2
 
 [node name="JingZhouWuLin" parent="Map/CityContainer" instance=ExtResource("5_eycq6")]
 position = Vector2(203, 507)
 texture_path = "res://assets/texture/citys/2_6.png"
-text_name = "荆州武陵"
+text_name = " 武陵"
 
 [node name="JingZhouChangSha" parent="Map/CityContainer" instance=ExtResource("5_eycq6")]
 position = Vector2(262, 487)
 texture_path = "res://assets/texture/citys/2_6.png"
 text_name = "荆州长沙"
 
-[node name="JingZhouLinLing" parent="Map/CityContainer" instance=ExtResource("5_eycq6")]
+[node name="JingZhouGuiYang" parent="Map/CityContainer" instance=ExtResource("5_eycq6")]
 position = Vector2(263, 525)
 texture_path = "res://assets/texture/citys/2_6.png"
-text_name = "荆州零陵"
+text_name = "荆州桂阳"
 
 [node name="QingZhouDongLai" parent="Map/CityContainer" instance=ExtResource("5_eycq6")]
 position = Vector2(476, 291)
@@ -490,10 +499,10 @@ texture_path = "res://assets/texture/citys/5_5.png"
 text_name = "冀州中山"
 character_number = 3
 
-[node name="JiZhouBoHai" parent="Map/CityContainer" instance=ExtResource("5_eycq6")]
+[node name="JiZhouNanPi" parent="Map/CityContainer" instance=ExtResource("5_eycq6")]
 position = Vector2(376, 258)
 texture_path = "res://assets/texture/citys/5_5.png"
-text_name = "冀州渤海郡"
+text_name = "冀州南皮"
 character_number = 3
 
 [node name="JiZhouAnPing" parent="Map/CityContainer" instance=ExtResource("5_eycq6")]
@@ -514,15 +523,15 @@ texture_path = "res://assets/texture/citys/5_5.png"
 text_name = "冀州邺"
 character_number = 3
 
-[node name="YanZhouTaiShan" parent="Map/CityContainer" instance=ExtResource("5_eycq6")]
+[node name="YanZhouPuyang" parent="Map/CityContainer" instance=ExtResource("5_eycq6")]
 position = Vector2(395, 308)
 texture_path = "res://assets/texture/citys/5_5.png"
-text_name = "兖州泰山"
+text_name = "兖州濮阳"
 
-[node name="YanZhouDongJun" parent="Map/CityContainer" instance=ExtResource("5_eycq6")]
+[node name="YanZhouChenLiu" parent="Map/CityContainer" instance=ExtResource("5_eycq6")]
 position = Vector2(364, 327)
 texture_path = "res://assets/texture/citys/5_5.png"
-text_name = "兖州东郡"
+text_name = "兖州陈留"
 character_number = 2
 
 [node name="XuZhouLangXie" parent="Map/CityContainer" instance=ExtResource("5_eycq6")]
@@ -536,16 +545,22 @@ position = Vector2(442, 357)
 texture_path = "res://assets/texture/citys/5_5.png"
 text_name = "徐州东海"
 
-[node name="XuZhouPengCheng" parent="Map/CityContainer" instance=ExtResource("5_eycq6")]
+[node name="XuZhouXiaPi" parent="Map/CityContainer" instance=ExtResource("5_eycq6")]
 position = Vector2(399, 351)
 texture_path = "res://assets/texture/citys/5_5.png"
-text_name = "徐州彭城"
+text_name = "徐州下邳"
 character_number = 2
+city_code = " "
 
-[node name="XuZhouGuangLin" parent="Map/CityContainer" instance=ExtResource("5_eycq6")]
+[node name="XuZhouXiaoPei" parent="Map/CityContainer" instance=ExtResource("5_eycq6")]
 position = Vector2(426, 384)
 texture_path = "res://assets/texture/citys/5_5.png"
-text_name = "徐州广陵"
+text_name = "徐州小沛"
+
+[node name="YiZhouJianNing" parent="Map/CityContainer" instance=ExtResource("5_eycq6")]
+position = Vector2(99, 574)
+texture_path = "res://assets/texture/citys/2_8.png"
+text_name = " "
 
 [node name="YangZhouYiZhou" parent="Map/CityContainer" instance=ExtResource("5_eycq6")]
 position = Vector2(486, 597)
@@ -569,10 +584,10 @@ texture_path = "res://assets/texture/citys/3_7.png"
 text_name = "扬州豫章"
 character_number = 4
 
-[node name="YangZhouHouGuan" parent="Map/CityContainer" instance=ExtResource("5_eycq6")]
+[node name="YangZhouWu" parent="Map/CityContainer" instance=ExtResource("5_eycq6")]
 position = Vector2(392, 526)
 texture_path = "res://assets/texture/citys/3_7.png"
-text_name = "扬州侯官"
+text_name = "扬州吴"
 
 [node name="YangZhouPoYang" parent="Map/CityContainer" instance=ExtResource("5_eycq6")]
 position = Vector2(320, 485)
@@ -590,10 +605,10 @@ position = Vector2(437, 518)
 texture_path = "res://assets/texture/citys/3_7.png"
 text_name = "扬州东瓯"
 
-[node name="YangZhouXinDu" parent="Map/CityContainer" instance=ExtResource("5_eycq6")]
+[node name="YangZhouChaiSang" parent="Map/CityContainer" instance=ExtResource("5_eycq6")]
 position = Vector2(411, 467)
 texture_path = "res://assets/texture/citys/3_7.png"
-text_name = "扬州新都"
+text_name = "扬州柴桑"
 
 [node name="YangZhouKuaiJi" parent="Map/CityContainer" instance=ExtResource("5_eycq6")]
 position = Vector2(459, 489)
@@ -618,9 +633,20 @@ position = Vector2(379, 408)
 texture_path = "res://assets/texture/citys/3_7.png"
 text_name = "扬州寿春"
 
+[node name="JingZhouXinYe" parent="Map/CityContainer" instance=ExtResource("5_eycq6")]
+position = Vector2(286, 374)
+texture_path = "res://assets/texture/citys/4_2.png"
+text_name = "  荆州新野"
+
+[node name="JingZhouLingLing" parent="Map/CityContainer" instance=ExtResource("5_eycq6")]
+position = Vector2(226, 549)
+texture_path = "res://assets/texture/citys/2_6.png"
+text_name = " "
+
 [node name="SelectHero" type="Node2D" parent="Map"]
 
 [node name="MarginContainer" type="MarginContainer" parent="Map/SelectHero"]
+visible = false
 offset_right = 540.0
 offset_bottom = 220.0
 theme_override_constants/margin_left = 8
