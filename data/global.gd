@@ -467,7 +467,6 @@ var citys = {
 			121,
 			122,
 			123,
-			124,
 		],
 		"bing": 13450,
 		"nong": 35,
@@ -485,10 +484,13 @@ var characters = {
 	7: {
 		"name": "马腾",
 		"headImg": "res://assets/texture/profile/马腾 Ma Teng.jpg",
-		"weaponId": "002e7d6a-c5f3-8ebf-2694-6b032a458a26",
-		"armorId": "b179eeaf-ff6d-5e8b-dc6d-1ff3a6848649",
+		"weaponId": "8bc8766e-804f-770d-281a-600b7bcbebcb",
+		"armorId": "c1a0342c-4bce-79ef-8425-285723a9b6fa",
 		"skillIds": [
-			"44037d60-ee22-4bd8-4e04-f966f0af082d"
+			"b4950dc9-1472-3a65-539a-539175e4bf4c",
+			"337a5371-fd68-d7df-3565-a3e6177bb13d",
+			"7e1823d0-f790-5fb1-d171-81fb6d7ca747",
+			"48193d31-df5a-2535-2e63-53aa517b679d"
 		],
 		"attrs": {
 			"level": 40,
@@ -814,29 +816,6 @@ var characters = {
 		"dead": 240
 	},
 	113: {
-		"name": "费耀",
-		"headImg": "res://assets/texture/profile/费耀 Fei Yao.jpg",
-		"weaponId": "002e7d6a-c5f3-8ebf-2694-6b032a458a26",
-		"armorId": "b179eeaf-ff6d-5e8b-dc6d-1ff3a6848649",
-		"skillIds": [],
-		"attrs": {
-			"level": 20,
-			"command": 70,
-			"force": 66,
-			"intelligence": 73,
-			"politics": 62,
-			"morality": 67,
-			"physical_strength": 100,
-			"speed": 80,
-
-			"lorty": 92,
-			"curr_physical_strength": 100,
-		},
-		"work": 195,
-		"born": 174,
-		"dead": 240
-	},
-	114: {
 		"name": "侯选",
 		"headImg": "res://assets/texture/profile/侯选 Hou Xuan.jpg",
 		"weaponId": "002e7d6a-c5f3-8ebf-2694-6b032a458a26",
@@ -859,7 +838,7 @@ var characters = {
 		"born": 175,
 		"dead": 228
 	},
-	115: {
+	114: {
 		"name": "胡车儿",
 		"headImg": "res://assets/texture/profile/胡车儿 Hu Che Er.jpg",
 		"weaponId": "002e7d6a-c5f3-8ebf-2694-6b032a458a26",
@@ -882,7 +861,7 @@ var characters = {
 		"born": 164,
 		"dead": 206
 	},
-	116: {
+	115: {
 		"name": "华雄",
 		"headImg": "res://assets/texture/profile/华雄 Hua Xiong.jpg",
 		"weaponId": "002e7d6a-c5f3-8ebf-2694-6b032a458a26",
@@ -905,7 +884,7 @@ var characters = {
 		"born": 155,
 		"dead": 190
 	},
-	117: {
+	116: {
 		"name": "梁绪",
 		"headImg": "res://assets/texture/profile/梁绪 Liang Xu.jpg",
 		"weaponId": "002e7d6a-c5f3-8ebf-2694-6b032a458a26",
@@ -928,7 +907,7 @@ var characters = {
 		"born": 198,
 		"dead": 260
 	},
-	118: {
+	117: {
 		"name": "尹赏",
 		"headImg": "res://assets/texture/profile/尹赏 Yi Shang.jpg",
 		"weaponId": "002e7d6a-c5f3-8ebf-2694-6b032a458a26",
@@ -951,7 +930,7 @@ var characters = {
 		"born": 194,
 		"dead": 260
 	},
-	119: {
+	118: {
 		"name": "杨阜",
 		"headImg": "res://assets/texture/profile/杨阜 Yang Fu.jpg",
 		"weaponId": "002e7d6a-c5f3-8ebf-2694-6b032a458a26",
@@ -974,7 +953,7 @@ var characters = {
 		"born": 178,
 		"dead": 239
 	},
-	120: {
+	119: {
 		"name": "王异",
 		"headImg": "res://assets/texture/profile/王异 Wang Yi.jpg",
 		"weaponId": "002e7d6a-c5f3-8ebf-2694-6b032a458a26",
@@ -997,7 +976,7 @@ var characters = {
 		"born": 171,
 		"dead": 230
 	},
-	121: {
+	120: {
 		"name": "王韬",
 		"headImg": "res://assets/texture/profile/王韬 Wang Tao.jpg",
 		"weaponId": "002e7d6a-c5f3-8ebf-2694-6b032a458a26",
@@ -1020,7 +999,7 @@ var characters = {
 		"born": 210,
 		"dead": 269
 	},
-	122: {
+	121: {
 		"name": "马遵",
 		"headImg": "res://assets/texture/profile/马遵 Ma Zun.jpg",
 		"weaponId": "002e7d6a-c5f3-8ebf-2694-6b032a458a26",
@@ -1043,7 +1022,7 @@ var characters = {
 		"born": 196,
 		"dead": 260
 	},
-	123: {
+	122: {
 		"name": "宁随",
 		"headImg": "res://assets/texture/profile/宁随 Ning Sui.jpg",
 		"weaponId": "002e7d6a-c5f3-8ebf-2694-6b032a458a26",
@@ -1066,7 +1045,7 @@ var characters = {
 		"born": 234,
 		"dead": 264
 	},
-	124: {
+	123: {
 		"name": "王双",
 		"headImg": "res://assets/texture/profile/王双 Wang Shuang.jpg",
 		"weaponId": "002e7d6a-c5f3-8ebf-2694-6b032a458a26",
@@ -1322,7 +1301,9 @@ var characters_select = {
 			"speed": 80
 		},
 		"has_citys": [
-			"61b9c512-225d-d918-086c-e2da4edb860f"
+			"61b9c512-225d-d918-086c-e2da4edb860f",
+			"95ef07b8-a83a-5216-1772-e1636cc1487b",
+			"055a5ee1-332d-6889-c21a-5e06d3aa1a04"
 		]
 	}
 }
