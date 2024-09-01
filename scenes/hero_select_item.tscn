@@ -29,7 +29,7 @@ text = "刘备"
 script = ExtResource("3_77l7w")
 
 [node name="ColorRect" type="ColorRect" parent="."]
-custom_minimum_size = Vector2(20, 20)
+custom_minimum_size = Vector2(12, 12)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4

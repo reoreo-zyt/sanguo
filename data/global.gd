@@ -21,6 +21,15 @@ var characters_select = {}
 # 311 英雄数据
 var characters = {}
 
+# 当前选择的城池
+var cur_city = ""
+
+# 当前选择的人物
+var cur_hero_id = 0
+
+# 城池数据
+var citys = {}
+
 # 读取 xlsx 文件
 func _ready():
 	var excel = ExcelFile.open_file("res://data/311_data.xlsx")
@@ -63,7 +72,6 @@ func _ready():
 				"type": skills_data[i][3],
 			}
 
-
 	# 获取英雄数据
 	var hero_sheet = workbook.get_sheet(0)
 	var hero_data = hero_sheet.get_table_data()
@@ -86,6 +94,7 @@ func _ready():
 					"politics": hero_data[i][5],
 					"morality": hero_data[i][6],
 				},
+				"cityId": hero_data[i][10],
 				"weaponId": hero_data[i][11],
 				"armorId": hero_data[i][12],
 				"skillIds": hero_data[i][13].split(","),
@@ -142,158 +151,30 @@ func _ready():
 				"born": characters[int(character_data[i][3])].born,
 				"dead": characters[int(character_data[i][3])].dead,
 			}
-
-# 当前选择的城池
-var cur_city = "61b9c512-225d-d918-086c-e2da4edb860f"
-
-# 当前选择的人物
-var cur_hero_id = 100
-
-######### 187 剧本城池数据
-#########
-var citys = {
-"61b9c512-225d-d918-086c-e2da4edb860f": {
-	"name": "凉州武威",
-	"ownerId": 7,
-	"lordId": 7,
-	"tong": 60,
-	"ren": 20000,
-	"jiang": [
-		7,
-		100,
-		101,
-		102,
-		103,
-		104,
-		105,
-		106,
-		107
-	],
-	"bing": 15600,
-	"nong": 25,
-	"shang": 25,
-	"zhi": 60,
-	"jin": 300,
-	"liang": 600
-},
-"95ef07b8-a83a-5216-1772-e1636cc1487b": {
-	"name": "凉州金城",
-	"ownerId": 7,
-	"lordId": 108,
-	"tong": 60,
-	"ren": 16500,
-	"jiang": [
-		108,
-		109,
-	],
-	"bing": 13450,
-	"nong": 35,
-	"shang": 15,
-	"zhi": 72,
-	"jin": 450,
-	"liang": 550
-},
-"055a5ee1-332d-6889-c21a-5e06d3aa1a04": {
-	"name": "凉州武都",
-	"ownerId": 7,
-	"lordId": 110,
-	"tong": 60,
-	"ren": 18500,
-	"jiang": [
-		110,
-		111,
-		112,
-		113,
-		114,
-		115,
-		116,
-		117,
-		118,
-		119,
-		120,
-		121,
-		122,
-		123,
-	],
-	"bing": 17690,
-	"nong": 40,
-	"shang": 20,
-	"zhi": 66,
-	"jin": 300,
-	"liang": 500
-},
-"e556187f-fdc8-8478-01b7-700e929bf82b": {
-	"name": "雍州安庆",
-	"ownerId": 0,
-	"lordId": 0,
-	"tong": 60,
-	"ren": 18500,
-	"jiang": [
-		124,
-		125
-	],
-	"bing": 17690,
-	"nong": 40,
-	"shang": 20,
-	"zhi": 66,
-	"jin": 300,
-	"liang": 500
-},
-"19f4f683-b564-5c14-b6b0-ddce7f229b91": {
-	"name": "并州朔方",
-	"ownerId": 0,
-	"lordId": 0,
-	"tong": 60,
-	"ren": 21500,
-	"jiang": [
-		126
-	],
-	"bing": 21680,
-	"nong": 45,
-	"shang": 15,
-	"zhi": 74,
-	"jin": 200,
-	"liang": 400
-},
-"e42f21b7-9cd3-8148-907b-d77faa3d1ef5": {
-	"name": "益州汉中",
-	"ownerId": 0,
-	"lordId": 128,
-	"tong": 55,
-	"ren": 25647,
-	"jiang": [
-		128,
-		129,
-		130,
-		131,
-		132,
-		133,
-		134
-	],
-	"bing": 23670,
-	"nong": 25,
-	"shang": 35,
-	"zhi": 55,
-	"jin": 100,
-	"liang": 200
-},
-"bd1ded71-00b0-98b6-9bc4-ffd19583f7ab": {
-	"name": "雍州长安",
-	"ownerId": 5,
-	"lordId": 128,
-	"tong": 55,
-	"ren": 25647,
-	"jiang": [
-		5
-	],
-	"bing": 23670,
-	"nong": 25,
-	"shang": 35,
-	"zhi": 55,
-	"jin": 100,
-	"liang": 200
-},
-}
+	
+	# 获取城池数据
+	var city_sheet = workbook.get_sheet(3)
+	var city_data = city_sheet.get_table_data()
+	cur_city = city_data[2][2]
+	for i in city_data:
+		if(i!=1):
+			citys[city_data[i][2]] = {
+				"name": city_data[i][1],
+				"ownerId": city_data[i][3],
+				"lordId": city_data[i][4],
+				"tong": city_data[i][5],
+				"ren": city_data[i][6],
+				"jiang": findAllCharacters(city_data[i][2], hero_data),
+				"bing": city_data[i][7],
+				"nong": city_data[i][8],
+				"shang": city_data[i][9],
+				"zhi": city_data[i][10],
+				"jin": city_data[i][11],
+				"liang": city_data[i][12],
+				"position_x": city_data[i][13],
+				"position_y": city_data[i][14],
+			}
+	print(citys)
 
 # 公用方法
 func set_name_text(name):
@@ -305,3 +186,13 @@ func set_text(str):
 func clear_children(parent: Node):
 	for child in parent.get_children():
 		child.queue_free()
+
+func findAllCharacters(city_code, heros):
+	var heros_codes = []
+	for i in heros:
+		if(i!=1):
+			if(!characters[i].cityId):
+				continue
+			if(characters[i].cityId == city_code):
+				heros_codes.push_back(i)
+	return heros_codes
