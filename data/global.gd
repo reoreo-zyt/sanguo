@@ -120,6 +120,9 @@ func _ready():
 					"green": character_data[i][2].split(',')[4],
 					"red": character_data[i][2].split(',')[5]
 				},
+				"id": character_data[i][3],
+				"color": character_data[i][5],
+				"citys": character_data[i][4].split(','),
 				"headImg": characters[int(character_data[i][3])].headImg,
 				"attrs": {
 					"curr_physical_strength": characters[int(character_data[i][3])].attrs.curr_physical_strength,
@@ -137,7 +140,7 @@ func _ready():
 				"skillIds": characters[int(character_data[i][3])].skillIds,
 				"work": characters[int(character_data[i][3])].work,
 				"born": characters[int(character_data[i][3])].born,
-				"dead": characters[int(character_data[i][3])].dead
+				"dead": characters[int(character_data[i][3])].dead,
 			}
 
 # 当前选择的城池

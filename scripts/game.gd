@@ -29,5 +29,4 @@ func _on_show_city_hero_info():
 	$Map/CityMessage/HeroList/CharacterAttr.show()
 
 func _on_hide_city_hero_info():
-	print(111)
 	$Map/CityMessage/HeroList/CharacterAttr.hide()

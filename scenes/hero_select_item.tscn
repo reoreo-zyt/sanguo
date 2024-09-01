@@ -1,0 +1,51 @@
+[gd_scene load_steps=7 format=3 uid="uid://bqhs7geo88ldp"]
+
+[ext_resource type="Script" path="res://scripts/hero_list_item_message.gd" id="1_fu45c"]
+[ext_resource type="FontFile" uid="uid://ccc7h37nygjqu" path="res://assets/fonts/方正隶书简体.TTF" id="2_mnmj2"]
+[ext_resource type="Script" path="res://scripts/hero_name.gd" id="3_77l7w"]
+[ext_resource type="Shader" path="res://shaders/city_pic.gdshader" id="4_6ir20"]
+[ext_resource type="Texture2D" uid="uid://fpqvlmu5bwus" path="res://assets/texture/citys/city_temp.png" id="5_wjgki"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_huyy7"]
+shader = ExtResource("4_6ir20")
+shader_parameter/green_blue = true
+shader_parameter/green_red = false
+shader_parameter/blue_red = false
+shader_parameter/blue = 0.3
+shader_parameter/green = 1.0
+shader_parameter/red = 1.0
+
+[node name="LiuBei" type="HBoxContainer"]
+offset_right = 78.0
+offset_bottom = 27.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+script = ExtResource("1_fu45c")
+
+[node name="Name" type="Button" parent="."]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_mnmj2")
+text = "刘备"
+script = ExtResource("3_77l7w")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="CityNum" type="TextureRect" parent="."]
+visible = false
+material = SubResource("ShaderMaterial_huyy7")
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("5_wjgki")
+stretch_mode = 2
+
+[node name="CityText" type="Label" parent="."]
+layout_mode = 2
+text = "1"
+
+[connection signal="pressed" from="Name" to="Name" method="_on_pressed"]

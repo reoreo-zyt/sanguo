@@ -15,7 +15,7 @@
 [ext_resource type="Script" path="res://scripts/rich_text_label.gd" id="10_b3kvj"]
 [ext_resource type="Script" path="res://scripts/character_select.gd" id="11_g114o"]
 [ext_resource type="Script" path="res://scripts/hero_select_list.gd" id="12_slfkq"]
-[ext_resource type="PackedScene" uid="uid://bqhs7geo88ldp" path="res://hero_list_item.tscn" id="13_vcgxo"]
+[ext_resource type="PackedScene" uid="uid://bqhs7geo88ldp" path="res://scenes/hero_select_item.tscn" id="13_vcgxo"]
 [ext_resource type="PackedScene" uid="uid://t75w08daqljg" path="res://scenes/character_attr.tscn" id="15_lqbkq"]
 [ext_resource type="Script" path="res://scripts/city_message.gd" id="20_lqc7v"]
 [ext_resource type="Texture2D" uid="uid://b2eeks7vq2vxx" path="res://assets/texture/force/Cheng.png" id="21_vvsnv"]
@@ -619,27 +619,30 @@ offset_bottom = 952.0
 script = ExtResource("11_g114o")
 
 [node name="HCContainer" type="VBoxContainer" parent="Map/SelectHero/CharacterSelect"]
-custom_minimum_size = Vector2(100, 200)
+custom_minimum_size = Vector2(74, 200)
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
 offset_left = 6.0
-offset_top = -103.5
-offset_right = 106.0
-offset_bottom = 113.5
+offset_top = -107.5
+offset_right = 95.0
+offset_bottom = 117.5
 grow_vertical = 2
 script = ExtResource("12_slfkq")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="Map/SelectHero/CharacterSelect/HCContainer"]
-custom_minimum_size = Vector2(0, 225)
+custom_minimum_size = Vector2(33, 225)
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Map/SelectHero/CharacterSelect/HCContainer/ScrollContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Map/SelectHero/CharacterSelect/HCContainer/ScrollContainer"]
 layout_mode = 2
 
-[node name="HeroListItem" parent="Map/SelectHero/CharacterSelect/HCContainer/ScrollContainer/HBoxContainer" instance=ExtResource("13_vcgxo")]
+[node name="HeroListItem" parent="Map/SelectHero/CharacterSelect/HCContainer/ScrollContainer/VBoxContainer" instance=ExtResource("13_vcgxo")]
+visible = false
 layout_mode = 2
+name_text = "张飞"
+num = 1
 
 [node name="CharacterAttr" parent="Map/SelectHero/CharacterSelect" instance=ExtResource("15_lqbkq")]
 layout_mode = 0
