@@ -3,12 +3,15 @@ extends Node
 @onready var text = $Panel/RichTextLabel
 @export var texture_path = "res://assets/texture/citys/1_1.png"
 @export var text_name = ""
-@export var character_number = 0
+@export var character_number = 261
 @export var city_code = ""
 
 var show_text_ui = false
 
 func _ready() -> void:
+	#print(character_number)
+	#print(Global.characters_select)
+	#print(Global.characters_select["261"])
 	text.text = "[color=#fff][u][url]" + text_name + "[/url][/u][/color]"
 	var character_item = Global.characters_select[character_number]
 	var city_material = character_item["city_material"]

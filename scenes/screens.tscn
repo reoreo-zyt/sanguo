@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=3 uid="uid://coeuv1kg0usol"]
+[gd_scene load_steps=45 format=3 uid="uid://coeuv1kg0usol"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_7ijmt"]
 [ext_resource type="PackedScene" uid="uid://1yhkkygysjvv" path="res://scenes/fog.tscn" id="1_njvu3"]
@@ -12,11 +12,10 @@
 [ext_resource type="Texture2D" uid="uid://ygyu3gpdnu2i" path="res://assets/texture/drama/qxtd_text.png" id="8_338p3"]
 [ext_resource type="Script" path="res://scripts/start_game.gd" id="8_r5q5y"]
 [ext_resource type="FontFile" uid="uid://ccc7h37nygjqu" path="res://assets/fonts/方正隶书简体.TTF" id="9_lny1d"]
-[ext_resource type="Texture2D" uid="uid://fpqvlmu5bwus" path="res://assets/texture/citys/city_temp.png" id="9_ofk0u"]
 [ext_resource type="Script" path="res://scripts/rich_text_label.gd" id="10_b3kvj"]
 [ext_resource type="Script" path="res://scripts/character_select.gd" id="11_g114o"]
-[ext_resource type="Shader" path="res://shaders/city_pic.gdshader" id="12_4prka"]
-[ext_resource type="Script" path="res://scripts/hero_name.gd" id="12_g0dfm"]
+[ext_resource type="Script" path="res://scripts/hero_select_list.gd" id="12_slfkq"]
+[ext_resource type="PackedScene" uid="uid://bqhs7geo88ldp" path="res://hero_list_item.tscn" id="13_vcgxo"]
 [ext_resource type="PackedScene" uid="uid://t75w08daqljg" path="res://scenes/character_attr.tscn" id="15_lqbkq"]
 [ext_resource type="Script" path="res://scripts/city_message.gd" id="20_lqc7v"]
 [ext_resource type="Texture2D" uid="uid://b2eeks7vq2vxx" path="res://assets/texture/force/Cheng.png" id="21_vvsnv"]
@@ -42,70 +41,6 @@ render_priority = 0
 shader = ExtResource("2_tjku0")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1k5yt"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_q8vsd"]
-resource_local_to_scene = true
-shader = ExtResource("12_4prka")
-shader_parameter/green_blue = true
-shader_parameter/green_red = false
-shader_parameter/blue_red = false
-shader_parameter/blue = 0.4
-shader_parameter/green = 0.8
-shader_parameter/red = 0.3
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_pdshs"]
-shader = ExtResource("12_4prka")
-shader_parameter/green_blue = true
-shader_parameter/green_red = false
-shader_parameter/blue_red = false
-shader_parameter/blue = 0.1
-shader_parameter/green = 0.3
-shader_parameter/red = 1.0
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_bk5es"]
-shader = ExtResource("12_4prka")
-shader_parameter/green_blue = false
-shader_parameter/green_red = true
-shader_parameter/blue_red = false
-shader_parameter/blue = 0.0
-shader_parameter/green = 0.3
-shader_parameter/red = 0.0
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_2ca7k"]
-shader = ExtResource("12_4prka")
-shader_parameter/green_blue = false
-shader_parameter/green_red = true
-shader_parameter/blue_red = false
-shader_parameter/blue = 0.0
-shader_parameter/green = 0.1
-shader_parameter/red = 0.4
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_0k0qe"]
-shader = ExtResource("12_4prka")
-shader_parameter/green_blue = true
-shader_parameter/green_red = false
-shader_parameter/blue_red = false
-shader_parameter/blue = 0.8
-shader_parameter/green = 0.1
-shader_parameter/red = 0.0
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_6axdc"]
-shader = ExtResource("12_4prka")
-shader_parameter/green_blue = true
-shader_parameter/green_red = false
-shader_parameter/blue_red = false
-shader_parameter/blue = 0.0
-shader_parameter/green = 0.6
-shader_parameter/red = 1.0
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_60uir"]
-shader = ExtResource("12_4prka")
-shader_parameter/green_blue = true
-shader_parameter/green_red = false
-shader_parameter/blue_red = false
-shader_parameter/blue = 1.0
-shader_parameter/green = 1.0
-shader_parameter/red = 1.0
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8rkr4"]
 
@@ -245,21 +180,18 @@ theme_override_styles/panel = SubResource("StyleBoxEmpty_1k5yt")
 [node name="LiangZhouWuWei" parent="Map/CityContainer" instance=ExtResource("5_eycq6")]
 position = Vector2(86, 272)
 text_name = "凉州武威"
-character_number = 7
 city_code = "61b9c512-225d-d918-086c-e2da4edb860f"
 
 [node name="LiangZhouJingCheng" parent="Map/CityContainer" instance=ExtResource("5_eycq6")]
 position = Vector2(118, 309)
 texture_path = "res://assets/texture/citys/1_2.png"
 text_name = "凉州金城"
-character_number = 7
 city_code = "95ef07b8-a83a-5216-1772-e1636cc1487b"
 
 [node name="LiangZhouTianShui" parent="Map/CityContainer" instance=ExtResource("5_eycq6")]
 position = Vector2(140, 337)
 texture_path = "res://assets/texture/citys/1_3.png"
 text_name = "凉州天水"
-character_number = 7
 city_code = "055a5ee1-332d-6889-c21a-5e06d3aa1a04"
 
 [node name="YiZhouHanZhong" parent="Map/CityContainer" instance=ExtResource("5_eycq6")]
@@ -272,25 +204,21 @@ city_code = "e42f21b7-9cd3-8148-907b-d77faa3d1ef5"
 position = Vector2(140, 401)
 texture_path = "res://assets/texture/citys/2_2.png"
 text_name = "益州梓潼"
-character_number = 6
 
 [node name="YiZhouChengDu" parent="Map/CityContainer" instance=ExtResource("5_eycq6")]
 position = Vector2(104, 439)
 texture_path = "res://assets/texture/citys/2_3.png"
 text_name = "益州成都"
-character_number = 6
 
 [node name="YiZhouBaJun" parent="Map/CityContainer" instance=ExtResource("5_eycq6")]
 position = Vector2(178, 434)
 texture_path = "res://assets/texture/citys/2_4.png"
 text_name = "益州江州"
-character_number = 6
 
 [node name="YiZhouJiangYang" parent="Map/CityContainer" instance=ExtResource("5_eycq6")]
 position = Vector2(95, 482)
 texture_path = "res://assets/texture/citys/2_5.png"
 text_name = "益州江阳"
-character_number = 6
 
 [node name="YiZhouPeiLin" parent="Map/CityContainer" instance=ExtResource("5_eycq6")]
 position = Vector2(156, 486)
@@ -357,7 +285,6 @@ city_code = "e556187f-fdc8-8478-01b7-700e929bf82b"
 position = Vector2(206, 343)
 texture_path = "res://assets/texture/citys/4_2.png"
 text_name = "雍州长安"
-character_number = 5
 city_code = "bd1ded71-00b0-98b6-9bc4-ffd19583f7ab"
 
 [node name="BingZhouShuoFang" parent="Map/CityContainer" instance=ExtResource("5_eycq6")]
@@ -390,13 +317,11 @@ text_name = "并州雁门"
 position = Vector2(354, 234)
 texture_path = "res://assets/texture/citys/5_5.png"
 text_name = "幽州代郡"
-character_number = 3
 
 [node name="YouZhouBeiPing" parent="Map/CityContainer" instance=ExtResource("5_eycq6")]
 position = Vector2(406, 235)
 texture_path = "res://assets/texture/citys/5_5.png"
 text_name = " "
-character_number = 3
 
 [node name="YouZhouXiangPing" parent="Map/CityContainer" instance=ExtResource("5_eycq6")]
 position = Vector2(484, 203)
@@ -407,19 +332,16 @@ text_name = "幽州襄平"
 position = Vector2(433, 211)
 texture_path = "res://assets/texture/citys/5_5.png"
 text_name = " 幽州蓟"
-character_number = 3
 
 [node name="SiZhouHeDong" parent="Map/CityContainer" instance=ExtResource("5_eycq6")]
 position = Vector2(246, 322)
 texture_path = "res://assets/texture/citys/5_2.png"
 text_name = "司州河东"
-character_number = 5
 
 [node name="SiZhouLuoYang" parent="Map/CityContainer" instance=ExtResource("5_eycq6")]
 position = Vector2(273, 348)
 texture_path = "res://assets/texture/citys/5_2.png"
 text_name = "司州洛阳"
-character_number = 5
 
 [node name="SiZhouHeNei" parent="Map/CityContainer" instance=ExtResource("5_eycq6")]
 position = Vector2(322, 320)
@@ -445,7 +367,6 @@ text_name = "  荆州宛 "
 position = Vector2(288, 430)
 texture_path = "res://assets/texture/citys/4_2.png"
 text_name = " "
-character_number = 1
 
 [node name="JingZhouJiangXia" parent="Map/CityContainer" instance=ExtResource("5_eycq6")]
 position = Vector2(321, 440)
@@ -466,7 +387,6 @@ text_name = "豫州陈郡"
 position = Vector2(317, 345)
 texture_path = "res://assets/texture/citys/4_2.png"
 text_name = " "
-character_number = 2
 
 [node name="JingZhouWuLin" parent="Map/CityContainer" instance=ExtResource("5_eycq6")]
 position = Vector2(203, 507)
@@ -497,31 +417,26 @@ text_name = "青州北海"
 position = Vector2(337, 259)
 texture_path = "res://assets/texture/citys/5_5.png"
 text_name = "冀州中山"
-character_number = 3
 
 [node name="JiZhouNanPi" parent="Map/CityContainer" instance=ExtResource("5_eycq6")]
 position = Vector2(376, 258)
 texture_path = "res://assets/texture/citys/5_5.png"
 text_name = "冀州南皮"
-character_number = 3
 
 [node name="JiZhouAnPing" parent="Map/CityContainer" instance=ExtResource("5_eycq6")]
 position = Vector2(346, 284)
 texture_path = "res://assets/texture/citys/5_5.png"
 text_name = "冀州安平"
-character_number = 3
 
 [node name="JiZhouPingYuan" parent="Map/CityContainer" instance=ExtResource("5_eycq6")]
 position = Vector2(383, 281)
 texture_path = "res://assets/texture/citys/5_5.png"
 text_name = "冀州平原"
-character_number = 3
 
 [node name="JiZhouYe" parent="Map/CityContainer" instance=ExtResource("5_eycq6")]
 position = Vector2(327, 298)
 texture_path = "res://assets/texture/citys/5_5.png"
 text_name = "冀州邺"
-character_number = 3
 
 [node name="YanZhouPuyang" parent="Map/CityContainer" instance=ExtResource("5_eycq6")]
 position = Vector2(395, 308)
@@ -532,13 +447,11 @@ text_name = "兖州濮阳"
 position = Vector2(364, 327)
 texture_path = "res://assets/texture/citys/5_5.png"
 text_name = "兖州陈留"
-character_number = 2
 
 [node name="XuZhouLangXie" parent="Map/CityContainer" instance=ExtResource("5_eycq6")]
 position = Vector2(430, 324)
 texture_path = "res://assets/texture/citys/5_5.png"
 text_name = "徐州琅邪"
-character_number = 2
 
 [node name="XuZhouDongHai" parent="Map/CityContainer" instance=ExtResource("5_eycq6")]
 position = Vector2(442, 357)
@@ -549,7 +462,6 @@ text_name = "徐州东海"
 position = Vector2(399, 351)
 texture_path = "res://assets/texture/citys/5_5.png"
 text_name = "徐州下邳"
-character_number = 2
 city_code = " "
 
 [node name="XuZhouXiaoPei" parent="Map/CityContainer" instance=ExtResource("5_eycq6")]
@@ -571,7 +483,6 @@ text_name = "扬州夷州"
 position = Vector2(305, 549)
 texture_path = "res://assets/texture/citys/3_7.png"
 text_name = "扬州庐陵"
-character_number = 4
 
 [node name="YangZhouTongAn" parent="Map/CityContainer" instance=ExtResource("5_eycq6")]
 position = Vector2(383, 556)
@@ -582,7 +493,6 @@ text_name = "扬州同安"
 position = Vector2(316, 519)
 texture_path = "res://assets/texture/citys/3_7.png"
 text_name = "扬州豫章"
-character_number = 4
 
 [node name="YangZhouWu" parent="Map/CityContainer" instance=ExtResource("5_eycq6")]
 position = Vector2(392, 526)
@@ -593,7 +503,6 @@ text_name = "扬州吴"
 position = Vector2(320, 485)
 texture_path = "res://assets/texture/citys/3_7.png"
 text_name = "扬州鄱阳"
-character_number = 4
 
 [node name="YangZhouJianAn" parent="Map/CityContainer" instance=ExtResource("5_eycq6")]
 position = Vector2(384, 491)
@@ -614,19 +523,16 @@ text_name = "扬州柴桑"
 position = Vector2(459, 489)
 texture_path = "res://assets/texture/citys/3_7.png"
 text_name = "扬州会稽"
-character_number = 4
 
 [node name="YangZhouJianYe" parent="Map/CityContainer" instance=ExtResource("5_eycq6")]
 position = Vector2(451, 446)
 texture_path = "res://assets/texture/citys/3_7.png"
 text_name = "扬州建业"
-character_number = 4
 
 [node name="YangZhouLuJiang" parent="Map/CityContainer" instance=ExtResource("5_eycq6")]
 position = Vector2(359, 450)
 texture_path = "res://assets/texture/citys/3_7.png"
 text_name = "扬州庐江"
-character_number = 4
 
 [node name="YangZhouShouChun" parent="Map/CityContainer" instance=ExtResource("5_eycq6")]
 position = Vector2(379, 408)
@@ -705,7 +611,6 @@ text = "经历了[color=#91c2d5][u][url]黄巾之乱[/url][/u][/color]，汉室�
 script = ExtResource("10_b3kvj")
 
 [node name="CharacterSelect" type="Panel" parent="Map/SelectHero"]
-visible = false
 custom_minimum_size = Vector2(0, 33)
 offset_left = 8.0
 offset_top = 653.0
@@ -724,170 +629,17 @@ offset_top = -103.5
 offset_right = 106.0
 offset_bottom = 113.5
 grow_vertical = 2
+script = ExtResource("12_slfkq")
 
-[node name="LiuBei" type="HBoxContainer" parent="Map/SelectHero/CharacterSelect/HCContainer"]
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 0
-
-[node name="Name" type="Button" parent="Map/SelectHero/CharacterSelect/HCContainer/LiuBei"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("9_lny1d")
-text = "刘备"
-script = ExtResource("12_g0dfm")
-name_id = 1
-
-[node name="CityNum" type="TextureRect" parent="Map/SelectHero/CharacterSelect/HCContainer/LiuBei"]
-material = SubResource("ShaderMaterial_q8vsd")
-custom_minimum_size = Vector2(10, 10)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-texture = ExtResource("9_ofk0u")
-stretch_mode = 2
-
-[node name="CityText" type="Label" parent="Map/SelectHero/CharacterSelect/HCContainer/LiuBei"]
-layout_mode = 2
-text = "1"
-
-[node name="CaoCao" type="HBoxContainer" parent="Map/SelectHero/CharacterSelect/HCContainer"]
+[node name="ScrollContainer" type="ScrollContainer" parent="Map/SelectHero/CharacterSelect/HCContainer"]
+custom_minimum_size = Vector2(0, 225)
 layout_mode = 2
 
-[node name="Name" type="Button" parent="Map/SelectHero/CharacterSelect/HCContainer/CaoCao"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("9_lny1d")
-text = "曹操"
-script = ExtResource("12_g0dfm")
-name_id = 2
-
-[node name="CityNum" type="TextureRect" parent="Map/SelectHero/CharacterSelect/HCContainer/CaoCao"]
-material = SubResource("ShaderMaterial_pdshs")
-custom_minimum_size = Vector2(10, 10)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-texture = ExtResource("9_ofk0u")
-stretch_mode = 2
-
-[node name="CityText" type="Label" parent="Map/SelectHero/CharacterSelect/HCContainer/CaoCao"]
-layout_mode = 2
-text = "4"
-
-[node name="YuanShao" type="HBoxContainer" parent="Map/SelectHero/CharacterSelect/HCContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Map/SelectHero/CharacterSelect/HCContainer/ScrollContainer"]
 layout_mode = 2
 
-[node name="Name" type="Button" parent="Map/SelectHero/CharacterSelect/HCContainer/YuanShao"]
+[node name="HeroListItem" parent="Map/SelectHero/CharacterSelect/HCContainer/ScrollContainer/HBoxContainer" instance=ExtResource("13_vcgxo")]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("9_lny1d")
-text = "袁绍"
-script = ExtResource("12_g0dfm")
-name_id = 3
-
-[node name="CityNum" type="TextureRect" parent="Map/SelectHero/CharacterSelect/HCContainer/YuanShao"]
-material = SubResource("ShaderMaterial_bk5es")
-custom_minimum_size = Vector2(10, 10)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-texture = ExtResource("9_ofk0u")
-stretch_mode = 2
-
-[node name="CityText" type="Label" parent="Map/SelectHero/CharacterSelect/HCContainer/YuanShao"]
-layout_mode = 2
-text = "7"
-
-[node name="SunCe" type="HBoxContainer" parent="Map/SelectHero/CharacterSelect/HCContainer"]
-layout_mode = 2
-
-[node name="Name" type="Button" parent="Map/SelectHero/CharacterSelect/HCContainer/SunCe"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("9_lny1d")
-text = "孙策"
-script = ExtResource("12_g0dfm")
-name_id = 4
-
-[node name="CityNum" type="TextureRect" parent="Map/SelectHero/CharacterSelect/HCContainer/SunCe"]
-material = SubResource("ShaderMaterial_2ca7k")
-custom_minimum_size = Vector2(10, 10)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-texture = ExtResource("9_ofk0u")
-stretch_mode = 2
-
-[node name="CityText" type="Label" parent="Map/SelectHero/CharacterSelect/HCContainer/SunCe"]
-layout_mode = 2
-text = "6"
-
-[node name="DongZhuo" type="HBoxContainer" parent="Map/SelectHero/CharacterSelect/HCContainer"]
-layout_mode = 2
-
-[node name="Name" type="Button" parent="Map/SelectHero/CharacterSelect/HCContainer/DongZhuo"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("9_lny1d")
-text = "董卓"
-script = ExtResource("12_g0dfm")
-name_id = 5
-
-[node name="CityNum" type="TextureRect" parent="Map/SelectHero/CharacterSelect/HCContainer/DongZhuo"]
-material = SubResource("ShaderMaterial_0k0qe")
-custom_minimum_size = Vector2(10, 10)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-texture = ExtResource("9_ofk0u")
-stretch_mode = 2
-
-[node name="CityText" type="Label" parent="Map/SelectHero/CharacterSelect/HCContainer/DongZhuo"]
-layout_mode = 2
-text = "3"
-
-[node name="LiuZhang" type="HBoxContainer" parent="Map/SelectHero/CharacterSelect/HCContainer"]
-layout_mode = 2
-
-[node name="Name" type="Button" parent="Map/SelectHero/CharacterSelect/HCContainer/LiuZhang"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("9_lny1d")
-text = "刘璋
-"
-script = ExtResource("12_g0dfm")
-name_id = 6
-
-[node name="CityNum" type="TextureRect" parent="Map/SelectHero/CharacterSelect/HCContainer/LiuZhang"]
-material = SubResource("ShaderMaterial_6axdc")
-custom_minimum_size = Vector2(10, 10)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-texture = ExtResource("9_ofk0u")
-stretch_mode = 2
-
-[node name="CityText" type="Label" parent="Map/SelectHero/CharacterSelect/HCContainer/LiuZhang"]
-layout_mode = 2
-text = "5"
-
-[node name="MaTeng" type="HBoxContainer" parent="Map/SelectHero/CharacterSelect/HCContainer"]
-layout_mode = 2
-
-[node name="Name" type="Button" parent="Map/SelectHero/CharacterSelect/HCContainer/MaTeng"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("9_lny1d")
-text = "马腾"
-script = ExtResource("12_g0dfm")
-name_id = 7
-
-[node name="CityNum" type="TextureRect" parent="Map/SelectHero/CharacterSelect/HCContainer/MaTeng"]
-material = SubResource("ShaderMaterial_60uir")
-custom_minimum_size = Vector2(10, 10)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-texture = ExtResource("9_ofk0u")
-stretch_mode = 2
-
-[node name="CityText" type="Label" parent="Map/SelectHero/CharacterSelect/HCContainer/MaTeng"]
-layout_mode = 2
-text = "3"
 
 [node name="CharacterAttr" parent="Map/SelectHero/CharacterSelect" instance=ExtResource("15_lqbkq")]
 layout_mode = 0
@@ -1744,13 +1496,6 @@ offset_bottom = 329.64
 
 [connection signal="meta_hover_ended" from="Map/SelectHero/MarginContainer/DContainer/DHContainer/TextPanel/MarginContainer/RichTextLabel" to="Map/SelectHero/MarginContainer/DContainer/DHContainer/TextPanel/MarginContainer/RichTextLabel" method="_on_meta_hover_ended"]
 [connection signal="meta_hover_started" from="Map/SelectHero/MarginContainer/DContainer/DHContainer/TextPanel/MarginContainer/RichTextLabel" to="Map/SelectHero/MarginContainer/DContainer/DHContainer/TextPanel/MarginContainer/RichTextLabel" method="_on_meta_hover_started"]
-[connection signal="pressed" from="Map/SelectHero/CharacterSelect/HCContainer/LiuBei/Name" to="Map/SelectHero/CharacterSelect/HCContainer/LiuBei/Name" method="_on_pressed"]
-[connection signal="pressed" from="Map/SelectHero/CharacterSelect/HCContainer/CaoCao/Name" to="Map/SelectHero/CharacterSelect/HCContainer/CaoCao/Name" method="_on_pressed"]
-[connection signal="pressed" from="Map/SelectHero/CharacterSelect/HCContainer/YuanShao/Name" to="Map/SelectHero/CharacterSelect/HCContainer/YuanShao/Name" method="_on_pressed"]
-[connection signal="pressed" from="Map/SelectHero/CharacterSelect/HCContainer/SunCe/Name" to="Map/SelectHero/CharacterSelect/HCContainer/SunCe/Name" method="_on_pressed"]
-[connection signal="pressed" from="Map/SelectHero/CharacterSelect/HCContainer/DongZhuo/Name" to="Map/SelectHero/CharacterSelect/HCContainer/DongZhuo/Name" method="_on_pressed"]
-[connection signal="pressed" from="Map/SelectHero/CharacterSelect/HCContainer/LiuZhang/Name" to="Map/SelectHero/CharacterSelect/HCContainer/LiuZhang/Name" method="_on_pressed"]
-[connection signal="pressed" from="Map/SelectHero/CharacterSelect/HCContainer/MaTeng/Name" to="Map/SelectHero/CharacterSelect/HCContainer/MaTeng/Name" method="_on_pressed"]
 [connection signal="pressed" from="Map/SelectHero/Menu/Decide" to="." method="_on_decide_pressed"]
 [connection signal="pressed" from="Map/SelectHero/Menu/Refuse" to="." method="_on_refuse_pressed"]
 [connection signal="pressed" from="Map/CityMessage/Close" to="Map/CityMessage" method="_on_close_pressed"]
