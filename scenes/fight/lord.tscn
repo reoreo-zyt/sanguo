@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=3 uid="uid://c8s2jxbxvg8yb"]
+
+[ext_resource type="Script" path="res://scripts/lord.gd" id="1_4hso4"]
+[ext_resource type="Texture2D" uid="uid://ylgxq4lbdt1u" path="res://assets/texture/force/Jiang.png" id="1_vxtf0"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vnopk"]
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+
+[node name="lord" type="Panel"]
+custom_minimum_size = Vector2(32, 32)
+offset_left = 16.0
+offset_top = 164.0
+offset_right = 48.0
+offset_bottom = 196.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_vnopk")
+script = ExtResource("1_4hso4")
+
+[node name="force" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -16.0
+offset_top = -16.0
+offset_right = 16.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_vxtf0")
+expand_mode = 2

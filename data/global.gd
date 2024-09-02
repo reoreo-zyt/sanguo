@@ -174,7 +174,7 @@ func _ready():
 				"position_x": city_data[i][13],
 				"position_y": city_data[i][14],
 			}
-	print(citys)
+	# print(citys)
 
 # 公用方法
 func set_name_text(name):

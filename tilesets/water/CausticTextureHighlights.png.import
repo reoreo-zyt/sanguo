@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://vnk0cnx5eph6"
-path="res://.godot/imported/city_temp.png-4729ec96b33f65d4e32a9a18a89b4fca.ctex"
+uid="uid://b15stxfa0h0ie"
+path="res://.godot/imported/CausticTextureHighlights.png-451b7d1e17a02811db6afd949404f5f4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/texture/citys/city_temp.png"
-dest_files=["res://.godot/imported/city_temp.png-4729ec96b33f65d4e32a9a18a89b4fca.ctex"]
+source_file="res://tilesets/water/CausticTextureHighlights.png"
+dest_files=["res://.godot/imported/CausticTextureHighlights.png-451b7d1e17a02811db6afd949404f5f4.ctex"]
 
 [params]
 

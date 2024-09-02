@@ -1,0 +1,54 @@
+[gd_scene load_steps=6 format=3 uid="uid://dabkwvaejgxq4"]
+
+[ext_resource type="Script" path="res://scripts/fight_map.gd" id="1_dbre8"]
+[ext_resource type="PackedScene" uid="uid://t75w08daqljg" path="res://scenes/character_attr.tscn" id="2_k0ovn"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4qe1e"]
+bg_color = Color(0.505882, 0.615686, 0.709804, 0.164706)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ehqau"]
+bg_color = Color(0.505882, 0.615686, 0.709804, 0.164706)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.658824, 0.839216, 0.960784, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ak81u"]
+bg_color = Color(0.505882, 0.615686, 0.709804, 0.164706)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.8, 0.101961, 0.176471, 1)
+
+[node name="Small" type="Node2D"]
+
+[node name="Map" type="Panel" parent="."]
+offset_top = 300.0
+offset_right = 540.0
+offset_bottom = 660.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_4qe1e")
+script = ExtResource("1_dbre8")
+
+[node name="self" type="Node2D" parent="Map"]
+
+[node name="animy" type="Node2D" parent="Map"]
+
+[node name="SelfCharacterAttr" parent="." instance=ExtResource("2_k0ovn")]
+offset_left = 72.0
+offset_top = 3.0
+offset_right = 485.0
+offset_bottom = 272.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ehqau")
+hero_id = 222
+is_show_close = false
+
+[node name="AnimyCharacterAttr" parent="." instance=ExtResource("2_k0ovn")]
+offset_left = 76.0
+offset_top = 689.0
+offset_right = 489.0
+offset_bottom = 958.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ak81u")
+hero_id = 255
+is_show_close = false

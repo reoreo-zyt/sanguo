@@ -5,22 +5,12 @@ extends Node
 @export var text_name = ""
 @export var character_number = 261
 @export var city_code = ""
+@export var color = "#d2dad8"
 
 var show_text_ui = false
 
 func _ready() -> void:
-	#print(character_number)
-	#print(Global.characters_select)
-	#print(Global.characters_select["261"])
-	text.text = "[color=#fff][u][url]" + text_name + "[/url][/u][/color]"
-	var character_item = Global.characters_select[character_number]
-	var city_material = character_item["city_material"]
-	$Icon.material.set_shader_parameter("green_blue", city_material["green_blue"])
-	$Icon.material.set_shader_parameter("green_red", city_material["green_red"])
-	$Icon.material.set_shader_parameter("blue_red", city_material["blue_red"])
-	$Icon.material.set_shader_parameter("blue", city_material["blue"])
-	$Icon.material.set_shader_parameter("green", city_material["green"])
-	$Icon.material.set_shader_parameter("red", city_material["red"])
+	$ColorRect.color = color
 
 func _on_icon_pressed() -> void:
 	Global.cur_city = city_code

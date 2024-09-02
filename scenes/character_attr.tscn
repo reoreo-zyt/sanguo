@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://t75w08daqljg"]
 
 [ext_resource type="Script" path="res://scripts/city_character_attr_custom.gd" id="1_ablh7"]
-[ext_resource type="Texture2D" path="res://assets/texture/profile/？？？？_117.jpg" id="1_s8hhc"]
+[ext_resource type="Texture2D" uid="uid://dvtyj5b0klr1a" path="res://assets/texture/profile/新武将_37.jpg" id="1_s8hhc"]
 [ext_resource type="Texture2D" uid="uid://c7k54vbipqqo" path="res://assets/texture/force/fffea5e6-96bc-e1e0-b465-8491edda9c84.png" id="2_8pgst"]
 [ext_resource type="FontFile" uid="uid://ccc7h37nygjqu" path="res://assets/fonts/方正隶书简体.TTF" id="3_bjp46"]
 [ext_resource type="Script" path="res://scripts/rich_text_label.gd" id="4_3opgj"]

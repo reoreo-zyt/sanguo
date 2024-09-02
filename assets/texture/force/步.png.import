@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://vnk0cnx5eph6"
-path="res://.godot/imported/city_temp.png-4729ec96b33f65d4e32a9a18a89b4fca.ctex"
+uid="uid://igl1f4hdkn2x"
+path="res://.godot/imported/步.png-ae4ddd04e890b8c1621dc2ec540bbd27.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/texture/citys/city_temp.png"
-dest_files=["res://.godot/imported/city_temp.png-4729ec96b33f65d4e32a9a18a89b4fca.ctex"]
+source_file="res://assets/texture/force/步.png"
+dest_files=["res://.godot/imported/步.png-ae4ddd04e890b8c1621dc2ec540bbd27.ctex"]
 
 [params]
 

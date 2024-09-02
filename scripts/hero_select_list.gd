@@ -12,10 +12,4 @@ func _ready() -> void:
 			instance.num = Global.characters_select[i].citys.size()
 			instance.color = Global.characters_select[i].color
 			instance.name_id = int(Global.characters_select[i].id)
-			#instance.green_blue = Global.characters_select[i].city_material.green_blue
-			#instance.green_red = Global.characters_select[i].city_material.green_red
-			#instance.blue_red = Global.characters_select[i].city_material.blue_red
-			#instance.blue = Global.characters_select[i].city_material.blue
-			#instance.green = Global.characters_select[i].city_material.green
-			#instance.red = Global.characters_select[i].city_material.red
 			$ScrollContainer/VBoxContainer.add_child(instance)

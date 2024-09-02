@@ -7,9 +7,10 @@ func _on_close_pressed() -> void:
 	$".".hide()
 
 func _on_show_city_info(name, cityId):
+	print(name)
 	var city_data = Global.citys[cityId]
 	$CityMessage/CityPanel/RichTextLabel.text = "[center][color=#91c2d5][u][url]" + name + "[/url][/u][/color]"
-	$CityMessage/MasterPanel/RichTextLabel.text = "[center][color=#91c2d5][u][url]" + Global.characters[city_data.lordId].name + "[/url][/u][/color]"
+	$CityMessage/MasterPanel/RichTextLabel.text = "[center][color=#91c2d5][u][url]" + Global.characters[int(city_data.lordId)].name + "[/url][/u][/color]"
 	$CityMessage/TongPanel/RichTextLabel.text = set_color(city_data.tong)
 	$CityMessageMore/ScrollContainer/VBoxContainer/RenContainer/RenPanel/RichTextLabel.text = set_color(city_data.ren)
 	$CityMessageMore/ScrollContainer/VBoxContainer/JiangContainer/JangPanel/RichTextLabel.text = set_color(city_data.jiang.size())

@@ -22,7 +22,7 @@ func _on_show_city_hero_info():
 	if(!has_chart_scene):
 		var RadarChartStats = RadarChartStatsScene.instantiate()
 		RadarChartStats.position = Vector2(296, 100)
-		RadarChartStats.stats = [attrs["command"], attrs["force"], attrs["intelligence"], attrs["politics"], attrs["morality"], attrs["physical_strength"], attrs["speed"], attrs["level"]]
+		RadarChartStats.stats = [attrs["command"], attrs["force"], attrs["intelligence"], attrs["politics"], attrs["morality"], attrs["curr_physical_strength"], attrs["speed"], attrs["level"]]
 		$".".add_child(RadarChartStats)
 		has_chart_scene = true
 	

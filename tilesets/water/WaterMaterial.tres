@@ -1,0 +1,24 @@
+[gd_resource type="ShaderMaterial" load_steps=4 format=3 uid="uid://cgjocunkt7lim"]
+
+[ext_resource type="Shader" uid="uid://c25wx8oihvkgw" path="res://tilesets/water/WaterShader.tres" id="1_qm0vv"]
+[ext_resource type="Texture2D" uid="uid://b15stxfa0h0ie" path="res://tilesets/water/CausticTextureHighlights.png" id="2_ddldc"]
+[ext_resource type="Texture2D" uid="uid://ovc8ns3358f1" path="res://tilesets/water/CausticTexture.png" id="3_qtw1d"]
+
+[resource]
+shader = ExtResource("1_qm0vv")
+shader_parameter/WaterColour = Color(0.372549, 0.54902, 0.768627, 0.796078)
+shader_parameter/CausticTextureScale = 0.0055
+shader_parameter/CausticMovementStrength = 0.035
+shader_parameter/CausticColour = Color(0.5984, 0.88, 0.88, 0.431373)
+shader_parameter/CausticHighlightColour = Color(1, 1, 1, 1)
+shader_parameter/NoiseStrength = 0.5
+shader_parameter/SpecularThreshold = -0.5
+shader_parameter/SpecularColour = Color(1, 1, 1, 0.843137)
+shader_parameter/FoamColour = Color(1, 1, 1, 1)
+shader_parameter/WaveSpeed = 5.0
+shader_parameter/FoamNoiseScale = 8e-06
+shader_parameter/FoamNoiseAmount = 0.8
+shader_parameter/FoamFrequency = 32.0
+shader_parameter/FoamQuantizeAmount = 3.5
+shader_parameter/CausticTexture = ExtResource("3_qtw1d")
+shader_parameter/CausticHighlightTexture = ExtResource("2_ddldc")

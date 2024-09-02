@@ -13,6 +13,7 @@ func create_characters(textname, cityCode):
 	
 	Global.clear_children(vbContainer)
 	
+	print(cityCode, 'cityCode')
 	for i in citys[cityCode].jiang:
 		var instance = hero_list_item.instantiate()
 		instance.hero_id = i

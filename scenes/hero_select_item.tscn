@@ -1,10 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://bqhs7geo88ldp"]
+[gd_scene load_steps=8 format=3 uid="uid://bqhs7geo88ldp"]
 
 [ext_resource type="Script" path="res://scripts/hero_list_item_message.gd" id="1_fu45c"]
 [ext_resource type="FontFile" uid="uid://ccc7h37nygjqu" path="res://assets/fonts/方正隶书简体.TTF" id="2_mnmj2"]
 [ext_resource type="Script" path="res://scripts/hero_name.gd" id="3_77l7w"]
 [ext_resource type="Shader" path="res://shaders/city_pic.gdshader" id="4_6ir20"]
-[ext_resource type="Texture2D" uid="uid://fpqvlmu5bwus" path="res://assets/texture/citys/city_temp.png" id="5_wjgki"]
+[ext_resource type="Texture2D" uid="uid://vnk0cnx5eph6" path="res://assets/texture/citys/city_temp.png" id="5_wjgki"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r2plx"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_huyy7"]
 shader = ExtResource("4_6ir20")
@@ -16,7 +18,8 @@ shader_parameter/green = 1.0
 shader_parameter/red = 1.0
 
 [node name="LiuBei" type="HBoxContainer"]
-offset_right = 78.0
+offset_left = 4.0
+offset_right = 94.0
 offset_bottom = 27.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
@@ -28,11 +31,31 @@ theme_override_fonts/font = ExtResource("2_mnmj2")
 text = "刘备"
 script = ExtResource("3_77l7w")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="Panel" type="Panel" parent="."]
+custom_minimum_size = Vector2(32, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_r2plx")
+
+[node name="ColorRect" type="ColorRect" parent="Panel"]
 custom_minimum_size = Vector2(12, 12)
 layout_mode = 2
+offset_left = 4.0
+offset_top = 1.0
+offset_right = 28.0
+offset_bottom = 26.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
+
+[node name="TextureRect" type="TextureRect" parent="Panel"]
+custom_minimum_size = Vector2(24, 25)
+layout_mode = 2
+offset_left = 4.0
+offset_top = 1.0
+offset_right = 28.0
+offset_bottom = 26.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("5_wjgki")
 
 [node name="CityNum" type="TextureRect" parent="."]
 visible = false
