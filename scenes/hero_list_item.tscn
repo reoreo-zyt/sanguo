@@ -40,6 +40,14 @@ bbcode_enabled = true
 text = "[center][color=#91c2d5]99"
 script = ExtResource("2_o7gkw")
 
+[node name="ShiTextLabel" type="RichTextLabel" parent="."]
+custom_minimum_size = Vector2(80, 29)
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("1_c4elu")
+bbcode_enabled = true
+text = "[center][color=#91c2d5]99"
+script = ExtResource("2_o7gkw")
+
 [connection signal="meta_clicked" from="NameTextLabel" to="NameTextLabel" method="_on_meta_clicked"]
 [connection signal="meta_hover_ended" from="NameTextLabel" to="NameTextLabel" method="_on_meta_hover_ended"]
 [connection signal="meta_hover_started" from="NameTextLabel" to="NameTextLabel" method="_on_meta_hover_started"]
@@ -49,3 +57,5 @@ script = ExtResource("2_o7gkw")
 [connection signal="meta_hover_started" from="ZhongTextLabel" to="ZhongTextLabel" method="_on_meta_hover_started"]
 [connection signal="meta_hover_ended" from="TiTextLabel" to="TiTextLabel" method="_on_meta_hover_ended"]
 [connection signal="meta_hover_started" from="TiTextLabel" to="TiTextLabel" method="_on_meta_hover_started"]
+[connection signal="meta_hover_ended" from="ShiTextLabel" to="ShiTextLabel" method="_on_meta_hover_ended"]
+[connection signal="meta_hover_started" from="ShiTextLabel" to="ShiTextLabel" method="_on_meta_hover_started"]

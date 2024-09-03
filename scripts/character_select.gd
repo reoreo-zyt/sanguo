@@ -7,6 +7,7 @@ func _ready():
 	SignalBus.connect("show_hero_info", _on_show_hero_info)
 
 func _on_show_hero_info(nameId):
+	Global.is_select_hero = true
 	var character = Global.characters_select[nameId]
 	var attrs = character.attrs
 	$CharacterAttr/Name/RichTextLabel.text = set_message_name(character.name)

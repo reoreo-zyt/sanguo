@@ -18,6 +18,8 @@ func _on_refuse_pressed() -> void:
 	$Map/SelectHero.hide()
 
 func _on_decide_pressed() -> void:
+	if(!Global.is_select_hero):
+		return
 	$Map/SelectHero/Menu.hide()
 	$Map/SelectHero/CharacterSelect.hide()
 	$Map/SelectHero/MarginContainer.hide()

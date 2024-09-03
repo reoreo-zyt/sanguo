@@ -27,6 +27,9 @@ var cur_city = ""
 # 当前选择的人物
 var cur_hero_id = 0
 
+# 是否已经选择人物
+var is_select_hero = false
+
 # 城池数据
 var citys = {}
 
@@ -165,6 +168,7 @@ func _ready():
 				"tong": city_data[i][5],
 				"ren": city_data[i][6],
 				"jiang": findAllCharacters(city_data[i][2], hero_data),
+				"curent_jiang": findAllCharacters(city_data[i][2], hero_data, 189),
 				"bing": city_data[i][7],
 				"nong": city_data[i][8],
 				"shang": city_data[i][9],
@@ -187,12 +191,12 @@ func clear_children(parent: Node):
 	for child in parent.get_children():
 		child.queue_free()
 
-func findAllCharacters(city_code, heros):
+func findAllCharacters(city_code, heros, year = 10000):
 	var heros_codes = []
 	for i in heros:
 		if(i!=1):
 			if(!characters[i].cityId):
 				continue
-			if(characters[i].cityId == city_code):
+			if(characters[i].cityId == city_code && characters[i].work <= year):
 				heros_codes.push_back(i)
 	return heros_codes

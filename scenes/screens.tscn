@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://coeuv1kg0usol"]
+[gd_scene load_steps=46 format=3 uid="uid://coeuv1kg0usol"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_7ijmt"]
 [ext_resource type="PackedScene" uid="uid://1yhkkygysjvv" path="res://scenes/fog.tscn" id="1_njvu3"]
@@ -15,6 +15,7 @@
 [ext_resource type="Script" path="res://scripts/rich_text_label.gd" id="10_b3kvj"]
 [ext_resource type="Script" path="res://scripts/character_select.gd" id="11_g114o"]
 [ext_resource type="Script" path="res://scripts/hero_select_list.gd" id="12_slfkq"]
+[ext_resource type="Texture2D" uid="uid://dn3uc6tspek7l" path="res://assets/texture/ui/Button 4Gray.png" id="15_863i4"]
 [ext_resource type="PackedScene" uid="uid://t75w08daqljg" path="res://scenes/character_attr.tscn" id="15_lqbkq"]
 [ext_resource type="Script" path="res://scripts/city_message.gd" id="20_lqc7v"]
 [ext_resource type="Texture2D" uid="uid://b2eeks7vq2vxx" path="res://assets/texture/force/Cheng.png" id="21_vvsnv"]
@@ -28,6 +29,7 @@
 [ext_resource type="Texture2D" uid="uid://er8tgcpdqlw6" path="res://assets/texture/force/Shang.png" id="27_bnw5v"]
 [ext_resource type="Texture2D" uid="uid://dohaxbiwcf0ye" path="res://assets/texture/force/fcacf8df-6f81-8c6f-350b-fa9e4cc6525c.png" id="28_efskv"]
 [ext_resource type="Texture2D" uid="uid://dv771xvleepn2" path="res://assets/texture/force/Zhong.png" id="28_gr5id"]
+[ext_resource type="Texture2D" uid="uid://dfe1eg0ehy2a1" path="res://assets/texture/force/Shi.png" id="28_t5tia"]
 [ext_resource type="Texture2D" uid="uid://dor1lq83o5e5i" path="res://assets/texture/force/Jin.png" id="29_7x036"]
 [ext_resource type="Texture2D" uid="uid://bdj6nddrvyugm" path="res://assets/texture/force/Ti.png" id="29_dongr"]
 [ext_resource type="Script" path="res://scripts/hero_scroll_container.gd" id="30_q0s5f"]
@@ -303,20 +305,23 @@ text = "中止"
 
 [node name="CityMessage" type="Panel" parent="Map"]
 visible = false
-offset_left = 8.0
+offset_left = -1.0
 offset_top = 286.0
-offset_right = 530.0
+offset_right = 539.0
 offset_bottom = 745.0
 script = ExtResource("20_lqc7v")
 
 [node name="Close" type="Button" parent="Map/CityMessage"]
 layout_mode = 0
-offset_left = 473.0
+offset_left = 509.0
 offset_top = 5.0
-offset_right = 513.0
-offset_bottom = 32.0
+offset_right = 993.0
+offset_bottom = 513.0
+scale = Vector2(0.05, 0.05)
 theme_override_fonts/font = ExtResource("9_lny1d")
-text = "关闭"
+icon = ExtResource("15_863i4")
+flat = true
+expand_icon = true
 
 [node name="CityMessage" type="Panel" parent="Map/CityMessage"]
 layout_mode = 0
@@ -897,13 +902,14 @@ script = ExtResource("10_b3kvj")
 layout_mode = 0
 offset_left = 142.0
 offset_top = 36.0
-offset_right = 513.0
+offset_right = 538.0
 offset_bottom = 453.0
 
 [node name="Attr" type="Panel" parent="Map/CityMessage/HeroList"]
 layout_mode = 0
-offset_right = 371.0
-offset_bottom = 40.0
+offset_left = -1.0
+offset_right = 396.0
+offset_bottom = 37.0
 
 [node name="JangLabel" type="Panel" parent="Map/CityMessage/HeroList/Attr"]
 layout_mode = 0
@@ -1001,11 +1007,37 @@ grow_vertical = 2
 texture = ExtResource("29_dongr")
 expand_mode = 2
 
+[node name="Shi" type="Panel" parent="Map/CityMessage/HeroList/Attr"]
+layout_mode = 0
+offset_left = 363.0
+offset_top = 5.0
+offset_right = 391.0
+offset_bottom = 33.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_0vkf5")
+
+[node name="force" type="TextureRect" parent="Map/CityMessage/HeroList/Attr/Shi"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -13.0
+offset_top = -13.0
+offset_right = 13.0
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("28_t5tia")
+expand_mode = 2
+
 [node name="HeroScrollContainer" type="ScrollContainer" parent="Map/CityMessage/HeroList"]
 layout_mode = 0
-offset_top = 49.0
-offset_right = 365.0
+offset_left = -3.0
+offset_top = 50.0
+offset_right = 395.0
 offset_bottom = 413.0
+horizontal_scroll_mode = 0
 script = ExtResource("30_q0s5f")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Map/CityMessage/HeroList/HeroScrollContainer"]
@@ -1106,7 +1138,6 @@ libraries = {
 }
 
 [node name="Message" parent="." instance=ExtResource("22_ck4v4")]
-visible = false
 offset_left = 70.0
 offset_top = 330.0
 offset_right = 69.9

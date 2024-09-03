@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://4lupj23e4h4a"]
+[gd_scene load_steps=5 format=3 uid="uid://4lupj23e4h4a"]
 
 [ext_resource type="Script" path="res://scripts/message.gd" id="1_3a5sa"]
 [ext_resource type="FontFile" uid="uid://ccc7h37nygjqu" path="res://assets/fonts/方正隶书简体.TTF" id="1_ienrw"]
 [ext_resource type="Script" path="res://scripts/rich_text_label.gd" id="2_y3kgi"]
+[ext_resource type="Texture2D" uid="uid://dn3uc6tspek7l" path="res://assets/texture/ui/Button 4Gray.png" id="3_wpuff"]
 
 [node name="Message" type="Control"]
 layout_mode = 3
@@ -22,24 +23,27 @@ offset_right = 407.0
 offset_bottom = 203.0
 
 [node name="Button" type="Button" parent="Panel"]
-visible = false
 layout_mode = 0
-offset_left = 370.0
-offset_top = 3.0
-offset_right = 402.0
-offset_bottom = 25.0
+offset_left = 378.0
+offset_top = 2.0
+offset_right = 404.0
+offset_bottom = 30.0
 theme_override_fonts/font = ExtResource("1_ienrw")
 theme_override_font_sizes/font_size = 12
-text = "关闭"
+icon = ExtResource("3_wpuff")
+flat = true
+expand_icon = true
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Panel"]
 custom_minimum_size = Vector2(143, 167)
 layout_mode = 0
-offset_left = 9.0
-offset_top = 18.0
-offset_right = 395.0
-offset_bottom = 185.0
+offset_left = 8.0
+offset_top = 28.0
+offset_right = 394.0
+offset_bottom = 195.0
 theme_override_fonts/normal_font = ExtResource("1_ienrw")
 bbcode_enabled = true
 text = "经历了[color=#91c2d5][u][url]黄巾之乱[/url][/u][/color]，汉室威信受挫，权力下放，各地方[color=#91c2d5][u][url]诸侯[/url][/u][/color]自组势力，而宦官[color=#91c2d5][u][url]十常侍[/url][/u][/color]与外戚[color=#91c2d5][u][url]何进[/url][/u][/color] 的争斗也日益加剧。终于在[color=#91c2d5][u][url]中平六年[/url][/u][/color]（189年）四月，[color=#91c2d5][u][url]汉灵帝[/url][/u][/color]驾崩后，戚宦再次相争，[color=#91c2d5][u][url]何进[/url][/u][/color]被杀。虽然[color=#91c2d5][u][url]何进[/url][/u][/color]部将[color=#91c2d5][u][url]袁绍[/url][/u][/color]率领部曲入宫尽杀宦官，但皇帝[color=#91c2d5][u][url]刘辩[/url][/u][/color]和皇弟[color=#91c2d5][u][url]刘协[/url][/u][/color]却被宦官挟持出宫，然后被[color=#91c2d5][u][url]何进[/url][/u][/color]召进京、准备讨伐宦官的[color=#91c2d5][u][url]董卓[/url][/u][/color]抢先找到并控制。[color=#91c2d5][u][url]董卓[/url][/u][/color]想废掉少帝[color=#91c2d5][u][url]刘辩[/url][/u][/color]，拥立其弟陈留王[color=#91c2d5][u][url]刘协[/url][/u][/color]为帝，于是用计壮大自己的势力，并铲除反对者，如诱使[color=#91c2d5][u][url]丁原[/url][/u][/color]部下[color=#91c2d5][u][url]吕布[/url][/u][/color]杀死[color=#91c2d5][u][url]丁原[/url][/u][/color]以夺其兵马，和逼走反对者[color=#91c2d5][u][url]袁绍[/url][/u][/color]。一切准备好后，便于九月甲戌日废少帝为弘农王，而推[color=#91c2d5][u][url]刘协[/url][/u][/color]为献帝，至丙子日，更鸩杀了[color=#91c2d5][u][url]何太后[/url][/u][/color]，成为汉室实际控制人，担任相国。他在洛阳实行恐怖统治，纵容士兵奸淫掳掠，连皇室、公主、宫人也不能幸免，百姓对他恨之入骨，也激起各地群雄的痛恨。不过，[color=#91c2d5][u][url]董卓[/url][/u][/color]受[color=#91c2d5][u][url]周毖[/url][/u][/color]、[color=#91c2d5][u][url]伍琼[/url][/u][/color]之言，为收纳名望和平息反对，重新任用党人，[color=#91c2d5][u][url]荀爽[/url][/u][/color]、[color=#91c2d5][u][url]陈纪[/url][/u][/color]、[color=#91c2d5][u][url]韩融[/url][/u][/color]都不自愿地受到任用，又以[color=#91c2d5][u][url]袁绍[/url][/u][/color]为勃海太守、[color=#91c2d5][u][url]韩馥[/url][/u][/color]为冀州牧、[color=#91c2d5][u][url]刘岱[/url][/u][/color]为兖州刺史、[color=#91c2d5][u][url]孔伷[/url][/u][/color]为豫州刺史、[color=#91c2d5][u][url]张邈[/url][/u][/color]为陈留太守、[color=#91c2d5][u][url]张咨[/url][/u][/color]为南阳太守等。但这些举动也不能平息各地愤恨。在京师的[color=#91c2d5][u][url]袁术[/url][/u][/color]因畏惧[color=#91c2d5][u][url]董卓[/url][/u][/color]而逃到南阳，而[color=#91c2d5][u][url]曹操[/url][/u][/color]认为[color=#91c2d5][u][url]董卓[/url][/u][/color]必定会败亡，遂逃出京都。"
 script = ExtResource("2_y3kgi")
+
+[connection signal="pressed" from="Panel/Button" to="." method="_on_button_pressed"]

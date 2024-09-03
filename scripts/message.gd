@@ -15,3 +15,7 @@ func _on_show_message(isShow):
 		set_tex()
 	else:
 		$".".hide()
+
+
+func _on_button_pressed() -> void:
+	$".".hide()

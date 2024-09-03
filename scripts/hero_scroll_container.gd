@@ -9,15 +9,23 @@ func _ready() -> void:
 
 func create_characters(textname, cityCode):
 	var citys = Global.citys
-	var characters = Global.characters
+	var characters = find_year_character(Global.characters, 189)
 	
 	Global.clear_children(vbContainer)
 	
 	print(cityCode, 'cityCode')
-	for i in citys[cityCode].jiang:
+	for i in citys[cityCode].curent_jiang:
 		var instance = hero_list_item.instantiate()
 		instance.hero_id = i
 		vbContainer.add_child(instance)
 
 func _on_show_city_info(textname, cityCode):
 	create_characters(textname, cityCode)
+
+func find_year_character(char_objects, year):
+	var new_character = {}
+	for i in char_objects:
+		if(i!=0):
+			if(int(char_objects[i].work) <= year):
+				new_character[i] = char_objects[i]
+	return new_character

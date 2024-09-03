@@ -6,7 +6,8 @@ var RadarChartStatsScene = preload("res://scenes/RadarChartStats.tscn")
 var has_chart_scene = false
 
 func _ready() -> void:
-	show_hero_info(hero_id)
+	# 白兵战需要执行下这个
+	# show_hero_info(hero_id)
 	if(is_show_close):
 		$Button.show()
 	else:
