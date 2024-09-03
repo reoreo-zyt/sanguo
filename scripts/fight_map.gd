@@ -81,7 +81,8 @@ var troop_army = [
 ]
 
 func _ready() -> void:
-	generate_fight()
+	pass
+	#generate_fight()
 
 func generate_fight():
 	for i in troop_self:

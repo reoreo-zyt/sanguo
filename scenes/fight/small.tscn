@@ -1,10 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://dabkwvaejgxq4"]
+[gd_scene load_steps=5 format=3 uid="uid://dabkwvaejgxq4"]
 
-[ext_resource type="Script" path="res://scripts/fight_map.gd" id="1_dbre8"]
 [ext_resource type="PackedScene" uid="uid://t75w08daqljg" path="res://scenes/character_attr.tscn" id="2_k0ovn"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4qe1e"]
-bg_color = Color(0.505882, 0.615686, 0.709804, 0.164706)
+[ext_resource type="PackedScene" uid="uid://c0bw7n8jqbv0x" path="res://scenes/fight/board.tscn" id="4_t6bin"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ehqau"]
 bg_color = Color(0.505882, 0.615686, 0.709804, 0.164706)
@@ -24,31 +21,63 @@ border_color = Color(0.8, 0.101961, 0.176471, 1)
 
 [node name="Small" type="Node2D"]
 
-[node name="Map" type="Panel" parent="."]
-offset_top = 300.0
-offset_right = 540.0
-offset_bottom = 660.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_4qe1e")
-script = ExtResource("1_dbre8")
-
-[node name="self" type="Node2D" parent="Map"]
-
-[node name="animy" type="Node2D" parent="Map"]
-
 [node name="SelfCharacterAttr" parent="." instance=ExtResource("2_k0ovn")]
-offset_left = 72.0
-offset_top = 3.0
-offset_right = 485.0
-offset_bottom = 272.0
+offset_left = 2.0
+offset_top = 689.0
+offset_right = 415.0
+offset_bottom = 958.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_ehqau")
 hero_id = 222
 is_show_close = false
 
+[node name="AnimyState" type="Panel" parent="."]
+offset_left = 415.0
+offset_top = 692.0
+offset_right = 536.0
+offset_bottom = 957.0
+
+[node name="HCContainer" type="VBoxContainer" parent="AnimyState"]
+custom_minimum_size = Vector2(74, 200)
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 8.0
+offset_top = -107.5
+offset_right = 111.0
+offset_bottom = 117.5
+grow_vertical = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="AnimyState/HCContainer"]
+custom_minimum_size = Vector2(47, 225)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="AnimyState/HCContainer/ScrollContainer"]
+custom_minimum_size = Vector2(102, 0)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="AnimyState/HCContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
 [node name="AnimyCharacterAttr" parent="." instance=ExtResource("2_k0ovn")]
-offset_left = 76.0
-offset_top = 689.0
-offset_right = 489.0
-offset_bottom = 958.0
+offset_left = 0.0
+offset_top = -1.0
+offset_right = 413.0
+offset_bottom = 268.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_ak81u")
 hero_id = 255
 is_show_close = false
+
+[node name="ranks" parent="." instance=ExtResource("4_t6bin")]
+offset_left = 64.0
+offset_top = 272.0
+offset_right = 476.0
+offset_bottom = 684.0
+
+[node name="Panel" type="Panel" parent="."]
+visible = false
+custom_minimum_size = Vector2(0, 96)
+offset_left = 37.0
+offset_top = 424.0
+offset_right = 504.0
+offset_bottom = 530.0

@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://devu8a8lpb2co"]
+
+[ext_resource type="Script" path="res://scenes/fight/Square.gd" id="1_46iyn"]
+
+[node name="Square" type="ColorRect"]
+custom_minimum_size = Vector2(48, 48)
+color = Color(0.74902, 0.85098, 0.94902, 1)
+script = ExtResource("1_46iyn")
