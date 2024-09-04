@@ -2,7 +2,7 @@ extends Panel
 
 func _ready():
 	SignalBus.connect("show_city_info", _on_show_city_info)
-	
+
 func _on_close_pressed() -> void:
 	$".".hide()
 

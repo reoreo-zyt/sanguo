@@ -62,6 +62,38 @@ func _on_sjkf_meta_clicked(meta: Variant) -> void:
 	SignalBus.emit_signal("show_city_info", Global.citys[Global.cur_city].name, Global.cur_city)
 	SignalBus.emit_signal("change_polities_times")
 
+# 情报收集
+func _on_qbsj_meta_clicked(meta: Variant) -> void:
+	if(!limit_message()):
+		return
+
+	# 获取这个年份这个城市的出仕武将
+	# 获取到当前选择的武将的德数据
+	# 根据德属性去做以下
+		# 这个城市有未出仕武将
+			# 如果德大于90，直接找到随机的一个
+			# 如果德 70-89，概率大幅度增加
+			# 如果德小于 70，概率小幅度减少
+		# 这个城市没有未出仕武将
+			# 根据德去获取金、量随机的一个值
+	# 这里不能包含已经出仕的武将
+	var jiang = Global.findAllCharacters(Global.cur_city, Global.citys[Global.cur_city].jiang, Global.year)
+	var select_jiang = Global.get_array_diff(Global.citys[Global.cur_city].curent_jiang, jiang)
+	# TODO: 此处是侦察功能
+	# SignalBus.emit_signal("hide_city_message")
+	# Global.is_show_other_city_message = true
+
+# 侦察
+func _on_zc_meta_clicked(meta: Variant) -> void:
+	if(!limit_message()):
+		return
+
+	# 获取这个年份这个城市的出仕武将
+	# 获取到当前选择的武将的德数据
+	# TODO: 此处是侦察功能
+	# SignalBus.emit_signal("hide_city_message")
+	# Global.is_show_other_city_message = true
+
 func limit_message():
 	if(Global.polities_times == 0):
 		var message = messageScene.instantiate()

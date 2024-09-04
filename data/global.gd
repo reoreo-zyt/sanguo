@@ -43,8 +43,12 @@ var polities_times = 3
 var cur_character = 0
 
 # 初始年月
-var year = 189
+var year = 220
 var month = 1
+
+# 内政相关
+# 是否可以显示全部城市的信息
+var is_show_other_city_message = false
 
 # 读取 xlsx 文件
 func _ready():
@@ -214,3 +218,21 @@ func findAllCharacters(city_code, heros, year = 10000):
 			if(characters[i].cityId == city_code && characters[i].work <= year):
 				heros_codes.push_back(i)
 	return heros_codes
+
+# a b 数组
+# 获取 a 在 b 数组中不重复的值
+# [3, 15, 43, 174, 189] a
+# [3, 15, 43, 174, 189, 374, 421, 478] b
+# [374, 421, 478]
+func get_array_diff(a, b):
+	var temparray = []
+	var is_append = true
+	for i in b:
+		for j in a:
+			if(i == j):
+				is_append = false
+		if(is_append):
+			temparray.append(i)
+		else:
+			is_append = true
+	return temparray

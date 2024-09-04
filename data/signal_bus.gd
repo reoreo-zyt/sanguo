@@ -17,3 +17,6 @@ signal hide_city_hero_info()
 
 # 政务指令次数
 signal change_polities_times()
+
+# 关闭城市信息
+signal hide_city_message()

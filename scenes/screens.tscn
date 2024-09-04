@@ -1083,58 +1083,59 @@ offset_right = 379.0
 offset_bottom = 398.0
 script = ExtResource("32_pcofb")
 
-[node name="CityDetail" type="Panel" parent="Map/CityMessage"]
-layout_mode = 0
+[node name="NZ" type="Node2D" parent="Map/CityMessage"]
+
+[node name="CityDetail" type="Panel" parent="Map/CityMessage/NZ"]
 offset_left = 8.0
 offset_top = 477.0
 offset_right = 532.0
 offset_bottom = 562.0
 
-[node name="level1" type="Node2D" parent="Map/CityMessage/CityDetail"]
+[node name="level1" type="Node2D" parent="Map/CityMessage/NZ/CityDetail"]
 script = ExtResource("33_hk46h")
 
-[node name="TextureRect" type="TextureRect" parent="Map/CityMessage/CityDetail/level1"]
+[node name="TextureRect" type="TextureRect" parent="Map/CityMessage/NZ/CityDetail/level1"]
 offset_right = 80.0
 offset_bottom = 86.0
 texture = ExtResource("33_vmqsd")
 
-[node name="Level1" type="HBoxContainer" parent="Map/CityMessage/CityDetail/level1"]
+[node name="Level1" type="HBoxContainer" parent="Map/CityMessage/NZ/CityDetail/level1"]
 offset_left = 91.0
 offset_top = 29.0
 offset_right = 518.0
 offset_bottom = 59.0
 
-[node name="czkf" type="RichTextLabel" parent="Map/CityMessage/CityDetail/level1/Level1"]
+[node name="czkf" type="RichTextLabel" parent="Map/CityMessage/NZ/CityDetail/level1/Level1"]
 custom_minimum_size = Vector2(80, 30)
 layout_mode = 2
 bbcode_enabled = true
 text = "[center][color=#91c2d5][u][url]城镇开发"
 
-[node name="qbsj" type="RichTextLabel" parent="Map/CityMessage/CityDetail/level1/Level1"]
+[node name="qbsj" type="RichTextLabel" parent="Map/CityMessage/NZ/CityDetail/level1/Level1"]
 custom_minimum_size = Vector2(80, 30)
 layout_mode = 2
 bbcode_enabled = true
 text = "[center][color=#91c2d5][u][url]情报收集"
 
-[node name="cl" type="RichTextLabel" parent="Map/CityMessage/CityDetail/level1/Level1"]
+[node name="cl" type="RichTextLabel" parent="Map/CityMessage/NZ/CityDetail/level1/Level1"]
 custom_minimum_size = Vector2(80, 30)
 layout_mode = 2
 bbcode_enabled = true
 text = "[center][color=#91c2d5][u][url]策略"
 
-[node name="wjyd" type="RichTextLabel" parent="Map/CityMessage/CityDetail/level1/Level1"]
+[node name="wjyd" type="RichTextLabel" parent="Map/CityMessage/NZ/CityDetail/level1/Level1"]
 custom_minimum_size = Vector2(80, 30)
 layout_mode = 2
 bbcode_enabled = true
 text = "[center][color=#91c2d5][u][url]武将移动"
 
-[node name="fz" type="RichTextLabel" parent="Map/CityMessage/CityDetail/level1/Level1"]
+[node name="fz" type="RichTextLabel" parent="Map/CityMessage/NZ/CityDetail/level1/Level1"]
 custom_minimum_size = Vector2(80, 30)
 layout_mode = 2
 bbcode_enabled = true
 text = "[center][color=#91c2d5][u][url]防灾"
 
-[node name="Level1Open" type="Panel" parent="Map/CityMessage/CityDetail/level1"]
+[node name="Level1Open" type="Panel" parent="Map/CityMessage/NZ/CityDetail/level1"]
 visible = false
 anchors_preset = -1
 anchor_left = 0.403
@@ -1146,7 +1147,7 @@ offset_top = -12.0
 offset_right = 349.0
 offset_bottom = 102.0
 
-[node name="TextureRect" type="TextureRect" parent="Map/CityMessage/CityDetail/level1/Level1Open"]
+[node name="TextureRect" type="TextureRect" parent="Map/CityMessage/NZ/CityDetail/level1/Level1Open"]
 layout_mode = 0
 offset_left = -5.0
 offset_top = -12.0
@@ -1154,32 +1155,32 @@ offset_right = 148.0
 offset_bottom = 125.0
 texture = ExtResource("35_syhit")
 
-[node name="HBoxContainer" type="VBoxContainer" parent="Map/CityMessage/CityDetail/level1/Level1Open"]
+[node name="HBoxContainer" type="VBoxContainer" parent="Map/CityMessage/NZ/CityDetail/level1/Level1Open"]
 layout_mode = 0
 offset_left = 30.0
 offset_top = 16.0
 offset_right = 113.0
 offset_bottom = 99.0
 
-[node name="tdkk" type="RichTextLabel" parent="Map/CityMessage/CityDetail/level1/Level1Open/HBoxContainer"]
+[node name="tdkk" type="RichTextLabel" parent="Map/CityMessage/NZ/CityDetail/level1/Level1Open/HBoxContainer"]
 custom_minimum_size = Vector2(0, 26)
 layout_mode = 2
 bbcode_enabled = true
 text = "[center][color=#4d81ad][u][url]土地开垦"
 
-[node name="glgs" type="RichTextLabel" parent="Map/CityMessage/CityDetail/level1/Level1Open/HBoxContainer"]
+[node name="glgs" type="RichTextLabel" parent="Map/CityMessage/NZ/CityDetail/level1/Level1Open/HBoxContainer"]
 custom_minimum_size = Vector2(0, 26)
 layout_mode = 2
 bbcode_enabled = true
 text = "[center][color=#4d81ad][u][url]鼓励工商"
 
-[node name="sjkf" type="RichTextLabel" parent="Map/CityMessage/CityDetail/level1/Level1Open/HBoxContainer"]
+[node name="sjkf" type="RichTextLabel" parent="Map/CityMessage/NZ/CityDetail/level1/Level1Open/HBoxContainer"]
 custom_minimum_size = Vector2(0, 26)
 layout_mode = 2
 bbcode_enabled = true
 text = "[center][color=#4d81ad][u][url]市集开发"
 
-[node name="Close" type="Button" parent="Map/CityMessage/CityDetail/level1/Level1Open"]
+[node name="Close" type="Button" parent="Map/CityMessage/NZ/CityDetail/level1/Level1Open"]
 layout_mode = 0
 offset_left = 119.0
 offset_top = 5.0
@@ -1191,51 +1192,50 @@ icon = ExtResource("15_863i4")
 flat = true
 expand_icon = true
 
-[node name="ArmyDetail" type="Panel" parent="Map/CityMessage"]
-layout_mode = 0
+[node name="ArmyDetail" type="Panel" parent="Map/CityMessage/NZ"]
 offset_left = 8.0
 offset_top = 583.0
 offset_right = 532.0
 offset_bottom = 668.0
 
-[node name="level1" type="Node2D" parent="Map/CityMessage/ArmyDetail"]
+[node name="level1" type="Node2D" parent="Map/CityMessage/NZ/ArmyDetail"]
 
-[node name="TextureRect" type="TextureRect" parent="Map/CityMessage/ArmyDetail/level1"]
+[node name="TextureRect" type="TextureRect" parent="Map/CityMessage/NZ/ArmyDetail/level1"]
 offset_right = 80.0
 offset_bottom = 86.0
 texture = ExtResource("36_jwelq")
 
-[node name="Level1" type="HBoxContainer" parent="Map/CityMessage/ArmyDetail/level1"]
+[node name="Level1" type="HBoxContainer" parent="Map/CityMessage/NZ/ArmyDetail/level1"]
 offset_left = 91.0
 offset_top = 29.0
 offset_right = 518.0
 offset_bottom = 59.0
 
-[node name="cz" type="RichTextLabel" parent="Map/CityMessage/ArmyDetail/level1/Level1"]
+[node name="cz" type="RichTextLabel" parent="Map/CityMessage/NZ/ArmyDetail/level1/Level1"]
 custom_minimum_size = Vector2(80, 30)
 layout_mode = 2
 bbcode_enabled = true
 text = "[center][color=#91c2d5][u][url]出征"
 
-[node name="zb" type="RichTextLabel" parent="Map/CityMessage/ArmyDetail/level1/Level1"]
+[node name="zb" type="RichTextLabel" parent="Map/CityMessage/NZ/ArmyDetail/level1/Level1"]
 custom_minimum_size = Vector2(80, 30)
 layout_mode = 2
 bbcode_enabled = true
 text = "[center][color=#91c2d5][u][url]征兵"
 
-[node name="zc" type="RichTextLabel" parent="Map/CityMessage/ArmyDetail/level1/Level1"]
+[node name="zc" type="RichTextLabel" parent="Map/CityMessage/NZ/ArmyDetail/level1/Level1"]
 custom_minimum_size = Vector2(80, 30)
 layout_mode = 2
 bbcode_enabled = true
 text = "[center][color=#91c2d5][u][url]侦察"
 
-[node name="rm" type="RichTextLabel" parent="Map/CityMessage/ArmyDetail/level1/Level1"]
+[node name="rm" type="RichTextLabel" parent="Map/CityMessage/NZ/ArmyDetail/level1/Level1"]
 custom_minimum_size = Vector2(80, 30)
 layout_mode = 2
 bbcode_enabled = true
 text = "[center][color=#91c2d5][u][url]任命"
 
-[node name="Level1Open" type="Panel" parent="Map/CityMessage/ArmyDetail/level1"]
+[node name="Level1Open" type="Panel" parent="Map/CityMessage/NZ/ArmyDetail/level1"]
 visible = false
 anchors_preset = -1
 anchor_left = 0.403
@@ -1247,7 +1247,7 @@ offset_top = -12.0
 offset_right = 349.0
 offset_bottom = 102.0
 
-[node name="TextureRect" type="TextureRect" parent="Map/CityMessage/ArmyDetail/level1/Level1Open"]
+[node name="TextureRect" type="TextureRect" parent="Map/CityMessage/NZ/ArmyDetail/level1/Level1Open"]
 layout_mode = 0
 offset_left = -5.0
 offset_top = -12.0
@@ -1255,32 +1255,32 @@ offset_right = 148.0
 offset_bottom = 125.0
 texture = ExtResource("35_syhit")
 
-[node name="HBoxContainer" type="VBoxContainer" parent="Map/CityMessage/ArmyDetail/level1/Level1Open"]
+[node name="HBoxContainer" type="VBoxContainer" parent="Map/CityMessage/NZ/ArmyDetail/level1/Level1Open"]
 layout_mode = 0
 offset_left = 30.0
 offset_top = 16.0
 offset_right = 113.0
 offset_bottom = 99.0
 
-[node name="tdkk" type="RichTextLabel" parent="Map/CityMessage/ArmyDetail/level1/Level1Open/HBoxContainer"]
+[node name="tdkk" type="RichTextLabel" parent="Map/CityMessage/NZ/ArmyDetail/level1/Level1Open/HBoxContainer"]
 custom_minimum_size = Vector2(0, 26)
 layout_mode = 2
 bbcode_enabled = true
 text = "[center][color=#4d81ad][u][url]土地开垦"
 
-[node name="glgs" type="RichTextLabel" parent="Map/CityMessage/ArmyDetail/level1/Level1Open/HBoxContainer"]
+[node name="glgs" type="RichTextLabel" parent="Map/CityMessage/NZ/ArmyDetail/level1/Level1Open/HBoxContainer"]
 custom_minimum_size = Vector2(0, 26)
 layout_mode = 2
 bbcode_enabled = true
 text = "[center][color=#4d81ad][u][url]鼓励工商"
 
-[node name="sjkf" type="RichTextLabel" parent="Map/CityMessage/ArmyDetail/level1/Level1Open/HBoxContainer"]
+[node name="sjkf" type="RichTextLabel" parent="Map/CityMessage/NZ/ArmyDetail/level1/Level1Open/HBoxContainer"]
 custom_minimum_size = Vector2(0, 26)
 layout_mode = 2
 bbcode_enabled = true
 text = "[center][color=#4d81ad][u][url]市集开发"
 
-[node name="Close" type="Button" parent="Map/CityMessage/ArmyDetail/level1/Level1Open"]
+[node name="Close" type="Button" parent="Map/CityMessage/NZ/ArmyDetail/level1/Level1Open"]
 layout_mode = 0
 offset_left = 119.0
 offset_top = 5.0
@@ -1506,16 +1506,17 @@ offset_bottom = 329.64
 [connection signal="meta_hover_started" from="Map/CityMessage/CityMessageMore/ScrollContainer/VBoxContainer/JinContainer/JinPanel/RichTextLabel" to="Map/CityMessage/CityMessageMore/ScrollContainer/VBoxContainer/JinContainer/JinPanel/RichTextLabel" method="_on_meta_hover_started"]
 [connection signal="meta_hover_ended" from="Map/CityMessage/CityMessageMore/ScrollContainer/VBoxContainer/LiangContainer/LiangPanel/RichTextLabel" to="Map/CityMessage/CityMessageMore/ScrollContainer/VBoxContainer/LiangContainer/LiangPanel/RichTextLabel" method="_on_meta_hover_ended"]
 [connection signal="meta_hover_started" from="Map/CityMessage/CityMessageMore/ScrollContainer/VBoxContainer/LiangContainer/LiangPanel/RichTextLabel" to="Map/CityMessage/CityMessageMore/ScrollContainer/VBoxContainer/LiangContainer/LiangPanel/RichTextLabel" method="_on_meta_hover_started"]
-[connection signal="meta_clicked" from="Map/CityMessage/CityDetail/level1/Level1/czkf" to="Map/CityMessage/CityDetail/level1" method="_on_czkf_meta_clicked"]
-[connection signal="meta_clicked" from="Map/CityMessage/CityDetail/level1/Level1Open/HBoxContainer/tdkk" to="Map/CityMessage/CityDetail/level1" method="_on_tdkk_meta_clicked"]
-[connection signal="meta_clicked" from="Map/CityMessage/CityDetail/level1/Level1Open/HBoxContainer/glgs" to="Map/CityMessage/CityDetail/level1" method="_on_glgs_meta_clicked"]
-[connection signal="meta_clicked" from="Map/CityMessage/CityDetail/level1/Level1Open/HBoxContainer/sjkf" to="Map/CityMessage/CityDetail/level1" method="_on_sjkf_meta_clicked"]
-[connection signal="pressed" from="Map/CityMessage/CityDetail/level1/Level1Open/Close" to="Map/CityMessage/CityDetail/level1" method="_on_close_pressed"]
-[connection signal="meta_clicked" from="Map/CityMessage/ArmyDetail/level1/Level1/cz" to="Map/CityMessage/ArmyDetail/level1" method="_on_czkf_meta_clicked"]
-[connection signal="meta_clicked" from="Map/CityMessage/ArmyDetail/level1/Level1Open/HBoxContainer/tdkk" to="Map/CityMessage/ArmyDetail/level1" method="_on_tdkk_meta_clicked"]
-[connection signal="meta_clicked" from="Map/CityMessage/ArmyDetail/level1/Level1Open/HBoxContainer/glgs" to="Map/CityMessage/ArmyDetail/level1" method="_on_glgs_meta_clicked"]
-[connection signal="meta_clicked" from="Map/CityMessage/ArmyDetail/level1/Level1Open/HBoxContainer/sjkf" to="Map/CityMessage/ArmyDetail/level1" method="_on_sjkf_meta_clicked"]
-[connection signal="pressed" from="Map/CityMessage/ArmyDetail/level1/Level1Open/Close" to="Map/CityMessage/ArmyDetail/level1" method="_on_close_pressed"]
+[connection signal="meta_clicked" from="Map/CityMessage/NZ/CityDetail/level1/Level1/czkf" to="Map/CityMessage/NZ/CityDetail/level1" method="_on_czkf_meta_clicked"]
+[connection signal="meta_clicked" from="Map/CityMessage/NZ/CityDetail/level1/Level1/qbsj" to="Map/CityMessage/NZ/CityDetail/level1" method="_on_qbsj_meta_clicked"]
+[connection signal="meta_clicked" from="Map/CityMessage/NZ/CityDetail/level1/Level1Open/HBoxContainer/tdkk" to="Map/CityMessage/NZ/CityDetail/level1" method="_on_tdkk_meta_clicked"]
+[connection signal="meta_clicked" from="Map/CityMessage/NZ/CityDetail/level1/Level1Open/HBoxContainer/glgs" to="Map/CityMessage/NZ/CityDetail/level1" method="_on_glgs_meta_clicked"]
+[connection signal="meta_clicked" from="Map/CityMessage/NZ/CityDetail/level1/Level1Open/HBoxContainer/sjkf" to="Map/CityMessage/NZ/CityDetail/level1" method="_on_sjkf_meta_clicked"]
+[connection signal="pressed" from="Map/CityMessage/NZ/CityDetail/level1/Level1Open/Close" to="Map/CityMessage/NZ/CityDetail/level1" method="_on_close_pressed"]
+[connection signal="meta_clicked" from="Map/CityMessage/NZ/ArmyDetail/level1/Level1/cz" to="Map/CityMessage/NZ/ArmyDetail/level1" method="_on_czkf_meta_clicked"]
+[connection signal="meta_clicked" from="Map/CityMessage/NZ/ArmyDetail/level1/Level1Open/HBoxContainer/tdkk" to="Map/CityMessage/NZ/ArmyDetail/level1" method="_on_tdkk_meta_clicked"]
+[connection signal="meta_clicked" from="Map/CityMessage/NZ/ArmyDetail/level1/Level1Open/HBoxContainer/glgs" to="Map/CityMessage/NZ/ArmyDetail/level1" method="_on_glgs_meta_clicked"]
+[connection signal="meta_clicked" from="Map/CityMessage/NZ/ArmyDetail/level1/Level1Open/HBoxContainer/sjkf" to="Map/CityMessage/NZ/ArmyDetail/level1" method="_on_sjkf_meta_clicked"]
+[connection signal="pressed" from="Map/CityMessage/NZ/ArmyDetail/level1/Level1Open/Close" to="Map/CityMessage/NZ/ArmyDetail/level1" method="_on_close_pressed"]
 [connection signal="pressed" from="Menu/MainContainer/ButtonContainer/VBoxContainer/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="GameUi/TextureButton" to="." method="_on_texture_button_pressed"]
 [connection signal="pressed" from="GameUi/start_ui/TimePanel/TextureButton" to="GameUi/start_ui" method="_on_texture_button_pressed"]
