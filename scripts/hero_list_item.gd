@@ -11,4 +11,4 @@ func _ready() -> void:
 		$BingTextLabel.text =  Global.set_text(1000 + ((int(characters[hero_id].attrs.command) - 50) * 50))
 	$ZhongTextLabel.text = Global.set_text(characters[hero_id].attrs.lorty)
 	$TiTextLabel.text =  Global.set_text(characters[hero_id].attrs.curr_physical_strength)
-	$ShiTextLabel.text = "[center]" + str(characters[hero_id].work)
+	$ShiTextLabel.text = Global.set_text(characters[hero_id].attrs.command + characters[hero_id].attrs.force + characters[hero_id].attrs.intelligence + characters[hero_id].attrs.politics + characters[hero_id].attrs.morality)

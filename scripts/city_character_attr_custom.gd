@@ -15,6 +15,7 @@ func _ready() -> void:
 
 func _on_button_pressed() -> void:
 	SignalBus.emit_signal("hide_city_hero_info")
+	Global.curr_city_character = 0
 	$".".hide()
 
 func show_hero_info(nameId):

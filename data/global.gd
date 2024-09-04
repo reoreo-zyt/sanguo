@@ -33,6 +33,19 @@ var is_select_hero = false
 # 城池数据
 var citys = {}
 
+# 城市内政选择的人物 id
+var curr_city_character = 0
+
+# 初始政令数量
+var polities_times = 3
+
+# 选择的君主
+var cur_character = 0
+
+# 初始年月
+var year = 189
+var month = 1
+
 # 读取 xlsx 文件
 func _ready():
 	var excel = ExcelFile.open_file("res://data/311_data.xlsx")
@@ -118,7 +131,8 @@ func _ready():
 			"blue": 1,
 			"green": 1,
 			"red": 1
-		}
+		},
+		"color": "#fff",
 	}
 	for i in character_data:
 		if(i!=1):

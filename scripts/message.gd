@@ -14,7 +14,9 @@ func _on_show_message(isShow):
 	if(isShow):
 		set_tex()
 	else:
-		$".".hide()
+		pass
+		#TODO: bug 会出现无法关闭情况	
+		#$".".hide()
 
 
 func _on_button_pressed() -> void:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://coeuv1kg0usol"]
+[gd_scene load_steps=61 format=3 uid="uid://coeuv1kg0usol"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_7ijmt"]
 [ext_resource type="PackedScene" uid="uid://1yhkkygysjvv" path="res://scenes/fog.tscn" id="1_njvu3"]
@@ -36,8 +36,19 @@
 [ext_resource type="Texture2D" uid="uid://br3y7a3whqp8" path="res://assets/texture/force/e88dd331-d8cb-4827-90b5-f4fa4626acc1.png" id="30_swif7"]
 [ext_resource type="PackedScene" uid="uid://b2krug8ss4rwg" path="res://scenes/hero_list_item.tscn" id="31_g8j7j"]
 [ext_resource type="Script" path="res://scripts/city_character_attr.gd" id="32_pcofb"]
+[ext_resource type="Texture2D" uid="uid://qkvvyrsnkqjt" path="res://assets/texture/ui/18_Marker (2)Gray.png" id="33_01vy3"]
+[ext_resource type="Script" path="res://scripts/city_level_1.gd" id="33_hk46h"]
+[ext_resource type="Texture2D" uid="uid://kyfl7nu0go64" path="res://assets/texture/ui/22_Home (2)Gray.png" id="33_vmqsd"]
+[ext_resource type="Texture2D" uid="uid://bndtbthqpan0r" path="res://assets/texture/ui/Color 5_BigGray.png" id="35_syhit"]
 [ext_resource type="Texture2D" uid="uid://cxy32k5xvxhyf" path="res://assets/texture/ui/20_Exit (2)Gray.png" id="36_vbs7r"]
 [ext_resource type="Texture2D" uid="uid://cl6e47kdiyq4a" path="res://assets/texture/ui/20_Exit (3)Gray.png" id="37_v3jmb"]
+[ext_resource type="Script" path="res://scripts/start_ui.gd" id="41_30d2h"]
+[ext_resource type="Texture2D" uid="uid://bwy2bhjm0e2qt" path="res://assets/texture/ui/09_IconArrowRigh (2)Gray.png" id="42_w26rt"]
+[ext_resource type="Texture2D" uid="uid://fepblawfb26l" path="res://assets/texture/ui/09_IconArrowRigh (3)Gray.png" id="43_rxohy"]
+[ext_resource type="Texture2D" uid="uid://dl18re1yc003s" path="res://assets/texture/ui/10_IconRecycler (2)Gray.png" id="45_om1bg"]
+[ext_resource type="Texture2D" uid="uid://guqkvtjkqrjj" path="res://assets/texture/ui/10_IconRecycler (3)Gray.png" id="46_2xu5n"]
+[ext_resource type="Texture2D" uid="uid://dgegq6l3ddcx3" path="res://assets/texture/ui/19_Menu (2)Gray.png" id="47_351ui"]
+[ext_resource type="Texture2D" uid="uid://dlsm338v2o8kt" path="res://assets/texture/ui/19_Menu (3)Gray.png" id="48_ei5t0"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_e0x5k"]
 render_priority = 0
@@ -158,6 +169,8 @@ _data = {
 "fade_out": SubResource("Animation_x6xo1")
 }
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3w6d4"]
+
 [node name="screens" type="CanvasLayer"]
 script = ExtResource("1_7ijmt")
 
@@ -185,6 +198,7 @@ theme_override_styles/panel = SubResource("StyleBoxEmpty_1k5yt")
 script = ExtResource("6_r7wv3")
 
 [node name="SelectHero" type="Node2D" parent="Map"]
+visible = false
 
 [node name="MarginContainer" type="MarginContainer" parent="Map/SelectHero"]
 offset_right = 540.0
@@ -303,7 +317,7 @@ offset_top = 6.0
 offset_right = 68.0
 offset_bottom = 33.0
 theme_override_fonts/font = ExtResource("9_lny1d")
-text = "决定"
+text = "决定 "
 
 [node name="Refuse" type="Button" parent="Map/SelectHero/Menu"]
 layout_mode = 0
@@ -317,9 +331,9 @@ text = "中止"
 [node name="CityMessage" type="Panel" parent="Map"]
 visible = false
 offset_left = -1.0
-offset_top = 286.0
+offset_top = 89.0
 offset_right = 539.0
-offset_bottom = 745.0
+offset_bottom = 959.0
 script = ExtResource("20_lqc7v")
 
 [node name="Close" type="Button" parent="Map/CityMessage"]
@@ -1069,6 +1083,113 @@ offset_right = 379.0
 offset_bottom = 398.0
 script = ExtResource("32_pcofb")
 
+[node name="CityDetail" type="Panel" parent="Map/CityMessage"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 464.0
+offset_right = 532.0
+offset_bottom = 549.0
+
+[node name="level1" type="Node2D" parent="Map/CityMessage/CityDetail"]
+script = ExtResource("33_hk46h")
+
+[node name="TextureRect" type="TextureRect" parent="Map/CityMessage/CityDetail/level1"]
+offset_right = 80.0
+offset_bottom = 86.0
+texture = ExtResource("33_vmqsd")
+
+[node name="Level1" type="HBoxContainer" parent="Map/CityMessage/CityDetail/level1"]
+offset_left = 91.0
+offset_top = 29.0
+offset_right = 518.0
+offset_bottom = 59.0
+
+[node name="czkf" type="RichTextLabel" parent="Map/CityMessage/CityDetail/level1/Level1"]
+custom_minimum_size = Vector2(80, 30)
+layout_mode = 2
+bbcode_enabled = true
+text = "[center][color=#91c2d5][u][url]城镇开发"
+
+[node name="qbsj" type="RichTextLabel" parent="Map/CityMessage/CityDetail/level1/Level1"]
+custom_minimum_size = Vector2(80, 30)
+layout_mode = 2
+bbcode_enabled = true
+text = "[center][color=#91c2d5][u][url]情报收集"
+
+[node name="cl" type="RichTextLabel" parent="Map/CityMessage/CityDetail/level1/Level1"]
+custom_minimum_size = Vector2(80, 30)
+layout_mode = 2
+bbcode_enabled = true
+text = "[center][color=#91c2d5][u][url]策略"
+
+[node name="wjyd" type="RichTextLabel" parent="Map/CityMessage/CityDetail/level1/Level1"]
+custom_minimum_size = Vector2(80, 30)
+layout_mode = 2
+bbcode_enabled = true
+text = "[center][color=#91c2d5][u][url]武将移动"
+
+[node name="fz" type="RichTextLabel" parent="Map/CityMessage/CityDetail/level1/Level1"]
+custom_minimum_size = Vector2(80, 30)
+layout_mode = 2
+bbcode_enabled = true
+text = "[center][color=#91c2d5][u][url]防灾"
+
+[node name="Level1Open" type="Panel" parent="Map/CityMessage/CityDetail/level1"]
+anchors_preset = -1
+anchor_left = 0.403
+anchor_top = -0.141
+anchor_right = 0.403
+anchor_bottom = -0.141
+offset_left = 211.0
+offset_top = -12.0
+offset_right = 349.0
+offset_bottom = 102.0
+
+[node name="TextureRect" type="TextureRect" parent="Map/CityMessage/CityDetail/level1/Level1Open"]
+layout_mode = 0
+offset_left = -5.0
+offset_top = -12.0
+offset_right = 148.0
+offset_bottom = 125.0
+texture = ExtResource("35_syhit")
+
+[node name="HBoxContainer" type="VBoxContainer" parent="Map/CityMessage/CityDetail/level1/Level1Open"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 16.0
+offset_right = 113.0
+offset_bottom = 99.0
+
+[node name="tdkk" type="RichTextLabel" parent="Map/CityMessage/CityDetail/level1/Level1Open/HBoxContainer"]
+custom_minimum_size = Vector2(0, 26)
+layout_mode = 2
+bbcode_enabled = true
+text = "[center][color=#4d81ad][u][url]土地开垦"
+
+[node name="glgs" type="RichTextLabel" parent="Map/CityMessage/CityDetail/level1/Level1Open/HBoxContainer"]
+custom_minimum_size = Vector2(0, 26)
+layout_mode = 2
+bbcode_enabled = true
+text = "[center][color=#4d81ad][u][url]鼓励工商"
+
+[node name="sjkf" type="RichTextLabel" parent="Map/CityMessage/CityDetail/level1/Level1Open/HBoxContainer"]
+custom_minimum_size = Vector2(0, 26)
+layout_mode = 2
+bbcode_enabled = true
+text = "[center][color=#4d81ad][u][url]市集开发"
+
+[node name="Close" type="Button" parent="Map/CityMessage/CityDetail/level1/Level1Open"]
+layout_mode = 0
+offset_left = 119.0
+offset_top = 5.0
+offset_right = 399.0
+offset_bottom = 285.0
+scale = Vector2(0.05, 0.05)
+theme_override_fonts/font = ExtResource("9_lny1d")
+icon = ExtResource("15_863i4")
+flat = true
+expand_icon = true
+
 [node name="Menu" type="Node2D" parent="."]
 visible = false
 
@@ -1149,7 +1270,6 @@ libraries = {
 }
 
 [node name="GameUi" type="Node2D" parent="."]
-visible = false
 
 [node name="TextureButton" type="TextureButton" parent="GameUi"]
 offset_left = 507.0
@@ -1160,7 +1280,98 @@ scale = Vector2(0.5, 0.5)
 texture_normal = ExtResource("36_vbs7r")
 texture_pressed = ExtResource("37_v3jmb")
 
+[node name="start_ui" type="Node2D" parent="GameUi"]
+script = ExtResource("41_30d2h")
+
+[node name="TimePanel" type="Panel" parent="GameUi/start_ui"]
+offset_right = 124.0
+offset_bottom = 40.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="GameUi/start_ui/TimePanel"]
+layout_mode = 1
+offset_top = 8.0
+offset_right = 124.0
+offset_bottom = 32.0
+bbcode_enabled = true
+text = "[center]189 年 1 月"
+
+[node name="TextureButton" type="TextureButton" parent="GameUi/start_ui/TimePanel"]
+layout_mode = 0
+offset_left = 127.0
+offset_top = 4.0
+offset_right = 186.0
+offset_bottom = 68.0
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("42_w26rt")
+texture_pressed = ExtResource("43_rxohy")
+
+[node name="Panel" type="Panel" parent="GameUi/start_ui"]
+offset_left = 432.0
+offset_top = 48.0
+offset_right = 536.0
+offset_bottom = 88.0
+
+[node name="TextureRect" type="TextureRect" parent="GameUi/start_ui/Panel"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 4.0
+offset_right = 64.0
+offset_bottom = 68.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("33_01vy3")
+
+[node name="Label" type="Label" parent="GameUi/start_ui/Panel"]
+layout_mode = 0
+offset_left = 55.0
+offset_top = 9.0
+offset_right = 95.0
+offset_bottom = 32.0
+text = "3"
+horizontal_alignment = 1
+
+[node name="HistoryAi" type="Panel" parent="GameUi/start_ui"]
+offset_left = 1.0
+offset_top = 41.0
+offset_right = 1.0
+offset_bottom = 222.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_3w6d4")
+
+[node name="Panel" type="Panel" parent="GameUi/start_ui/HistoryAi"]
+layout_mode = 0
+offset_right = 204.0
+offset_bottom = 220.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="GameUi/start_ui/HistoryAi"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 11.0
+offset_right = 200.0
+offset_bottom = 212.0
+bbcode_enabled = true
+scroll_following = true
+
+[node name="ClearTextureButton" type="TextureButton" parent="GameUi/start_ui/HistoryAi"]
+layout_mode = 0
+offset_left = 205.0
+offset_top = 1.0
+offset_right = 264.0
+offset_bottom = 65.0
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("45_om1bg")
+texture_pressed = ExtResource("46_2xu5n")
+
+[node name="ExpendTextureButton" type="TextureButton" parent="GameUi/start_ui/HistoryAi"]
+layout_mode = 0
+offset_left = 205.0
+offset_top = 35.0
+offset_right = 264.0
+offset_bottom = 99.0
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("47_351ui")
+texture_pressed = ExtResource("48_ei5t0")
+
 [node name="Message" parent="." instance=ExtResource("22_ck4v4")]
+visible = false
 offset_left = 70.0
 offset_top = 330.0
 offset_right = 69.9
@@ -1193,5 +1404,13 @@ offset_bottom = 329.64
 [connection signal="meta_hover_started" from="Map/CityMessage/CityMessageMore/ScrollContainer/VBoxContainer/JinContainer/JinPanel/RichTextLabel" to="Map/CityMessage/CityMessageMore/ScrollContainer/VBoxContainer/JinContainer/JinPanel/RichTextLabel" method="_on_meta_hover_started"]
 [connection signal="meta_hover_ended" from="Map/CityMessage/CityMessageMore/ScrollContainer/VBoxContainer/LiangContainer/LiangPanel/RichTextLabel" to="Map/CityMessage/CityMessageMore/ScrollContainer/VBoxContainer/LiangContainer/LiangPanel/RichTextLabel" method="_on_meta_hover_ended"]
 [connection signal="meta_hover_started" from="Map/CityMessage/CityMessageMore/ScrollContainer/VBoxContainer/LiangContainer/LiangPanel/RichTextLabel" to="Map/CityMessage/CityMessageMore/ScrollContainer/VBoxContainer/LiangContainer/LiangPanel/RichTextLabel" method="_on_meta_hover_started"]
+[connection signal="meta_clicked" from="Map/CityMessage/CityDetail/level1/Level1/czkf" to="Map/CityMessage/CityDetail/level1" method="_on_czkf_meta_clicked"]
+[connection signal="meta_clicked" from="Map/CityMessage/CityDetail/level1/Level1Open/HBoxContainer/tdkk" to="Map/CityMessage/CityDetail/level1" method="_on_tdkk_meta_clicked"]
+[connection signal="meta_clicked" from="Map/CityMessage/CityDetail/level1/Level1Open/HBoxContainer/glgs" to="Map/CityMessage/CityDetail/level1" method="_on_glgs_meta_clicked"]
+[connection signal="meta_clicked" from="Map/CityMessage/CityDetail/level1/Level1Open/HBoxContainer/sjkf" to="Map/CityMessage/CityDetail/level1" method="_on_sjkf_meta_clicked"]
+[connection signal="pressed" from="Map/CityMessage/CityDetail/level1/Level1Open/Close" to="Map/CityMessage/CityDetail/level1" method="_on_close_pressed"]
 [connection signal="pressed" from="Menu/MainContainer/ButtonContainer/VBoxContainer/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="GameUi/TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="GameUi/start_ui/TimePanel/TextureButton" to="GameUi/start_ui" method="_on_texture_button_pressed"]
+[connection signal="pressed" from="GameUi/start_ui/HistoryAi/ClearTextureButton" to="GameUi/start_ui" method="_on_clear_texture_button_pressed"]
+[connection signal="pressed" from="GameUi/start_ui/HistoryAi/ExpendTextureButton" to="GameUi/start_ui" method="_on_expend_texture_button_pressed"]

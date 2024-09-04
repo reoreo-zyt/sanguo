@@ -18,11 +18,14 @@ func _on_refuse_pressed() -> void:
 	$Map/SelectHero.hide()
 
 func _on_decide_pressed() -> void:
+	Global.cur_character = Global.cur_hero_id
+	print(Global.cur_character)
 	if(!Global.is_select_hero):
+		var message1 = preload("res://scenes/game_state.tscn").instantiate()
+		$".".add_child(message1)
+		message1.show_message("[color=#ffde66][center]请在左边先选择一个君主角色", Vector2(10, 500), message1.Direction.Up, 1, 2)
 		return
-	$Map/SelectHero/Menu.hide()
-	$Map/SelectHero/CharacterSelect.hide()
-	$Map/SelectHero/MarginContainer.hide()
+	$Map/SelectHero.hide()
 	$GameUi.show()
 
 func _on_button_pressed() -> void:
