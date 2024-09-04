@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://coeuv1kg0usol"]
+[gd_scene load_steps=49 format=3 uid="uid://coeuv1kg0usol"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_7ijmt"]
 [ext_resource type="PackedScene" uid="uid://1yhkkygysjvv" path="res://scenes/fog.tscn" id="1_njvu3"]
@@ -36,12 +36,17 @@
 [ext_resource type="Texture2D" uid="uid://br3y7a3whqp8" path="res://assets/texture/force/e88dd331-d8cb-4827-90b5-f4fa4626acc1.png" id="30_swif7"]
 [ext_resource type="PackedScene" uid="uid://b2krug8ss4rwg" path="res://scenes/hero_list_item.tscn" id="31_g8j7j"]
 [ext_resource type="Script" path="res://scripts/city_character_attr.gd" id="32_pcofb"]
+[ext_resource type="Texture2D" uid="uid://cxy32k5xvxhyf" path="res://assets/texture/ui/20_Exit (2)Gray.png" id="36_vbs7r"]
+[ext_resource type="Texture2D" uid="uid://cl6e47kdiyq4a" path="res://assets/texture/ui/20_Exit (3)Gray.png" id="37_v3jmb"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_e0x5k"]
 render_priority = 0
 shader = ExtResource("2_tjku0")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1k5yt"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d7ep3"]
+bg_color = Color(0.643137, 0.678431, 0.670588, 0.627451)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8rkr4"]
 
@@ -241,11 +246,17 @@ script = ExtResource("10_b3kvj")
 
 [node name="CharacterSelect" type="Panel" parent="Map/SelectHero"]
 custom_minimum_size = Vector2(0, 33)
-offset_left = 8.0
+offset_left = 2.0
 offset_top = 653.0
-offset_right = 534.0
+offset_right = 539.0
 offset_bottom = 952.0
 script = ExtResource("11_g114o")
+
+[node name="Panel" type="Panel" parent="Map/SelectHero/CharacterSelect"]
+layout_mode = 0
+offset_right = 103.0
+offset_bottom = 299.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_d7ep3")
 
 [node name="HCContainer" type="VBoxContainer" parent="Map/SelectHero/CharacterSelect"]
 custom_minimum_size = Vector2(74, 200)
@@ -269,9 +280,9 @@ layout_mode = 2
 
 [node name="CharacterAttr" parent="Map/SelectHero/CharacterSelect" instance=ExtResource("15_lqbkq")]
 layout_mode = 0
-offset_left = 131.0
+offset_left = 106.0
 offset_top = 15.0
-offset_right = 517.0
+offset_right = 535.0
 offset_bottom = 284.0
 is_show_close = false
 
@@ -1137,6 +1148,18 @@ libraries = {
 "": SubResource("AnimationLibrary_mrha4")
 }
 
+[node name="GameUi" type="Node2D" parent="."]
+visible = false
+
+[node name="TextureButton" type="TextureButton" parent="GameUi"]
+offset_left = 507.0
+offset_top = 2.0
+offset_right = 566.0
+offset_bottom = 66.0
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("36_vbs7r")
+texture_pressed = ExtResource("37_v3jmb")
+
 [node name="Message" parent="." instance=ExtResource("22_ck4v4")]
 offset_left = 70.0
 offset_top = 330.0
@@ -1171,3 +1194,4 @@ offset_bottom = 329.64
 [connection signal="meta_hover_ended" from="Map/CityMessage/CityMessageMore/ScrollContainer/VBoxContainer/LiangContainer/LiangPanel/RichTextLabel" to="Map/CityMessage/CityMessageMore/ScrollContainer/VBoxContainer/LiangContainer/LiangPanel/RichTextLabel" method="_on_meta_hover_ended"]
 [connection signal="meta_hover_started" from="Map/CityMessage/CityMessageMore/ScrollContainer/VBoxContainer/LiangContainer/LiangPanel/RichTextLabel" to="Map/CityMessage/CityMessageMore/ScrollContainer/VBoxContainer/LiangContainer/LiangPanel/RichTextLabel" method="_on_meta_hover_started"]
 [connection signal="pressed" from="Menu/MainContainer/ButtonContainer/VBoxContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="GameUi/TextureButton" to="." method="_on_texture_button_pressed"]

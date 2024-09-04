@@ -23,6 +23,7 @@ func _on_decide_pressed() -> void:
 	$Map/SelectHero/Menu.hide()
 	$Map/SelectHero/CharacterSelect.hide()
 	$Map/SelectHero/MarginContainer.hide()
+	$GameUi.show()
 
 func _on_button_pressed() -> void:
 	$Map/CityMessage/HeroList/CharacterAttr.hide()
@@ -32,3 +33,8 @@ func _on_show_city_hero_info():
 
 func _on_hide_city_hero_info():
 	$Map/CityMessage/HeroList/CharacterAttr.hide()
+
+
+func _on_texture_button_pressed() -> void:
+	_on_refuse_pressed()
+	$GameUi.hide()

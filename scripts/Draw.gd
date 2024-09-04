@@ -40,4 +40,4 @@ func create_label():
 		var ins = labelIns.instantiate()
 		get_parent().get_node("Label").add_child(ins)
 		ins.position = lerp(Vector2.ZERO,get_child(i).position,data.labelPos)
-		ins.get_node("RichTextLabel").text = '[color=#91c2d5][u][url]' + data.labels[i] + '[/url][/u][/color]'
+		ins.get_node("RichTextLabel").text = '[color=#91c2d5][u][url]' + data.labels[i] + str(data.stats[i]) + '[/url][/u][/color]'

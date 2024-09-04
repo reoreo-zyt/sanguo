@@ -12,9 +12,8 @@ func create_characters(textname, cityCode):
 	var characters = find_year_character(Global.characters, 189)
 	
 	Global.clear_children(vbContainer)
-	
-	print(cityCode, 'cityCode')
-	for i in citys[cityCode].curent_jiang:
+
+	for i in citys[cityCode].jiang:
 		var instance = hero_list_item.instantiate()
 		instance.hero_id = i
 		vbContainer.add_child(instance)

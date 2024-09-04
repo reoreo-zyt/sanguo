@@ -55,7 +55,6 @@ script = null
 
 [node name="i8" parent="rank8" instance=ExtResource("1_jio5e")]
 layout_mode = 2
-color = Color(0.74902, 0.85098, 0.94902, 1)
 script = null
 
 [node name="rank7" type="HBoxContainer" parent="."]
@@ -143,7 +142,6 @@ script = null
 
 [node name="i6" parent="rank6" instance=ExtResource("1_jio5e")]
 layout_mode = 2
-color = Color(0.74902, 0.85098, 0.94902, 1)
 script = null
 
 [node name="rank5" type="HBoxContainer" parent="."]
@@ -231,7 +229,6 @@ script = null
 
 [node name="i4" parent="rank4" instance=ExtResource("1_jio5e")]
 layout_mode = 2
-color = Color(0.74902, 0.85098, 0.94902, 1)
 script = null
 
 [node name="rank3" type="HBoxContainer" parent="."]
@@ -319,7 +316,6 @@ script = null
 
 [node name="i2" parent="rank2" instance=ExtResource("1_jio5e")]
 layout_mode = 2
-color = Color(0.74902, 0.85098, 0.94902, 1)
 script = null
 
 [node name="rank1" type="HBoxContainer" parent="."]

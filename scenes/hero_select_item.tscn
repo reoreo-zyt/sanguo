@@ -18,9 +18,14 @@ shader_parameter/green = 1.0
 shader_parameter/red = 1.0
 
 [node name="LiuBei" type="HBoxContainer"]
-offset_left = 4.0
-offset_right = 94.0
-offset_bottom = 27.0
+anchors_preset = -1
+anchor_left = 0.007
+anchor_right = 0.174
+anchor_bottom = 0.026
+offset_left = 0.22
+offset_top = 4.0
+offset_right = 0.0399933
+offset_bottom = 6.04
 size_flags_horizontal = 0
 size_flags_vertical = 0
 script = ExtResource("1_fu45c")
@@ -29,30 +34,34 @@ script = ExtResource("1_fu45c")
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_mnmj2")
 text = "刘备"
+alignment = 0
 script = ExtResource("3_77l7w")
 
 [node name="Panel" type="Panel" parent="."]
 custom_minimum_size = Vector2(32, 0)
 layout_mode = 2
+size_flags_horizontal = 4
 theme_override_styles/panel = SubResource("StyleBoxEmpty_r2plx")
 
 [node name="ColorRect" type="ColorRect" parent="Panel"]
 custom_minimum_size = Vector2(12, 12)
 layout_mode = 2
-offset_left = 4.0
-offset_top = 1.0
-offset_right = 28.0
-offset_bottom = 26.0
+offset_left = 10.0
+offset_top = 4.0
+offset_right = 34.0
+offset_bottom = 29.0
+scale = Vector2(0.7, 0.7)
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
 [node name="TextureRect" type="TextureRect" parent="Panel"]
-custom_minimum_size = Vector2(24, 25)
+custom_minimum_size = Vector2(18, 20)
 layout_mode = 2
-offset_left = 4.0
-offset_top = 1.0
-offset_right = 28.0
-offset_bottom = 26.0
+offset_left = 10.0
+offset_top = 4.0
+offset_right = 34.0
+offset_bottom = 29.0
+scale = Vector2(0.7, 0.7)
 size_flags_horizontal = 4
 size_flags_vertical = 4
 texture = ExtResource("5_wjgki")
