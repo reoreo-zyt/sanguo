@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://t5mry6qb5dk7"]
+
+[ext_resource type="Script" path="res://addons/create-grid/test/test.gd" id="1_yjxfq"]
+[ext_resource type="TileSet" uid="uid://do673s7au06kb" path="res://assets/tile_set/zero.tres" id="2_47w3c"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_yjxfq")
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource("2_47w3c")
+cell_quadrant_size = 64
+format = 2
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(32, 32)
+zoom = Vector2(1.5, 1.5)
