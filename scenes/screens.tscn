@@ -1192,6 +1192,7 @@ flat = true
 expand_icon = true
 
 [node name="ArmyDetail" type="Panel" parent="Map/CityMessage"]
+layout_mode = 0
 offset_left = 8.0
 offset_top = 583.0
 offset_right = 532.0

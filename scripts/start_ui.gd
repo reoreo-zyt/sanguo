@@ -28,9 +28,9 @@ func set_time_text():
 
 func create_ai_action():
 	var characters = Global.characters_select
-	print(characters)
+	# print(characters)
 	for i in characters:
-		print(characters[i])
+		# print(characters[i])
 		# 开始战略
 		$HistoryAi/RichTextLabel.text += "[center] [color=" + Global.characters_select[i].color + "]" + Global.characters[i].name + "战略中"
 		# 结束战略

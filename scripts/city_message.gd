@@ -7,7 +7,7 @@ func _on_close_pressed() -> void:
 	$".".hide()
 
 func _on_show_city_info(name, cityId):
-	print(name)
+	# print(name)
 	var city_data = Global.citys[cityId]
 	$CityMessage/CityPanel/RichTextLabel.text = "[center][color=#91c2d5][u][url]" + name + "[/url][/u][/color]"
 #	TODO: bug 消息悬浮框无法消失
