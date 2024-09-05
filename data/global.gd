@@ -46,7 +46,7 @@ var polities_times = 3
 var cur_character = 0
 
 # 初始年月
-var year = 220
+var year = 189
 var month = 1
 
 # 内政相关

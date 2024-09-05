@@ -1372,6 +1372,7 @@ libraries = {
 }
 
 [node name="GameUi" type="Node2D" parent="."]
+visible = false
 
 [node name="TextureButton" type="TextureButton" parent="GameUi"]
 offset_left = 507.0

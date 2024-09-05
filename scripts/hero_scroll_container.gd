@@ -14,7 +14,6 @@ func create_characters(textname, cityCode):
 	Global.clear_children(vbContainer)
 
 	for i in citys[cityCode].curent_jiang:
-	# for i in citys[cityCode].jiang:
 		var instance = hero_list_item.instantiate()
 		instance.hero_id = i
 		vbContainer.add_child(instance)

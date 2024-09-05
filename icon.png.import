@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dovsh3aaiycxc"
-path="res://.godot/imported/bwico.png-dcec5efda2316b19cb7c3bba9c55c9bd.ctex"
+uid="uid://cn3l0lmw6ho3x"
+path="res://.godot/imported/icon.png-487276ed1e3a0c39cad0279d744ee560.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://bwico.png"
-dest_files=["res://.godot/imported/bwico.png-dcec5efda2316b19cb7c3bba9c55c9bd.ctex"]
+source_file="res://icon.png"
+dest_files=["res://.godot/imported/icon.png-487276ed1e3a0c39cad0279d744ee560.ctex"]
 
 [params]
 
