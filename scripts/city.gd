@@ -17,6 +17,8 @@ func show_message():
 	$"../../CityMessage".show()
 
 func _on_icon_pressed() -> void:
+	if(!Global.is_press_select_button):
+		return
 	Global.cur_city = city_code
 	if(character_number != Global.cur_character):
 		var message = messageScene.instantiate()

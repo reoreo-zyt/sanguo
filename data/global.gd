@@ -30,6 +30,9 @@ var cur_hero_id = 0
 # 是否已经选择人物
 var is_select_hero = false
 
+# 是否按下点击按钮
+var is_press_select_button = false
+
 # 城池数据
 var citys = {}
 

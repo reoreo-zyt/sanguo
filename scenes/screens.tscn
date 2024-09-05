@@ -199,7 +199,6 @@ theme_override_styles/panel = SubResource("StyleBoxEmpty_1k5yt")
 script = ExtResource("6_r7wv3")
 
 [node name="SelectHero" type="Node2D" parent="Map"]
-visible = false
 
 [node name="MarginContainer" type="MarginContainer" parent="Map/SelectHero"]
 offset_right = 540.0
@@ -330,6 +329,7 @@ theme_override_fonts/font = ExtResource("9_lny1d")
 text = "中止"
 
 [node name="CityMessage" type="Panel" parent="Map"]
+visible = false
 offset_left = -1.0
 offset_top = 89.0
 offset_right = 539.0

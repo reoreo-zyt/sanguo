@@ -19,6 +19,7 @@ func _on_refuse_pressed() -> void:
 	$Map/SelectHero.hide()
 
 func _on_decide_pressed() -> void:
+	Global.is_press_select_button = true
 	if(!Global.is_select_hero):
 		var message1 = preload("res://scenes/game_state.tscn").instantiate()
 		$".".add_child(message1)
