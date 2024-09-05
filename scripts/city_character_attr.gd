@@ -42,4 +42,5 @@ func get_skill_desc(nameId):
 	return skillsDesc
 
 func _on_button_pressed() -> void:
+	Global.curr_city_character = 0
 	$".".hide()

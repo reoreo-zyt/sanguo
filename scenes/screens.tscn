@@ -199,6 +199,7 @@ theme_override_styles/panel = SubResource("StyleBoxEmpty_1k5yt")
 script = ExtResource("6_r7wv3")
 
 [node name="SelectHero" type="Node2D" parent="Map"]
+visible = false
 
 [node name="MarginContainer" type="MarginContainer" parent="Map/SelectHero"]
 offset_right = 540.0
@@ -273,20 +274,20 @@ offset_bottom = 299.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_d7ep3")
 
 [node name="HCContainer" type="VBoxContainer" parent="Map/SelectHero/CharacterSelect"]
-custom_minimum_size = Vector2(74, 200)
+custom_minimum_size = Vector2(74, 195)
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
 offset_left = 8.0
-offset_top = -107.5
-offset_right = 111.0
-offset_bottom = 117.5
+offset_top = -137.5
+offset_right = 99.0
+offset_bottom = 133.5
 grow_vertical = 2
 script = ExtResource("12_slfkq")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="Map/SelectHero/CharacterSelect/HCContainer"]
-custom_minimum_size = Vector2(47, 225)
+custom_minimum_size = Vector2(47, 263)
 layout_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Map/SelectHero/CharacterSelect/HCContainer/ScrollContainer"]
@@ -329,7 +330,6 @@ theme_override_fonts/font = ExtResource("9_lny1d")
 text = "中止"
 
 [node name="CityMessage" type="Panel" parent="Map"]
-visible = false
 offset_left = -1.0
 offset_top = 89.0
 offset_right = 539.0
@@ -1442,14 +1442,14 @@ theme_override_styles/panel = SubResource("StyleBoxEmpty_3w6d4")
 [node name="Panel" type="Panel" parent="GameUi/start_ui/HistoryAi"]
 layout_mode = 0
 offset_right = 204.0
-offset_bottom = 220.0
+offset_bottom = 919.0
 
 [node name="RichTextLabel" type="RichTextLabel" parent="GameUi/start_ui/HistoryAi"]
 layout_mode = 0
 offset_left = 3.0
 offset_top = 11.0
 offset_right = 200.0
-offset_bottom = 212.0
+offset_bottom = 902.0
 bbcode_enabled = true
 scroll_following = true
 
@@ -1480,6 +1480,7 @@ offset_top = 330.0
 offset_right = 69.9
 offset_bottom = 329.64
 
+[connection signal="meta_clicked" from="Map/SelectHero/MarginContainer/DContainer/DHContainer/TextPanel/MarginContainer/RichTextLabel" to="Map/SelectHero/MarginContainer/DContainer/DHContainer/TextPanel/MarginContainer/RichTextLabel" method="_on_meta_clicked"]
 [connection signal="meta_hover_ended" from="Map/SelectHero/MarginContainer/DContainer/DHContainer/TextPanel/MarginContainer/RichTextLabel" to="Map/SelectHero/MarginContainer/DContainer/DHContainer/TextPanel/MarginContainer/RichTextLabel" method="_on_meta_hover_ended"]
 [connection signal="meta_hover_started" from="Map/SelectHero/MarginContainer/DContainer/DHContainer/TextPanel/MarginContainer/RichTextLabel" to="Map/SelectHero/MarginContainer/DContainer/DHContainer/TextPanel/MarginContainer/RichTextLabel" method="_on_meta_hover_started"]
 [connection signal="pressed" from="Map/SelectHero/Menu/Decide" to="." method="_on_decide_pressed"]

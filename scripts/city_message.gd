@@ -14,7 +14,7 @@ func _on_show_city_info(name, cityId):
 	$CityMessage/MasterPanel/RichTextLabel.text = set_color(Global.characters[int(city_data.lordId)].name)
 	$CityMessage/TongPanel/RichTextLabel.text = set_color(city_data.tong)
 	$CityMessageMore/ScrollContainer/VBoxContainer/RenContainer/RenPanel/RichTextLabel.text = set_color(city_data.ren)
-	$CityMessageMore/ScrollContainer/VBoxContainer/JiangContainer/JangPanel/RichTextLabel.text = set_color(city_data.jiang.size())
+	$CityMessageMore/ScrollContainer/VBoxContainer/JiangContainer/JangPanel/RichTextLabel.text = set_color(city_data.curent_jiang.size())
 	$CityMessageMore/ScrollContainer/VBoxContainer/BingContainer/BingPanel/RichTextLabel.text = set_color(city_data.bing)
 	$CityMessageMore/ScrollContainer/VBoxContainer/KaiContainer/KaiPanel/RichTextLabel.text = set_color(city_data.nong)
 	$CityMessageMore/ScrollContainer/VBoxContainer/ShangContainer/ShangPanel/RichTextLabel.text = set_color(city_data.shang)

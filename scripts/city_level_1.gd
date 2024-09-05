@@ -128,6 +128,7 @@ func _on_zc_meta_clicked(meta: Variant) -> void:
 	# Global.is_show_other_city_message = true
 
 func limit_message():
+	print(Global.curr_city_character)
 	if(Global.polities_times == 0):
 		var message = messageScene.instantiate()
 		$".".add_child(message)

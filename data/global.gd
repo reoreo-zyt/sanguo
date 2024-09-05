@@ -51,7 +51,7 @@ var month = 1
 
 # 内政相关
 # 是否可以显示全部城市的信息
-var is_show_other_city_message = false
+var is_show_other_city_message = true
 
 # 读取 xlsx 文件
 func _ready():
@@ -107,7 +107,7 @@ func _ready():
 				"name": hero_data[i][1],
 				"headImg": "res://assets/texture/profile/" + hero_data[i][1] + ".jpg",
 				"attrs": {
-					"level": 30,
+					"level": hero_data[i][14],
 					"speed": 80,
 					"lorty": 99,
 					"curr_physical_strength": 100,
