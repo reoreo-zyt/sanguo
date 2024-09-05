@@ -66,22 +66,55 @@ func _on_sjkf_meta_clicked(meta: Variant) -> void:
 func _on_qbsj_meta_clicked(meta: Variant) -> void:
 	if(!limit_message()):
 		return
-
 	# 获取这个年份这个城市的出仕武将
 	# 获取到当前选择的武将的德数据
 	# 根据德属性去做以下
 		# 这个城市有未出仕武将
-			# 如果德大于90，直接找到随机的一个
-			# 如果德 70-89，概率大幅度增加
-			# 如果德小于 70，概率小幅度减少
+			# 如果德大于70，直接找到随机的一个
+			# 如果德小于 70，概率减少
 		# 这个城市没有未出仕武将
 			# 根据德去获取金、量随机的一个值
 	# 这里不能包含已经出仕的武将
 	var jiang = Global.findAllCharacters(Global.cur_city, Global.citys[Global.cur_city].jiang, Global.year)
 	var select_jiang = Global.get_array_diff(Global.citys[Global.cur_city].curent_jiang, jiang)
+	var morality = Global.characters[Global.curr_city_character].attrs.morality
+	if(select_jiang.size() > 0):
+		if(morality >= 70):
+			var index = randi() % select_jiang.size()
+			var random_jiang = select_jiang[index]
+			var message = messageScene.instantiate()
+			$".".add_child(message)
+			message.show_message("[color=#ffde66][center]" + Global.citys[Global.cur_city].name + "的 " + Global.characters[random_jiang].name + " 出仕了", Vector2(10, 10), message.Direction.Down, 1, 2)
+			Global.citys[Global.cur_city].curent_jiang.append(random_jiang)
+		elif(morality < 70):
+			get_qbsj(morality)
+	else:
+		get_qbsj(morality)
+	SignalBus.emit_signal("show_city_info", Global.citys[Global.cur_city].name, Global.cur_city)
+	SignalBus.emit_signal("change_polities_times")
 	# TODO: 此处是侦察功能
 	# SignalBus.emit_signal("hide_city_message")
 	# Global.is_show_other_city_message = true
+
+# 没有出仕人物时候的逻辑
+func get_qbsj(morality):
+	var random_result = [
+		{ "text": '富商捐赠金币', "type": 'jin' },
+		{ "text": '富商捐赠粮草', "type": 'liang' },
+		{ "text": '一无所获', "type": 'none' },
+		{ "text": '一无所获', "type": 'none' },
+	]
+	var index = randi() % random_result.size()
+	var random_result_item = random_result[index]
+	if(random_result_item.type == 'none'):
+		var message = messageScene.instantiate()
+		$".".add_child(message)
+		message.show_message("[color=#ffde66][center]" + random_result_item.text, Vector2(10, 10), message.Direction.Down, 1, 2)
+	else:
+		Global.citys[Global.cur_city][random_result_item.type] += morality * 2
+		var message = messageScene.instantiate()
+		$".".add_child(message)
+		message.show_message("[color=#ffde66][center]" + random_result_item.text, Vector2(10, 10), message.Direction.Down, 1, 2)
 
 # 侦察
 func _on_zc_meta_clicked(meta: Variant) -> void:

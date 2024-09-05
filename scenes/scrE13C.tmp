@@ -1,0 +1,1524 @@
+[gd_scene load_steps=62 format=3 uid="uid://coeuv1kg0usol"]
+
+[ext_resource type="Script" path="res://scripts/game.gd" id="1_7ijmt"]
+[ext_resource type="PackedScene" uid="uid://1yhkkygysjvv" path="res://scenes/fog.tscn" id="1_njvu3"]
+[ext_resource type="Texture2D" uid="uid://blkxuwx41exbr" path="res://assets/texture/background/map_pixel.png" id="1_r56x3"]
+[ext_resource type="PackedScene" uid="uid://bpm4p72m452h4" path="res://scenes/rain.tscn" id="2_d24yw"]
+[ext_resource type="Shader" path="res://shaders/map_pixel.gdshader" id="2_tjku0"]
+[ext_resource type="Texture2D" uid="uid://bv74kmvkuhrvt" path="res://assets/texture/background/GuanYu.png" id="6_krf3x"]
+[ext_resource type="Script" path="res://scripts/city_container.gd" id="6_r7wv3"]
+[ext_resource type="Texture2D" uid="uid://oiri753spwsi" path="res://assets/texture/drama/qxtd.png" id="7_dh5dd"]
+[ext_resource type="Texture2D" uid="uid://bri1mvk023yyp" path="res://assets/texture/background/sanguo.png" id="7_jqdx8"]
+[ext_resource type="Texture2D" uid="uid://ygyu3gpdnu2i" path="res://assets/texture/drama/qxtd_text.png" id="8_338p3"]
+[ext_resource type="Script" path="res://scripts/start_game.gd" id="8_r5q5y"]
+[ext_resource type="FontFile" uid="uid://ccc7h37nygjqu" path="res://assets/fonts/方正隶书简体.TTF" id="9_lny1d"]
+[ext_resource type="Script" path="res://scripts/rich_text_label.gd" id="10_b3kvj"]
+[ext_resource type="Script" path="res://scripts/character_select.gd" id="11_g114o"]
+[ext_resource type="Script" path="res://scripts/hero_select_list.gd" id="12_slfkq"]
+[ext_resource type="Texture2D" uid="uid://dn3uc6tspek7l" path="res://assets/texture/ui/Button 4Gray.png" id="15_863i4"]
+[ext_resource type="PackedScene" uid="uid://t75w08daqljg" path="res://scenes/character_attr.tscn" id="15_lqbkq"]
+[ext_resource type="Script" path="res://scripts/city_message.gd" id="20_lqc7v"]
+[ext_resource type="Texture2D" uid="uid://b2eeks7vq2vxx" path="res://assets/texture/force/Cheng.png" id="21_vvsnv"]
+[ext_resource type="PackedScene" uid="uid://4lupj23e4h4a" path="res://scenes/Message.tscn" id="22_ck4v4"]
+[ext_resource type="Texture2D" uid="uid://c7k54vbipqqo" path="res://assets/texture/force/fffea5e6-96bc-e1e0-b465-8491edda9c84.png" id="22_o2bo4"]
+[ext_resource type="Texture2D" uid="uid://mb625t7y4mlj" path="res://assets/texture/force/Tong.png" id="23_1qjju"]
+[ext_resource type="Texture2D" uid="uid://nepado6552jf" path="res://assets/texture/force/Ren.png" id="23_kt6r3"]
+[ext_resource type="Texture2D" uid="uid://ylgxq4lbdt1u" path="res://assets/texture/force/Jiang.png" id="24_yyogy"]
+[ext_resource type="Texture2D" uid="uid://bbs3m3e138wuq" path="res://assets/texture/force/Bing.png" id="25_i24qe"]
+[ext_resource type="Texture2D" uid="uid://bi3l7dxppho1t" path="res://assets/texture/force/Kai.png" id="26_w4wts"]
+[ext_resource type="Texture2D" uid="uid://er8tgcpdqlw6" path="res://assets/texture/force/Shang.png" id="27_bnw5v"]
+[ext_resource type="Texture2D" uid="uid://dohaxbiwcf0ye" path="res://assets/texture/force/fcacf8df-6f81-8c6f-350b-fa9e4cc6525c.png" id="28_efskv"]
+[ext_resource type="Texture2D" uid="uid://dv771xvleepn2" path="res://assets/texture/force/Zhong.png" id="28_gr5id"]
+[ext_resource type="Texture2D" uid="uid://dfe1eg0ehy2a1" path="res://assets/texture/force/Shi.png" id="28_t5tia"]
+[ext_resource type="Texture2D" uid="uid://dor1lq83o5e5i" path="res://assets/texture/force/Jin.png" id="29_7x036"]
+[ext_resource type="Texture2D" uid="uid://bdj6nddrvyugm" path="res://assets/texture/force/Ti.png" id="29_dongr"]
+[ext_resource type="Script" path="res://scripts/hero_scroll_container.gd" id="30_q0s5f"]
+[ext_resource type="Texture2D" uid="uid://br3y7a3whqp8" path="res://assets/texture/force/e88dd331-d8cb-4827-90b5-f4fa4626acc1.png" id="30_swif7"]
+[ext_resource type="PackedScene" uid="uid://b2krug8ss4rwg" path="res://scenes/hero_list_item.tscn" id="31_g8j7j"]
+[ext_resource type="Script" path="res://scripts/city_character_attr.gd" id="32_pcofb"]
+[ext_resource type="Texture2D" uid="uid://qkvvyrsnkqjt" path="res://assets/texture/ui/18_Marker (2)Gray.png" id="33_01vy3"]
+[ext_resource type="Script" path="res://scripts/city_level_1.gd" id="33_hk46h"]
+[ext_resource type="Texture2D" uid="uid://kyfl7nu0go64" path="res://assets/texture/ui/22_Home (2)Gray.png" id="33_vmqsd"]
+[ext_resource type="Texture2D" uid="uid://bndtbthqpan0r" path="res://assets/texture/ui/Color 5_BigGray.png" id="35_syhit"]
+[ext_resource type="Texture2D" uid="uid://bshkiju34g5u0" path="res://assets/texture/ui/17_Shield (2)Gray.png" id="36_jwelq"]
+[ext_resource type="Texture2D" uid="uid://cxy32k5xvxhyf" path="res://assets/texture/ui/20_Exit (2)Gray.png" id="36_vbs7r"]
+[ext_resource type="Texture2D" uid="uid://cl6e47kdiyq4a" path="res://assets/texture/ui/20_Exit (3)Gray.png" id="37_v3jmb"]
+[ext_resource type="Script" path="res://scripts/start_ui.gd" id="41_30d2h"]
+[ext_resource type="Texture2D" uid="uid://bwy2bhjm0e2qt" path="res://assets/texture/ui/09_IconArrowRigh (2)Gray.png" id="42_w26rt"]
+[ext_resource type="Texture2D" uid="uid://fepblawfb26l" path="res://assets/texture/ui/09_IconArrowRigh (3)Gray.png" id="43_rxohy"]
+[ext_resource type="Texture2D" uid="uid://dl18re1yc003s" path="res://assets/texture/ui/10_IconRecycler (2)Gray.png" id="45_om1bg"]
+[ext_resource type="Texture2D" uid="uid://guqkvtjkqrjj" path="res://assets/texture/ui/10_IconRecycler (3)Gray.png" id="46_2xu5n"]
+[ext_resource type="Texture2D" uid="uid://dgegq6l3ddcx3" path="res://assets/texture/ui/19_Menu (2)Gray.png" id="47_351ui"]
+[ext_resource type="Texture2D" uid="uid://dlsm338v2o8kt" path="res://assets/texture/ui/19_Menu (3)Gray.png" id="48_ei5t0"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_e0x5k"]
+render_priority = 0
+shader = ExtResource("2_tjku0")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1k5yt"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d7ep3"]
+bg_color = Color(0.643137, 0.678431, 0.670588, 0.627451)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8rkr4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0vkf5"]
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6gvmq"]
+
+[sub_resource type="Animation" id="Animation_d4ae1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Menu/GuanYu:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(694, 763)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Menu/TitleBg:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-3, -2)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Menu/MainContainer:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_u1kqp"]
+resource_name = "fade_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Menu/GuanYu:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(694, 763), Vector2(500, 763), Vector2(387, 763)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Menu/TitleBg:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, -400), Vector2(0, -200), Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Menu/MainContainer:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="Animation" id="Animation_x6xo1"]
+resource_name = "fade_out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Menu/GuanYu:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 0,
+"values": []
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mrha4"]
+_data = {
+"RESET": SubResource("Animation_d4ae1"),
+"fade_in": SubResource("Animation_u1kqp"),
+"fade_out": SubResource("Animation_x6xo1")
+}
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3w6d4"]
+
+[node name="screens" type="CanvasLayer"]
+script = ExtResource("1_7ijmt")
+
+[node name="Weather" type="Node2D" parent="."]
+
+[node name="fog" parent="Weather" instance=ExtResource("1_njvu3")]
+
+[node name="rain" parent="Weather" instance=ExtResource("2_d24yw")]
+visible = false
+
+[node name="Map" type="Node2D" parent="."]
+
+[node name="MapPixel" type="Sprite2D" parent="Map"]
+material = SubResource("ShaderMaterial_e0x5k")
+position = Vector2(270, 480)
+texture = ExtResource("1_r56x3")
+
+[node name="CityContainer" type="PanelContainer" parent="Map"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_1k5yt")
+script = ExtResource("6_r7wv3")
+
+[node name="SelectHero" type="Node2D" parent="Map"]
+visible = false
+
+[node name="MarginContainer" type="MarginContainer" parent="Map/SelectHero"]
+offset_right = 540.0
+offset_bottom = 220.0
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="DContainer" type="VBoxContainer" parent="Map/SelectHero/MarginContainer"]
+layout_mode = 2
+
+[node name="DHContainer" type="HBoxContainer" parent="Map/SelectHero/MarginContainer/DContainer"]
+layout_mode = 2
+
+[node name="pic" type="TextureRect" parent="Map/SelectHero/MarginContainer/DContainer/DHContainer"]
+custom_minimum_size = Vector2(291, 200)
+layout_mode = 2
+texture = ExtResource("7_dh5dd")
+expand_mode = 2
+
+[node name="text" type="TextureRect" parent="Map/SelectHero/MarginContainer/DContainer/DHContainer/pic"]
+custom_minimum_size = Vector2(200, 100)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -145.5
+offset_top = 7.0
+offset_right = 1314.5
+offset_bottom = 477.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("8_338p3")
+
+[node name="TextPanel" type="Panel" parent="Map/SelectHero/MarginContainer/DContainer/DHContainer"]
+custom_minimum_size = Vector2(229, 0)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Map/SelectHero/MarginContainer/DContainer/DHContainer/TextPanel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Map/SelectHero/MarginContainer/DContainer/DHContainer/TextPanel/MarginContainer"]
+custom_minimum_size = Vector2(221, 189)
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("9_lny1d")
+bbcode_enabled = true
+text = "经历了[color=#91c2d5][u][url]黄巾之乱[/url][/u][/color]，汉室威信受挫，权力下放，各地方[color=#91c2d5][u][url]诸侯[/url][/u][/color]自组势力，而宦官[color=#91c2d5][u][url]十常侍[/url][/u][/color]与外戚[color=#91c2d5][u][url]何进[/url][/u][/color] 的争斗也日益加剧。终于在[color=#91c2d5][u][url]中平六年[/url][/u][/color]（189年）四月，[color=#91c2d5][u][url]汉灵帝[/url][/u][/color]驾崩后，戚宦再次相争，[color=#91c2d5][u][url]何进[/url][/u][/color]被杀。虽然[color=#91c2d5][u][url]何进[/url][/u][/color]部将[color=#91c2d5][u][url]袁绍[/url][/u][/color]率领部曲入宫尽杀宦官，但皇帝[color=#91c2d5][u][url]刘辩[/url][/u][/color]和皇弟[color=#91c2d5][u][url]刘协[/url][/u][/color]却被宦官挟持出宫，然后被[color=#91c2d5][u][url]何进[/url][/u][/color]召进京、准备讨伐宦官的[color=#91c2d5][u][url]董卓[/url][/u][/color]抢先找到并控制。[color=#91c2d5][u][url]董卓[/url][/u][/color]想废掉少帝[color=#91c2d5][u][url]刘辩[/url][/u][/color]，拥立其弟陈留王[color=#91c2d5][u][url]刘协[/url][/u][/color]为帝，于是用计壮大自己的势力，并铲除反对者，如诱使[color=#91c2d5][u][url]丁原[/url][/u][/color]部下[color=#91c2d5][u][url]吕布[/url][/u][/color]杀死[color=#91c2d5][u][url]丁原[/url][/u][/color]以夺其兵马，和逼走反对者[color=#91c2d5][u][url]袁绍[/url][/u][/color]。一切准备好后，便于九月甲戌日废少帝为弘农王，而推[color=#91c2d5][u][url]刘协[/url][/u][/color]为献帝，至丙子日，更鸩杀了[color=#91c2d5][u][url]何太后[/url][/u][/color]，成为汉室实际控制人，担任相国。他在洛阳实行恐怖统治，纵容士兵奸淫掳掠，连皇室、公主、宫人也不能幸免，百姓对他恨之入骨，也激起各地群雄的痛恨。不过，[color=#91c2d5][u][url]董卓[/url][/u][/color]受[color=#91c2d5][u][url]周毖[/url][/u][/color]、[color=#91c2d5][u][url]伍琼[/url][/u][/color]之言，为收纳名望和平息反对，重新任用党人，[color=#91c2d5][u][url]荀爽[/url][/u][/color]、[color=#91c2d5][u][url]陈纪[/url][/u][/color]、[color=#91c2d5][u][url]韩融[/url][/u][/color]都不自愿地受到任用，又以[color=#91c2d5][u][url]袁绍[/url][/u][/color]为勃海太守、[color=#91c2d5][u][url]韩馥[/url][/u][/color]为冀州牧、[color=#91c2d5][u][url]刘岱[/url][/u][/color]为兖州刺史、[color=#91c2d5][u][url]孔伷[/url][/u][/color]为豫州刺史、[color=#91c2d5][u][url]张邈[/url][/u][/color]为陈留太守、[color=#91c2d5][u][url]张咨[/url][/u][/color]为南阳太守等。但这些举动也不能平息各地愤恨。在京师的[color=#91c2d5][u][url]袁术[/url][/u][/color]因畏惧[color=#91c2d5][u][url]董卓[/url][/u][/color]而逃到南阳，而[color=#91c2d5][u][url]曹操[/url][/u][/color]认为[color=#91c2d5][u][url]董卓[/url][/u][/color]必定会败亡，遂逃出京都。"
+script = ExtResource("10_b3kvj")
+
+[node name="CharacterSelect" type="Panel" parent="Map/SelectHero"]
+custom_minimum_size = Vector2(0, 33)
+offset_left = 2.0
+offset_top = 653.0
+offset_right = 539.0
+offset_bottom = 952.0
+script = ExtResource("11_g114o")
+
+[node name="Panel" type="Panel" parent="Map/SelectHero/CharacterSelect"]
+layout_mode = 0
+offset_right = 103.0
+offset_bottom = 299.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_d7ep3")
+
+[node name="HCContainer" type="VBoxContainer" parent="Map/SelectHero/CharacterSelect"]
+custom_minimum_size = Vector2(74, 200)
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 8.0
+offset_top = -107.5
+offset_right = 111.0
+offset_bottom = 117.5
+grow_vertical = 2
+script = ExtResource("12_slfkq")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Map/SelectHero/CharacterSelect/HCContainer"]
+custom_minimum_size = Vector2(47, 225)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Map/SelectHero/CharacterSelect/HCContainer/ScrollContainer"]
+layout_mode = 2
+
+[node name="CharacterAttr" parent="Map/SelectHero/CharacterSelect" instance=ExtResource("15_lqbkq")]
+layout_mode = 0
+offset_left = 106.0
+offset_top = 15.0
+offset_right = 535.0
+offset_bottom = 284.0
+is_show_close = false
+
+[node name="Menu" type="Panel" parent="Map/SelectHero"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = 177.0
+offset_top = 608.0
+offset_right = 345.0
+offset_bottom = 648.0
+grow_horizontal = 0
+
+[node name="Decide" type="Button" parent="Map/SelectHero/Menu"]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 6.0
+offset_right = 68.0
+offset_bottom = 33.0
+theme_override_fonts/font = ExtResource("9_lny1d")
+text = "决定 "
+
+[node name="Refuse" type="Button" parent="Map/SelectHero/Menu"]
+layout_mode = 0
+offset_left = 92.0
+offset_top = 6.0
+offset_right = 132.0
+offset_bottom = 33.0
+theme_override_fonts/font = ExtResource("9_lny1d")
+text = "中止"
+
+[node name="CityMessage" type="Panel" parent="Map"]
+offset_left = -1.0
+offset_top = 89.0
+offset_right = 539.0
+offset_bottom = 959.0
+script = ExtResource("20_lqc7v")
+
+[node name="Close" type="Button" parent="Map/CityMessage"]
+layout_mode = 0
+offset_left = 509.0
+offset_top = 5.0
+offset_right = 993.0
+offset_bottom = 513.0
+scale = Vector2(0.05, 0.05)
+theme_override_fonts/font = ExtResource("9_lny1d")
+icon = ExtResource("15_863i4")
+flat = true
+expand_icon = true
+
+[node name="CityMessage" type="Panel" parent="Map/CityMessage"]
+layout_mode = 0
+offset_right = 136.0
+offset_bottom = 117.0
+
+[node name="CityPanel" type="Panel" parent="Map/CityMessage/CityMessage"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 5.0
+offset_right = 130.0
+offset_bottom = 45.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_8rkr4")
+
+[node name="CityLabel" type="Panel" parent="Map/CityMessage/CityMessage/CityPanel"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 5.0
+offset_right = 32.0
+offset_bottom = 33.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_0vkf5")
+
+[node name="force" type="TextureRect" parent="Map/CityMessage/CityMessage/CityPanel/CityLabel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -13.0
+offset_top = -13.0
+offset_right = 13.0
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("21_vvsnv")
+expand_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Map/CityMessage/CityMessage/CityPanel"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -79.0
+offset_top = -11.5
+offset_bottom = 11.5
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("9_lny1d")
+bbcode_enabled = true
+text = "[center][color=#91c2d5][u][url]豫州颍川[/url][/u][/color] "
+script = ExtResource("10_b3kvj")
+
+[node name="MasterPanel" type="Panel" parent="Map/CityMessage/CityMessage"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 39.0
+offset_right = 129.0
+offset_bottom = 79.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_6gvmq")
+
+[node name="MasterLabel" type="Panel" parent="Map/CityMessage/CityMessage/MasterPanel"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 5.0
+offset_right = 32.0
+offset_bottom = 33.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_0vkf5")
+
+[node name="force" type="TextureRect" parent="Map/CityMessage/CityMessage/MasterPanel/MasterLabel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -13.0
+offset_top = -13.0
+offset_right = 13.0
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("22_o2bo4")
+expand_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Map/CityMessage/CityMessage/MasterPanel"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -79.0
+offset_top = -11.5
+offset_bottom = 11.5
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("9_lny1d")
+bbcode_enabled = true
+text = "[center][color=#91c2d5]刘备"
+script = ExtResource("10_b3kvj")
+
+[node name="TongPanel" type="Panel" parent="Map/CityMessage/CityMessage"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 73.0
+offset_right = 128.0
+offset_bottom = 113.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_6gvmq")
+
+[node name="TongLabel" type="Panel" parent="Map/CityMessage/CityMessage/TongPanel"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 5.0
+offset_right = 32.0
+offset_bottom = 33.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_0vkf5")
+
+[node name="force" type="TextureRect" parent="Map/CityMessage/CityMessage/TongPanel/TongLabel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -13.0
+offset_top = -13.0
+offset_right = 13.0
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("23_1qjju")
+expand_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Map/CityMessage/CityMessage/TongPanel"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -79.0
+offset_top = -11.5
+offset_bottom = 11.5
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("9_lny1d")
+bbcode_enabled = true
+text = "[center][color=#91c2d5]60"
+script = ExtResource("10_b3kvj")
+
+[node name="CityMessageMore" type="Panel" parent="Map/CityMessage"]
+layout_mode = 0
+offset_left = -1.0
+offset_top = 121.0
+offset_right = 137.0
+offset_bottom = 453.0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Map/CityMessage/CityMessageMore"]
+layout_mode = 2
+offset_right = 137.0
+offset_bottom = 329.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Map/CityMessage/CityMessageMore/ScrollContainer"]
+layout_mode = 2
+
+[node name="RenContainer" type="HBoxContainer" parent="Map/CityMessage/CityMessageMore/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 37)
+layout_mode = 2
+
+[node name="RenPanel" type="Panel" parent="Map/CityMessage/CityMessageMore/ScrollContainer/VBoxContainer/RenContainer"]
+custom_minimum_size = Vector2(137, 35)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_6gvmq")
+
+[node name="RenLabel" type="Panel" parent="Map/CityMessage/CityMessageMore/ScrollContainer/VBoxContainer/RenContainer/RenPanel"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 5.0
+offset_right = 38.0
+offset_bottom = 33.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_0vkf5")
+
+[node name="force" type="TextureRect" parent="Map/CityMessage/CityMessageMore/ScrollContainer/VBoxContainer/RenContainer/RenPanel/RenLabel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -13.0
+offset_top = -13.0
+offset_right = 13.0
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("23_kt6r3")
+expand_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Map/CityMessage/CityMessageMore/ScrollContainer/VBoxContainer/RenContainer/RenPanel"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -96.0
+offset_top = -11.0
+offset_right = 1.0
+offset_bottom = 12.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("9_lny1d")
+bbcode_enabled = true
+text = "[center][color=#91c2d5]60"
+script = ExtResource("10_b3kvj")
+
+[node name="JiangContainer" type="HBoxContainer" parent="Map/CityMessage/CityMessageMore/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 37)
+layout_mode = 2
+
+[node name="JangPanel" type="Panel" parent="Map/CityMessage/CityMessageMore/ScrollContainer/VBoxContainer/JiangContainer"]
+custom_minimum_size = Vector2(137, 35)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_6gvmq")
+
+[node name="JangLabel" type="Panel" parent="Map/CityMessage/CityMessageMore/ScrollContainer/VBoxContainer/JiangContainer/JangPanel"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 5.0
+offset_right = 38.0
+offset_bottom = 33.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_0vkf5")
+
+[node name="force" type="TextureRect" parent="Map/CityMessage/CityMessageMore/ScrollContainer/VBoxContainer/JiangContainer/JangPanel/JangLabel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -13.0
+offset_top = -13.0
+offset_right = 13.0
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("24_yyogy")
+expand_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Map/CityMessage/CityMessageMore/ScrollContainer/VBoxContainer/JiangContainer/JangPanel"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -96.0
+offset_top = -11.0
+offset_right = 1.0
+offset_bottom = 12.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("9_lny1d")
+bbcode_enabled = true
+text = "[center][color=#91c2d5]60"
+script = ExtResource("10_b3kvj")
+
+[node name="BingContainer" type="HBoxContainer" parent="Map/CityMessage/CityMessageMore/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 37)
+layout_mode = 2
+
+[node name="BingPanel" type="Panel" parent="Map/CityMessage/CityMessageMore/ScrollContainer/VBoxContainer/BingContainer"]
+custom_minimum_size = Vector2(137, 35)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_6gvmq")
+
+[node name="BingLabel" type="Panel" parent="Map/CityMessage/CityMessageMore/ScrollContainer/VBoxContainer/BingContainer/BingPanel"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 5.0
+offset_right = 38.0
+offset_bottom = 33.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_0vkf5")
+
+[node name="force" type="TextureRect" parent="Map/CityMessage/CityMessageMore/ScrollContainer/VBoxContainer/BingContainer/BingPanel/BingLabel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -13.0
+offset_top = -13.0
+offset_right = 13.0
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("25_i24qe")
+expand_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Map/CityMessage/CityMessageMore/ScrollContainer/VBoxContainer/BingContainer/BingPanel"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -96.0
+offset_top = -11.0
+offset_right = 1.0
+offset_bottom = 12.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("9_lny1d")
+bbcode_enabled = true
+text = "[center][color=#91c2d5]60"
+script = ExtResource("10_b3kvj")
+
+[node name="KaiContainer" type="HBoxContainer" parent="Map/CityMessage/CityMessageMore/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 37)
+layout_mode = 2
+
+[node name="KaiPanel" type="Panel" parent="Map/CityMessage/CityMessageMore/ScrollContainer/VBoxContainer/KaiContainer"]
+custom_minimum_size = Vector2(137, 35)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_6gvmq")
+
+[node name="KaiLabel" type="Panel" parent="Map/CityMessage/CityMessageMore/ScrollContainer/VBoxContainer/KaiContainer/KaiPanel"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 5.0
+offset_right = 38.0
+offset_bottom = 33.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_0vkf5")
+
+[node name="force" type="TextureRect" parent="Map/CityMessage/CityMessageMore/ScrollContainer/VBoxContainer/KaiContainer/KaiPanel/KaiLabel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -13.0
+offset_top = -13.0
+offset_right = 13.0
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("26_w4wts")
+expand_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Map/CityMessage/CityMessageMore/ScrollContainer/VBoxContainer/KaiContainer/KaiPanel"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -96.0
+offset_top = -11.0
+offset_right = 1.0
+offset_bottom = 12.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("9_lny1d")
+bbcode_enabled = true
+text = "[center][color=#91c2d5]60"
+script = ExtResource("10_b3kvj")
+
+[node name="ShangContainer" type="HBoxContainer" parent="Map/CityMessage/CityMessageMore/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 37)
+layout_mode = 2
+
+[node name="ShangPanel" type="Panel" parent="Map/CityMessage/CityMessageMore/ScrollContainer/VBoxContainer/ShangContainer"]
+custom_minimum_size = Vector2(137, 35)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_6gvmq")
+
+[node name="ShangLabel" type="Panel" parent="Map/CityMessage/CityMessageMore/ScrollContainer/VBoxContainer/ShangContainer/ShangPanel"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 5.0
+offset_right = 38.0
+offset_bottom = 33.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_0vkf5")
+
+[node name="force" type="TextureRect" parent="Map/CityMessage/CityMessageMore/ScrollContainer/VBoxContainer/ShangContainer/ShangPanel/ShangLabel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -13.0
+offset_top = -13.0
+offset_right = 13.0
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("27_bnw5v")
+expand_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Map/CityMessage/CityMessageMore/ScrollContainer/VBoxContainer/ShangContainer/ShangPanel"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -96.0
+offset_top = -11.0
+offset_right = 1.0
+offset_bottom = 12.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("9_lny1d")
+bbcode_enabled = true
+text = "[center][color=#91c2d5]60"
+script = ExtResource("10_b3kvj")
+
+[node name="ZhiContainer" type="HBoxContainer" parent="Map/CityMessage/CityMessageMore/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 37)
+layout_mode = 2
+
+[node name="ZhiPanel" type="Panel" parent="Map/CityMessage/CityMessageMore/ScrollContainer/VBoxContainer/ZhiContainer"]
+custom_minimum_size = Vector2(137, 35)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_6gvmq")
+
+[node name="ZhiLabel" type="Panel" parent="Map/CityMessage/CityMessageMore/ScrollContainer/VBoxContainer/ZhiContainer/ZhiPanel"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 5.0
+offset_right = 38.0
+offset_bottom = 33.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_0vkf5")
+
+[node name="force" type="TextureRect" parent="Map/CityMessage/CityMessageMore/ScrollContainer/VBoxContainer/ZhiContainer/ZhiPanel/ZhiLabel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -13.0
+offset_top = -13.0
+offset_right = 13.0
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("28_efskv")
+expand_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Map/CityMessage/CityMessageMore/ScrollContainer/VBoxContainer/ZhiContainer/ZhiPanel"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -96.0
+offset_top = -11.0
+offset_right = 1.0
+offset_bottom = 12.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("9_lny1d")
+bbcode_enabled = true
+text = "[center][color=#91c2d5]60"
+script = ExtResource("10_b3kvj")
+
+[node name="JinContainer" type="HBoxContainer" parent="Map/CityMessage/CityMessageMore/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 37)
+layout_mode = 2
+
+[node name="JinPanel" type="Panel" parent="Map/CityMessage/CityMessageMore/ScrollContainer/VBoxContainer/JinContainer"]
+custom_minimum_size = Vector2(137, 35)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_6gvmq")
+
+[node name="JinLabel" type="Panel" parent="Map/CityMessage/CityMessageMore/ScrollContainer/VBoxContainer/JinContainer/JinPanel"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 5.0
+offset_right = 38.0
+offset_bottom = 33.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_0vkf5")
+
+[node name="force" type="TextureRect" parent="Map/CityMessage/CityMessageMore/ScrollContainer/VBoxContainer/JinContainer/JinPanel/JinLabel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -13.0
+offset_top = -13.0
+offset_right = 13.0
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("29_7x036")
+expand_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Map/CityMessage/CityMessageMore/ScrollContainer/VBoxContainer/JinContainer/JinPanel"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -96.0
+offset_top = -11.0
+offset_right = 1.0
+offset_bottom = 12.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("9_lny1d")
+bbcode_enabled = true
+text = "[center][color=#91c2d5]60"
+script = ExtResource("10_b3kvj")
+
+[node name="LiangContainer" type="HBoxContainer" parent="Map/CityMessage/CityMessageMore/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 37)
+layout_mode = 2
+
+[node name="LiangPanel" type="Panel" parent="Map/CityMessage/CityMessageMore/ScrollContainer/VBoxContainer/LiangContainer"]
+custom_minimum_size = Vector2(137, 35)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_6gvmq")
+
+[node name="LiangLabel" type="Panel" parent="Map/CityMessage/CityMessageMore/ScrollContainer/VBoxContainer/LiangContainer/LiangPanel"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 5.0
+offset_right = 38.0
+offset_bottom = 33.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_0vkf5")
+
+[node name="force" type="TextureRect" parent="Map/CityMessage/CityMessageMore/ScrollContainer/VBoxContainer/LiangContainer/LiangPanel/LiangLabel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -13.0
+offset_top = -13.0
+offset_right = 13.0
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("30_swif7")
+expand_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Map/CityMessage/CityMessageMore/ScrollContainer/VBoxContainer/LiangContainer/LiangPanel"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -96.0
+offset_top = -11.0
+offset_right = 1.0
+offset_bottom = 12.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("9_lny1d")
+bbcode_enabled = true
+text = "[center][color=#91c2d5]60"
+script = ExtResource("10_b3kvj")
+
+[node name="HeroList" type="Panel" parent="Map/CityMessage"]
+layout_mode = 0
+offset_left = 142.0
+offset_top = 36.0
+offset_right = 538.0
+offset_bottom = 453.0
+
+[node name="Attr" type="Panel" parent="Map/CityMessage/HeroList"]
+layout_mode = 0
+offset_left = -1.0
+offset_right = 396.0
+offset_bottom = 37.0
+
+[node name="JangLabel" type="Panel" parent="Map/CityMessage/HeroList/Attr"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 5.0
+offset_right = 52.0
+offset_bottom = 33.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_0vkf5")
+
+[node name="force" type="TextureRect" parent="Map/CityMessage/HeroList/Attr/JangLabel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -12.0
+offset_top = -13.0
+offset_right = 14.0
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("24_yyogy")
+expand_mode = 2
+
+[node name="BingLabel" type="Panel" parent="Map/CityMessage/HeroList/Attr"]
+layout_mode = 0
+offset_left = 108.0
+offset_top = 5.0
+offset_right = 136.0
+offset_bottom = 33.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_0vkf5")
+
+[node name="force" type="TextureRect" parent="Map/CityMessage/HeroList/Attr/BingLabel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -13.0
+offset_top = -13.0
+offset_right = 13.0
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("25_i24qe")
+expand_mode = 2
+
+[node name="ZhongLabel" type="Panel" parent="Map/CityMessage/HeroList/Attr"]
+layout_mode = 0
+offset_left = 190.0
+offset_top = 5.0
+offset_right = 218.0
+offset_bottom = 33.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_0vkf5")
+
+[node name="force" type="TextureRect" parent="Map/CityMessage/HeroList/Attr/ZhongLabel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -13.0
+offset_top = -13.0
+offset_right = 13.0
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("28_gr5id")
+expand_mode = 2
+
+[node name="TiLabel" type="Panel" parent="Map/CityMessage/HeroList/Attr"]
+layout_mode = 0
+offset_left = 276.0
+offset_top = 5.0
+offset_right = 304.0
+offset_bottom = 33.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_0vkf5")
+
+[node name="force" type="TextureRect" parent="Map/CityMessage/HeroList/Attr/TiLabel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -13.0
+offset_top = -13.0
+offset_right = 13.0
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("29_dongr")
+expand_mode = 2
+
+[node name="Shi" type="Panel" parent="Map/CityMessage/HeroList/Attr"]
+layout_mode = 0
+offset_left = 363.0
+offset_top = 5.0
+offset_right = 391.0
+offset_bottom = 33.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_0vkf5")
+
+[node name="force" type="TextureRect" parent="Map/CityMessage/HeroList/Attr/Shi"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -13.0
+offset_top = -13.0
+offset_right = 13.0
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("28_t5tia")
+expand_mode = 2
+
+[node name="HeroScrollContainer" type="ScrollContainer" parent="Map/CityMessage/HeroList"]
+layout_mode = 0
+offset_left = -3.0
+offset_top = 50.0
+offset_right = 395.0
+offset_bottom = 413.0
+horizontal_scroll_mode = 0
+script = ExtResource("30_q0s5f")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Map/CityMessage/HeroList/HeroScrollContainer"]
+custom_minimum_size = Vector2(30, 16)
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="HBoxContainer" parent="Map/CityMessage/HeroList/HeroScrollContainer/VBoxContainer" instance=ExtResource("31_g8j7j")]
+visible = false
+layout_mode = 2
+
+[node name="CharacterAttr" parent="Map/CityMessage/HeroList" instance=ExtResource("15_lqbkq")]
+visible = false
+layout_mode = 0
+offset_left = -42.0
+offset_top = 129.0
+offset_right = 379.0
+offset_bottom = 398.0
+script = ExtResource("32_pcofb")
+
+[node name="NZ" type="Node2D" parent="Map/CityMessage"]
+
+[node name="CityDetail" type="Panel" parent="Map/CityMessage/NZ"]
+offset_left = 8.0
+offset_top = 477.0
+offset_right = 532.0
+offset_bottom = 562.0
+
+[node name="level1" type="Node2D" parent="Map/CityMessage/NZ/CityDetail"]
+script = ExtResource("33_hk46h")
+
+[node name="TextureRect" type="TextureRect" parent="Map/CityMessage/NZ/CityDetail/level1"]
+offset_right = 80.0
+offset_bottom = 86.0
+texture = ExtResource("33_vmqsd")
+
+[node name="Level1" type="HBoxContainer" parent="Map/CityMessage/NZ/CityDetail/level1"]
+offset_left = 91.0
+offset_top = 29.0
+offset_right = 518.0
+offset_bottom = 59.0
+
+[node name="czkf" type="RichTextLabel" parent="Map/CityMessage/NZ/CityDetail/level1/Level1"]
+custom_minimum_size = Vector2(80, 30)
+layout_mode = 2
+bbcode_enabled = true
+text = "[center][color=#91c2d5][u][url]城镇开发"
+
+[node name="qbsj" type="RichTextLabel" parent="Map/CityMessage/NZ/CityDetail/level1/Level1"]
+custom_minimum_size = Vector2(80, 30)
+layout_mode = 2
+bbcode_enabled = true
+text = "[center][color=#91c2d5][u][url]情报收集"
+
+[node name="cl" type="RichTextLabel" parent="Map/CityMessage/NZ/CityDetail/level1/Level1"]
+custom_minimum_size = Vector2(80, 30)
+layout_mode = 2
+bbcode_enabled = true
+text = "[center][color=#91c2d5][u][url]策略"
+
+[node name="wjyd" type="RichTextLabel" parent="Map/CityMessage/NZ/CityDetail/level1/Level1"]
+custom_minimum_size = Vector2(80, 30)
+layout_mode = 2
+bbcode_enabled = true
+text = "[center][color=#91c2d5][u][url]武将移动"
+
+[node name="fz" type="RichTextLabel" parent="Map/CityMessage/NZ/CityDetail/level1/Level1"]
+custom_minimum_size = Vector2(80, 30)
+layout_mode = 2
+bbcode_enabled = true
+text = "[center][color=#91c2d5][u][url]防灾"
+
+[node name="Level1Open" type="Panel" parent="Map/CityMessage/NZ/CityDetail/level1"]
+visible = false
+anchors_preset = -1
+anchor_left = 0.403
+anchor_top = -0.141
+anchor_right = 0.403
+anchor_bottom = -0.141
+offset_left = 211.0
+offset_top = -12.0
+offset_right = 349.0
+offset_bottom = 102.0
+
+[node name="TextureRect" type="TextureRect" parent="Map/CityMessage/NZ/CityDetail/level1/Level1Open"]
+layout_mode = 0
+offset_left = -5.0
+offset_top = -12.0
+offset_right = 148.0
+offset_bottom = 125.0
+texture = ExtResource("35_syhit")
+
+[node name="HBoxContainer" type="VBoxContainer" parent="Map/CityMessage/NZ/CityDetail/level1/Level1Open"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 16.0
+offset_right = 113.0
+offset_bottom = 99.0
+
+[node name="tdkk" type="RichTextLabel" parent="Map/CityMessage/NZ/CityDetail/level1/Level1Open/HBoxContainer"]
+custom_minimum_size = Vector2(0, 26)
+layout_mode = 2
+bbcode_enabled = true
+text = "[center][color=#4d81ad][u][url]土地开垦"
+
+[node name="glgs" type="RichTextLabel" parent="Map/CityMessage/NZ/CityDetail/level1/Level1Open/HBoxContainer"]
+custom_minimum_size = Vector2(0, 26)
+layout_mode = 2
+bbcode_enabled = true
+text = "[center][color=#4d81ad][u][url]鼓励工商"
+
+[node name="sjkf" type="RichTextLabel" parent="Map/CityMessage/NZ/CityDetail/level1/Level1Open/HBoxContainer"]
+custom_minimum_size = Vector2(0, 26)
+layout_mode = 2
+bbcode_enabled = true
+text = "[center][color=#4d81ad][u][url]市集开发"
+
+[node name="Close" type="Button" parent="Map/CityMessage/NZ/CityDetail/level1/Level1Open"]
+layout_mode = 0
+offset_left = 119.0
+offset_top = 5.0
+offset_right = 399.0
+offset_bottom = 285.0
+scale = Vector2(0.05, 0.05)
+theme_override_fonts/font = ExtResource("9_lny1d")
+icon = ExtResource("15_863i4")
+flat = true
+expand_icon = true
+
+[node name="ArmyDetail" type="Panel" parent="Map/CityMessage/NZ"]
+offset_left = 8.0
+offset_top = 583.0
+offset_right = 532.0
+offset_bottom = 668.0
+
+[node name="level1" type="Node2D" parent="Map/CityMessage/NZ/ArmyDetail"]
+
+[node name="TextureRect" type="TextureRect" parent="Map/CityMessage/NZ/ArmyDetail/level1"]
+offset_right = 80.0
+offset_bottom = 86.0
+texture = ExtResource("36_jwelq")
+
+[node name="Level1" type="HBoxContainer" parent="Map/CityMessage/NZ/ArmyDetail/level1"]
+offset_left = 91.0
+offset_top = 29.0
+offset_right = 518.0
+offset_bottom = 59.0
+
+[node name="cz" type="RichTextLabel" parent="Map/CityMessage/NZ/ArmyDetail/level1/Level1"]
+custom_minimum_size = Vector2(80, 30)
+layout_mode = 2
+bbcode_enabled = true
+text = "[center][color=#91c2d5][u][url]出征"
+
+[node name="zb" type="RichTextLabel" parent="Map/CityMessage/NZ/ArmyDetail/level1/Level1"]
+custom_minimum_size = Vector2(80, 30)
+layout_mode = 2
+bbcode_enabled = true
+text = "[center][color=#91c2d5][u][url]征兵"
+
+[node name="zc" type="RichTextLabel" parent="Map/CityMessage/NZ/ArmyDetail/level1/Level1"]
+custom_minimum_size = Vector2(80, 30)
+layout_mode = 2
+bbcode_enabled = true
+text = "[center][color=#91c2d5][u][url]侦察"
+
+[node name="rm" type="RichTextLabel" parent="Map/CityMessage/NZ/ArmyDetail/level1/Level1"]
+custom_minimum_size = Vector2(80, 30)
+layout_mode = 2
+bbcode_enabled = true
+text = "[center][color=#91c2d5][u][url]任命"
+
+[node name="Level1Open" type="Panel" parent="Map/CityMessage/NZ/ArmyDetail/level1"]
+visible = false
+anchors_preset = -1
+anchor_left = 0.403
+anchor_top = -0.141
+anchor_right = 0.403
+anchor_bottom = -0.141
+offset_left = 211.0
+offset_top = -12.0
+offset_right = 349.0
+offset_bottom = 102.0
+
+[node name="TextureRect" type="TextureRect" parent="Map/CityMessage/NZ/ArmyDetail/level1/Level1Open"]
+layout_mode = 0
+offset_left = -5.0
+offset_top = -12.0
+offset_right = 148.0
+offset_bottom = 125.0
+texture = ExtResource("35_syhit")
+
+[node name="HBoxContainer" type="VBoxContainer" parent="Map/CityMessage/NZ/ArmyDetail/level1/Level1Open"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 16.0
+offset_right = 113.0
+offset_bottom = 99.0
+
+[node name="tdkk" type="RichTextLabel" parent="Map/CityMessage/NZ/ArmyDetail/level1/Level1Open/HBoxContainer"]
+custom_minimum_size = Vector2(0, 26)
+layout_mode = 2
+bbcode_enabled = true
+text = "[center][color=#4d81ad][u][url]土地开垦"
+
+[node name="glgs" type="RichTextLabel" parent="Map/CityMessage/NZ/ArmyDetail/level1/Level1Open/HBoxContainer"]
+custom_minimum_size = Vector2(0, 26)
+layout_mode = 2
+bbcode_enabled = true
+text = "[center][color=#4d81ad][u][url]鼓励工商"
+
+[node name="sjkf" type="RichTextLabel" parent="Map/CityMessage/NZ/ArmyDetail/level1/Level1Open/HBoxContainer"]
+custom_minimum_size = Vector2(0, 26)
+layout_mode = 2
+bbcode_enabled = true
+text = "[center][color=#4d81ad][u][url]市集开发"
+
+[node name="Close" type="Button" parent="Map/CityMessage/NZ/ArmyDetail/level1/Level1Open"]
+layout_mode = 0
+offset_left = 119.0
+offset_top = 5.0
+offset_right = 399.0
+offset_bottom = 285.0
+scale = Vector2(0.05, 0.05)
+theme_override_fonts/font = ExtResource("9_lny1d")
+icon = ExtResource("15_863i4")
+flat = true
+expand_icon = true
+
+[node name="Menu" type="Node2D" parent="."]
+visible = false
+
+[node name="MainContainer" type="VBoxContainer" parent="Menu"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 120.0
+offset_right = 540.0
+offset_bottom = 1080.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="ButtonContainer" type="HBoxContainer" parent="Menu/MainContainer"]
+custom_minimum_size = Vector2(0, 960)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Menu/MainContainer/ButtonContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Start" type="Button" parent="Menu/MainContainer/ButtonContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("9_lny1d")
+theme_override_font_sizes/font_size = 22
+text = "开创霸业"
+script = ExtResource("8_r5q5y")
+
+[node name="Continute" type="Button" parent="Menu/MainContainer/ButtonContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("9_lny1d")
+theme_override_font_sizes/font_size = 22
+text = "再续征程"
+
+[node name="AddHero" type="Button" parent="Menu/MainContainer/ButtonContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("9_lny1d")
+theme_override_font_sizes/font_size = 22
+text = "自建武将"
+
+[node name="GameHelp" type="Button" parent="Menu/MainContainer/ButtonContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("9_lny1d")
+theme_override_font_sizes/font_size = 22
+text = "游戏百科
+"
+
+[node name="GuanYu" type="Sprite2D" parent="Menu"]
+position = Vector2(694, 763)
+scale = Vector2(0.732143, 0.58151)
+texture = ExtResource("6_krf3x")
+
+[node name="TitleBg" type="TextureRect" parent="Menu"]
+custom_minimum_size = Vector2(540, 400)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -3.0
+offset_top = -2.0
+offset_right = 537.0
+offset_bottom = 398.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture = ExtResource("7_jqdx8")
+expand_mode = 1
+
+[node name="UIAnimation" type="AnimationPlayer" parent="Menu"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_mrha4")
+}
+
+[node name="GameUi" type="Node2D" parent="."]
+
+[node name="TextureButton" type="TextureButton" parent="GameUi"]
+offset_left = 507.0
+offset_top = 2.0
+offset_right = 566.0
+offset_bottom = 66.0
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("36_vbs7r")
+texture_pressed = ExtResource("37_v3jmb")
+
+[node name="start_ui" type="Node2D" parent="GameUi"]
+script = ExtResource("41_30d2h")
+
+[node name="TimePanel" type="Panel" parent="GameUi/start_ui"]
+offset_right = 124.0
+offset_bottom = 40.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="GameUi/start_ui/TimePanel"]
+layout_mode = 1
+offset_top = 8.0
+offset_right = 124.0
+offset_bottom = 32.0
+bbcode_enabled = true
+text = "[center]189 年 1 月"
+
+[node name="TextureButton" type="TextureButton" parent="GameUi/start_ui/TimePanel"]
+layout_mode = 0
+offset_left = 127.0
+offset_top = 4.0
+offset_right = 186.0
+offset_bottom = 68.0
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("42_w26rt")
+texture_pressed = ExtResource("43_rxohy")
+
+[node name="Panel" type="Panel" parent="GameUi/start_ui"]
+offset_left = 432.0
+offset_top = 48.0
+offset_right = 536.0
+offset_bottom = 88.0
+
+[node name="TextureRect" type="TextureRect" parent="GameUi/start_ui/Panel"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 4.0
+offset_right = 64.0
+offset_bottom = 68.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("33_01vy3")
+
+[node name="Label" type="Label" parent="GameUi/start_ui/Panel"]
+layout_mode = 0
+offset_left = 55.0
+offset_top = 9.0
+offset_right = 95.0
+offset_bottom = 32.0
+text = "3"
+horizontal_alignment = 1
+
+[node name="HistoryAi" type="Panel" parent="GameUi/start_ui"]
+offset_left = 1.0
+offset_top = 41.0
+offset_right = 1.0
+offset_bottom = 222.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_3w6d4")
+
+[node name="Panel" type="Panel" parent="GameUi/start_ui/HistoryAi"]
+layout_mode = 0
+offset_right = 204.0
+offset_bottom = 220.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="GameUi/start_ui/HistoryAi"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 11.0
+offset_right = 200.0
+offset_bottom = 212.0
+bbcode_enabled = true
+scroll_following = true
+
+[node name="ClearTextureButton" type="TextureButton" parent="GameUi/start_ui/HistoryAi"]
+layout_mode = 0
+offset_left = 205.0
+offset_top = 1.0
+offset_right = 264.0
+offset_bottom = 65.0
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("45_om1bg")
+texture_pressed = ExtResource("46_2xu5n")
+
+[node name="ExpendTextureButton" type="TextureButton" parent="GameUi/start_ui/HistoryAi"]
+layout_mode = 0
+offset_left = 205.0
+offset_top = 35.0
+offset_right = 264.0
+offset_bottom = 99.0
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("47_351ui")
+texture_pressed = ExtResource("48_ei5t0")
+
+[node name="Message" parent="." instance=ExtResource("22_ck4v4")]
+visible = false
+offset_left = 70.0
+offset_top = 330.0
+offset_right = 69.9
+offset_bottom = 329.64
+
+[connection signal="meta_hover_ended" from="Map/SelectHero/MarginContainer/DContainer/DHContainer/TextPanel/MarginContainer/RichTextLabel" to="Map/SelectHero/MarginContainer/DContainer/DHContainer/TextPanel/MarginContainer/RichTextLabel" method="_on_meta_hover_ended"]
+[connection signal="meta_hover_started" from="Map/SelectHero/MarginContainer/DContainer/DHContainer/TextPanel/MarginContainer/RichTextLabel" to="Map/SelectHero/MarginContainer/DContainer/DHContainer/TextPanel/MarginContainer/RichTextLabel" method="_on_meta_hover_started"]
+[connection signal="pressed" from="Map/SelectHero/Menu/Decide" to="." method="_on_decide_pressed"]
+[connection signal="pressed" from="Map/SelectHero/Menu/Refuse" to="." method="_on_refuse_pressed"]
+[connection signal="pressed" from="Map/CityMessage/Close" to="Map/CityMessage" method="_on_close_pressed"]
+[connection signal="meta_hover_ended" from="Map/CityMessage/CityMessage/CityPanel/RichTextLabel" to="Map/CityMessage/CityMessage/CityPanel/RichTextLabel" method="_on_meta_hover_ended"]
+[connection signal="meta_hover_started" from="Map/CityMessage/CityMessage/CityPanel/RichTextLabel" to="Map/CityMessage/CityMessage/CityPanel/RichTextLabel" method="_on_meta_hover_started"]
+[connection signal="meta_hover_ended" from="Map/CityMessage/CityMessage/MasterPanel/RichTextLabel" to="Map/CityMessage/CityMessage/MasterPanel/RichTextLabel" method="_on_meta_hover_ended"]
+[connection signal="meta_hover_started" from="Map/CityMessage/CityMessage/MasterPanel/RichTextLabel" to="Map/CityMessage/CityMessage/MasterPanel/RichTextLabel" method="_on_meta_hover_started"]
+[connection signal="meta_hover_ended" from="Map/CityMessage/CityMessage/TongPanel/RichTextLabel" to="Map/CityMessage/CityMessage/TongPanel/RichTextLabel" method="_on_meta_hover_ended"]
+[connection signal="meta_hover_started" from="Map/CityMessage/CityMessage/TongPanel/RichTextLabel" to="Map/CityMessage/CityMessage/TongPanel/RichTextLabel" method="_on_meta_hover_started"]
+[connection signal="meta_hover_ended" from="Map/CityMessage/CityMessageMore/ScrollContainer/VBoxContainer/RenContainer/RenPanel/RichTextLabel" to="Map/CityMessage/CityMessageMore/ScrollContainer/VBoxContainer/RenContainer/RenPanel/RichTextLabel" method="_on_meta_hover_ended"]
+[connection signal="meta_hover_started" from="Map/CityMessage/CityMessageMore/ScrollContainer/VBoxContainer/RenContainer/RenPanel/RichTextLabel" to="Map/CityMessage/CityMessageMore/ScrollContainer/VBoxContainer/RenContainer/RenPanel/RichTextLabel" method="_on_meta_hover_started"]
+[connection signal="meta_hover_ended" from="Map/CityMessage/CityMessageMore/ScrollContainer/VBoxContainer/JiangContainer/JangPanel/RichTextLabel" to="Map/CityMessage/CityMessageMore/ScrollContainer/VBoxContainer/JiangContainer/JangPanel/RichTextLabel" method="_on_meta_hover_ended"]
+[connection signal="meta_hover_started" from="Map/CityMessage/CityMessageMore/ScrollContainer/VBoxContainer/JiangContainer/JangPanel/RichTextLabel" to="Map/CityMessage/CityMessageMore/ScrollContainer/VBoxContainer/JiangContainer/JangPanel/RichTextLabel" method="_on_meta_hover_started"]
+[connection signal="meta_hover_ended" from="Map/CityMessage/CityMessageMore/ScrollContainer/VBoxContainer/BingContainer/BingPanel/RichTextLabel" to="Map/CityMessage/CityMessageMore/ScrollContainer/VBoxContainer/BingContainer/BingPanel/RichTextLabel" method="_on_meta_hover_ended"]
+[connection signal="meta_hover_started" from="Map/CityMessage/CityMessageMore/ScrollContainer/VBoxContainer/BingContainer/BingPanel/RichTextLabel" to="Map/CityMessage/CityMessageMore/ScrollContainer/VBoxContainer/BingContainer/BingPanel/RichTextLabel" method="_on_meta_hover_started"]
+[connection signal="meta_hover_ended" from="Map/CityMessage/CityMessageMore/ScrollContainer/VBoxContainer/KaiContainer/KaiPanel/RichTextLabel" to="Map/CityMessage/CityMessageMore/ScrollContainer/VBoxContainer/KaiContainer/KaiPanel/RichTextLabel" method="_on_meta_hover_ended"]
+[connection signal="meta_hover_started" from="Map/CityMessage/CityMessageMore/ScrollContainer/VBoxContainer/KaiContainer/KaiPanel/RichTextLabel" to="Map/CityMessage/CityMessageMore/ScrollContainer/VBoxContainer/KaiContainer/KaiPanel/RichTextLabel" method="_on_meta_hover_started"]
+[connection signal="meta_hover_ended" from="Map/CityMessage/CityMessageMore/ScrollContainer/VBoxContainer/ShangContainer/ShangPanel/RichTextLabel" to="Map/CityMessage/CityMessageMore/ScrollContainer/VBoxContainer/ShangContainer/ShangPanel/RichTextLabel" method="_on_meta_hover_ended"]
+[connection signal="meta_hover_started" from="Map/CityMessage/CityMessageMore/ScrollContainer/VBoxContainer/ShangContainer/ShangPanel/RichTextLabel" to="Map/CityMessage/CityMessageMore/ScrollContainer/VBoxContainer/ShangContainer/ShangPanel/RichTextLabel" method="_on_meta_hover_started"]
+[connection signal="meta_hover_ended" from="Map/CityMessage/CityMessageMore/ScrollContainer/VBoxContainer/ZhiContainer/ZhiPanel/RichTextLabel" to="Map/CityMessage/CityMessageMore/ScrollContainer/VBoxContainer/ZhiContainer/ZhiPanel/RichTextLabel" method="_on_meta_hover_ended"]
+[connection signal="meta_hover_started" from="Map/CityMessage/CityMessageMore/ScrollContainer/VBoxContainer/ZhiContainer/ZhiPanel/RichTextLabel" to="Map/CityMessage/CityMessageMore/ScrollContainer/VBoxContainer/ZhiContainer/ZhiPanel/RichTextLabel" method="_on_meta_hover_started"]
+[connection signal="meta_hover_ended" from="Map/CityMessage/CityMessageMore/ScrollContainer/VBoxContainer/JinContainer/JinPanel/RichTextLabel" to="Map/CityMessage/CityMessageMore/ScrollContainer/VBoxContainer/JinContainer/JinPanel/RichTextLabel" method="_on_meta_hover_ended"]
+[connection signal="meta_hover_started" from="Map/CityMessage/CityMessageMore/ScrollContainer/VBoxContainer/JinContainer/JinPanel/RichTextLabel" to="Map/CityMessage/CityMessageMore/ScrollContainer/VBoxContainer/JinContainer/JinPanel/RichTextLabel" method="_on_meta_hover_started"]
+[connection signal="meta_hover_ended" from="Map/CityMessage/CityMessageMore/ScrollContainer/VBoxContainer/LiangContainer/LiangPanel/RichTextLabel" to="Map/CityMessage/CityMessageMore/ScrollContainer/VBoxContainer/LiangContainer/LiangPanel/RichTextLabel" method="_on_meta_hover_ended"]
+[connection signal="meta_hover_started" from="Map/CityMessage/CityMessageMore/ScrollContainer/VBoxContainer/LiangContainer/LiangPanel/RichTextLabel" to="Map/CityMessage/CityMessageMore/ScrollContainer/VBoxContainer/LiangContainer/LiangPanel/RichTextLabel" method="_on_meta_hover_started"]
+[connection signal="meta_clicked" from="Map/CityMessage/NZ/CityDetail/level1/Level1/czkf" to="Map/CityMessage/NZ/CityDetail/level1" method="_on_czkf_meta_clicked"]
+[connection signal="meta_clicked" from="Map/CityMessage/NZ/CityDetail/level1/Level1/qbsj" to="Map/CityMessage/NZ/CityDetail/level1" method="_on_qbsj_meta_clicked"]
+[connection signal="meta_clicked" from="Map/CityMessage/NZ/CityDetail/level1/Level1Open/HBoxContainer/tdkk" to="Map/CityMessage/NZ/CityDetail/level1" method="_on_tdkk_meta_clicked"]
+[connection signal="meta_clicked" from="Map/CityMessage/NZ/CityDetail/level1/Level1Open/HBoxContainer/glgs" to="Map/CityMessage/NZ/CityDetail/level1" method="_on_glgs_meta_clicked"]
+[connection signal="meta_clicked" from="Map/CityMessage/NZ/CityDetail/level1/Level1Open/HBoxContainer/sjkf" to="Map/CityMessage/NZ/CityDetail/level1" method="_on_sjkf_meta_clicked"]
+[connection signal="pressed" from="Map/CityMessage/NZ/CityDetail/level1/Level1Open/Close" to="Map/CityMessage/NZ/CityDetail/level1" method="_on_close_pressed"]
+[connection signal="meta_clicked" from="Map/CityMessage/NZ/ArmyDetail/level1/Level1/cz" to="Map/CityMessage/NZ/ArmyDetail/level1" method="_on_czkf_meta_clicked"]
+[connection signal="meta_clicked" from="Map/CityMessage/NZ/ArmyDetail/level1/Level1Open/HBoxContainer/tdkk" to="Map/CityMessage/NZ/ArmyDetail/level1" method="_on_tdkk_meta_clicked"]
+[connection signal="meta_clicked" from="Map/CityMessage/NZ/ArmyDetail/level1/Level1Open/HBoxContainer/glgs" to="Map/CityMessage/NZ/ArmyDetail/level1" method="_on_glgs_meta_clicked"]
+[connection signal="meta_clicked" from="Map/CityMessage/NZ/ArmyDetail/level1/Level1Open/HBoxContainer/sjkf" to="Map/CityMessage/NZ/ArmyDetail/level1" method="_on_sjkf_meta_clicked"]
+[connection signal="pressed" from="Map/CityMessage/NZ/ArmyDetail/level1/Level1Open/Close" to="Map/CityMessage/NZ/ArmyDetail/level1" method="_on_close_pressed"]
+[connection signal="pressed" from="Menu/MainContainer/ButtonContainer/VBoxContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="GameUi/TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="GameUi/start_ui/TimePanel/TextureButton" to="GameUi/start_ui" method="_on_texture_button_pressed"]
+[connection signal="pressed" from="GameUi/start_ui/HistoryAi/ClearTextureButton" to="GameUi/start_ui" method="_on_clear_texture_button_pressed"]
+[connection signal="pressed" from="GameUi/start_ui/HistoryAi/ExpendTextureButton" to="GameUi/start_ui" method="_on_expend_texture_button_pressed"]
