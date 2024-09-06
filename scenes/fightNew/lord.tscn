@@ -1,0 +1,55 @@
+[gd_scene load_steps=6 format=3 uid="uid://c8s2jxbxvg8yb"]
+
+[ext_resource type="Script" path="res://scripts/lord.gd" id="1_3g7la"]
+[ext_resource type="Texture2D" uid="uid://ylgxq4lbdt1u" path="res://assets/texture/force/Jiang.png" id="2_cw7ko"]
+[ext_resource type="FontFile" uid="uid://ccc7h37nygjqu" path="res://assets/fonts/方正隶书简体.TTF" id="3_r1n3n"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vnopk"]
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nub2k"]
+bg_color = Color(0.6, 0.6, 0.6, 0.756863)
+
+[node name="lord" type="Panel"]
+custom_minimum_size = Vector2(32, 32)
+offset_right = 16.0
+offset_bottom = 16.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_vnopk")
+script = ExtResource("1_3g7la")
+lord_name = "将"
+
+[node name="force" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -16.0
+offset_top = -16.0
+offset_right = 16.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_cw7ko")
+expand_mode = 2
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_top = 22.0
+offset_right = 32.0
+offset_bottom = 32.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_nub2k")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel"]
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 10.0
+theme_override_fonts/normal_font = ExtResource("3_r1n3n")
+theme_override_font_sizes/normal_font_size = 8
+bbcode_enabled = true
+text = "[center]3000"
+autowrap_mode = 2

@@ -263,13 +263,14 @@ script = ExtResource("10_b3kvj")
 custom_minimum_size = Vector2(0, 33)
 offset_left = 2.0
 offset_top = 653.0
-offset_right = 539.0
+offset_right = 541.0
 offset_bottom = 952.0
 script = ExtResource("11_g114o")
 
 [node name="Panel" type="Panel" parent="Map/SelectHero/CharacterSelect"]
 layout_mode = 0
-offset_right = 103.0
+offset_left = -1.0
+offset_right = 136.0
 offset_bottom = 299.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_d7ep3")
 
@@ -281,7 +282,7 @@ anchor_top = 0.5
 anchor_bottom = 0.5
 offset_left = 8.0
 offset_top = -137.5
-offset_right = 99.0
+offset_right = 139.0
 offset_bottom = 133.5
 grow_vertical = 2
 script = ExtResource("12_slfkq")
@@ -295,10 +296,10 @@ layout_mode = 2
 
 [node name="CharacterAttr" parent="Map/SelectHero/CharacterSelect" instance=ExtResource("15_lqbkq")]
 layout_mode = 0
-offset_left = 106.0
-offset_top = 15.0
-offset_right = 535.0
-offset_bottom = 284.0
+offset_left = 136.0
+offset_top = 16.0
+offset_right = 539.0
+offset_bottom = 294.0
 is_show_close = false
 
 [node name="Menu" type="Panel" parent="Map/SelectHero"]
@@ -330,6 +331,7 @@ theme_override_fonts/font = ExtResource("9_lny1d")
 text = "中止"
 
 [node name="CityMessage" type="Panel" parent="Map"]
+visible = false
 offset_left = -1.0
 offset_top = 89.0
 offset_right = 539.0
@@ -1084,6 +1086,7 @@ offset_bottom = 398.0
 script = ExtResource("32_pcofb")
 
 [node name="NZ" type="Node2D" parent="Map/CityMessage"]
+visible = false
 
 [node name="CityDetail" type="Panel" parent="Map/CityMessage/NZ"]
 offset_left = 8.0
@@ -1293,7 +1296,6 @@ flat = true
 expand_icon = true
 
 [node name="Menu" type="Node2D" parent="."]
-visible = false
 
 [node name="MainContainer" type="VBoxContainer" parent="Menu"]
 anchors_preset = 15
