@@ -1,0 +1,238 @@
+[gd_scene load_steps=10 format=3 uid="uid://cx6s01xbhtbed"]
+
+[ext_resource type="Texture2D" uid="uid://dvtyj5b0klr1a" path="res://assets/texture/profile/新武将_37.jpg" id="1_s8hhc"]
+[ext_resource type="Texture2D" uid="uid://c7k54vbipqqo" path="res://assets/texture/force/fffea5e6-96bc-e1e0-b465-8491edda9c84.png" id="2_8pgst"]
+[ext_resource type="FontFile" uid="uid://ccc7h37nygjqu" path="res://assets/fonts/方正隶书简体.TTF" id="3_bjp46"]
+[ext_resource type="Script" path="res://scripts/rich_text_label.gd" id="4_3opgj"]
+[ext_resource type="Texture2D" uid="uid://dduwbugqetbvk" path="res://assets/texture/force/Weapon.png" id="5_8pil2"]
+[ext_resource type="Texture2D" uid="uid://dwsknm4juhhi3" path="res://assets/texture/force/Fang.png" id="6_3w7rt"]
+[ext_resource type="Texture2D" uid="uid://iss3fl7t22cx" path="res://assets/texture/force/Ji.png" id="7_w2gc7"]
+[ext_resource type="Texture2D" uid="uid://dn3uc6tspek7l" path="res://assets/texture/ui/Button 4Gray.png" id="9_1vf8j"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0vkf5"]
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+
+[node name="CharacterAttr" type="Panel"]
+offset_left = 97.0
+offset_top = 26.0
+offset_right = 510.0
+offset_bottom = 295.0
+
+[node name="Head" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 5.0
+offset_right = 363.0
+offset_bottom = 517.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_s8hhc")
+
+[node name="Name" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 115.0
+offset_right = 162.0
+offset_bottom = 142.0
+
+[node name="Panel" type="Panel" parent="Name"]
+layout_mode = 0
+offset_left = -1.0
+offset_right = 29.0
+offset_bottom = 28.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_0vkf5")
+
+[node name="force" type="TextureRect" parent="Name/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -13.0
+offset_top = -13.0
+offset_right = 13.0
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_8pgst")
+expand_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Name"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -102.0
+offset_top = -11.5
+offset_bottom = 11.5
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("3_bjp46")
+bbcode_enabled = true
+text = "[color=#91c2d5][u][url]请选择主公[/url][/u][/color] "
+script = ExtResource("4_3opgj")
+
+[node name="Wu" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 149.0
+offset_right = 162.0
+offset_bottom = 176.0
+
+[node name="Panel" type="Panel" parent="Wu"]
+layout_mode = 0
+offset_left = -1.0
+offset_right = 29.0
+offset_bottom = 28.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_0vkf5")
+
+[node name="force" type="TextureRect" parent="Wu/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -13.0
+offset_top = -13.0
+offset_right = 13.0
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_8pil2")
+expand_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Wu"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -102.0
+offset_top = -11.5
+offset_bottom = 11.5
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("3_bjp46")
+bbcode_enabled = true
+text = "[color=#91c2d5][u][url]请选择主公[/url][/u][/color] "
+script = ExtResource("4_3opgj")
+
+[node name="Fang" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 183.0
+offset_right = 162.0
+offset_bottom = 210.0
+
+[node name="Panel" type="Panel" parent="Fang"]
+layout_mode = 0
+offset_left = -1.0
+offset_right = 29.0
+offset_bottom = 28.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_0vkf5")
+
+[node name="force" type="TextureRect" parent="Fang/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -13.0
+offset_top = -13.0
+offset_right = 13.0
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_3w7rt")
+expand_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Fang"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -101.0
+offset_top = -9.5
+offset_right = -3.0
+offset_bottom = 13.5
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("3_bjp46")
+bbcode_enabled = true
+text = "[color=#91c2d5][u][url]请选择主公[/url][/u][/color] "
+script = ExtResource("4_3opgj")
+
+[node name="Skill" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 216.0
+offset_right = 382.0
+offset_bottom = 262.0
+
+[node name="Panel" type="Panel" parent="Skill"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 9.0
+offset_right = 43.0
+offset_bottom = 37.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_0vkf5")
+
+[node name="force" type="TextureRect" parent="Skill/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -13.0
+offset_top = -13.0
+offset_right = 13.0
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_w2gc7")
+expand_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Skill"]
+custom_minimum_size = Vector2(258, 22)
+layout_mode = 0
+offset_left = 56.0
+offset_top = 3.0
+offset_right = 373.0
+offset_bottom = 45.0
+theme_override_fonts/normal_font = ExtResource("3_bjp46")
+bbcode_enabled = true
+text = "[center][color=#91c2d5][u][url]请先选择主公[/url][/u][/color] "
+script = ExtResource("4_3opgj")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 394.0
+offset_top = 11.0
+offset_right = 734.0
+offset_bottom = 319.0
+scale = Vector2(0.05, 0.05)
+theme_override_fonts/font = ExtResource("3_bjp46")
+icon = ExtResource("9_1vf8j")
+flat = true
+expand_icon = true
+
+[connection signal="meta_hover_ended" from="Name/RichTextLabel" to="Name/RichTextLabel" method="_on_meta_hover_ended"]
+[connection signal="meta_hover_started" from="Name/RichTextLabel" to="Name/RichTextLabel" method="_on_meta_hover_started"]
+[connection signal="meta_hover_ended" from="Wu/RichTextLabel" to="Wu/RichTextLabel" method="_on_meta_hover_ended"]
+[connection signal="meta_hover_started" from="Wu/RichTextLabel" to="Wu/RichTextLabel" method="_on_meta_hover_started"]
+[connection signal="meta_hover_ended" from="Fang/RichTextLabel" to="Fang/RichTextLabel" method="_on_meta_hover_ended"]
+[connection signal="meta_hover_started" from="Fang/RichTextLabel" to="Fang/RichTextLabel" method="_on_meta_hover_started"]
+[connection signal="meta_hover_ended" from="Skill/RichTextLabel" to="Skill/RichTextLabel" method="_on_meta_hover_ended"]
+[connection signal="meta_hover_started" from="Skill/RichTextLabel" to="Skill/RichTextLabel" method="_on_meta_hover_started"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

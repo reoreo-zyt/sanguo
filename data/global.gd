@@ -53,6 +53,13 @@ var month = 1
 # 是否可以显示全部城市的信息
 var is_show_other_city_message = true
 
+
+# 战斗相关
+# 我方
+var fight_self_ids = []
+# 敌方
+var fight_other_ids = []
+
 # 读取 xlsx 文件
 func _ready():
 	var excel = ExcelFile.open_file("res://data/311_data.xlsx")

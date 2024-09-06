@@ -199,7 +199,6 @@ theme_override_styles/panel = SubResource("StyleBoxEmpty_1k5yt")
 script = ExtResource("6_r7wv3")
 
 [node name="SelectHero" type="Node2D" parent="Map"]
-visible = false
 
 [node name="MarginContainer" type="MarginContainer" parent="Map/SelectHero"]
 offset_right = 540.0
@@ -1296,6 +1295,7 @@ flat = true
 expand_icon = true
 
 [node name="Menu" type="Node2D" parent="."]
+visible = false
 
 [node name="MainContainer" type="VBoxContainer" parent="Menu"]
 anchors_preset = 15

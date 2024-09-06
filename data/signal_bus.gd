@@ -20,3 +20,6 @@ signal change_polities_times()
 
 # 关闭城市信息
 signal hide_city_message()
+
+# 选择战场人物
+signal select_hero_list(is_self: bool)

@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://dep052erw2s4y"]
+
+[ext_resource type="Script" path="res://scripts/fight_select_hero.gd" id="1_lh5g3"]
+
+[node name="HBoxContainer" type="HBoxContainer"]
+script = ExtResource("1_lh5g3")
+
+[node name="CheckBox" type="CheckBox" parent="."]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+text = "刘备"
+
+[connection signal="pressed" from="CheckBox" to="." method="_on_check_box_pressed"]
