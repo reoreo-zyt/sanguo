@@ -64,3 +64,13 @@ func _on_move_return_button_pressed() -> void:
 
 func _on_attr_button_pressed() -> void:
 	SignalBus.emit_signal("curr_fight_character_show_info", character_id)
+
+func _on_attack_more_pressed() -> void:
+	$Attack.hide()
+	$AttackMore.show()
+	$Circle.show()
+
+func _on_attack_back_pressed() -> void:
+	$Attack.show()
+	$AttackMore.hide()
+	$Circle.hide()

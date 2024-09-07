@@ -47,7 +47,11 @@ var select_map = {
 	}
 }
 
+func _draw() -> void:
+	pass
+	
 func _ready():
+	
 	# 初始化随机数生成器，可以使用当前时间作为种子以确保每次运行程序时都能得到不同的随机数
 	rng = RandomNumberGenerator.new()
 	rng.randomize() # 使用基于时间的种子初始化随机数生成器
@@ -134,7 +138,7 @@ func _on_button_pressed() -> void:
 		$start/selft.add_child(lord_scene_instance)
 		action_array.append({
 			"id": i,
-			"speed": 110,
+			"speed": get_random_number(),
 			"type": "self",
 			"location": self_location[index],
 			"instance": lord_scene_instance

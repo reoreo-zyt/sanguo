@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://c8s2jxbxvg8yb"]
+[gd_scene load_steps=14 format=3 uid="uid://c8s2jxbxvg8yb"]
 
 [ext_resource type="Script" path="res://scripts/lord.gd" id="1_3g7la"]
 [ext_resource type="Texture2D" uid="uid://ylgxq4lbdt1u" path="res://assets/texture/force/Jiang.png" id="2_cw7ko"]
@@ -11,6 +11,13 @@ border_width_left = 4
 border_width_top = 4
 border_width_right = 4
 border_width_bottom = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h88lv"]
+bg_color = Color(0.152941, 0.658824, 0.815686, 0.282353)
+corner_radius_top_left = 160
+corner_radius_top_right = 160
+corner_radius_bottom_right = 160
+corner_radius_bottom_left = 160
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nub2k"]
 bg_color = Color(0.6, 0.6, 0.6, 0.756863)
@@ -33,6 +40,22 @@ offset_bottom = 16.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_vnopk")
 script = ExtResource("1_3g7la")
 lord_name = "将"
+
+[node name="Circle" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -160.0
+offset_top = -160.0
+offset_right = 160.0
+offset_bottom = 160.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_h88lv")
 
 [node name="force" type="TextureRect" parent="."]
 layout_mode = 1
@@ -76,8 +99,78 @@ offset_right = -5.0
 offset_bottom = 37.0
 theme_override_styles/panel = SubResource("StyleBoxEmpty_arlws")
 
+[node name="Button" type="Button" parent="Attack"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -18.0
+offset_top = -14.0
+offset_right = 22.0
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_r1n3n")
+text = "战法"
+
+[node name="AttackMore" type="Panel" parent="."]
+visible = false
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.219
+anchor_top = 0.562
+anchor_right = -0.219
+anchor_bottom = 0.562
+offset_left = -87.992
+offset_top = -69.984
+offset_right = 1.008
+offset_bottom = 71.016
+grow_vertical = 0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="AttackMore"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 8.0
+offset_right = 81.0
+offset_bottom = 103.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="AttackMore/ScrollContainer"]
+custom_minimum_size = Vector2(69, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+alignment = 1
+
+[node name="HuoJi" type="Button" parent="AttackMore/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_r1n3n")
+text = "火计"
+
+[node name="YaoJi" type="Button" parent="AttackMore/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_r1n3n")
+text = "要击"
+
+[node name="LuanShui" type="Button" parent="AttackMore/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_r1n3n")
+text = "乱水"
+
+[node name="Button" type="Button" parent="AttackMore"]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 112.0
+offset_right = 65.0
+offset_bottom = 139.0
+theme_override_fonts/font = ExtResource("3_r1n3n")
+text = "返回"
+
 [node name="Move" type="Panel" parent="."]
 visible = false
+layout_mode = 0
 offset_left = -5.0
 offset_top = -47.0
 offset_right = 35.0
@@ -102,6 +195,7 @@ text = "移动"
 
 [node name="End" type="Panel" parent="."]
 visible = false
+layout_mode = 0
 offset_left = 37.0
 offset_top = -3.0
 offset_right = 77.0
@@ -126,6 +220,7 @@ text = "待机"
 
 [node name="Attr" type="Panel" parent="."]
 visible = false
+layout_mode = 0
 offset_left = -5.0
 offset_top = 40.0
 offset_right = 35.0
@@ -168,6 +263,7 @@ offset_bottom = 32.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_bflci")
 
 [node name="TextureButton" type="TextureButton" parent="MoveState/right"]
+layout_mode = 0
 offset_right = 32.0
 offset_bottom = 32.0
 
@@ -178,6 +274,7 @@ offset_bottom = 64.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_bflci")
 
 [node name="TextureButton" type="TextureButton" parent="MoveState/bottom"]
+layout_mode = 0
 offset_right = 32.0
 offset_bottom = 32.0
 
@@ -187,6 +284,7 @@ offset_bottom = 32.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_bflci")
 
 [node name="TextureButton" type="TextureButton" parent="MoveState/left"]
+layout_mode = 0
 offset_right = 32.0
 offset_bottom = 32.0
 
@@ -205,6 +303,8 @@ scale = Vector2(0.5, 0.5)
 texture_normal = ExtResource("4_enspi")
 texture_pressed = ExtResource("5_ktfa1")
 
+[connection signal="pressed" from="Attack/Button" to="." method="_on_attack_more_pressed"]
+[connection signal="pressed" from="AttackMore/Button" to="." method="_on_attack_back_pressed"]
 [connection signal="pressed" from="Move/Button" to="." method="_on_button_move_pressed"]
 [connection signal="pressed" from="End/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Attr/Button" to="." method="_on_attr_button_pressed"]
