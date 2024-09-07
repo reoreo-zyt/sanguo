@@ -23,3 +23,9 @@ signal hide_city_message()
 
 # 选择战场人物
 signal select_hero_list(is_self: bool)
+
+signal change_curr_fight_character_id(character_id: int)
+
+signal change_next_fight_character_id()
+
+signal close_before_fight_character_id(character_id: int)

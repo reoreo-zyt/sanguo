@@ -56,9 +56,12 @@ var is_show_other_city_message = true
 
 # 战斗相关
 # 我方
-var fight_self_ids = []
+var fight_self_ids = [2]
 # 敌方
-var fight_other_ids = []
+var fight_other_ids = [3]
+
+# 当前选择
+var curr_fight_character_id = 0
 
 # 读取 xlsx 文件
 func _ready():
