@@ -29,3 +29,6 @@ func get_skill_desc(nameId):
 		if(Global.skills[i].type == "self_bad"):
 			skillsDesc += "[color=#ff5437][u][url]"+  Global.skills[i].name +"[/url][/u][/color]" + " "
 	return skillsDesc
+
+func _on_button_pressed() -> void:
+	$".".hide()

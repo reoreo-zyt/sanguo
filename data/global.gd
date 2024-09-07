@@ -56,9 +56,9 @@ var is_show_other_city_message = true
 
 # 战斗相关
 # 我方
-var fight_self_ids = [2]
+var fight_self_ids = []
 # 敌方
-var fight_other_ids = [3]
+var fight_other_ids = []
 
 # 当前选择
 var curr_fight_character_id = 0

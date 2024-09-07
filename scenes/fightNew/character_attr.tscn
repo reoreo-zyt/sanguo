@@ -17,10 +17,10 @@ border_width_right = 4
 border_width_bottom = 4
 
 [node name="CharacterAttr" type="Panel"]
-offset_left = 97.0
-offset_top = 26.0
-offset_right = 510.0
-offset_bottom = 295.0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 541.0
+offset_bottom = 270.0
 script = ExtResource("1_nnoie")
 
 [node name="Head" type="TextureRect" parent="."]
@@ -178,7 +178,7 @@ script = ExtResource("4_3opgj")
 layout_mode = 0
 offset_left = 8.0
 offset_top = 216.0
-offset_right = 382.0
+offset_right = 535.0
 offset_bottom = 262.0
 
 [node name="Panel" type="Panel" parent="Skill"]
@@ -210,7 +210,7 @@ custom_minimum_size = Vector2(258, 22)
 layout_mode = 0
 offset_left = 56.0
 offset_top = 3.0
-offset_right = 373.0
+offset_right = 516.0
 offset_bottom = 45.0
 theme_override_fonts/normal_font = ExtResource("3_bjp46")
 bbcode_enabled = true
@@ -218,26 +218,16 @@ text = "[center][color=#91c2d5][u][url]请先选择主公[/url][/u][/color] "
 script = ExtResource("4_3opgj")
 
 [node name="Button" type="Button" parent="."]
-visible = false
 layout_mode = 0
-offset_left = 394.0
-offset_top = 11.0
-offset_right = 734.0
-offset_bottom = 319.0
-scale = Vector2(0.05, 0.05)
+offset_left = 260.0
+offset_top = -32.0
+offset_right = 600.0
+offset_bottom = 276.0
+scale = Vector2(0.1, 0.1)
 theme_override_fonts/font = ExtResource("3_bjp46")
 icon = ExtResource("9_1vf8j")
 flat = true
 expand_icon = true
-
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
-layout_mode = 0
-offset_left = 190.0
-offset_top = 17.0
-offset_right = 402.0
-offset_bottom = 203.0
-bbcode_enabled = true
-text = "[center]请任意点击地图上的位置安排我的军团进军"
 
 [connection signal="meta_hover_ended" from="Name/RichTextLabel" to="Name/RichTextLabel" method="_on_meta_hover_ended"]
 [connection signal="meta_hover_started" from="Name/RichTextLabel" to="Name/RichTextLabel" method="_on_meta_hover_started"]

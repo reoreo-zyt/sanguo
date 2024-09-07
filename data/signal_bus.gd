@@ -29,3 +29,12 @@ signal change_curr_fight_character_id(character_id: int)
 signal change_next_fight_character_id()
 
 signal close_before_fight_character_id(character_id: int)
+
+# 通知人物移动
+signal curr_fight_character_move(character_id: int)
+
+# 通知具体移动
+signal curr_fight_character_move_forward(upward: String)
+
+# 通知人物显示属性
+signal curr_fight_character_show_info(character_id: int)

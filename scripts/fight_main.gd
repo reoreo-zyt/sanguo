@@ -4,6 +4,7 @@ var select_hero_scene = preload("res://scenes/fightNew/select_hero.tscn")
 var lord_scene = preload("res://scenes/fightNew/lord.tscn")
 var character_attr_scene = preload("res://scenes/fightNew/character_attr.tscn")
 var is_self_turn = false
+var create_character_instance = null
 
 var action_array = []
 var static_times = {
@@ -52,6 +53,9 @@ func _ready():
 	rng.randomize() # 使用基于时间的种子初始化随机数生成器
 	SignalBus.connect("select_hero_list", _on_select_hero_list)
 	SignalBus.connect("change_next_fight_character_id", _on_change_next_fight_character_id)
+	SignalBus.connect("curr_fight_character_move", _on_curr_fight_character_move)
+	SignalBus.connect("curr_fight_character_move_forward", _on_curr_fight_character_move_forward)
+	SignalBus.connect("curr_fight_character_show_info", _on_curr_fight_character_show_info)
 	create_select_heros()
 	_on_button_pressed()
 
@@ -245,3 +249,29 @@ func _on_change_next_fight_character_id():
 	SignalBus.emit_signal("change_curr_fight_character_id", action_array[0].id)
 	# 选中当前武将
 	get_select(action_array[0].location)
+
+func _on_curr_fight_character_move(id):
+	# 计算当前位置的四个方向的移动点消耗，画上高亮的点
+	# print(id)
+	pass
+
+func _on_curr_fight_character_move_forward(direction):
+	var pixel = 32
+	if(direction == "UP"):
+		action_array[0].instance.position = Vector2i(action_array[0].instance.position.x, action_array[0].instance.position.y - pixel)
+	if(direction == "BOTTOM"):
+		action_array[0].instance.position = Vector2i(action_array[0].instance.position.x, action_array[0].instance.position.y + pixel)
+	if(direction == "LEFT"):
+		action_array[0].instance.position = Vector2i(action_array[0].instance.position.x - pixel, action_array[0].instance.position.y)
+	if(direction == "RIGHT"):
+		action_array[0].instance.position = Vector2i(action_array[0].instance.position.x + pixel, action_array[0].instance.position.y)
+	get_select(Vector2i((action_array[0].instance.position.x + pixel)/ 16, action_array[0].instance.position.y / 16))
+
+func _on_curr_fight_character_show_info(id):
+	if(create_character_instance):
+		create_character_instance.queue_free()
+	var character = character_attr_scene.instantiate()
+	character.name_id = id
+	character.position.y += 700
+	create_character_instance = character
+	$start.add_child(character)

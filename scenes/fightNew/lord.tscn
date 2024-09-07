@@ -1,8 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://c8s2jxbxvg8yb"]
+[gd_scene load_steps=13 format=3 uid="uid://c8s2jxbxvg8yb"]
 
 [ext_resource type="Script" path="res://scripts/lord.gd" id="1_3g7la"]
 [ext_resource type="Texture2D" uid="uid://ylgxq4lbdt1u" path="res://assets/texture/force/Jiang.png" id="2_cw7ko"]
 [ext_resource type="FontFile" uid="uid://ccc7h37nygjqu" path="res://assets/fonts/方正隶书简体.TTF" id="3_r1n3n"]
+[ext_resource type="Texture2D" uid="uid://tm5371qrkv88" path="res://assets/texture/ui/21_Restart (2)Gray.png" id="4_enspi"]
+[ext_resource type="Texture2D" uid="uid://b1lnsdel60d48" path="res://assets/texture/ui/21_Restart (3)Gray.png" id="5_ktfa1"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vnopk"]
 border_width_left = 4
@@ -20,6 +22,9 @@ bg_color = Color(0.6, 0.6, 0.6, 0.756863)
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rv4gj"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mext0"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bflci"]
+bg_color = Color(0.34902, 0.65098, 0.721569, 0.556863)
 
 [node name="lord" type="Panel"]
 custom_minimum_size = Vector2(32, 32)
@@ -79,6 +84,22 @@ offset_right = 35.0
 offset_bottom = -7.0
 theme_override_styles/panel = SubResource("StyleBoxEmpty_kavw8")
 
+[node name="Button" type="Button" parent="Move"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -4.0
+offset_right = 20.0
+offset_bottom = 23.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_r1n3n")
+text = "移动"
+
 [node name="End" type="Panel" parent="."]
 visible = false
 offset_left = 37.0
@@ -111,4 +132,84 @@ offset_right = 35.0
 offset_bottom = 80.0
 theme_override_styles/panel = SubResource("StyleBoxEmpty_mext0")
 
+[node name="Button" type="Button" parent="Attr"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -19.0
+offset_top = -23.0
+offset_right = 21.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_r1n3n")
+text = "属性"
+
+[node name="MoveState" type="Node2D" parent="."]
+visible = false
+
+[node name="top" type="Panel" parent="MoveState"]
+offset_top = -32.0
+offset_right = 32.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_bflci")
+
+[node name="TextureButton" type="TextureButton" parent="MoveState/top"]
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+
+[node name="right" type="Panel" parent="MoveState"]
+offset_left = 32.0
+offset_right = 64.0
+offset_bottom = 32.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_bflci")
+
+[node name="TextureButton" type="TextureButton" parent="MoveState/right"]
+offset_right = 32.0
+offset_bottom = 32.0
+
+[node name="bottom" type="Panel" parent="MoveState"]
+offset_top = 32.0
+offset_right = 32.0
+offset_bottom = 64.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_bflci")
+
+[node name="TextureButton" type="TextureButton" parent="MoveState/bottom"]
+offset_right = 32.0
+offset_bottom = 32.0
+
+[node name="left" type="Panel" parent="MoveState"]
+offset_left = -32.0
+offset_bottom = 32.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_bflci")
+
+[node name="TextureButton" type="TextureButton" parent="MoveState/left"]
+offset_right = 32.0
+offset_bottom = 32.0
+
+[node name="TextureButton" type="TextureButton" parent="MoveState"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 1.0
+offset_right = 60.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("4_enspi")
+texture_pressed = ExtResource("5_ktfa1")
+
+[connection signal="pressed" from="Move/Button" to="." method="_on_button_move_pressed"]
 [connection signal="pressed" from="End/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Attr/Button" to="." method="_on_attr_button_pressed"]
+[connection signal="pressed" from="MoveState/top/TextureButton" to="." method="_on_move_top_button_pressed"]
+[connection signal="pressed" from="MoveState/right/TextureButton" to="." method="_on_move_right_button_pressed"]
+[connection signal="pressed" from="MoveState/bottom/TextureButton" to="." method="_on_move_bottom_button_pressed"]
+[connection signal="pressed" from="MoveState/left/TextureButton" to="." method="_on_move_left_button_pressed"]
+[connection signal="pressed" from="MoveState/TextureButton" to="." method="_on_move_return_button_pressed"]
