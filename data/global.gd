@@ -51,8 +51,7 @@ var month = 1
 
 # 内政相关
 # 是否可以显示全部城市的信息
-var is_show_other_city_message = true
-
+var is_show_other_city_message = false
 
 # 战斗相关
 # 我方

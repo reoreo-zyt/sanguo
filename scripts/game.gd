@@ -43,3 +43,16 @@ func _on_hide_city_message():
 func _on_texture_button_pressed() -> void:
 	_on_refuse_pressed()
 	$GameUi.hide()
+
+func _on_button_deside_pressed() -> void:
+	if(Global.polities_times <= 0):
+		var message1 = preload("res://scenes/game_state.tscn").instantiate()
+		$".".add_child(message1)
+		message1.show_message("[color=#ffde66][center]没有政令了", Vector2(10, 500), message1.Direction.Up, 1, 2)
+		return
+	SignalBus.emit_signal("change_polities_times")
+	# 关闭城市界面
+	$popupTCQB/PopupPanel.hide()
+	$Map/CityMessage.hide()
+	# 允许查看城市界面
+	Global.is_show_other_city_message = true

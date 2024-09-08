@@ -4,9 +4,14 @@ func _ready():
 	SignalBus.connect("show_city_info", _on_show_city_info)
 
 func _on_close_pressed() -> void:
+	Global.is_show_other_city_message = false
 	$".".hide()
 
 func _on_show_city_info(name, cityId):
+	if(Global.is_show_other_city_message):
+		$NZN.hide()
+	else:
+		$NZN.show()
 	# print(name)
 	var city_data = Global.citys[cityId]
 	$CityMessage/CityPanel/RichTextLabel.text = "[center][color=#91c2d5][u][url]" + name + "[/url][/u][/color]"
