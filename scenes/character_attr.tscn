@@ -17,26 +17,24 @@ border_width_right = 4
 border_width_bottom = 4
 
 [node name="CharacterAttr" type="Panel"]
-offset_left = 97.0
-offset_top = 26.0
-offset_right = 510.0
-offset_bottom = 295.0
+offset_left = 86.0
+offset_top = 31.0
+offset_right = 473.0
+offset_bottom = 298.0
 script = ExtResource("1_ablh7")
 
 [node name="Head" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 3.0
-offset_top = 5.0
-offset_right = 363.0
-offset_bottom = 517.0
-scale = Vector2(0.5, 0.5)
+offset_right = 360.0
+offset_bottom = 512.0
+scale = Vector2(0.42, 0.42)
 texture = ExtResource("1_s8hhc")
 
 [node name="Name" type="Panel" parent="."]
 layout_mode = 0
-offset_left = 24.0
+offset_left = 8.0
 offset_top = 115.0
-offset_right = 162.0
+offset_right = 146.0
 offset_bottom = 142.0
 
 [node name="Panel" type="Panel" parent="Name"]
@@ -81,9 +79,9 @@ script = ExtResource("4_3opgj")
 
 [node name="Wu" type="Panel" parent="."]
 layout_mode = 0
-offset_left = 24.0
+offset_left = 8.0
 offset_top = 149.0
-offset_right = 162.0
+offset_right = 146.0
 offset_bottom = 176.0
 
 [node name="Panel" type="Panel" parent="Wu"]
@@ -128,9 +126,9 @@ script = ExtResource("4_3opgj")
 
 [node name="Fang" type="Panel" parent="."]
 layout_mode = 0
-offset_left = 24.0
+offset_left = 8.0
 offset_top = 183.0
-offset_right = 162.0
+offset_right = 146.0
 offset_bottom = 210.0
 
 [node name="Panel" type="Panel" parent="Fang"]
@@ -176,10 +174,10 @@ script = ExtResource("4_3opgj")
 
 [node name="Skill" type="Panel" parent="."]
 layout_mode = 0
-offset_left = 8.0
-offset_top = 216.0
-offset_right = 382.0
-offset_bottom = 262.0
+offset_left = -5.0
+offset_top = 218.0
+offset_right = 391.0
+offset_bottom = 265.0
 
 [node name="Panel" type="Panel" parent="Skill"]
 layout_mode = 0
@@ -210,8 +208,8 @@ custom_minimum_size = Vector2(258, 22)
 layout_mode = 0
 offset_left = 56.0
 offset_top = 3.0
-offset_right = 373.0
-offset_bottom = 45.0
+offset_right = 354.0
+offset_bottom = 39.0
 theme_override_fonts/normal_font = ExtResource("3_bjp46")
 bbcode_enabled = true
 text = "[center][color=#91c2d5][u][url]请先选择主公[/url][/u][/color] "
@@ -219,17 +217,16 @@ script = ExtResource("4_3opgj")
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 0
-offset_left = 394.0
-offset_top = 11.0
-offset_right = 734.0
-offset_bottom = 319.0
+offset_left = 375.0
+offset_top = -8.0
+offset_right = 715.0
+offset_bottom = 300.0
 scale = Vector2(0.05, 0.05)
 theme_override_fonts/font = ExtResource("3_bjp46")
 icon = ExtResource("9_1vf8j")
 flat = true
 expand_icon = true
 
-[connection signal="meta_hover_ended" from="Name/RichTextLabel" to="Name/RichTextLabel" method="_on_meta_hover_ended"]
 [connection signal="meta_hover_started" from="Name/RichTextLabel" to="Name/RichTextLabel" method="_on_meta_hover_started"]
 [connection signal="meta_hover_ended" from="Wu/RichTextLabel" to="Wu/RichTextLabel" method="_on_meta_hover_ended"]
 [connection signal="meta_hover_started" from="Wu/RichTextLabel" to="Wu/RichTextLabel" method="_on_meta_hover_started"]

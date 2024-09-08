@@ -27,15 +27,15 @@ func show_hero_info(nameId):
 	$Fang/RichTextLabel.text = set_message_name(Global.armors[character.armorId].name)
 	$Skill/RichTextLabel.text = get_skill_desc(nameId)
 	# TODO: bug-暂时用生成实例、移除实例的方式
-	if(has_chart_scene):
-		$".".remove_child($".".get_child(6))
-		has_chart_scene = false
-	if(!has_chart_scene):
-		var RadarChartStats = RadarChartStatsScene.instantiate()
-		RadarChartStats.position = Vector2(296, 80)
-		RadarChartStats.stats = [attrs["command"], attrs["force"], attrs["intelligence"], attrs["politics"], attrs["morality"]]
-		$".".add_child(RadarChartStats)
-		has_chart_scene = true
+	#if(has_chart_scene):
+		#$".".remove_child($".".get_child(6))
+		#has_chart_scene = false
+	#if(!has_chart_scene):
+		#var RadarChartStats = RadarChartStatsScene.instantiate()
+		#RadarChartStats.position = Vector2(296, 80)
+		#RadarChartStats.stats = [attrs["command"], attrs["force"], attrs["intelligence"], attrs["politics"], attrs["morality"]]
+		#$".".add_child(RadarChartStats)
+		#has_chart_scene = true
 
 func set_message_name(text):
 	return "[color=#91c2d5][u][url]"+  text +"[/url][/u][/color]"

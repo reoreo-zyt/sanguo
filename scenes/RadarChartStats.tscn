@@ -14,7 +14,6 @@ offset_left = -0.120003
 offset_top = 0.360001
 offset_right = -36.04
 offset_bottom = -33.4
-scale = Vector2(0.8, 0.8)
 size_flags_horizontal = 0
 size_flags_vertical = 8
 script = ExtResource("1")
@@ -80,3 +79,7 @@ position = Vector2(-96.2963, -229.63)
 
 [node name="Label" type="Node2D" parent="RadarChart"]
 position = Vector2(-41, -26)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="RadarChart"]
+offset_right = 40.0
+offset_bottom = 40.0

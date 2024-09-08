@@ -20,6 +20,8 @@ shader_parameter/noise_teture = SubResource("NoiseTexture2D_ileuy")
 
 [node name="fog" type="ParallaxBackground"]
 layer = 2
+scale = Vector2(2, 2)
+transform = Transform2D(2, 0, 0, 2, 0, 0)
 scroll_ignore_camera_zoom = true
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="."]
