@@ -46,7 +46,7 @@ var polities_times = 3
 var cur_character = 0
 
 # 初始年月
-var year = 189
+var year = 220
 var month = 1
 
 # 内政相关
@@ -64,6 +64,9 @@ var curr_fight_character_id = 0
 
 # 当前选择的武将
 var save_move_jiang = []
+
+# 维护一个出仕的武将列表
+var save_hire_jiang = []
 
 # 读取 xlsx 文件
 func _ready():
@@ -213,6 +216,9 @@ func _ready():
 			}
 	# print(citys)
 
+	for i in citys:
+		for item in citys[i].curent_jiang:
+			save_hire_jiang.append(item)
 # 公用方法
 func set_name_text(name):
 	return "[center][color=#91c2d5][u][url]" + name + "[/url][/u][/color]"

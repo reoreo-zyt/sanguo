@@ -13,7 +13,7 @@ func _ready() -> void:
 	$Button/HBoxContainer/RichTextLabel5.text = Global.set_text(character.attrs.command)
 	$Button/HBoxContainer/RichTextLabel6.text = Global.set_text(character.attrs.intelligence)
 	$Button/HBoxContainer/RichTextLabel7.text = Global.set_text(character.attrs.politics)
-	$Button/HBoxContainer/RichTextLabel8.text = Global.set_text(character.attrs.lorty)
+	$Button/HBoxContainer/RichTextLabel8.text = Global.set_text(character.attrs.morality)
 
 func search_lord(character_id):
 	var city_id = Global.characters[character_id].cityId

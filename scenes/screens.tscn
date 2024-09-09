@@ -361,6 +361,7 @@ flat = true
 icon_alignment = 1
 
 [node name="CityMessage" type="Panel" parent="Map"]
+visible = false
 offset_left = -1.0
 offset_top = 89.0
 offset_right = 539.0
@@ -1538,8 +1539,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 4.0
 offset_top = 4.0
-offset_right = -4.0
-offset_bottom = -4.0
+offset_right = 400.0
+offset_bottom = 196.0
 grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
@@ -1604,8 +1605,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 4.0
 offset_top = 4.0
-offset_right = -4.0
-offset_bottom = -4.0
+offset_right = 516.0
+offset_bottom = 496.0
 grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
@@ -1631,6 +1632,72 @@ offset_top = 23.0
 offset_bottom = 63.0
 
 [node name="ButtonDeside" type="TextureButton" parent="popupDJWJ/PopupPanel/Control"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -59.0
+offset_top = -64.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(0.5, 0.5)
+size_flags_vertical = 8
+texture_normal = ExtResource("58_pjwgo")
+texture_pressed = ExtResource("59_4yht0")
+
+[node name="popupCS" type="Control" parent="."]
+layout_mode = 3
+anchor_right = 0.074
+anchor_bottom = 0.042
+offset_left = 3.0
+offset_top = -1.0
+offset_right = 3.04
+offset_bottom = -1.32
+size_flags_horizontal = 0
+size_flags_vertical = 4
+
+[node name="PopupPanel" type="PopupPanel" parent="popupCS"]
+auto_translate_mode = 1
+initial_position = 1
+size = Vector2i(404, 200)
+theme_override_styles/panel = SubResource("StyleBoxFlat_h02dy")
+
+[node name="Control" type="Control" parent="popupCS/PopupPanel"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 400.0
+offset_bottom = 196.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="popupCS/PopupPanel/Control"]
+custom_minimum_size = Vector2(200, 87)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -176.0
+offset_top = -43.5
+offset_right = 176.0
+offset_bottom = 43.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+theme_override_fonts/font = ExtResource("9_lny1d")
+theme_override_font_sizes/font_size = 22
+text = "已找到贤才，是否花费政令登用？"
+horizontal_alignment = 1
+
+[node name="ButtonDeside" type="TextureButton" parent="popupCS/PopupPanel/Control"]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -1682,3 +1749,4 @@ texture_pressed = ExtResource("59_4yht0")
 [connection signal="pressed" from="GameUi/start_ui/HistoryAi/ExpendTextureButton" to="GameUi/start_ui" method="_on_expend_texture_button_pressed"]
 [connection signal="pressed" from="popupTCQB/PopupPanel/Control/ButtonDeside" to="." method="_on_button_deside_pressed"]
 [connection signal="pressed" from="popupDJWJ/PopupPanel/Control/ButtonDeside" to="." method="_on_wjyd_button_deside_pressed"]
+[connection signal="pressed" from="popupCS/PopupPanel/Control/ButtonDeside" to="." method="_on_cs_button_deside_pressed"]

@@ -1,5 +1,7 @@
 extends CanvasLayer
 
+var dy_character = 0
+
 func _ready() -> void:
 	SignalBus.connect("show_city_hero_info", _on_show_city_hero_info)
 	SignalBus.connect("hide_city_hero_info", _on_hide_city_hero_info)
@@ -90,4 +92,52 @@ func _on_wjyd_button_deside_pressed() -> void:
 
 # 寻找人才
 func _on_xzrc_panel_pressed() -> void:
-	pass # Replace with function body.
+	# 按照年份获取出仕列表，将已经出仕的武将排除在外
+	var jiang = findAllCharacters()
+	# 这里需要深度拷贝一下，不然会影响到原数组
+	var copy_jiang = jiang.duplicate(true)
+	print(copy_jiang)
+	for i in jiang:
+		for j in Global.save_hire_jiang:
+			if(i == j):
+				print(j)
+				copy_jiang.erase(i)
+	# 拿到未出仕的武将列表
+	print(copy_jiang)
+	if(!copy_jiang.size()):
+		var message1 = preload("res://scenes/game_state.tscn").instantiate()
+		$".".add_child(message1)
+		message1.show_message("[color=#ffde66][center]野无贤才", Vector2(10, 500), message1.Direction.Up, 1, 0.5)
+		return
+	# 随机获取一个出仕
+	var character = copy_jiang[randi() % copy_jiang.size()]
+	# 打开是否出仕弹窗
+	$popupCS/PopupPanel.popup()
+	dy_character = character
+
+func findAllCharacters():
+	var heros_codes = []
+	for i in Global.characters:
+		if(Global.characters[i].name == "无人占领城池"):
+			continue
+		if(str(Global.characters[i].cityId) == Global.cur_city && Global.characters[i].work <= Global.year):
+				heros_codes.push_back(i)
+	return heros_codes
+
+func _on_cs_button_deside_pressed() -> void:
+	if(Global.polities_times <= 0):
+		var message1 = preload("res://scenes/game_state.tscn").instantiate()
+		$".".add_child(message1)
+		message1.show_message("[color=#ffde66][center]没有政令了", Vector2(10, 500), message1.Direction.Up, 1, 2)
+		return
+	var message1 = preload("res://scenes/game_state.tscn").instantiate()
+	$".".add_child(message1)
+	message1.show_message("[color=#ffde66][center]" + Global.characters[dy_character].name + "已出仕", Vector2(10, 500), message1.Direction.Up, 1, 0.5)
+	# 出仕列表数据加上这个武将
+	Global.save_hire_jiang.append(dy_character)
+	# 城池数据加上这个武将
+	Global.citys[Global.cur_city].curent_jiang.append(dy_character)
+	# 减少政令
+	SignalBus.emit_signal("change_polities_times")
+	# 刷新城池数据
+	SignalBus.emit_signal("show_city_info", Global.citys[Global.cur_city].name, Global.cur_city)
