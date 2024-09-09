@@ -135,7 +135,7 @@ func _ready():
 				"cityId": hero_data[i][10],
 				"weaponId": hero_data[i][11],
 				"armorId": hero_data[i][12],
-				"skillIds": hero_data[i][13].split(","),
+				"skillIds": get_skill_array(hero_data[i][13]),
 				"work": hero_data[i][9],
 				"born": hero_data[i][7],
 				"dead": hero_data[i][8]
@@ -257,3 +257,9 @@ func get_array_diff(a, b):
 		else:
 			is_append = true
 	return temparray
+
+func get_skill_array(skill_text):
+	if(!skill_text):
+		return []
+	else:
+		return skill_text.split(",")
