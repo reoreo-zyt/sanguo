@@ -1674,6 +1674,7 @@ texture_pressed = ExtResource("59_4yht0")
 [connection signal="meta_hover_started" from="Map/CityMessage/CityMessageMore/ScrollContainer/VBoxContainer/LiangContainer/LiangPanel/RichTextLabel" to="Map/CityMessage/CityMessageMore/ScrollContainer/VBoxContainer/LiangContainer/LiangPanel/RichTextLabel" method="_on_meta_hover_started"]
 [connection signal="pressed" from="Map/CityMessage/NZN/QB/Panel" to="Map/CityMessage/NZN" method="_on_panel_pressed"]
 [connection signal="pressed" from="Map/CityMessage/NZN/WJYD/Panel" to="." method="_on_panel_wjyd_pressed"]
+[connection signal="pressed" from="Map/CityMessage/NZN/XZRC/Panel" to="." method="_on_xzrc_panel_pressed"]
 [connection signal="pressed" from="Menu/MainContainer/ButtonContainer/VBoxContainer/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="GameUi/TextureButton" to="." method="_on_texture_button_pressed"]
 [connection signal="pressed" from="GameUi/start_ui/TimePanel/TextureButton" to="GameUi/start_ui" method="_on_texture_button_pressed"]

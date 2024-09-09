@@ -17,7 +17,7 @@ func _on_show_hero_info(nameId):
 	$CharacterAttr/Skill/RichTextLabel.text = get_skill_desc(nameId)
 	# TODO: bug-暂时用生成实例、移除实例的方式
 	if(has_chart_scene):
-		$CharacterAttr.remove_child($CharacterAttr.get_child(6))
+		$CharacterAttr.remove_child($CharacterAttr.get_child(5))
 		has_chart_scene = false
 	if(!has_chart_scene):
 		var RadarChartStats = RadarChartStatsScene.instantiate()

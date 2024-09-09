@@ -87,3 +87,7 @@ func _on_wjyd_button_deside_pressed() -> void:
 	SignalBus.emit_signal("change_polities_times")
 	SignalBus.emit_signal("show_city_info", Global.citys[Global.cur_city].name, Global.cur_city)
 	$popupDJWJ/PopupPanel.hide()
+
+# 寻找人才
+func _on_xzrc_panel_pressed() -> void:
+	pass # Replace with function body.
