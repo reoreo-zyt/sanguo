@@ -1,0 +1,89 @@
+[gd_scene load_steps=3 format=3 uid="uid://b1651j217b2q7"]
+
+[ext_resource type="Script" path="res://scripts/attr_value.gd" id="1_46u1r"]
+[ext_resource type="FontFile" uid="uid://ccc7h37nygjqu" path="res://assets/fonts/方正隶书简体.TTF" id="1_a8fvc"]
+
+[node name="AttrValue" type="VBoxContainer"]
+custom_minimum_size = Vector2(288, 20)
+offset_right = 505.0
+offset_bottom = 30.0
+script = ExtResource("1_46u1r")
+
+[node name="Button" type="Button" parent="."]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+flat = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Button"]
+custom_minimum_size = Vector2(288, 20)
+layout_mode = 2
+offset_top = 4.0
+offset_right = 508.0
+offset_bottom = 24.0
+mouse_filter = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Button/HBoxContainer"]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("1_a8fvc")
+bbcode_enabled = true
+text = "[center][color=#91c2d5]吕布"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Button/HBoxContainer"]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("1_a8fvc")
+bbcode_enabled = true
+text = "[center][color=#91c2d5]吕布"
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="Button/HBoxContainer"]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("1_a8fvc")
+bbcode_enabled = true
+text = "[center][color=#91c2d5]洛阳"
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="Button/HBoxContainer"]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("1_a8fvc")
+bbcode_enabled = true
+text = "[center][color=#91c2d5]100"
+
+[node name="RichTextLabel5" type="RichTextLabel" parent="Button/HBoxContainer"]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("1_a8fvc")
+bbcode_enabled = true
+text = "[center][color=#91c2d5]90"
+
+[node name="RichTextLabel6" type="RichTextLabel" parent="Button/HBoxContainer"]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("1_a8fvc")
+bbcode_enabled = true
+text = "[center][color=#91c2d5]32"
+
+[node name="RichTextLabel7" type="RichTextLabel" parent="Button/HBoxContainer"]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("1_a8fvc")
+bbcode_enabled = true
+text = "[center][color=#91c2d5]22"
+
+[node name="RichTextLabel8" type="RichTextLabel" parent="Button/HBoxContainer"]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("1_a8fvc")
+bbcode_enabled = true
+text = "[center][color=#91c2d5]--"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

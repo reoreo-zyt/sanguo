@@ -38,3 +38,6 @@ signal curr_fight_character_move_forward(upward: String)
 
 # 通知人物显示属性
 signal curr_fight_character_show_info(character_id: int)
+
+# 武将移动
+signal change_wjyd_characters_ids(character_ids: Array)

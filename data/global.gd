@@ -62,6 +62,9 @@ var fight_other_ids = []
 # 当前选择
 var curr_fight_character_id = 0
 
+# 当前选择的武将
+var save_move_jiang = []
+
 # 读取 xlsx 文件
 func _ready():
 	var excel = ExcelFile.open_file("res://data/311_data.xlsx")

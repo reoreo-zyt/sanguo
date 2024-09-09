@@ -1,4 +1,4 @@
-[gd_scene load_steps=74 format=3 uid="uid://coeuv1kg0usol"]
+[gd_scene load_steps=71 format=3 uid="uid://coeuv1kg0usol"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_7ijmt"]
 [ext_resource type="PackedScene" uid="uid://1yhkkygysjvv" path="res://scenes/fog.tscn" id="1_njvu3"]
@@ -38,10 +38,6 @@
 [ext_resource type="PackedScene" uid="uid://b2krug8ss4rwg" path="res://scenes/hero_list_item.tscn" id="31_g8j7j"]
 [ext_resource type="Script" path="res://scripts/city_character_attr.gd" id="32_pcofb"]
 [ext_resource type="Texture2D" uid="uid://qkvvyrsnkqjt" path="res://assets/texture/ui/18_Marker (2)Gray.png" id="33_01vy3"]
-[ext_resource type="Script" path="res://scripts/city_level_1.gd" id="33_hk46h"]
-[ext_resource type="Texture2D" uid="uid://kyfl7nu0go64" path="res://assets/texture/ui/22_Home (2)Gray.png" id="33_vmqsd"]
-[ext_resource type="Texture2D" uid="uid://bndtbthqpan0r" path="res://assets/texture/ui/Color 5_BigGray.png" id="35_syhit"]
-[ext_resource type="Texture2D" uid="uid://bshkiju34g5u0" path="res://assets/texture/ui/17_Shield (2)Gray.png" id="36_jwelq"]
 [ext_resource type="Texture2D" uid="uid://cxy32k5xvxhyf" path="res://assets/texture/ui/20_Exit (2)Gray.png" id="36_vbs7r"]
 [ext_resource type="Texture2D" uid="uid://cl6e47kdiyq4a" path="res://assets/texture/ui/20_Exit (3)Gray.png" id="37_v3jmb"]
 [ext_resource type="Script" path="res://scripts/nzn.gd" id="38_fb56o"]
@@ -59,6 +55,7 @@
 [ext_resource type="Texture2D" uid="uid://dlsm338v2o8kt" path="res://assets/texture/ui/19_Menu (3)Gray.png" id="48_ei5t0"]
 [ext_resource type="Texture2D" uid="uid://3xc8xdmeioys" path="res://assets/texture/ui/29_CheckGray.png" id="58_pjwgo"]
 [ext_resource type="Texture2D" uid="uid://cxvhuahmx1rf7" path="res://assets/texture/ui/29_Check (3)Gray.png" id="59_4yht0"]
+[ext_resource type="PackedScene" uid="uid://b135m2e4txmgj" path="res://scenes/characters_select_list.tscn" id="60_4pf3l"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_e0x5k"]
 render_priority = 0
@@ -1119,216 +1116,6 @@ offset_right = 379.0
 offset_bottom = 398.0
 script = ExtResource("32_pcofb")
 
-[node name="NZ" type="Node2D" parent="Map/CityMessage"]
-visible = false
-
-[node name="CityDetail" type="Panel" parent="Map/CityMessage/NZ"]
-offset_left = 8.0
-offset_top = 477.0
-offset_right = 532.0
-offset_bottom = 562.0
-
-[node name="level1" type="Node2D" parent="Map/CityMessage/NZ/CityDetail"]
-script = ExtResource("33_hk46h")
-
-[node name="TextureRect" type="TextureRect" parent="Map/CityMessage/NZ/CityDetail/level1"]
-offset_right = 80.0
-offset_bottom = 86.0
-texture = ExtResource("33_vmqsd")
-
-[node name="Level1" type="HBoxContainer" parent="Map/CityMessage/NZ/CityDetail/level1"]
-offset_left = 91.0
-offset_top = 29.0
-offset_right = 518.0
-offset_bottom = 59.0
-
-[node name="czkf" type="RichTextLabel" parent="Map/CityMessage/NZ/CityDetail/level1/Level1"]
-custom_minimum_size = Vector2(80, 30)
-layout_mode = 2
-bbcode_enabled = true
-text = "[center][color=#91c2d5][u][url]城镇开发"
-
-[node name="qbsj" type="RichTextLabel" parent="Map/CityMessage/NZ/CityDetail/level1/Level1"]
-custom_minimum_size = Vector2(80, 30)
-layout_mode = 2
-bbcode_enabled = true
-text = "[center][color=#91c2d5][u][url]情报收集"
-
-[node name="cl" type="RichTextLabel" parent="Map/CityMessage/NZ/CityDetail/level1/Level1"]
-custom_minimum_size = Vector2(80, 30)
-layout_mode = 2
-bbcode_enabled = true
-text = "[center][color=#91c2d5][u][url]策略"
-
-[node name="wjyd" type="RichTextLabel" parent="Map/CityMessage/NZ/CityDetail/level1/Level1"]
-custom_minimum_size = Vector2(80, 30)
-layout_mode = 2
-bbcode_enabled = true
-text = "[center][color=#91c2d5][u][url]武将移动"
-
-[node name="fz" type="RichTextLabel" parent="Map/CityMessage/NZ/CityDetail/level1/Level1"]
-custom_minimum_size = Vector2(80, 30)
-layout_mode = 2
-bbcode_enabled = true
-text = "[center][color=#91c2d5][u][url]防灾"
-
-[node name="Level1Open" type="Panel" parent="Map/CityMessage/NZ/CityDetail/level1"]
-visible = false
-anchors_preset = -1
-anchor_left = 0.403
-anchor_top = -0.141
-anchor_right = 0.403
-anchor_bottom = -0.141
-offset_left = 211.0
-offset_top = -12.0
-offset_right = 349.0
-offset_bottom = 102.0
-
-[node name="TextureRect" type="TextureRect" parent="Map/CityMessage/NZ/CityDetail/level1/Level1Open"]
-layout_mode = 0
-offset_left = -5.0
-offset_top = -12.0
-offset_right = 148.0
-offset_bottom = 125.0
-texture = ExtResource("35_syhit")
-
-[node name="HBoxContainer" type="VBoxContainer" parent="Map/CityMessage/NZ/CityDetail/level1/Level1Open"]
-layout_mode = 0
-offset_left = 30.0
-offset_top = 16.0
-offset_right = 113.0
-offset_bottom = 99.0
-
-[node name="tdkk" type="RichTextLabel" parent="Map/CityMessage/NZ/CityDetail/level1/Level1Open/HBoxContainer"]
-custom_minimum_size = Vector2(0, 26)
-layout_mode = 2
-bbcode_enabled = true
-text = "[center][color=#4d81ad][u][url]土地开垦"
-
-[node name="glgs" type="RichTextLabel" parent="Map/CityMessage/NZ/CityDetail/level1/Level1Open/HBoxContainer"]
-custom_minimum_size = Vector2(0, 26)
-layout_mode = 2
-bbcode_enabled = true
-text = "[center][color=#4d81ad][u][url]鼓励工商"
-
-[node name="sjkf" type="RichTextLabel" parent="Map/CityMessage/NZ/CityDetail/level1/Level1Open/HBoxContainer"]
-custom_minimum_size = Vector2(0, 26)
-layout_mode = 2
-bbcode_enabled = true
-text = "[center][color=#4d81ad][u][url]市集开发"
-
-[node name="Close" type="Button" parent="Map/CityMessage/NZ/CityDetail/level1/Level1Open"]
-layout_mode = 0
-offset_left = 119.0
-offset_top = 5.0
-offset_right = 399.0
-offset_bottom = 285.0
-scale = Vector2(0.05, 0.05)
-theme_override_fonts/font = ExtResource("9_lny1d")
-icon = ExtResource("15_863i4")
-flat = true
-expand_icon = true
-
-[node name="ArmyDetail" type="Panel" parent="Map/CityMessage/NZ"]
-offset_left = 8.0
-offset_top = 583.0
-offset_right = 532.0
-offset_bottom = 668.0
-
-[node name="level1" type="Node2D" parent="Map/CityMessage/NZ/ArmyDetail"]
-
-[node name="TextureRect" type="TextureRect" parent="Map/CityMessage/NZ/ArmyDetail/level1"]
-offset_right = 80.0
-offset_bottom = 86.0
-texture = ExtResource("36_jwelq")
-
-[node name="Level1" type="HBoxContainer" parent="Map/CityMessage/NZ/ArmyDetail/level1"]
-offset_left = 91.0
-offset_top = 29.0
-offset_right = 518.0
-offset_bottom = 59.0
-
-[node name="cz" type="RichTextLabel" parent="Map/CityMessage/NZ/ArmyDetail/level1/Level1"]
-custom_minimum_size = Vector2(80, 30)
-layout_mode = 2
-bbcode_enabled = true
-text = "[center][color=#91c2d5][u][url]出征"
-
-[node name="zb" type="RichTextLabel" parent="Map/CityMessage/NZ/ArmyDetail/level1/Level1"]
-custom_minimum_size = Vector2(80, 30)
-layout_mode = 2
-bbcode_enabled = true
-text = "[center][color=#91c2d5][u][url]征兵"
-
-[node name="zc" type="RichTextLabel" parent="Map/CityMessage/NZ/ArmyDetail/level1/Level1"]
-custom_minimum_size = Vector2(80, 30)
-layout_mode = 2
-bbcode_enabled = true
-text = "[center][color=#91c2d5][u][url]侦察"
-
-[node name="rm" type="RichTextLabel" parent="Map/CityMessage/NZ/ArmyDetail/level1/Level1"]
-custom_minimum_size = Vector2(80, 30)
-layout_mode = 2
-bbcode_enabled = true
-text = "[center][color=#91c2d5][u][url]任命"
-
-[node name="Level1Open" type="Panel" parent="Map/CityMessage/NZ/ArmyDetail/level1"]
-visible = false
-anchors_preset = -1
-anchor_left = 0.403
-anchor_top = -0.141
-anchor_right = 0.403
-anchor_bottom = -0.141
-offset_left = 211.0
-offset_top = -12.0
-offset_right = 349.0
-offset_bottom = 102.0
-
-[node name="TextureRect" type="TextureRect" parent="Map/CityMessage/NZ/ArmyDetail/level1/Level1Open"]
-layout_mode = 0
-offset_left = -5.0
-offset_top = -12.0
-offset_right = 148.0
-offset_bottom = 125.0
-texture = ExtResource("35_syhit")
-
-[node name="HBoxContainer" type="VBoxContainer" parent="Map/CityMessage/NZ/ArmyDetail/level1/Level1Open"]
-layout_mode = 0
-offset_left = 30.0
-offset_top = 16.0
-offset_right = 113.0
-offset_bottom = 99.0
-
-[node name="tdkk" type="RichTextLabel" parent="Map/CityMessage/NZ/ArmyDetail/level1/Level1Open/HBoxContainer"]
-custom_minimum_size = Vector2(0, 26)
-layout_mode = 2
-bbcode_enabled = true
-text = "[center][color=#4d81ad][u][url]土地开垦"
-
-[node name="glgs" type="RichTextLabel" parent="Map/CityMessage/NZ/ArmyDetail/level1/Level1Open/HBoxContainer"]
-custom_minimum_size = Vector2(0, 26)
-layout_mode = 2
-bbcode_enabled = true
-text = "[center][color=#4d81ad][u][url]鼓励工商"
-
-[node name="sjkf" type="RichTextLabel" parent="Map/CityMessage/NZ/ArmyDetail/level1/Level1Open/HBoxContainer"]
-custom_minimum_size = Vector2(0, 26)
-layout_mode = 2
-bbcode_enabled = true
-text = "[center][color=#4d81ad][u][url]市集开发"
-
-[node name="Close" type="Button" parent="Map/CityMessage/NZ/ArmyDetail/level1/Level1Open"]
-layout_mode = 0
-offset_left = 119.0
-offset_top = 5.0
-offset_right = 399.0
-offset_bottom = 285.0
-scale = Vector2(0.05, 0.05)
-theme_override_fonts/font = ExtResource("9_lny1d")
-icon = ExtResource("15_863i4")
-flat = true
-expand_icon = true
-
 [node name="NZN" type="Node2D" parent="Map/CityMessage"]
 position = Vector2(7, 448)
 script = ExtResource("38_fb56o")
@@ -1710,10 +1497,10 @@ texture_pressed = ExtResource("48_ei5t0")
 
 [node name="Message" parent="." instance=ExtResource("22_ck4v4")]
 visible = false
-offset_left = 70.0
-offset_top = 330.0
-offset_right = 69.9
-offset_bottom = 329.64
+offset_left = 6.0
+offset_top = 5.0
+offset_right = -135.1
+offset_bottom = -171.36
 
 [node name="popupTCQB" type="Control" parent="."]
 layout_mode = 3
@@ -1780,9 +1567,73 @@ size_flags_vertical = 8
 texture_normal = ExtResource("58_pjwgo")
 texture_pressed = ExtResource("59_4yht0")
 
+[node name="popupDJWJ" type="Control" parent="."]
+layout_mode = 3
+anchor_right = 0.074
+anchor_bottom = 0.042
+offset_left = 3.0
+offset_top = -1.0
+offset_right = 3.04
+offset_bottom = -1.32
+size_flags_horizontal = 0
+size_flags_vertical = 4
+
+[node name="PopupPanel" type="PopupPanel" parent="popupDJWJ"]
+auto_translate_mode = 1
+initial_position = 1
+size = Vector2i(520, 500)
+theme_override_styles/panel = SubResource("StyleBoxFlat_h02dy")
+
+[node name="Control" type="Control" parent="popupDJWJ/PopupPanel"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = -4.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="popupDJWJ/PopupPanel/Control"]
+custom_minimum_size = Vector2(200, 87)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -176.0
+offset_right = 176.0
+offset_bottom = 87.0
+grow_horizontal = 2
+size_flags_horizontal = 0
+theme_override_fonts/font = ExtResource("9_lny1d")
+theme_override_font_sizes/font_size = 22
+text = "是否花费政令调集附近城池的武将？"
+horizontal_alignment = 1
+
+[node name="List" parent="popupDJWJ/PopupPanel/Control" instance=ExtResource("60_4pf3l")]
+offset_top = 23.0
+offset_bottom = 63.0
+
+[node name="ButtonDeside" type="TextureButton" parent="popupDJWJ/PopupPanel/Control"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -59.0
+offset_top = -64.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(0.5, 0.5)
+size_flags_vertical = 8
+texture_normal = ExtResource("58_pjwgo")
+texture_pressed = ExtResource("59_4yht0")
+
 [connection signal="meta_clicked" from="Map/SelectHero/MarginContainer/DContainer/DHContainer/TextPanel/MarginContainer/RichTextLabel" to="Map/SelectHero/MarginContainer/DContainer/DHContainer/TextPanel/MarginContainer/RichTextLabel" method="_on_meta_clicked"]
-[connection signal="meta_hover_ended" from="Map/SelectHero/MarginContainer/DContainer/DHContainer/TextPanel/MarginContainer/RichTextLabel" to="Map/SelectHero/MarginContainer/DContainer/DHContainer/TextPanel/MarginContainer/RichTextLabel" method="_on_meta_hover_ended"]
-[connection signal="meta_hover_started" from="Map/SelectHero/MarginContainer/DContainer/DHContainer/TextPanel/MarginContainer/RichTextLabel" to="Map/SelectHero/MarginContainer/DContainer/DHContainer/TextPanel/MarginContainer/RichTextLabel" method="_on_meta_hover_started"]
 [connection signal="pressed" from="Map/SelectHero/Menu/Decide" to="." method="_on_decide_pressed"]
 [connection signal="pressed" from="Map/SelectHero/Menu/Refuse" to="." method="_on_refuse_pressed"]
 [connection signal="pressed" from="Map/CityMessage/Close" to="Map/CityMessage" method="_on_close_pressed"]
@@ -1808,21 +1659,12 @@ texture_pressed = ExtResource("59_4yht0")
 [connection signal="meta_hover_started" from="Map/CityMessage/CityMessageMore/ScrollContainer/VBoxContainer/JinContainer/JinPanel/RichTextLabel" to="Map/CityMessage/CityMessageMore/ScrollContainer/VBoxContainer/JinContainer/JinPanel/RichTextLabel" method="_on_meta_hover_started"]
 [connection signal="meta_hover_ended" from="Map/CityMessage/CityMessageMore/ScrollContainer/VBoxContainer/LiangContainer/LiangPanel/RichTextLabel" to="Map/CityMessage/CityMessageMore/ScrollContainer/VBoxContainer/LiangContainer/LiangPanel/RichTextLabel" method="_on_meta_hover_ended"]
 [connection signal="meta_hover_started" from="Map/CityMessage/CityMessageMore/ScrollContainer/VBoxContainer/LiangContainer/LiangPanel/RichTextLabel" to="Map/CityMessage/CityMessageMore/ScrollContainer/VBoxContainer/LiangContainer/LiangPanel/RichTextLabel" method="_on_meta_hover_started"]
-[connection signal="meta_clicked" from="Map/CityMessage/NZ/CityDetail/level1/Level1/czkf" to="Map/CityMessage/NZ/CityDetail/level1" method="_on_czkf_meta_clicked"]
-[connection signal="meta_clicked" from="Map/CityMessage/NZ/CityDetail/level1/Level1/qbsj" to="Map/CityMessage/NZ/CityDetail/level1" method="_on_qbsj_meta_clicked"]
-[connection signal="meta_clicked" from="Map/CityMessage/NZ/CityDetail/level1/Level1Open/HBoxContainer/tdkk" to="Map/CityMessage/NZ/CityDetail/level1" method="_on_tdkk_meta_clicked"]
-[connection signal="meta_clicked" from="Map/CityMessage/NZ/CityDetail/level1/Level1Open/HBoxContainer/glgs" to="Map/CityMessage/NZ/CityDetail/level1" method="_on_glgs_meta_clicked"]
-[connection signal="meta_clicked" from="Map/CityMessage/NZ/CityDetail/level1/Level1Open/HBoxContainer/sjkf" to="Map/CityMessage/NZ/CityDetail/level1" method="_on_sjkf_meta_clicked"]
-[connection signal="pressed" from="Map/CityMessage/NZ/CityDetail/level1/Level1Open/Close" to="Map/CityMessage/NZ/CityDetail/level1" method="_on_close_pressed"]
-[connection signal="meta_clicked" from="Map/CityMessage/NZ/ArmyDetail/level1/Level1/cz" to="Map/CityMessage/NZ/ArmyDetail/level1" method="_on_czkf_meta_clicked"]
-[connection signal="meta_clicked" from="Map/CityMessage/NZ/ArmyDetail/level1/Level1Open/HBoxContainer/tdkk" to="Map/CityMessage/NZ/ArmyDetail/level1" method="_on_tdkk_meta_clicked"]
-[connection signal="meta_clicked" from="Map/CityMessage/NZ/ArmyDetail/level1/Level1Open/HBoxContainer/glgs" to="Map/CityMessage/NZ/ArmyDetail/level1" method="_on_glgs_meta_clicked"]
-[connection signal="meta_clicked" from="Map/CityMessage/NZ/ArmyDetail/level1/Level1Open/HBoxContainer/sjkf" to="Map/CityMessage/NZ/ArmyDetail/level1" method="_on_sjkf_meta_clicked"]
-[connection signal="pressed" from="Map/CityMessage/NZ/ArmyDetail/level1/Level1Open/Close" to="Map/CityMessage/NZ/ArmyDetail/level1" method="_on_close_pressed"]
 [connection signal="pressed" from="Map/CityMessage/NZN/QB/Panel" to="Map/CityMessage/NZN" method="_on_panel_pressed"]
+[connection signal="pressed" from="Map/CityMessage/NZN/WJYD/Panel" to="." method="_on_panel_wjyd_pressed"]
 [connection signal="pressed" from="Menu/MainContainer/ButtonContainer/VBoxContainer/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="GameUi/TextureButton" to="." method="_on_texture_button_pressed"]
 [connection signal="pressed" from="GameUi/start_ui/TimePanel/TextureButton" to="GameUi/start_ui" method="_on_texture_button_pressed"]
 [connection signal="pressed" from="GameUi/start_ui/HistoryAi/ClearTextureButton" to="GameUi/start_ui" method="_on_clear_texture_button_pressed"]
 [connection signal="pressed" from="GameUi/start_ui/HistoryAi/ExpendTextureButton" to="GameUi/start_ui" method="_on_expend_texture_button_pressed"]
 [connection signal="pressed" from="popupTCQB/PopupPanel/Control/ButtonDeside" to="." method="_on_button_deside_pressed"]
+[connection signal="pressed" from="popupDJWJ/PopupPanel/Control/ButtonDeside" to="." method="_on_wjyd_button_deside_pressed"]

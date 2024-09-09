@@ -12,7 +12,7 @@ border_width_left = 4
 border_width_right = 4
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2kx4u"]
-bg_color = Color(0.470588, 0.584314, 0.635294, 1)
+bg_color = Color(0.184314, 0.219608, 0.262745, 0.247059)
 border_width_left = 4
 border_width_right = 4
 
