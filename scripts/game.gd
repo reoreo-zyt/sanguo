@@ -32,7 +32,8 @@ func _on_button_pressed() -> void:
 	$Map/CityMessage/HeroList/CharacterAttr.hide()
 
 func _on_show_city_hero_info():
-	$Map/CityMessage/HeroList/CharacterAttr.show()
+	$Map/CityMessage/HeroList/PopupPanel.popup()
+	# $Map/CityMessage/HeroList/CharacterAttr.show()
 
 func _on_hide_city_hero_info():
 	$Map/CityMessage/HeroList/CharacterAttr.hide()

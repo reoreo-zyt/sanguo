@@ -49,8 +49,6 @@ text = "[center][color=#91c2d5]99"
 script = ExtResource("2_o7gkw")
 
 [connection signal="meta_clicked" from="NameTextLabel" to="NameTextLabel" method="_on_meta_clicked"]
-[connection signal="meta_hover_ended" from="NameTextLabel" to="NameTextLabel" method="_on_meta_hover_ended"]
-[connection signal="meta_hover_started" from="NameTextLabel" to="NameTextLabel" method="_on_meta_hover_started"]
 [connection signal="meta_hover_ended" from="BingTextLabel" to="BingTextLabel" method="_on_meta_hover_ended"]
 [connection signal="meta_hover_started" from="BingTextLabel" to="BingTextLabel" method="_on_meta_hover_started"]
 [connection signal="meta_hover_ended" from="ZhongTextLabel" to="ZhongTextLabel" method="_on_meta_hover_ended"]

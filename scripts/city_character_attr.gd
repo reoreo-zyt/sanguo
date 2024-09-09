@@ -5,7 +5,7 @@ var has_chart_scene = false
 
 func _ready() -> void:
 	SignalBus.connect("show_city_hero_info", _on_show_city_hero_info)
-	
+
 func _on_show_city_hero_info():
 	var nameId = Global.cur_hero_id
 	var character = Global.characters[nameId]
@@ -17,11 +17,11 @@ func _on_show_city_hero_info():
 	$Skill/RichTextLabel.text = get_skill_desc(nameId)
 	# TODO: bug-暂时用生成实例、移除实例的方式
 	if(has_chart_scene):
-		$".".remove_child($".".get_child(6))
+		$".".remove_child($".".get_child(5))
 		has_chart_scene = false
 	if(!has_chart_scene):
 		var RadarChartStats = RadarChartStatsScene.instantiate()
-		RadarChartStats.position = Vector2(296, 100)
+		RadarChartStats.position = Vector2(256, 80)
 		RadarChartStats.stats = [attrs["command"], attrs["force"], attrs["intelligence"], attrs["politics"], attrs["morality"], attrs["curr_physical_strength"], attrs["speed"], attrs["level"]]
 		$".".add_child(RadarChartStats)
 		has_chart_scene = true

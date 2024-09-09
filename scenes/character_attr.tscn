@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://t75w08daqljg"]
+[gd_scene load_steps=10 format=3 uid="uid://t75w08daqljg"]
 
 [ext_resource type="Script" path="res://scripts/city_character_attr_custom.gd" id="1_ablh7"]
 [ext_resource type="Texture2D" uid="uid://dvtyj5b0klr1a" path="res://assets/texture/profile/新武将_37.jpg" id="1_s8hhc"]
@@ -8,7 +8,6 @@
 [ext_resource type="Texture2D" uid="uid://dduwbugqetbvk" path="res://assets/texture/force/Weapon.png" id="5_8pil2"]
 [ext_resource type="Texture2D" uid="uid://dwsknm4juhhi3" path="res://assets/texture/force/Fang.png" id="6_3w7rt"]
 [ext_resource type="Texture2D" uid="uid://iss3fl7t22cx" path="res://assets/texture/force/Ji.png" id="7_w2gc7"]
-[ext_resource type="Texture2D" uid="uid://dn3uc6tspek7l" path="res://assets/texture/ui/Button 4Gray.png" id="9_1vf8j"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0vkf5"]
 border_width_left = 4
@@ -215,18 +214,6 @@ bbcode_enabled = true
 text = "[center][color=#91c2d5][u][url]请先选择主公[/url][/u][/color] "
 script = ExtResource("4_3opgj")
 
-[node name="Button" type="Button" parent="."]
-layout_mode = 0
-offset_left = 375.0
-offset_top = -8.0
-offset_right = 715.0
-offset_bottom = 300.0
-scale = Vector2(0.05, 0.05)
-theme_override_fonts/font = ExtResource("3_bjp46")
-icon = ExtResource("9_1vf8j")
-flat = true
-expand_icon = true
-
 [connection signal="meta_hover_started" from="Name/RichTextLabel" to="Name/RichTextLabel" method="_on_meta_hover_started"]
 [connection signal="meta_hover_ended" from="Wu/RichTextLabel" to="Wu/RichTextLabel" method="_on_meta_hover_ended"]
 [connection signal="meta_hover_started" from="Wu/RichTextLabel" to="Wu/RichTextLabel" method="_on_meta_hover_started"]
@@ -234,4 +221,3 @@ expand_icon = true
 [connection signal="meta_hover_started" from="Fang/RichTextLabel" to="Fang/RichTextLabel" method="_on_meta_hover_started"]
 [connection signal="meta_hover_ended" from="Skill/RichTextLabel" to="Skill/RichTextLabel" method="_on_meta_hover_ended"]
 [connection signal="meta_hover_started" from="Skill/RichTextLabel" to="Skill/RichTextLabel" method="_on_meta_hover_started"]
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

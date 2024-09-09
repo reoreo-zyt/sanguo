@@ -80,6 +80,13 @@ border_width_bottom = 4
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6gvmq"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h02dy"]
+bg_color = Color(0.6, 0.6, 0.6, 0.360784)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+
 [sub_resource type="Animation" id="Animation_d4ae1"]
 length = 0.001
 tracks/0/type = "value"
@@ -181,13 +188,6 @@ _data = {
 }
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3w6d4"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h02dy"]
-bg_color = Color(0.6, 0.6, 0.6, 0.360784)
-border_width_left = 4
-border_width_top = 4
-border_width_right = 4
-border_width_bottom = 4
 
 [node name="screens" type="CanvasLayer"]
 script = ExtResource("1_7ijmt")
@@ -318,7 +318,6 @@ offset_left = 145.0
 offset_top = 22.0
 offset_right = 533.0
 offset_bottom = 287.0
-is_show_close = false
 
 [node name="Menu" type="Panel" parent="Map/SelectHero"]
 anchors_preset = 1
@@ -1107,13 +1106,28 @@ size_flags_horizontal = 0
 visible = false
 layout_mode = 2
 
-[node name="CharacterAttr" parent="Map/CityMessage/HeroList" instance=ExtResource("15_lqbkq")]
-visible = false
-layout_mode = 0
-offset_left = -42.0
-offset_top = 129.0
-offset_right = 379.0
-offset_bottom = 398.0
+[node name="PopupPanel" type="PopupPanel" parent="Map/CityMessage/HeroList"]
+auto_translate_mode = 1
+initial_position = 1
+size = Vector2i(390, 287)
+theme_override_styles/panel = SubResource("StyleBoxFlat_h02dy")
+
+[node name="Control" type="Control" parent="Map/CityMessage/HeroList/PopupPanel"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 386.0
+offset_bottom = 283.0
+size_flags_horizontal = 4
+metadata/_edit_use_anchors_ = true
+
+[node name="CharacterAttr" parent="Map/CityMessage/HeroList/PopupPanel/Control" instance=ExtResource("15_lqbkq")]
+layout_mode = 1
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 390.0
+offset_bottom = 280.0
 script = ExtResource("32_pcofb")
 
 [node name="NZN" type="Node2D" parent="Map/CityMessage"]
