@@ -59,6 +59,7 @@ func _on_button_deside_pressed() -> void:
 	Global.is_show_other_city_message = true
 
 func _on_panel_wjyd_pressed() -> void:
+	Global.save_move_jiang = []
 	# 计算除了这个城市的所有其他武将列表
 	var resultArray = []
 	for city in Global.characters_select[Global.cur_character].citys:
@@ -78,8 +79,9 @@ func _on_wjyd_button_deside_pressed() -> void:
 		return
 	# 找到这个编号在哪个城市，修改掉，然后塞进城市的列表中，通知城市界面更新
 	for character_id in Global.save_move_jiang:
-		# 将移动过的武将在他们所在的城市删掉
+		# 从原来的城市中移除
 		Global.citys[Global.characters[character_id].cityId].curent_jiang.erase(character_id)
+		# 修改武将属于的城市
 		Global.characters[character_id].cityId = Global.cur_city
 		Global.citys[Global.cur_city].curent_jiang.append(character_id)
 	SignalBus.emit_signal("change_polities_times")

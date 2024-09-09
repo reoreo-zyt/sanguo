@@ -361,7 +361,6 @@ flat = true
 icon_alignment = 1
 
 [node name="CityMessage" type="Panel" parent="Map"]
-visible = false
 offset_left = -1.0
 offset_top = 89.0
 offset_right = 539.0

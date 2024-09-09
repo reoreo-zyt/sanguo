@@ -21,7 +21,6 @@ func search_lord(character_id):
 	var ownerName = Global.characters_select[ownerId].name
 	return ownerName
 
-
 func _on_button_pressed() -> void:
 	is_select = !is_select
 	$Button.flat = !$Button.flat
