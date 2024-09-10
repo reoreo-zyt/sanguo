@@ -141,3 +141,65 @@ func _on_cs_button_deside_pressed() -> void:
 	SignalBus.emit_signal("change_polities_times")
 	# 刷新城池数据
 	SignalBus.emit_signal("show_city_info", Global.citys[Global.cur_city].name, Global.cur_city)
+
+# 执行内政操作
+func _on_nz_detail_panel_pressed() -> void:
+	$decideMode/desidePanel/NZN/QB/TextureRect.show()
+	$decideMode/desidePanel/NZN/WJYD/TextureRect.hide()
+	$decideMode/desidePanel/NZN/XZRC/TextureRect.hide()
+	$decideMode/desidePanel/NZN/List.hide()
+	$decideMode/desidePanel/NZN/battle.hide()
+	# 获取全部选择主公势力下的武将
+	var allCharacters = []
+	for city in Global.characters_select[Global.cur_character].citys:
+		var characters = Global.citys[city].curent_jiang
+		for character in characters:
+			# 获取到每一个武将的属性，判断执行倾向
+			var bing = Global.characters[character].attrs.bing
+			# 武将的兵力满员时，执行内政操作
+			if(bing >= Global.get_bing_by_command(Global.characters[character].attrs.command)):
+				allCharacters.append(character)
+	# 支持内政操作的武将
+	SignalBus.emit_signal("change_wjyd_characters_ids", allCharacters)
+	SignalBus.emit_signal("change_character_list_scroller_width", 522)
+	$decideMode/desidePanel/NZN/List.show()
+
+# 执行军队操作
+func _on_jdpy_panel_pressed() -> void:
+	$decideMode/desidePanel/NZN/QB/TextureRect.hide()
+	$decideMode/desidePanel/NZN/WJYD/TextureRect.show()
+	$decideMode/desidePanel/NZN/XZRC/TextureRect.hide()
+	$decideMode/desidePanel/NZN/List.hide()
+	$decideMode/desidePanel/NZN/battle.hide()
+	# 获取全部选择主公势力下的武将
+	var allCharacters = []
+	for city in Global.characters_select[Global.cur_character].citys:
+		var characters = Global.citys[city].curent_jiang
+		for character in characters:
+			# 获取到每一个武将的属性，判断执行倾向
+			var bing = Global.characters[character].attrs.bing
+			# 武将的兵力未满员时，执行征兵操作
+			if(bing < Global.get_bing_by_command(Global.characters[character].attrs.command)):
+				allCharacters.append(character)
+	# 支持内政操作的武将
+	SignalBus.emit_signal("change_wjyd_characters_ids", allCharacters)
+	SignalBus.emit_signal("change_character_list_scroller_width", 522)
+	$decideMode/desidePanel/NZN/List.show()
+
+# 进行军事侵略
+func _on_gcld_panel_pressed() -> void:
+	$decideMode/desidePanel/NZN/QB/TextureRect.hide()
+	$decideMode/desidePanel/NZN/WJYD/TextureRect.hide()
+	$decideMode/desidePanel/NZN/XZRC/TextureRect.show()
+	$decideMode/desidePanel/NZN/List.hide()
+	# 打开武将列表、城市列表。
+	$decideMode/desidePanel/NZN/battle.show()
+	# 获取全部选择主公势力下的武将
+	var allCharacters = []
+	for city in Global.characters_select[Global.cur_character].citys:
+		var characters = Global.citys[city].curent_jiang
+		for character in characters:
+			allCharacters.append(character)
+	# 支持内政操作的武将
+	SignalBus.emit_signal("change_wjyd_characters_ids", allCharacters)
+	SignalBus.emit_signal("change_character_list_scroller_width", 200)

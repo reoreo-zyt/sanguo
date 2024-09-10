@@ -43,7 +43,7 @@ var curr_city_character = 0
 var polities_times = 3
 
 # 选择的君主
-var cur_character = 0
+var cur_character = 2
 
 # 初始年月
 var year = 189
@@ -140,6 +140,15 @@ func _ready():
 				"born": hero_data[i][7],
 				"dead": hero_data[i][8]
 			}
+
+
+	# 将角色数据加入兵力等信息
+	for i in characters:
+		if(i!=0):
+			# 兵力
+			characters[i].attrs.bing = get_bing_by_command(characters[i].attrs.command)
+			# 初始金钱
+			characters[i].attrs.jin = 200
 
 	# 获取自定义君主列表
 	var character_sheet = workbook.get_sheet(6)
@@ -263,3 +272,13 @@ func get_skill_array(skill_text):
 		return []
 	else:
 		return skill_text.split(",")
+
+func get_bing_by_command(command):
+	if(command <= 50):
+		return 1000
+	elif(command <= 70):
+		return 1000 + (50 * (command - 50))
+	elif(command <= 90):
+		return 1000 + (80 * (command - 50))
+	else:
+		return 1000 + (100 * (command - 50))

@@ -10,18 +10,21 @@ func _on_change_polities_times():
 
 func _on_texture_button_pressed() -> void:
 	$HistoryAi/RichTextLabel.text += "[center]" + str(Global.year) + " 年 " + str(Global.month) + " 月"
-	if(Global.month == 12):
-		Global.month = 1
-		Global.year = Global.year + 1
-	else:
-		Global.month = Global.month + 1
-
-	# 获取到所有除自己以外的君主，执行 AI 的相关操作
-	create_ai_action()
-	set_time_text()
-
-	Global.polities_times = 3
-	$Panel/Label.text = str(Global.polities_times)
+	$"../../decideMode".show()
+	#if(Global.month == 12):
+		#Global.month = 1
+		#Global.year = Global.year + 1
+	#else:
+		#Global.month = Global.month + 1
+	#
+	## 选择 发展内政 军备 发动战争 外交 的其中一种
+#
+	## 获取到所有除自己以外的君主，执行 AI 的相关操作
+	#create_ai_action()
+	#set_time_text()
+#
+	#Global.polities_times = 3
+	#$Panel/Label.text = str(Global.polities_times)
 
 func set_time_text():
 	$TimePanel/RichTextLabel.text = "[center]" + str(Global.year) + " 年 " + str(Global.month) + " 月 "

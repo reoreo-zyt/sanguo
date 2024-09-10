@@ -41,3 +41,6 @@ signal curr_fight_character_show_info(character_id: int)
 
 # 武将移动
 signal change_wjyd_characters_ids(character_ids: Array)
+
+# 修改武将列表的宽度
+signal change_character_list_scroller_width(width: int)
