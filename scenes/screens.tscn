@@ -1957,6 +1957,7 @@ offset_bottom = 479.0
 script = ExtResource("57_c5tf6")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="decideMode/desidePanel/NZN/battle/CityList"]
+layout_mode = 0
 offset_right = 308.0
 offset_bottom = 407.0
 
@@ -1979,7 +1980,7 @@ custom_minimum_size = Vector2(288, 20)
 layout_mode = 2
 
 [node name="RichTextLabel" type="RichTextLabel" parent="decideMode/desidePanel/NZN/battle/CityList/ScrollContainer/MarginContainer/VBoxContainer/AttrKey/HBoxContainer"]
-custom_minimum_size = Vector2(60, 0)
+custom_minimum_size = Vector2(80, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_fonts/normal_font = ExtResource("9_lny1d")
@@ -1995,12 +1996,60 @@ bbcode_enabled = true
 text = "[center]所属"
 
 [node name="RichTextLabel3" type="RichTextLabel" parent="decideMode/desidePanel/NZN/battle/CityList/ScrollContainer/MarginContainer/VBoxContainer/AttrKey/HBoxContainer"]
-custom_minimum_size = Vector2(60, 0)
+custom_minimum_size = Vector2(80, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_fonts/normal_font = ExtResource("9_lny1d")
 bbcode_enabled = true
 text = "[center]距离"
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="decideMode/desidePanel/NZN/battle/CityList/ScrollContainer/MarginContainer/VBoxContainer/AttrKey/HBoxContainer"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/normal_font = ExtResource("9_lny1d")
+bbcode_enabled = true
+text = "[center]时间"
+
+[node name="CityValue" type="VBoxContainer" parent="decideMode/desidePanel/NZN/battle/CityList/ScrollContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(272, 20)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="decideMode/desidePanel/NZN/battle/CityList/ScrollContainer/MarginContainer/VBoxContainer/CityValue"]
+custom_minimum_size = Vector2(288, 20)
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="decideMode/desidePanel/NZN/battle/CityList/ScrollContainer/MarginContainer/VBoxContainer/CityValue/HBoxContainer"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/normal_font = ExtResource("9_lny1d")
+bbcode_enabled = true
+text = "[center][color=#91c2d5]并州北平"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="decideMode/desidePanel/NZN/battle/CityList/ScrollContainer/MarginContainer/VBoxContainer/CityValue/HBoxContainer"]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/normal_font = ExtResource("9_lny1d")
+bbcode_enabled = true
+text = "[center][color=#91c2d5]曹操"
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="decideMode/desidePanel/NZN/battle/CityList/ScrollContainer/MarginContainer/VBoxContainer/CityValue/HBoxContainer"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/normal_font = ExtResource("9_lny1d")
+bbcode_enabled = true
+text = "[center][color=#91c2d5]1200公里"
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="decideMode/desidePanel/NZN/battle/CityList/ScrollContainer/MarginContainer/VBoxContainer/CityValue/HBoxContainer"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/normal_font = ExtResource("9_lny1d")
+bbcode_enabled = true
+text = "[center][color=#91c2d5]2个月"
 
 [connection signal="meta_clicked" from="Map/SelectHero/MarginContainer/DContainer/DHContainer/TextPanel/MarginContainer/RichTextLabel" to="Map/SelectHero/MarginContainer/DContainer/DHContainer/TextPanel/MarginContainer/RichTextLabel" method="_on_meta_clicked"]
 [connection signal="pressed" from="Map/SelectHero/Menu/Decide" to="." method="_on_decide_pressed"]
