@@ -1969,7 +1969,6 @@ offset_right = 205.0
 offset_bottom = 442.0
 
 [node name="CityList" type="Control" parent="decideMode/desidePanel/NZN/battle"]
-visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_left = 212.0
@@ -2036,6 +2035,7 @@ bbcode_enabled = true
 text = "[center]时间"
 
 [node name="CityValue" type="VBoxContainer" parent="decideMode/desidePanel/NZN/battle/CityList/ScrollContainer/MarginContainer/VBoxContainer"]
+visible = false
 custom_minimum_size = Vector2(272, 20)
 layout_mode = 2
 
