@@ -44,3 +44,9 @@ signal change_wjyd_characters_ids(character_ids: Array)
 
 # 修改武将列表的宽度
 signal change_character_list_scroller_width(width: int)
+
+signal change_citys_selcet()
+
+signal select_city_for_fight_begin(city_id: String)
+
+signal change_battle_city()

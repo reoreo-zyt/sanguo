@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://clfhd2552hyr2"]
+
+[ext_resource type="Script" path="res://scripts/city_text_label.gd" id="1_sqnhm"]
+
+[node name="RichTextLabel" type="RichTextLabel"]
+custom_minimum_size = Vector2(120, 23)
+bbcode_enabled = true
+text = "[center]并州"
+script = ExtResource("1_sqnhm")
+
+[connection signal="meta_clicked" from="." to="." method="_on_meta_clicked"]

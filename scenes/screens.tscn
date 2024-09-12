@@ -1,4 +1,4 @@
-[gd_scene load_steps=72 format=3 uid="uid://coeuv1kg0usol"]
+[gd_scene load_steps=74 format=3 uid="uid://coeuv1kg0usol"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_7ijmt"]
 [ext_resource type="PackedScene" uid="uid://1yhkkygysjvv" path="res://scenes/fog.tscn" id="1_njvu3"]
@@ -54,8 +54,10 @@
 [ext_resource type="Texture2D" uid="uid://dgegq6l3ddcx3" path="res://assets/texture/ui/19_Menu (2)Gray.png" id="47_351ui"]
 [ext_resource type="Texture2D" uid="uid://dlsm338v2o8kt" path="res://assets/texture/ui/19_Menu (3)Gray.png" id="48_ei5t0"]
 [ext_resource type="Script" path="res://scripts/city_list.gd" id="57_c5tf6"]
+[ext_resource type="Script" path="res://scripts/battle.gd" id="57_ganw7"]
 [ext_resource type="Texture2D" uid="uid://3xc8xdmeioys" path="res://assets/texture/ui/29_CheckGray.png" id="58_pjwgo"]
 [ext_resource type="Texture2D" uid="uid://cxvhuahmx1rf7" path="res://assets/texture/ui/29_Check (3)Gray.png" id="59_4yht0"]
+[ext_resource type="Script" path="res://scripts/city_select.gd" id="59_f1251"]
 [ext_resource type="PackedScene" uid="uid://b135m2e4txmgj" path="res://scenes/characters_select_list.tscn" id="60_4pf3l"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_e0x5k"]
@@ -1540,8 +1542,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 4.0
 offset_top = 4.0
-offset_right = 400.0
-offset_bottom = 196.0
+offset_right = -4.0
+offset_bottom = -4.0
 grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
@@ -1606,8 +1608,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 4.0
 offset_top = 4.0
-offset_right = 516.0
-offset_bottom = 496.0
+offset_right = -4.0
+offset_bottom = -4.0
 grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
@@ -1672,8 +1674,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 4.0
 offset_top = 4.0
-offset_right = 400.0
-offset_bottom = 196.0
+offset_right = -4.0
+offset_bottom = -4.0
 grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
@@ -1941,13 +1943,33 @@ offset_bottom = 696.0
 
 [node name="battle" type="Node2D" parent="decideMode/desidePanel/NZN"]
 position = Vector2(-3, 211)
+script = ExtResource("57_ganw7")
+
+[node name="citySelect" type="Control" parent="decideMode/desidePanel/NZN/battle"]
+layout_mode = 3
+anchors_preset = 0
+offset_top = -20.0
+offset_right = 521.0
+offset_bottom = 20.0
+script = ExtResource("59_f1251")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="decideMode/desidePanel/NZN/battle/citySelect"]
+layout_mode = 0
+offset_left = 8.0
+offset_right = 515.0
+offset_bottom = 52.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="decideMode/desidePanel/NZN/battle/citySelect/ScrollContainer"]
+custom_minimum_size = Vector2(500, 50)
+layout_mode = 2
 
 [node name="List" parent="decideMode/desidePanel/NZN/battle" instance=ExtResource("60_4pf3l")]
 offset_top = 32.0
 offset_right = 205.0
-offset_bottom = 344.0
+offset_bottom = 442.0
 
 [node name="CityList" type="Control" parent="decideMode/desidePanel/NZN/battle"]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_left = 212.0
@@ -1958,8 +1980,10 @@ script = ExtResource("57_c5tf6")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="decideMode/desidePanel/NZN/battle/CityList"]
 layout_mode = 0
-offset_right = 308.0
-offset_bottom = 407.0
+offset_left = 1.0
+offset_top = -34.0
+offset_right = 309.0
+offset_bottom = 373.0
 
 [node name="MarginContainer" type="MarginContainer" parent="decideMode/desidePanel/NZN/battle/CityList/ScrollContainer"]
 layout_mode = 2

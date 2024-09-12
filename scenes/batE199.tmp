@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://c3h38q8582f3p"]
+
+[ext_resource type="Script" path="res://scripts/battle_city_select.gd" id="1_p7q5b"]
+
+[node name="RichTextLabel" type="RichTextLabel"]
+custom_minimum_size = Vector2(63, 0)
+offset_right = 121.0
+offset_bottom = 34.0
+bbcode_enabled = true
+text = "[center]并州四川"
+script = ExtResource("1_p7q5b")
+
+[connection signal="meta_clicked" from="." to="." method="_on_meta_clicked"]
