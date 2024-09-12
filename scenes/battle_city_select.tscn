@@ -1,11 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://c3h38q8582f3p"]
+[gd_scene load_steps=3 format=3 uid="uid://c3h38q8582f3p"]
 
+[ext_resource type="FontFile" uid="uid://ccc7h37nygjqu" path="res://assets/fonts/方正隶书简体.TTF" id="1_p04ak"]
 [ext_resource type="Script" path="res://scripts/battle_city_select.gd" id="1_p7q5b"]
 
 [node name="RichTextLabel" type="RichTextLabel"]
-custom_minimum_size = Vector2(63, 0)
-offset_right = 121.0
-offset_bottom = 34.0
+custom_minimum_size = Vector2(121, 32)
+offset_left = 2.0
+offset_top = -1.0
+offset_right = 123.0
+offset_bottom = 31.0
+theme_override_fonts/normal_font = ExtResource("1_p04ak")
+theme_override_font_sizes/normal_font_size = 25
 bbcode_enabled = true
 text = "[center]并州四川"
 script = ExtResource("1_p7q5b")

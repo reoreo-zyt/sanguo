@@ -193,8 +193,11 @@ func _on_gcld_panel_pressed() -> void:
 	$decideMode/desidePanel/NZN/WJYD/TextureRect.hide()
 	$decideMode/desidePanel/NZN/XZRC/TextureRect.show()
 	$decideMode/desidePanel/NZN/List.hide()
+	$decideMode/desidePanel/NZN/battle/List.hide()
+	$decideMode/desidePanel/NZN/battle/CityList.hide()
 	# 打开武将列表、城市列表。
 	$decideMode/desidePanel/NZN/battle.show()
+	$decideMode/desidePanel/NZN/battle/citySelect.show()
 	# 获取全部选择主公势力下的武将
 	#var allCharacters = []
 	#for city in Global.characters_select[Global.cur_character].citys:
@@ -208,6 +211,7 @@ func _on_gcld_panel_pressed() -> void:
 	#SignalBus.emit_signal("change_wjyd_characters_ids", allCharacters)
 	#SignalBus.emit_signal("change_character_list_scroller_width", 200)
 
-func _on_select_city_for_fight_begin():
+func _on_select_city_for_fight_begin(city_id):
+	print(city_id)
 	$decideMode/desidePanel/NZN/battle/List.show()
 	$decideMode/desidePanel/NZN/battle/CityList.show()
