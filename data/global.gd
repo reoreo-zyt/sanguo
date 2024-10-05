@@ -228,6 +228,7 @@ func _ready():
 	for i in citys:
 		for item in citys[i].curent_jiang:
 			save_hire_jiang.append(item)
+
 # 公用方法
 func set_name_text(name):
 	return "[center][color=#91c2d5][u][url]" + name + "[/url][/u][/color]"
@@ -282,3 +283,18 @@ func get_bing_by_command(command):
 		return 1000 + (80 * (command - 50))
 	else:
 		return 1000 + (100 * (command - 50))
+
+func set_message_name(text):
+	return "[color=#91c2d5][u][url]"+  text +"[/url][/u][/color]"
+
+func get_skill_desc(nameId):
+	var skillsDesc = ""
+	var skillIds = Global.characters_select[int(nameId)].skillIds
+	for i in Global.characters_select[int(nameId)].skillIds:
+		if(Global.skills[i].type == "normal"):
+			skillsDesc += "[color=#91c2d5][u][url]"+  Global.skills[i].name +"[/url][/u][/color]" + " "
+		if(Global.skills[i].type == "self"):
+			skillsDesc += "[color=#ffe219][u][url]"+  Global.skills[i].name +"[/url][/u][/color]" + " "
+		if(Global.skills[i].type == "self_bad"):
+			skillsDesc += "[color=#ff5437][u][url]"+  Global.skills[i].name +"[/url][/u][/color]" + " "
+	return skillsDesc

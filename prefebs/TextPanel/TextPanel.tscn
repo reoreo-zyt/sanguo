@@ -1,0 +1,38 @@
+[gd_scene load_steps=4 format=3 uid="uid://hgfl2a8i708c"]
+
+[ext_resource type="Script" path="res://prefebs/TextPanel/text_panel.gd" id="1_pmw7a"]
+[ext_resource type="FontFile" uid="uid://ccc7h37nygjqu" path="res://assets/fonts/方正隶书简体.TTF" id="2_jt4uq"]
+
+[sub_resource type="Theme" id="Theme_hkxd8"]
+default_font = ExtResource("2_jt4uq")
+default_font_size = 32
+
+[node name="Panel" type="Panel"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -925.0
+offset_top = 330.0
+offset_right = 906.0
+offset_bottom = 447.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_pmw7a")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -897.0
+offset_top = -20.0
+offset_right = 897.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_hkxd8")
+bbcode_enabled = true

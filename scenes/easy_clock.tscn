@@ -1,9 +1,0 @@
-[gd_scene format=3 uid="uid://svvw4usdbj6g"]
-
-[node name="EasyClock" type="Control"]
-layout_mode = 3
-anchors_preset = 0
-offset_left = 9.0
-offset_top = 8.0
-offset_right = 56.0
-offset_bottom = 61.0

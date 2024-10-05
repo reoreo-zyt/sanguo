@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://dfhe3oswv607s"]
+
+[ext_resource type="Script" path="res://prefebs/CharacterSelect/character_select.gd" id="1_3nnrd"]
+[ext_resource type="PackedScene" uid="uid://can5rx1comvfn" path="res://prefebs/CharacterSelect/hero_select_item.tscn" id="2_ac3ld"]
+
+[node name="HCContainer" type="VBoxContainer"]
+offset_left = 109.0
+offset_top = 845.0
+offset_right = 1821.0
+offset_bottom = 945.0
+script = ExtResource("1_3nnrd")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+custom_minimum_size = Vector2(1591, 80)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+
+[node name="TextureButton" parent="ScrollContainer/VBoxContainer/HBoxContainer" instance=ExtResource("2_ac3ld")]
+visible = false
+layout_mode = 2

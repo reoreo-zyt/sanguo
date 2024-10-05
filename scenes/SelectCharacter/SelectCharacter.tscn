@@ -1,0 +1,119 @@
+[gd_scene load_steps=10 format=3 uid="uid://xdylmqtgfpij"]
+
+[ext_resource type="Script" path="res://scenes/SelectCharacter/select_character.gd" id="1_rotmt"]
+[ext_resource type="Texture2D" uid="uid://b1w483uyt4gnh" path="res://assets/maps/sanguo.jpg" id="1_uh2gg"]
+[ext_resource type="Script" path="res://scenes/SelectCharacter/city_container.gd" id="2_6pnv2"]
+[ext_resource type="Texture2D" uid="uid://cyn3fh4bok768" path="res://assets/ui/btn_back.png" id="2_x4sw0"]
+[ext_resource type="Texture2D" uid="uid://dsxdhuxuisime" path="res://assets/decorations/d1.png" id="3_tlc8l"]
+[ext_resource type="FontFile" uid="uid://ccc7h37nygjqu" path="res://assets/fonts/方正隶书简体.TTF" id="4_bxfqh"]
+[ext_resource type="PackedScene" uid="uid://du6ko4ea4nfh8" path="res://prefebs/City/City.tscn" id="4_plrk4"]
+[ext_resource type="Texture2D" uid="uid://d1ps37gn06i3l" path="res://assets/ui/ok.png" id="6_55qnc"]
+
+[sub_resource type="Theme" id="Theme_5nlvl"]
+default_font = ExtResource("4_bxfqh")
+default_font_size = 32
+
+[node name="SelectCharacter" type="Node2D"]
+script = ExtResource("1_rotmt")
+
+[node name="Main" type="Control" parent="."]
+custom_minimum_size = Vector2(1920, 1080)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MapPreview" type="Control" parent="Main"]
+custom_minimum_size = Vector2(1920, 1080)
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="Main/MapPreview"]
+custom_minimum_size = Vector2(1920, 1080)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -960.0
+offset_top = -540.0
+offset_right = 960.0
+offset_bottom = 540.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_uh2gg")
+expand_mode = 2
+
+[node name="CityContainer" type="PanelContainer" parent="Main"]
+layout_mode = 0
+script = ExtResource("2_6pnv2")
+
+[node name="city" parent="Main/CityContainer" instance=ExtResource("4_plrk4")]
+position = Vector2(929, 585)
+
+[node name="Menu" type="Control" parent="Main"]
+visible = false
+custom_minimum_size = Vector2(1920, 1080)
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="TextureButton" type="TextureButton" parent="Main/Menu"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -56.0
+offset_bottom = 44.0
+grow_horizontal = 0
+texture_normal = ExtResource("2_x4sw0")
+
+[node name="TextureRect" type="TextureRect" parent="Main/Menu"]
+layout_mode = 1
+offset_right = 226.0
+offset_bottom = 47.0
+texture = ExtResource("3_tlc8l")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Main/Menu/TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -80.0
+offset_top = -19.5
+offset_right = 82.0
+offset_bottom = 20.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_5nlvl")
+bbcode_enabled = true
+text = "[center]选择势力"
+
+[node name="Character" type="Control" parent="Main/Menu"]
+layout_mode = 1
+anchors_preset = 0
+offset_left = 46.0
+offset_top = 104.0
+offset_right = 709.0
+offset_bottom = 638.0
+
+[node name="Verify" type="TextureButton" parent="Main/Menu"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -83.0
+offset_top = -145.0
+offset_right = 83.0
+grow_horizontal = 2
+grow_vertical = 0
+texture_normal = ExtResource("6_55qnc")
+
+[connection signal="pressed" from="Main/Menu/TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="Main/Menu/Verify" to="." method="_on_verify_pressed"]

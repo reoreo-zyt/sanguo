@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://erthmmkrhlf0"]
-
-[ext_resource type="Script" path="res://addons/float-info/float.gd" id="1_l3b6t"]
-
-[node name="Float" type="Marker2D"]
-script = ExtResource("1_l3b6t")

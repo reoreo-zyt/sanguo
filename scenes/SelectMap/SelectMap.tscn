@@ -1,0 +1,216 @@
+[gd_scene load_steps=11 format=3 uid="uid://cbkvtnqwrw8od"]
+
+[ext_resource type="Script" path="res://scenes/SelectMap/select_map.gd" id="1_0c7b2"]
+[ext_resource type="Texture2D" uid="uid://b1w483uyt4gnh" path="res://assets/maps/sanguo.jpg" id="1_wqexc"]
+[ext_resource type="Texture2D" uid="uid://cyn3fh4bok768" path="res://assets/ui/btn_back.png" id="2_r4h0x"]
+[ext_resource type="Texture2D" uid="uid://dsxdhuxuisime" path="res://assets/decorations/d1.png" id="4_ruioj"]
+[ext_resource type="FontFile" uid="uid://ccc7h37nygjqu" path="res://assets/fonts/方正隶书简体.TTF" id="5_4d4fk"]
+[ext_resource type="Texture2D" uid="uid://d1ps37gn06i3l" path="res://assets/ui/ok.png" id="6_edopp"]
+[ext_resource type="Texture2D" uid="uid://dy4snsyqesdu6" path="res://assets/ui/Panel.jpg" id="6_x7diq"]
+
+[sub_resource type="Theme" id="Theme_tdbhy"]
+default_font = ExtResource("5_4d4fk")
+default_font_size = 32
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7skdx"]
+bg_color = Color(0.768627, 0.505882, 0.164706, 0.52549)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uo11e"]
+bg_color = Color(0.317647, 0.337255, 0.368627, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+
+[node name="SelectMap" type="Node2D"]
+script = ExtResource("1_0c7b2")
+
+[node name="Main" type="Control" parent="."]
+custom_minimum_size = Vector2(1920, 1080)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MapPreview" type="Control" parent="Main"]
+custom_minimum_size = Vector2(1920, 1080)
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="Main/MapPreview"]
+custom_minimum_size = Vector2(1920, 1080)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -960.0
+offset_top = -540.0
+offset_right = 960.0
+offset_bottom = 540.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_wqexc")
+expand_mode = 2
+
+[node name="Menu" type="Control" parent="Main"]
+custom_minimum_size = Vector2(1920, 1080)
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="TextureButton" type="TextureButton" parent="Main/Menu"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -56.0
+offset_bottom = 44.0
+grow_horizontal = 0
+texture_normal = ExtResource("2_r4h0x")
+
+[node name="TextureRect" type="TextureRect" parent="Main/Menu"]
+layout_mode = 1
+offset_right = 226.0
+offset_bottom = 47.0
+texture = ExtResource("4_ruioj")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Main/Menu/TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -80.0
+offset_top = -19.5
+offset_right = 82.0
+offset_bottom = 20.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_tdbhy")
+bbcode_enabled = true
+text = "[center]选择剧本"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Main/Menu"]
+layout_mode = 0
+offset_left = 22.0
+offset_top = 63.0
+offset_right = 395.0
+offset_bottom = 1032.0
+
+[node name="Panel" type="Panel" parent="Main/Menu/VBoxContainer"]
+custom_minimum_size = Vector2(48, 60)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_7skdx")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Main/Menu/VBoxContainer/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -174.5
+offset_top = -19.0
+offset_right = 179.5
+offset_bottom = 21.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_tdbhy")
+bbcode_enabled = true
+text = "[center]190年1月 反董卓联盟"
+
+[node name="Panel2" type="Panel" parent="Main/Menu/VBoxContainer"]
+custom_minimum_size = Vector2(48, 60)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_uo11e")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Main/Menu/VBoxContainer/Panel2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -174.5
+offset_top = -19.0
+offset_right = 179.5
+offset_bottom = 21.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_tdbhy")
+bbcode_enabled = true
+text = "[center]暂无更多"
+
+[node name="Text" type="TextureRect" parent="Main/Menu"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -957.0
+offset_top = -472.0
+offset_right = 963.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("6_x7diq")
+
+[node name="Title" type="RichTextLabel" parent="Main/Menu/Text"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.178
+anchor_right = 0.5
+anchor_bottom = 0.178
+offset_left = -174.0
+offset_top = -20.106
+offset_right = 180.0
+offset_bottom = 19.894
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_tdbhy")
+bbcode_enabled = true
+text = "[center]190年1月 反董卓联盟"
+
+[node name="Desc" type="RichTextLabel" parent="Main/Menu/Text"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.178
+anchor_right = 0.5
+anchor_bottom = 0.178
+offset_left = -911.0
+offset_top = 57.984
+offset_right = 916.0
+offset_bottom = 341.984
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_tdbhy")
+bbcode_enabled = true
+text = "[center]黄巾起义结束后不久，何进和十常侍在宫中双双倒台，凉州霸主董卓控制了有名无实的天子。董卓坐拥重兵，控制了朝廷。不满于此的诸侯共同举兵讨伐董卓。"
+
+[node name="Verify" type="TextureButton" parent="Main/Menu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -83.0
+offset_top = -72.5
+offset_right = 83.0
+offset_bottom = 72.5
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("6_edopp")
+
+[connection signal="pressed" from="Main/Menu/TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="Main/Menu/Verify" to="." method="_on_verify_pressed"]

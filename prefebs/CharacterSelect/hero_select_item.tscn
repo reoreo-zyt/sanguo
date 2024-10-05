@@ -1,0 +1,71 @@
+[gd_scene load_steps=7 format=3 uid="uid://can5rx1comvfn"]
+
+[ext_resource type="Texture2D" uid="uid://8js5x1rrptd" path="res://assets/button/button.png" id="1_k1hba"]
+[ext_resource type="FontFile" uid="uid://ccc7h37nygjqu" path="res://assets/fonts/方正隶书简体.TTF" id="2_psdk0"]
+[ext_resource type="Script" path="res://prefebs/CharacterSelect/hero_select_item.gd" id="2_tkcxh"]
+[ext_resource type="Texture2D" uid="uid://dfeth53ppgt5s" path="res://assets/citys/city_temp.png" id="3_1m2cm"]
+
+[sub_resource type="Theme" id="Theme_y18ub"]
+default_font = ExtResource("2_psdk0")
+default_font_size = 36
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7j0ff"]
+bg_color = Color(0.772549, 0.545098, 0.341176, 0.294118)
+
+[node name="TextureButton" type="TextureButton"]
+texture_normal = ExtResource("1_k1hba")
+script = ExtResource("2_tkcxh")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -21.5
+offset_right = 203.0
+offset_bottom = 22.5
+grow_vertical = 2
+mouse_filter = 2
+theme = SubResource("Theme_y18ub")
+bbcode_enabled = true
+text = "[center]刘备"
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -87.0
+offset_top = -20.0
+offset_right = -47.0
+offset_bottom = 20.0
+grow_horizontal = 0
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -87.0
+offset_top = -20.0
+offset_right = -47.0
+offset_bottom = 20.0
+grow_horizontal = 0
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("3_1m2cm")
+
+[node name="Panel" type="Panel" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 297.0
+offset_bottom = 66.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_7j0ff")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
