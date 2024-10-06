@@ -65,6 +65,7 @@ visible = false
 layout_mode = 2
 
 [node name="Zhu" type="Panel" parent="Main"]
+layout_mode = 0
 offset_left = 203.0
 offset_top = 15.0
 offset_right = 375.0
@@ -114,6 +115,7 @@ bbcode_enabled = true
 text = "[color=#91c2d5]刘备"
 
 [node name="Tong" type="Panel" parent="Main"]
+layout_mode = 0
 offset_left = 428.0
 offset_top = 15.0
 offset_right = 600.0
@@ -163,6 +165,7 @@ bbcode_enabled = true
 text = "[color=#91c2d5]50"
 
 [node name="Ren" type="Panel" parent="Main"]
+layout_mode = 0
 offset_left = 200.0
 offset_top = 96.0
 offset_right = 372.0
@@ -212,6 +215,7 @@ bbcode_enabled = true
 text = "[color=#91c2d5]30000"
 
 [node name="Jiang" type="Panel" parent="Main"]
+layout_mode = 0
 offset_left = 430.0
 offset_top = 97.0
 offset_right = 602.0
@@ -261,6 +265,7 @@ bbcode_enabled = true
 text = "[color=#91c2d5][u][url]5[/url][/u][/color] "
 
 [node name="Bing" type="Panel" parent="Main"]
+layout_mode = 0
 offset_left = 200.0
 offset_top = 167.0
 offset_right = 372.0
@@ -310,6 +315,7 @@ bbcode_enabled = true
 text = "[color=#91c2d5]15600"
 
 [node name="Kai" type="Panel" parent="Main"]
+layout_mode = 0
 offset_left = 430.0
 offset_top = 168.0
 offset_right = 602.0
@@ -359,6 +365,7 @@ bbcode_enabled = true
 text = "[color=#91c2d5]25"
 
 [node name="Shang" type="Panel" parent="Main"]
+layout_mode = 0
 offset_left = 200.0
 offset_top = 238.0
 offset_right = 372.0
@@ -408,6 +415,7 @@ bbcode_enabled = true
 text = "[color=#91c2d5]25"
 
 [node name="Zhi" type="Panel" parent="Main"]
+layout_mode = 0
 offset_left = 431.0
 offset_top = 238.0
 offset_right = 603.0
@@ -457,6 +465,7 @@ bbcode_enabled = true
 text = "[color=#91c2d5]25"
 
 [node name="Jin" type="Panel" parent="Main"]
+layout_mode = 0
 offset_left = 200.0
 offset_top = 305.0
 offset_right = 372.0
@@ -506,6 +515,7 @@ bbcode_enabled = true
 text = "[color=#91c2d5]300"
 
 [node name="Liang" type="Panel" parent="Main"]
+layout_mode = 0
 offset_left = 431.0
 offset_top = 305.0
 offset_right = 603.0
