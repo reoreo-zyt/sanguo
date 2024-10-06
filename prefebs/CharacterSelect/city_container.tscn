@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://de7cj247faoxo"]
+
+[ext_resource type="Script" path="res://scenes/SelectCharacter/city_container.gd" id="1_bb4ys"]
+
+[node name="CityContainer" type="PanelContainer"]
+script = ExtResource("1_bb4ys")

@@ -35,11 +35,13 @@ material = SubResource("ShaderMaterial_1dnd3")
 offset_right = 16.0
 offset_bottom = 16.0
 texture_normal = ExtResource("1_wbngm")
+stretch_mode = 0
 
 [node name="Panel" type="Panel" parent="."]
-offset_left = -33.0
+visible = false
+offset_left = -59.0
 offset_top = -43.0
-offset_right = 44.0
+offset_right = 76.0
 offset_bottom = -3.0
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Panel"]
@@ -49,14 +51,15 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -32.5
-offset_top = -30.0
-offset_right = 35.5
-offset_bottom = -8.0
+offset_left = -46.5
+offset_top = -35.0
+offset_right = 51.5
+offset_bottom = -6.0
 grow_horizontal = 2
 grow_vertical = 0
 size_flags_vertical = 4
 theme_override_fonts/normal_font = ExtResource("3_823vc")
+theme_override_font_sizes/normal_font_size = 24
 bbcode_enabled = true
 text = "[color=#fff][u][url]凉州武威[/url][/u][/color]"
 script = ExtResource("4_rjdv1")

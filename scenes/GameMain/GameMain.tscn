@@ -1,0 +1,57 @@
+[gd_scene load_steps=5 format=3 uid="uid://ccpolo20cr5qp"]
+
+[ext_resource type="Texture2D" uid="uid://b1w483uyt4gnh" path="res://assets/maps/sanguo.jpg" id="1_4ckgs"]
+[ext_resource type="Script" path="res://scenes/GameMain/game_main.gd" id="1_7uyeb"]
+[ext_resource type="PackedScene" uid="uid://de7cj247faoxo" path="res://prefebs/CharacterSelect/city_container.tscn" id="2_vmsst"]
+[ext_resource type="PackedScene" uid="uid://bsggmbbtr35iy" path="res://prefebs/CityDetail/CityDetail.tscn" id="4_haqky"]
+
+[node name="GameMain" type="Node2D"]
+script = ExtResource("1_7uyeb")
+
+[node name="Main" type="Control" parent="."]
+custom_minimum_size = Vector2(1920, 1080)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MapPreview" type="Control" parent="Main"]
+custom_minimum_size = Vector2(1920, 1080)
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="Main/MapPreview"]
+custom_minimum_size = Vector2(1920, 1080)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -960.0
+offset_top = -540.0
+offset_right = 960.0
+offset_bottom = 540.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_4ckgs")
+expand_mode = 2
+
+[node name="CityContainer" parent="Main" instance=ExtResource("2_vmsst")]
+layout_mode = 0
+is_select = false
+
+[node name="Control" type="Control" parent="Main"]
+anchors_preset = 0
+offset_left = 58.0
+offset_top = 147.0
+offset_right = 1741.0
+offset_bottom = 949.0
+
+[node name="CityDetail" parent="Main/Control" instance=ExtResource("4_haqky")]
+layout_mode = 0
+offset_left = 1169.0
+offset_top = 1.0
+offset_right = 1169.0
+offset_bottom = 1.0

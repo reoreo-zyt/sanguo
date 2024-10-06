@@ -1,0 +1,583 @@
+[gd_scene load_steps=19 format=3 uid="uid://bsggmbbtr35iy"]
+
+[ext_resource type="Texture2D" uid="uid://b88eisuk3vhxo" path="res://assets/ui/MiniPanel04.jpg" id="1_opvkm"]
+[ext_resource type="Script" path="res://prefebs/CityDetail/city_detail.gd" id="1_q5hdc"]
+[ext_resource type="PackedScene" uid="uid://cado3pqk0wsu6" path="res://prefebs/CityDetail/city_item.tscn" id="3_fk6di"]
+[ext_resource type="Texture2D" uid="uid://cjkngiyvq85kk" path="res://assets/ui/icons_256/home.png" id="3_s5eb8"]
+[ext_resource type="FontFile" uid="uid://ccc7h37nygjqu" path="res://assets/fonts/方正隶书简体.TTF" id="4_nw0gu"]
+[ext_resource type="Texture2D" uid="uid://c7k54vbipqqo" path="res://assets/texture/force/fffea5e6-96bc-e1e0-b465-8491edda9c84.png" id="5_3kmc3"]
+[ext_resource type="Texture2D" uid="uid://mb625t7y4mlj" path="res://assets/texture/force/Tong.png" id="6_c3u4o"]
+[ext_resource type="Texture2D" uid="uid://bq6bgxxarjylb" path="res://assets/texture/force/将.png" id="8_grrky"]
+[ext_resource type="Texture2D" uid="uid://bbs3m3e138wuq" path="res://assets/texture/force/Bing.png" id="9_aq5f4"]
+[ext_resource type="Texture2D" uid="uid://nepado6552jf" path="res://assets/texture/force/Ren.png" id="10_04gym"]
+[ext_resource type="Texture2D" uid="uid://bi3l7dxppho1t" path="res://assets/texture/force/Kai.png" id="10_ei53u"]
+[ext_resource type="Texture2D" uid="uid://er8tgcpdqlw6" path="res://assets/texture/force/Shang.png" id="11_05aat"]
+[ext_resource type="Texture2D" uid="uid://cdhn1garqbdtb" path="res://assets/ui/img_public_smallicon_bg.png" id="11_kyhxs"]
+[ext_resource type="Texture2D" uid="uid://dohaxbiwcf0ye" path="res://assets/texture/force/fcacf8df-6f81-8c6f-350b-fa9e4cc6525c.png" id="12_g1yo4"]
+[ext_resource type="Texture2D" uid="uid://dor1lq83o5e5i" path="res://assets/texture/force/Jin.png" id="13_71cv0"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rv44i"]
+bg_color = Color(0.121569, 0.160784, 0.192157, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_63mqd"]
+bg_color = Color(0.121569, 0.160784, 0.192157, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y6s0u"]
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+
+[node name="CityDetail" type="Panel"]
+script = ExtResource("1_q5hdc")
+
+[node name="BG" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 635.0
+offset_bottom = 643.0
+texture = ExtResource("1_opvkm")
+
+[node name="Main" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 635.0
+offset_bottom = 645.0
+
+[node name="Panel" type="Panel" parent="Main"]
+layout_mode = 0
+offset_top = 14.0
+offset_right = 177.0
+offset_bottom = 635.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_rv44i")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Main/Panel"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 3.0
+offset_right = 169.0
+offset_bottom = 613.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Main/Panel/ScrollContainer"]
+custom_minimum_size = Vector2(163, 610)
+layout_mode = 2
+
+[node name="TextureButton" parent="Main/Panel/ScrollContainer/VBoxContainer" instance=ExtResource("3_fk6di")]
+visible = false
+layout_mode = 2
+
+[node name="Zhu" type="Panel" parent="Main"]
+offset_left = 203.0
+offset_top = 15.0
+offset_right = 375.0
+offset_bottom = 70.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_63mqd")
+
+[node name="Panel" type="Panel" parent="Main/Zhu"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 7.0
+offset_right = 60.0
+offset_bottom = 49.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_y6s0u")
+
+[node name="force" type="TextureRect" parent="Main/Zhu/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -13.0
+offset_top = -13.0
+offset_right = 13.0
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_3kmc3")
+expand_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Main/Zhu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -14.0
+offset_top = -12.5
+offset_right = 86.0
+offset_bottom = 21.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("4_nw0gu")
+theme_override_font_sizes/normal_font_size = 26
+bbcode_enabled = true
+text = "[color=#91c2d5]刘备"
+
+[node name="Tong" type="Panel" parent="Main"]
+offset_left = 428.0
+offset_top = 15.0
+offset_right = 600.0
+offset_bottom = 70.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_63mqd")
+
+[node name="Panel" type="Panel" parent="Main/Tong"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 7.0
+offset_right = 60.0
+offset_bottom = 49.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_y6s0u")
+
+[node name="force" type="TextureRect" parent="Main/Tong/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -13.0
+offset_top = -13.0
+offset_right = 13.0
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_c3u4o")
+expand_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Main/Tong"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -14.0
+offset_top = -12.5
+offset_right = 86.0
+offset_bottom = 21.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("4_nw0gu")
+theme_override_font_sizes/normal_font_size = 26
+bbcode_enabled = true
+text = "[color=#91c2d5]50"
+
+[node name="Ren" type="Panel" parent="Main"]
+offset_left = 200.0
+offset_top = 96.0
+offset_right = 372.0
+offset_bottom = 151.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_63mqd")
+
+[node name="Panel" type="Panel" parent="Main/Ren"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 7.0
+offset_right = 60.0
+offset_bottom = 49.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_y6s0u")
+
+[node name="force" type="TextureRect" parent="Main/Ren/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -13.0
+offset_top = -13.0
+offset_right = 13.0
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("10_04gym")
+expand_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Main/Ren"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -14.0
+offset_top = -12.5
+offset_right = 86.0
+offset_bottom = 21.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("4_nw0gu")
+theme_override_font_sizes/normal_font_size = 26
+bbcode_enabled = true
+text = "[color=#91c2d5]30000"
+
+[node name="Jiang" type="Panel" parent="Main"]
+offset_left = 430.0
+offset_top = 97.0
+offset_right = 602.0
+offset_bottom = 152.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_63mqd")
+
+[node name="Panel" type="Panel" parent="Main/Jiang"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 7.0
+offset_right = 60.0
+offset_bottom = 49.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_y6s0u")
+
+[node name="force" type="TextureRect" parent="Main/Jiang/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -13.0
+offset_top = -13.0
+offset_right = 13.0
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_grrky")
+expand_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Main/Jiang"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -14.0
+offset_top = -12.5
+offset_right = 86.0
+offset_bottom = 21.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("4_nw0gu")
+theme_override_font_sizes/normal_font_size = 26
+bbcode_enabled = true
+text = "[color=#91c2d5][u][url]5[/url][/u][/color] "
+
+[node name="Bing" type="Panel" parent="Main"]
+offset_left = 200.0
+offset_top = 167.0
+offset_right = 372.0
+offset_bottom = 222.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_63mqd")
+
+[node name="Panel" type="Panel" parent="Main/Bing"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 7.0
+offset_right = 60.0
+offset_bottom = 49.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_y6s0u")
+
+[node name="force" type="TextureRect" parent="Main/Bing/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -13.0
+offset_top = -13.0
+offset_right = 13.0
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("9_aq5f4")
+expand_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Main/Bing"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -14.0
+offset_top = -12.5
+offset_right = 86.0
+offset_bottom = 21.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("4_nw0gu")
+theme_override_font_sizes/normal_font_size = 26
+bbcode_enabled = true
+text = "[color=#91c2d5]15600"
+
+[node name="Kai" type="Panel" parent="Main"]
+offset_left = 430.0
+offset_top = 168.0
+offset_right = 602.0
+offset_bottom = 223.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_63mqd")
+
+[node name="Panel" type="Panel" parent="Main/Kai"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 7.0
+offset_right = 60.0
+offset_bottom = 49.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_y6s0u")
+
+[node name="force" type="TextureRect" parent="Main/Kai/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -13.0
+offset_top = -13.0
+offset_right = 13.0
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("10_ei53u")
+expand_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Main/Kai"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -14.0
+offset_top = -12.5
+offset_right = 86.0
+offset_bottom = 21.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("4_nw0gu")
+theme_override_font_sizes/normal_font_size = 26
+bbcode_enabled = true
+text = "[color=#91c2d5]25"
+
+[node name="Shang" type="Panel" parent="Main"]
+offset_left = 200.0
+offset_top = 238.0
+offset_right = 372.0
+offset_bottom = 293.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_63mqd")
+
+[node name="Panel" type="Panel" parent="Main/Shang"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 7.0
+offset_right = 60.0
+offset_bottom = 49.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_y6s0u")
+
+[node name="force" type="TextureRect" parent="Main/Shang/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -13.0
+offset_top = -13.0
+offset_right = 13.0
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("11_05aat")
+expand_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Main/Shang"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -14.0
+offset_top = -12.5
+offset_right = 86.0
+offset_bottom = 21.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("4_nw0gu")
+theme_override_font_sizes/normal_font_size = 26
+bbcode_enabled = true
+text = "[color=#91c2d5]25"
+
+[node name="Zhi" type="Panel" parent="Main"]
+offset_left = 431.0
+offset_top = 238.0
+offset_right = 603.0
+offset_bottom = 293.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_63mqd")
+
+[node name="Panel" type="Panel" parent="Main/Zhi"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 7.0
+offset_right = 60.0
+offset_bottom = 49.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_y6s0u")
+
+[node name="force" type="TextureRect" parent="Main/Zhi/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -13.0
+offset_top = -13.0
+offset_right = 13.0
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("12_g1yo4")
+expand_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Main/Zhi"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -14.0
+offset_top = -12.5
+offset_right = 86.0
+offset_bottom = 21.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("4_nw0gu")
+theme_override_font_sizes/normal_font_size = 26
+bbcode_enabled = true
+text = "[color=#91c2d5]25"
+
+[node name="Jin" type="Panel" parent="Main"]
+offset_left = 200.0
+offset_top = 305.0
+offset_right = 372.0
+offset_bottom = 360.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_63mqd")
+
+[node name="Panel" type="Panel" parent="Main/Jin"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 7.0
+offset_right = 60.0
+offset_bottom = 49.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_y6s0u")
+
+[node name="force" type="TextureRect" parent="Main/Jin/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -13.0
+offset_top = -13.0
+offset_right = 13.0
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("13_71cv0")
+expand_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Main/Jin"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -14.0
+offset_top = -12.5
+offset_right = 86.0
+offset_bottom = 21.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("4_nw0gu")
+theme_override_font_sizes/normal_font_size = 26
+bbcode_enabled = true
+text = "[color=#91c2d5]300"
+
+[node name="Liang" type="Panel" parent="Main"]
+offset_left = 431.0
+offset_top = 305.0
+offset_right = 603.0
+offset_bottom = 360.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_63mqd")
+
+[node name="Panel" type="Panel" parent="Main/Liang"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 7.0
+offset_right = 60.0
+offset_bottom = 49.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_y6s0u")
+
+[node name="force" type="TextureRect" parent="Main/Liang/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -13.0
+offset_top = -13.0
+offset_right = 13.0
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("13_71cv0")
+expand_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Main/Liang"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -14.0
+offset_top = -12.5
+offset_right = 86.0
+offset_bottom = 21.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("4_nw0gu")
+theme_override_font_sizes/normal_font_size = 26
+bbcode_enabled = true
+text = "[color=#91c2d5]600"
+
+[node name="Fold" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = -64.0
+offset_top = -34.0
+offset_right = 2.0
+offset_bottom = 32.0
+texture_normal = ExtResource("11_kyhxs")
+
+[node name="TextureButton" type="TextureButton" parent="Fold"]
+modulate = Color(0.898039, 0.815686, 0.623529, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -12.0
+offset_top = -12.0
+offset_right = 244.0
+offset_bottom = 244.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.1, 0.1)
+mouse_filter = 2
+texture_normal = ExtResource("3_s5eb8")
+
+[connection signal="pressed" from="Fold" to="." method="_on_fold_pressed"]

@@ -28,4 +28,8 @@ func _on_get_name_id(id):
 	name_id = id
 
 func _on_verify_pressed() -> void:
+	Global.cur_hero_id = name_id
 	SignalBus.emit_signal("game_main")
+
+func _on_dectation_pressed() -> void:
+	_on_texture_button_pressed()

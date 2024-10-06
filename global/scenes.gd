@@ -11,7 +11,8 @@ func _ready() -> void:
 	SignalBus.connect("return_start", _on_return_start)
 	SignalBus.connect("return_select", _on_return_select)
 	SignalBus.connect("change_scenes_to_select_character", _on_change_scenes_to_select_character)
-	
+	SignalBus.connect("game_main", _on_game_main)
+
 func _on_start_game():
 	get_tree().change_scene_to_file("res://scenes/SelectMap/SelectMap.tscn")
 
@@ -29,3 +30,6 @@ func _on_return_select():
 
 func _on_change_scenes_to_select_character():
 	get_tree().change_scene_to_file("res://scenes/SelectCharacter/SelectCharacter.tscn")
+
+func _on_game_main():
+	get_tree().change_scene_to_file("res://scenes/GameMain/GameMain.tscn")

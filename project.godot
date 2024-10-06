@@ -11,26 +11,30 @@ config_version=5
 [application]
 
 config/name="sanguo2"
+config/version="0.0.1"
 run/main_scene="res://scenes/Menu/Menu.tscn"
 config/features=PackedStringArray("4.3", "Mobile")
 config/icon="res://icon.svg"
 
 [autoload]
 
-Tool="*res://global/tool.gd"
-SignalBus="*res://global/signal_bus.gd"
-Scenes="*res://global/scenes.gd"
 Global="*res://data/global.gd"
+Scenes="*res://global/scenes.gd"
+SignalBus="*res://global/signal_bus.gd"
+Tool="*res://global/tool.gd"
 
 [display]
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
 window/size/mode=3
+window/size/borderless=true
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/excel_reader/plugin.cfg")
+enabled=PackedStringArray("res://addons/better_vircle/plugin.cfg", "res://addons/excel_reader/plugin.cfg")
 
 [rendering]
 

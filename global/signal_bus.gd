@@ -19,3 +19,11 @@ signal return_select()
 signal change_character_attr()
 
 signal get_name_id(id: int)
+
+signal game_main()
+
+signal show_citys()
+
+signal change_citys_label()
+
+signal recover_city_select()

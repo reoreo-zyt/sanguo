@@ -12,6 +12,7 @@ size_flags_vertical = 4
 
 [node name="Bg" type="TextureRect" parent="."]
 custom_minimum_size = Vector2(1920, 1080)
+layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
 texture = ExtResource("1_cvtgh")
@@ -19,6 +20,7 @@ expand_mode = 2
 script = ExtResource("2_fk4k6")
 
 [node name="Panel" type="Panel" parent="."]
+layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
 

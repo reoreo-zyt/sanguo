@@ -68,6 +68,225 @@ var save_move_jiang = []
 # 维护一个出仕的武将列表
 var save_hire_jiang = []
 
+# 人物性格
+# AI 个性，基于以下属性和玩家交互，值在 -100 到 100 之间
+var personalitiesRange = {
+	'Very Negative': [ - 100, - 76],
+	'Negative': [ - 75, - 1],
+	'Positive': [1, 75],
+	'Very Positive': [76, 100],
+}
+
+var personalities = {
+	# 胆量
+	'Boldness': [
+			{
+				'adj': '没骨气的',
+				'noun': '胆小鬼',
+				'range': personalitiesRange['Very Negative']
+			},
+			{
+				'adj': '怯懦的',
+				'noun': '懦夫',
+				'range': personalitiesRange['Negative']
+			},
+			{
+				'adj': '大胆的',
+				'noun': '赌徒',
+				'range': personalitiesRange['Positive']
+			},
+			{
+				'adj': '无畏的',
+				'noun': '冒险家',
+				'range': personalitiesRange['Very Positive']
+			}
+	],
+	# 同理心
+	'Compassion': [
+			{
+				'adj': '邪恶的',
+				'noun': '恶棍',
+				'range': personalitiesRange['Very Negative']
+			},
+			{
+				'adj': '铁石心肠的',
+				'noun': '禽兽',
+				'range': personalitiesRange['Negative']
+			},
+			{
+				'adj': '富有同情心的',
+				'noun': '利他主义者',
+				'range': personalitiesRange['Positive']
+			},
+			{
+				'adj': '仁慈的',
+				'noun': '感同身受者',
+				'range': personalitiesRange['Very Positive']
+			}
+	],
+	# 贪婪
+	'Greed': [
+			{
+				'adj': '安于现状的',
+				'noun': '跟屁虫',
+				'range': personalitiesRange['Very Negative']
+			},
+			{
+				'adj': '安于现状的',
+				'noun': '循规蹈矩者',
+				'range': personalitiesRange['Negative']
+			},
+			{
+				'adj': '贪婪的',
+				'noun': '吝啬鬼',
+				'range': personalitiesRange['Positive']
+			},
+			{
+				'adj': '贪得无厌的',
+				'noun': '掠夺者',
+				'range': personalitiesRange['Very Positive']
+			}
+	],
+	# 荣誉
+	'Honor': [
+			{
+				'adj': '奸诈的',
+				'noun': '流氓',
+				'range': personalitiesRange['Very Negative']
+			},
+			{
+				'adj': '卑鄙的',
+				'noun': '无赖',
+				'range': personalitiesRange['Negative']
+			},
+			{
+				'adj': '正直的',
+				'noun': '绅士',
+				'range': personalitiesRange['Positive']
+			},
+			{
+				'adj': '仁慈的',
+				'noun': '感同身受者',
+				'range': personalitiesRange['Very Positive']
+			}
+	],
+	# 理性
+	'Rationality': [
+			{
+				'adj': '胡言乱语的',
+				'noun': '疯子',
+				'range': personalitiesRange['Very Negative']
+			},
+			{
+				'adj': '没有理性的',
+				'noun': '蠢货',
+				'range': personalitiesRange['Negative']
+			},
+			{
+				'adj': '理性的',
+				'noun': '思想家',
+				'range': personalitiesRange['Positive']
+			},
+			{
+				'adj': '审时度势的',
+				'noun': '规划家',
+				'range': personalitiesRange['Very Positive']
+			}
+	],
+	# 仁慈
+	'Vengefulness': [
+			{
+				'adj': '宽宏大量的',
+				'noun': '宽恕者',
+				'range': personalitiesRange['Very Negative']
+			},
+			{
+				'adj': '宽容的',
+				'noun': '怀柔者',
+				'range': personalitiesRange['Negative']
+			},
+			{
+				'adj': '忿忿不平的',
+				'noun': '吵闹者',
+				'range': personalitiesRange['Positive']
+			},
+			{
+				'adj': '记仇的',
+				'noun': '复仇者',
+				'range': personalitiesRange['Very Positive']
+			}
+	],
+	# 狂热
+	'Zeal': [
+			{
+				'adj': '不敬神的',
+				'noun': '无信者',
+				'range': personalitiesRange['Very Negative']
+			},
+			{
+				'adj': '愤世嫉俗的',
+				'noun': '背信者',
+				'range': personalitiesRange['Negative']
+			},
+			{
+				'adj': '虔诚的',
+				'noun': '信徒',
+				'range': personalitiesRange['Positive']
+			},
+			{
+				'adj': '热枕的',
+				'noun': '狂信者',
+				'range': personalitiesRange['Very Positive']
+			}
+	],
+	# 精力
+	'Energy': [
+			{
+				'adj': '无精打采的',
+				'noun': '懒汉',
+				'range': personalitiesRange['Very Negative']
+			},
+			{
+				'adj': '懒散的',
+				'noun': '懒汉',
+				'range': personalitiesRange['Negative']
+			},
+			{
+				'adj': '精力充沛的',
+				'noun': '精力充沛者',
+				'range': personalitiesRange['Positive']
+			},
+			{
+				'adj': '充满活力的',
+				'noun': '活力四溢者',
+				'range': personalitiesRange['Very Positive']
+			}
+	],
+	# 社交
+	'SocialPower': [
+			{
+				'adj': '孤僻的',
+				'noun': '独行者',
+				'range': personalitiesRange['Very Negative']
+			},
+			{
+				'adj': '孤独的',
+				'noun': '独行者',
+				'range': personalitiesRange['Negative']
+			},
+			{
+				'adj': '社交的',
+				'noun': '善交际者',
+				'range': personalitiesRange['Positive']
+			},
+			{
+				'adj': '热情的',
+				'noun': '社交家',
+				'range': personalitiesRange['Very Positive']
+			}
+	]
+}
+
 # 读取 xlsx 文件
 func _ready():
 	var excel = ExcelFile.open_file("res://data/311_data.xlsx")
@@ -123,7 +342,7 @@ func _ready():
 				"headImg": "res://assets/texture/profile/" + hero_data[i][1] + ".jpg",
 				"attrs": {
 					"level": hero_data[i][14],
-					"speed": 80,
+					"speed": Tool.get_random_num(10, 100),
 					"lorty": 99,
 					"curr_physical_strength": 100,
 					"command": hero_data[i][2],
@@ -138,17 +357,33 @@ func _ready():
 				"skillIds": get_skill_array(hero_data[i][13]),
 				"work": hero_data[i][9],
 				"born": hero_data[i][7],
-				"dead": hero_data[i][8]
+				"dead": hero_data[i][8],
+				# 个性
+				'personalitiy': {
+					'Boldness': Tool.get_random_num(-100, 100),
+					'Compassion': Tool.get_random_num(-100, 100),
+					'Energy': Tool.get_random_num(-100, 100),
+					'Greed': Tool.get_random_num(-100, 100),
+					'Honor': Tool.get_random_num(-100, 100),
+					'Rationality': Tool.get_random_num(-100, 100),
+					'SocialPower': Tool.get_random_num(-100, 100),
+					'Zeal': Tool.get_random_num(-100, 100)
+				}
 			}
-
 
 	# 将角色数据加入兵力等信息
 	for i in characters:
 		if(i!=0):
-			# 兵力
-			characters[i].attrs.bing = get_bing_by_command(characters[i].attrs.command)
+			# 根据统御计算最大兵力
+			characters[i].attrs.max_bing = get_bing_by_command(characters[i].attrs.command)
+			characters[i].attrs.bing = Tool.get_random_num(800, 1000)
 			# 初始金钱
-			characters[i].attrs.jin = 200
+			characters[i].attrs.jin = 50
+			# 初始粮草
+			characters[i].attrs.liang = 200
+
+			# 计算个性描述词
+			characters[i].personalitiy_desc = get_character_desc(characters[i].personalitiy)
 
 	# 获取自定义君主列表
 	var character_sheet = workbook.get_sheet(6)
@@ -191,7 +426,12 @@ func _ready():
 					"intelligence": characters[int(character_data[i][3])].attrs.intelligence,
 					"politics": characters[int(character_data[i][3])].attrs.politics,
 					"morality": characters[int(character_data[i][3])].attrs.morality,
+					"bing": characters[int(character_data[i][3])].attrs.bing,
+					"max_bing": characters[int(character_data[i][3])].attrs.max_bing,
+					"jin": characters[int(character_data[i][3])].attrs.jin,
+					"liang": characters[int(character_data[i][3])].attrs.liang,
 				},
+				"personalitiy_desc": characters[int(character_data[i][3])].personalitiy_desc,
 				"weaponId": characters[int(character_data[i][3])].weaponId,
 				"armorId": characters[int(character_data[i][3])].armorId,
 				"skillIds": characters[int(character_data[i][3])].skillIds,
@@ -298,3 +538,42 @@ func get_skill_desc(nameId):
 		if(Global.skills[i].type == "self_bad"):
 			skillsDesc += "[color=#ff5437][u][url]"+  Global.skills[i].name +"[/url][/u][/color]" + " "
 	return skillsDesc
+
+# 设置随机性格
+func get_character_desc(personalitiy):
+	var desc = ''
+	var bestNum = -100
+	var secondNum = -100
+	var bestAttr = ''
+	var secondAttr = ''
+	var personalitiyCopy = personalitiy
+	# 找形容词
+	for key in personalitiyCopy:
+		if (personalitiyCopy[key] > bestNum):
+			bestNum = personalitiyCopy[key]
+			bestAttr = key
+	personalitiyCopy.erase(bestAttr)
+	# 找名词
+	for key in personalitiyCopy:
+		if (personalitiyCopy[key] > secondNum):
+			secondNum = personalitiyCopy[key]
+			secondAttr = key
+	
+	var itemData = personalities[bestAttr]
+	var itemData2 = personalities[secondAttr]
+	var adj = judgeNum(bestNum, itemData, 'adj')
+	var noun = judgeNum(secondNum, itemData2, 'noun')
+	desc = adj + noun
+	return desc
+
+func judgeNum(num, data, name):
+	var adj = ''
+	for item in data:
+		var minNum = item.range[0]
+		var maxNum = item.range[1]
+		if (num >= minNum&&num <= maxNum):
+			if (name == 'adj'):
+				adj = item.adj
+			else:
+				adj = item.noun
+	return adj

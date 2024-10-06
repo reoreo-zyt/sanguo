@@ -1,14 +1,23 @@
-[gd_scene load_steps=11 format=3 uid="uid://t75w08daqljg"]
+[gd_scene load_steps=20 format=3 uid="uid://t75w08daqljg"]
 
 [ext_resource type="Texture2D" uid="uid://bpi7k7kjk2ci5" path="res://assets/texture/profile/吕尚.jpg" id="1_gnp85"]
 [ext_resource type="Script" path="res://prefebs/CharacterAttr/character_attr.gd" id="1_lpd2v"]
+[ext_resource type="Texture2D" uid="uid://dy4snsyqesdu6" path="res://assets/ui/Panel.jpg" id="2_4gy4q"]
 [ext_resource type="Texture2D" uid="uid://c7k54vbipqqo" path="res://assets/texture/force/fffea5e6-96bc-e1e0-b465-8491edda9c84.png" id="2_p1kb6"]
 [ext_resource type="FontFile" uid="uid://ccc7h37nygjqu" path="res://assets/fonts/方正隶书简体.TTF" id="3_bjp46"]
 [ext_resource type="Texture2D" uid="uid://iss3fl7t22cx" path="res://assets/texture/force/Ji.png" id="3_e5trb"]
+[ext_resource type="Texture2D" uid="uid://dliulpn030uhw" path="res://assets/ui/slice.png" id="3_kdbkv"]
 [ext_resource type="Texture2D" uid="uid://dduwbugqetbvk" path="res://assets/texture/force/Weapon.png" id="5_ma8sm"]
-[ext_resource type="PackedScene" uid="uid://dnmgsf1bvwkdq" path="res://prefebs/CharacterAttr/RadarChartStats.tscn" id="6_7e208"]
 [ext_resource type="Texture2D" uid="uid://dwsknm4juhhi3" path="res://assets/texture/force/Fang.png" id="6_b3mbo"]
 [ext_resource type="Texture2D" uid="uid://7blwbuhj0shu" path="res://assets/texture/force/Ma.png" id="7_mdgl5"]
+[ext_resource type="Texture2D" uid="uid://cdhn1garqbdtb" path="res://assets/ui/img_public_smallicon_bg.png" id="10_vdu0j"]
+[ext_resource type="Texture2D" uid="uid://crqjdknaxibaw" path="res://assets/ui/icons_256/list_bulleted.png" id="11_2u3lr"]
+[ext_resource type="Texture2D" uid="uid://nepado6552jf" path="res://assets/texture/force/Ren.png" id="11_t65i6"]
+[ext_resource type="Texture2D" uid="uid://bwnunbyoifns4" path="res://assets/ui/icons_256/group.png" id="13_7x3w3"]
+[ext_resource type="Texture2D" uid="uid://ci7johswlnkb0" path="res://assets/ui/icons_256/dollar.png" id="14_mr02t"]
+[ext_resource type="Texture2D" uid="uid://cjpashlcrur3e" path="res://assets/ui/icons_256/hd.png" id="15_unlkv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jdxpf"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0vkf5"]
 border_width_left = 4
@@ -16,25 +25,61 @@ border_width_top = 4
 border_width_right = 4
 border_width_bottom = 4
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tw551"]
+bg_color = Color(0.121816, 0.160177, 0.193066, 1)
+
 [node name="CharacterAttr" type="Panel"]
 offset_right = 1053.0
 offset_bottom = 652.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_jdxpf")
 script = ExtResource("1_lpd2v")
 
-[node name="Head" type="TextureRect" parent="."]
+[node name="BG" type="TextureRect" parent="."]
 layout_mode = 0
-offset_right = 360.0
-offset_bottom = 512.0
+offset_right = 1053.0
+offset_bottom = 646.0
+texture = ExtResource("2_4gy4q")
+
+[node name="Message" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 1057.0
+offset_bottom = 646.0
+
+[node name="Head" type="TextureRect" parent="Message"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 15.0
+offset_right = 368.0
+offset_bottom = 527.0
 texture = ExtResource("1_gnp85")
 
-[node name="Name" type="Panel" parent="."]
+[node name="HeadSlice" type="TextureRect" parent="Message"]
 layout_mode = 0
-offset_left = 6.0
-offset_top = 7.0
-offset_right = 248.0
-offset_bottom = 68.0
+offset_left = 3.0
+offset_top = 10.0
+offset_right = 387.0
+offset_bottom = 531.0
+texture = ExtResource("3_kdbkv")
 
-[node name="Panel" type="Panel" parent="Name"]
+[node name="Level" type="RichTextLabel" parent="Message"]
+layout_mode = 1
+offset_left = 13.0
+offset_top = 20.0
+offset_right = 105.0
+offset_bottom = 57.0
+theme_override_fonts/normal_font = ExtResource("3_bjp46")
+theme_override_font_sizes/normal_font_size = 26
+bbcode_enabled = true
+text = "[color=#91c2d5][u][url]LV 100[/url][/u][/color] "
+
+[node name="Name" type="Panel" parent="Message"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 206.0
+offset_right = 252.0
+offset_bottom = 267.0
+
+[node name="Panel" type="Panel" parent="Message/Name"]
 layout_mode = 0
 offset_left = 18.0
 offset_top = 9.0
@@ -42,7 +87,7 @@ offset_right = 60.0
 offset_bottom = 51.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_0vkf5")
 
-[node name="force" type="TextureRect" parent="Name/Panel"]
+[node name="force" type="TextureRect" parent="Message/Name/Panel"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -58,7 +103,7 @@ grow_vertical = 2
 texture = ExtResource("2_p1kb6")
 expand_mode = 2
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Name"]
+[node name="RichTextLabel" type="RichTextLabel" parent="Message/Name"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -76,14 +121,14 @@ theme_override_font_sizes/normal_font_size = 26
 bbcode_enabled = true
 text = "[color=#91c2d5][u][url]请选择主公[/url][/u][/color] "
 
-[node name="Wu" type="Panel" parent="."]
+[node name="Wu" type="Panel" parent="Message"]
 layout_mode = 0
 offset_left = 9.0
 offset_top = 276.0
 offset_right = 253.0
 offset_bottom = 337.0
 
-[node name="Panel" type="Panel" parent="Wu"]
+[node name="Panel" type="Panel" parent="Message/Wu"]
 layout_mode = 0
 offset_left = 18.0
 offset_top = 9.0
@@ -91,7 +136,7 @@ offset_right = 60.0
 offset_bottom = 51.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_0vkf5")
 
-[node name="force" type="TextureRect" parent="Wu/Panel"]
+[node name="force" type="TextureRect" parent="Message/Wu/Panel"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -107,7 +152,7 @@ grow_vertical = 2
 texture = ExtResource("5_ma8sm")
 expand_mode = 2
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Wu"]
+[node name="RichTextLabel" type="RichTextLabel" parent="Message/Wu"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -125,14 +170,14 @@ theme_override_font_sizes/normal_font_size = 26
 bbcode_enabled = true
 text = "[color=#91c2d5][u][url]请选择主公[/url][/u][/color] "
 
-[node name="Fang" type="Panel" parent="."]
+[node name="Fang" type="Panel" parent="Message"]
 layout_mode = 0
 offset_left = 10.0
 offset_top = 344.0
 offset_right = 254.0
 offset_bottom = 405.0
 
-[node name="Panel" type="Panel" parent="Fang"]
+[node name="Panel" type="Panel" parent="Message/Fang"]
 layout_mode = 0
 offset_left = 18.0
 offset_top = 9.0
@@ -140,7 +185,7 @@ offset_right = 60.0
 offset_bottom = 51.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_0vkf5")
 
-[node name="force" type="TextureRect" parent="Fang/Panel"]
+[node name="force" type="TextureRect" parent="Message/Fang/Panel"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -156,7 +201,7 @@ grow_vertical = 2
 texture = ExtResource("6_b3mbo")
 expand_mode = 2
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Fang"]
+[node name="RichTextLabel" type="RichTextLabel" parent="Message/Fang"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -174,14 +219,14 @@ theme_override_font_sizes/normal_font_size = 26
 bbcode_enabled = true
 text = "[color=#91c2d5][u][url]请选择主公[/url][/u][/color] "
 
-[node name="Ma" type="Panel" parent="."]
+[node name="Ma" type="Panel" parent="Message"]
 layout_mode = 0
 offset_left = 9.0
 offset_top = 413.0
 offset_right = 253.0
 offset_bottom = 474.0
 
-[node name="Panel" type="Panel" parent="Ma"]
+[node name="Panel" type="Panel" parent="Message/Ma"]
 layout_mode = 0
 offset_left = 18.0
 offset_top = 9.0
@@ -189,7 +234,7 @@ offset_right = 60.0
 offset_bottom = 51.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_0vkf5")
 
-[node name="force" type="TextureRect" parent="Ma/Panel"]
+[node name="force" type="TextureRect" parent="Message/Ma/Panel"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -205,7 +250,7 @@ grow_vertical = 2
 texture = ExtResource("7_mdgl5")
 expand_mode = 2
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Ma"]
+[node name="RichTextLabel" type="RichTextLabel" parent="Message/Ma"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -223,14 +268,15 @@ theme_override_font_sizes/normal_font_size = 26
 bbcode_enabled = true
 text = "[color=#91c2d5][u][url]请选择主公[/url][/u][/color] "
 
-[node name="Skill" type="Panel" parent="."]
+[node name="Skill" type="Panel" parent="Message"]
 layout_mode = 0
 offset_left = 9.0
-offset_top = 522.0
+offset_top = 538.0
 offset_right = 1038.0
 offset_bottom = 636.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_tw551")
 
-[node name="Panel" type="Panel" parent="Skill"]
+[node name="Panel" type="Panel" parent="Message/Skill"]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -242,7 +288,7 @@ offset_bottom = 36.0
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_0vkf5")
 
-[node name="force" type="TextureRect" parent="Skill/Panel"]
+[node name="force" type="TextureRect" parent="Message/Skill/Panel"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -258,23 +304,240 @@ grow_vertical = 2
 texture = ExtResource("3_e5trb")
 expand_mode = 2
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Skill"]
+[node name="RichTextLabel" type="RichTextLabel" parent="Message/Skill"]
 custom_minimum_size = Vector2(258, 22)
 layout_mode = 0
-offset_left = 111.0
+offset_left = 99.0
 offset_top = 14.0
-offset_right = 1035.0
-offset_bottom = 123.0
+offset_right = 1023.0
+offset_bottom = 94.0
 theme_override_fonts/normal_font = ExtResource("3_bjp46")
 theme_override_font_sizes/normal_font_size = 32
 bbcode_enabled = true
 text = "[center][color=#91c2d5][u][url]请先选择主公[/url][/u][/color] "
 
-[node name="RadarChartStats" parent="." instance=ExtResource("6_7e208")]
-visible = false
+[node name="XingGe" type="Panel" parent="Message"]
+offset_left = 392.0
+offset_top = 11.0
+offset_right = 651.0
+offset_bottom = 72.0
+
+[node name="Panel" type="Panel" parent="Message/XingGe"]
 layout_mode = 0
-offset_left = 623.0
-offset_top = 180.0
-offset_right = 623.0
-offset_bottom = 180.0
-scale = Vector2(2, 2)
+offset_left = 18.0
+offset_top = 9.0
+offset_right = 60.0
+offset_bottom = 51.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_0vkf5")
+
+[node name="force" type="TextureRect" parent="Message/XingGe/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -13.0
+offset_top = -13.0
+offset_right = 13.0
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("11_t65i6")
+expand_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Message/XingGe"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -46.5
+offset_top = -17.5
+offset_right = 483.5
+offset_bottom = 16.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("3_bjp46")
+theme_override_font_sizes/normal_font_size = 26
+bbcode_enabled = true
+text = "[color=#91c2d5][u][url]请选择主公[/url][/u][/color] "
+
+[node name="ZiYuan" type="Control" parent="Message"]
+anchors_preset = 0
+offset_left = 462.0
+offset_top = 75.0
+offset_right = 973.0
+offset_bottom = 152.0
+
+[node name="Bing" type="Panel" parent="Message/ZiYuan"]
+offset_left = -58.0
+offset_top = 9.0
+offset_right = 101.0
+offset_bottom = 70.0
+
+[node name="Fold" type="TextureButton" parent="Message/ZiYuan/Bing"]
+offset_top = -3.0
+offset_right = 66.0
+offset_bottom = 63.0
+texture_normal = ExtResource("10_vdu0j")
+
+[node name="TextureButton" type="TextureButton" parent="Message/ZiYuan/Bing/Fold"]
+modulate = Color(0.898039, 0.815686, 0.623529, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -12.0
+offset_top = -12.0
+offset_right = 244.0
+offset_bottom = 244.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.1, 0.1)
+mouse_filter = 2
+texture_normal = ExtResource("13_7x3w3")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Message/ZiYuan/Bing"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -0.5
+offset_top = -16.5
+offset_right = 72.5
+offset_bottom = 17.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("3_bjp46")
+theme_override_font_sizes/normal_font_size = 26
+bbcode_enabled = true
+text = "[color=#91c2d5][u][url]0[/url][/u][/color] "
+
+[node name="Jin" type="Panel" parent="Message/ZiYuan"]
+offset_left = 122.0
+offset_top = 9.0
+offset_right = 342.0
+offset_bottom = 70.0
+
+[node name="Fold" type="TextureButton" parent="Message/ZiYuan/Jin"]
+offset_top = -3.0
+offset_right = 66.0
+offset_bottom = 63.0
+texture_normal = ExtResource("10_vdu0j")
+
+[node name="TextureButton" type="TextureButton" parent="Message/ZiYuan/Jin/Fold"]
+modulate = Color(0.898039, 0.815686, 0.623529, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -12.0
+offset_top = -12.0
+offset_right = 244.0
+offset_bottom = 244.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.1, 0.1)
+mouse_filter = 2
+texture_normal = ExtResource("14_mr02t")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Message/ZiYuan/Jin"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -33.0
+offset_top = -16.5
+offset_right = 99.0
+offset_bottom = 17.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("3_bjp46")
+theme_override_font_sizes/normal_font_size = 26
+bbcode_enabled = true
+text = "[color=#91c2d5][u][url]0[/url][/u][/color] "
+
+[node name="Liang" type="Panel" parent="Message/ZiYuan"]
+offset_left = 351.0
+offset_top = 9.0
+offset_right = 559.0
+offset_bottom = 70.0
+
+[node name="Fold" type="TextureButton" parent="Message/ZiYuan/Liang"]
+offset_top = -3.0
+offset_right = 66.0
+offset_bottom = 63.0
+texture_normal = ExtResource("10_vdu0j")
+
+[node name="TextureButton" type="TextureButton" parent="Message/ZiYuan/Liang/Fold"]
+modulate = Color(0.898039, 0.815686, 0.623529, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -12.0
+offset_top = -12.0
+offset_right = 244.0
+offset_bottom = 244.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.1, 0.1)
+mouse_filter = 2
+texture_normal = ExtResource("15_unlkv")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Message/ZiYuan/Liang"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -26.0
+offset_top = -16.5
+offset_right = 98.0
+offset_bottom = 17.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("3_bjp46")
+theme_override_font_sizes/normal_font_size = 26
+bbcode_enabled = true
+text = "[color=#91c2d5][u][url]0[/url][/u][/color] "
+
+[node name="Fold" type="TextureButton" parent="."]
+offset_left = 1048.0
+offset_top = -32.0
+offset_right = 1114.0
+offset_bottom = 34.0
+texture_normal = ExtResource("10_vdu0j")
+
+[node name="TextureButton" type="TextureButton" parent="Fold"]
+modulate = Color(0.898039, 0.815686, 0.623529, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -12.0
+offset_top = -12.0
+offset_right = 244.0
+offset_bottom = 244.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.1, 0.1)
+mouse_filter = 2
+texture_normal = ExtResource("11_2u3lr")
+
+[connection signal="pressed" from="Fold" to="." method="_on_fold_pressed"]

@@ -11,7 +11,8 @@ func _ready() -> void:
 func _on_pressed() -> void:
 	SignalBus.emit_signal("get_name_id", name_id)
 	SignalBus.emit_signal("change_character_attr")
+	SignalBus.emit_signal("show_citys")
 
 	$Panel.show()
-	await get_tree().create_timer(1).timeout
+	await get_tree().create_timer(0.5).timeout
 	$Panel.hide()

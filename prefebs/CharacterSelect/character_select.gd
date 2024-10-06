@@ -11,4 +11,4 @@ func _ready() -> void:
 			instance.name_text = "[center]" + Global.characters_select[i].name
 			instance.color = Global.characters_select[i].color
 			instance.name_id = Global.characters_select[i].id
-			$ScrollContainer/VBoxContainer/HBoxContainer.add_child(instance)
+			$Panel/ScrollContainer/VBoxContainer/HBoxContainer.add_child(instance)

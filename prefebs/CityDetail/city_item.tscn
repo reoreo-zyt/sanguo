@@ -1,0 +1,46 @@
+[gd_scene load_steps=5 format=3 uid="uid://cado3pqk0wsu6"]
+
+[ext_resource type="Script" path="res://prefebs/CityDetail/city_item.gd" id="1_j3bk1"]
+[ext_resource type="Texture2D" uid="uid://b7ewpmrny5f7y" path="res://assets/ui/icons_256/list.png" id="1_qf7ak"]
+[ext_resource type="FontFile" uid="uid://ccc7h37nygjqu" path="res://assets/fonts/方正隶书简体.TTF" id="2_h676o"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_13hxf"]
+bg_color = Color(0.312995, 0.386784, 0.394226, 0.972549)
+
+[node name="TextureButton" type="TextureButton"]
+custom_minimum_size = Vector2(0, 32)
+script = ExtResource("1_j3bk1")
+
+[node name="Panel" type="Panel" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 167.0
+offset_bottom = 36.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_13hxf")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(0.898039, 0.815686, 0.623529, 1)
+layout_mode = 0
+offset_left = 11.0
+offset_top = 4.0
+offset_right = 267.0
+offset_bottom = 260.0
+scale = Vector2(0.1, 0.1)
+mouse_filter = 2
+texture = ExtResource("1_qf7ak")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 0
+offset_left = 41.0
+offset_top = 2.0
+offset_right = 161.0
+offset_bottom = 34.0
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("2_h676o")
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "[center][color=#91c2d5][u][url]荆州新野"
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

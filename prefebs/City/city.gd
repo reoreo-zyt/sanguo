@@ -7,9 +7,10 @@ extends Node
 @export var city_code = ""
 @export var color = "#d2dad8"
 
-#var messageScene = preload("res://scenes/game_state.tscn")
+var is_hide_label = false
 
 func _ready() -> void:
+	SignalBus.connect("change_citys_label", _on_change_citys_label)
 	$ColorRect.color = color
 	$Panel/RichTextLabel.text = "[center]" + text_name
 
@@ -37,3 +38,10 @@ func set_texture(texture_path: String) -> void:
 		text.texture = texture
 	else:
 		print("无法加载纹理: ", texture_path)
+
+func _on_change_citys_label():
+	is_hide_label = !is_hide_label
+	if(is_hide_label):
+		$Panel.show()
+	else:
+		$Panel.hide()
