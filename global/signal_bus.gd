@@ -27,3 +27,7 @@ signal show_citys()
 signal change_citys_label()
 
 signal recover_city_select()
+
+signal change_city_size(zoom)
+
+signal focus_map_city(city_id)

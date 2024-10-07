@@ -67,6 +67,7 @@ offset_right = 1920.0
 offset_bottom = 1080.0
 
 [node name="Dectation" type="TextureButton" parent="Main/Menu"]
+layout_mode = 0
 offset_left = 1856.0
 offset_right = 1922.0
 offset_bottom = 66.0
@@ -212,6 +213,7 @@ bbcode_enabled = true
 text = "[center]黄巾起义结束后不久，何进和十常侍在宫中双双倒台，凉州霸主董卓控制了有名无实的天子。董卓坐拥重兵，控制了朝廷。不满于此的诸侯共同举兵讨伐董卓。"
 
 [node name="Verify" type="TextureButton" parent="Main/Menu"]
+layout_mode = 0
 offset_left = 972.0
 offset_top = 537.0
 offset_right = 1038.0

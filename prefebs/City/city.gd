@@ -11,6 +11,7 @@ var is_hide_label = false
 
 func _ready() -> void:
 	SignalBus.connect("change_citys_label", _on_change_citys_label)
+	SignalBus.connect("change_city_size", _on_change_city_size)
 	$ColorRect.color = color
 	$Panel/RichTextLabel.text = "[center]" + text_name
 
@@ -45,3 +46,6 @@ func _on_change_citys_label():
 		$Panel.show()
 	else:
 		$Panel.hide()
+
+func _on_change_city_size(zoom):
+	$".".scale = Vector2(1 / zoom, 1 / zoom)

@@ -14,5 +14,7 @@ func _process(delta: float) -> void:
 
 func _on_pressed() -> void:
 	Global.cur_city = city_id
+	# 定位到地图的位置
+	SignalBus.emit_signal("focus_map_city", city_id)
 	$Panel.show()
 	SignalBus.emit_signal("recover_city_select")

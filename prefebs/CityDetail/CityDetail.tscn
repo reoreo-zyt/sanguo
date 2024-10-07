@@ -112,7 +112,7 @@ grow_vertical = 2
 theme_override_fonts/normal_font = ExtResource("4_nw0gu")
 theme_override_font_sizes/normal_font_size = 26
 bbcode_enabled = true
-text = "[color=#91c2d5]刘备"
+text = "[color=#91c2d5]暂无"
 
 [node name="Tong" type="Panel" parent="Main"]
 layout_mode = 0
@@ -162,7 +162,7 @@ grow_vertical = 2
 theme_override_fonts/normal_font = ExtResource("4_nw0gu")
 theme_override_font_sizes/normal_font_size = 26
 bbcode_enabled = true
-text = "[color=#91c2d5]50"
+text = "[color=#91c2d5]0"
 
 [node name="Ren" type="Panel" parent="Main"]
 layout_mode = 0
@@ -212,7 +212,7 @@ grow_vertical = 2
 theme_override_fonts/normal_font = ExtResource("4_nw0gu")
 theme_override_font_sizes/normal_font_size = 26
 bbcode_enabled = true
-text = "[color=#91c2d5]30000"
+text = "[color=#91c2d5]0"
 
 [node name="Jiang" type="Panel" parent="Main"]
 layout_mode = 0
@@ -262,7 +262,7 @@ grow_vertical = 2
 theme_override_fonts/normal_font = ExtResource("4_nw0gu")
 theme_override_font_sizes/normal_font_size = 26
 bbcode_enabled = true
-text = "[color=#91c2d5][u][url]5[/url][/u][/color] "
+text = "[color=#91c2d5][u][url]0[/url][/u][/color] "
 
 [node name="Bing" type="Panel" parent="Main"]
 layout_mode = 0
@@ -312,7 +312,7 @@ grow_vertical = 2
 theme_override_fonts/normal_font = ExtResource("4_nw0gu")
 theme_override_font_sizes/normal_font_size = 26
 bbcode_enabled = true
-text = "[color=#91c2d5]15600"
+text = "[color=#91c2d5]0"
 
 [node name="Kai" type="Panel" parent="Main"]
 layout_mode = 0
@@ -362,7 +362,7 @@ grow_vertical = 2
 theme_override_fonts/normal_font = ExtResource("4_nw0gu")
 theme_override_font_sizes/normal_font_size = 26
 bbcode_enabled = true
-text = "[color=#91c2d5]25"
+text = "[color=#91c2d5]0"
 
 [node name="Shang" type="Panel" parent="Main"]
 layout_mode = 0
@@ -412,7 +412,7 @@ grow_vertical = 2
 theme_override_fonts/normal_font = ExtResource("4_nw0gu")
 theme_override_font_sizes/normal_font_size = 26
 bbcode_enabled = true
-text = "[color=#91c2d5]25"
+text = "[color=#91c2d5]0"
 
 [node name="Zhi" type="Panel" parent="Main"]
 layout_mode = 0
@@ -462,7 +462,7 @@ grow_vertical = 2
 theme_override_fonts/normal_font = ExtResource("4_nw0gu")
 theme_override_font_sizes/normal_font_size = 26
 bbcode_enabled = true
-text = "[color=#91c2d5]25"
+text = "[color=#91c2d5]0"
 
 [node name="Jin" type="Panel" parent="Main"]
 layout_mode = 0
@@ -512,7 +512,7 @@ grow_vertical = 2
 theme_override_fonts/normal_font = ExtResource("4_nw0gu")
 theme_override_font_sizes/normal_font_size = 26
 bbcode_enabled = true
-text = "[color=#91c2d5]300"
+text = "[color=#91c2d5]0"
 
 [node name="Liang" type="Panel" parent="Main"]
 layout_mode = 0
@@ -562,7 +562,7 @@ grow_vertical = 2
 theme_override_fonts/normal_font = ExtResource("4_nw0gu")
 theme_override_font_sizes/normal_font_size = 26
 bbcode_enabled = true
-text = "[color=#91c2d5]600"
+text = "[color=#91c2d5]0"
 
 [node name="Fold" type="TextureButton" parent="."]
 layout_mode = 0

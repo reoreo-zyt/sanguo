@@ -317,6 +317,7 @@ bbcode_enabled = true
 text = "[center][color=#91c2d5][u][url]请先选择主公[/url][/u][/color] "
 
 [node name="XingGe" type="Panel" parent="Message"]
+layout_mode = 0
 offset_left = 392.0
 offset_top = 11.0
 offset_right = 651.0
@@ -372,12 +373,14 @@ offset_right = 973.0
 offset_bottom = 152.0
 
 [node name="Bing" type="Panel" parent="Message/ZiYuan"]
+layout_mode = 0
 offset_left = -58.0
 offset_top = 9.0
 offset_right = 101.0
 offset_bottom = 70.0
 
 [node name="Fold" type="TextureButton" parent="Message/ZiYuan/Bing"]
+layout_mode = 0
 offset_top = -3.0
 offset_right = 66.0
 offset_bottom = 63.0
@@ -420,12 +423,14 @@ bbcode_enabled = true
 text = "[color=#91c2d5][u][url]0[/url][/u][/color] "
 
 [node name="Jin" type="Panel" parent="Message/ZiYuan"]
+layout_mode = 0
 offset_left = 122.0
 offset_top = 9.0
 offset_right = 342.0
 offset_bottom = 70.0
 
 [node name="Fold" type="TextureButton" parent="Message/ZiYuan/Jin"]
+layout_mode = 0
 offset_top = -3.0
 offset_right = 66.0
 offset_bottom = 63.0
@@ -468,12 +473,14 @@ bbcode_enabled = true
 text = "[color=#91c2d5][u][url]0[/url][/u][/color] "
 
 [node name="Liang" type="Panel" parent="Message/ZiYuan"]
+layout_mode = 0
 offset_left = 351.0
 offset_top = 9.0
 offset_right = 559.0
 offset_bottom = 70.0
 
 [node name="Fold" type="TextureButton" parent="Message/ZiYuan/Liang"]
+layout_mode = 0
 offset_top = -3.0
 offset_right = 66.0
 offset_bottom = 63.0
@@ -516,6 +523,7 @@ bbcode_enabled = true
 text = "[color=#91c2d5][u][url]0[/url][/u][/color] "
 
 [node name="Fold" type="TextureButton" parent="."]
+layout_mode = 0
 offset_left = 1048.0
 offset_top = -32.0
 offset_right = 1114.0
