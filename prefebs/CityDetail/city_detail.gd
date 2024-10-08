@@ -51,3 +51,6 @@ func calc_bing():
 	for jiang in city.curent_jiang:
 		num += Global.characters[jiang].attrs.bing
 	return num
+
+func _on_rich_text_label_meta_clicked(meta: Variant) -> void:
+	SignalBus.emit_signal("open_characters_list", Global.cur_city)

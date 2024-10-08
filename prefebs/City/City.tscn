@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://du6ko4ea4nfh8"]
+[gd_scene load_steps=8 format=3 uid="uid://du6ko4ea4nfh8"]
 
 [ext_resource type="Texture2D" uid="uid://dfeth53ppgt5s" path="res://assets/citys/city_temp.png" id="1_wbngm"]
 [ext_resource type="Script" path="res://prefebs/City/city.gd" id="1_wwiws"]
 [ext_resource type="Shader" path="res://prefebs/City/city_pic.gdshader" id="2_ytyq5"]
 [ext_resource type="FontFile" uid="uid://ccc7h37nygjqu" path="res://assets/fonts/方正隶书简体.TTF" id="3_823vc"]
 [ext_resource type="Script" path="res://prefebs/City/rich_text_label.gd" id="4_rjdv1"]
+[ext_resource type="Script" path="res://addons/better_vircle/vircle_node.gd" id="6_4p5nw"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_1dnd3"]
 resource_local_to_scene = true
@@ -63,5 +64,60 @@ theme_override_font_sizes/normal_font_size = 24
 bbcode_enabled = true
 text = "[color=#fff][u][url]凉州武威[/url][/u][/color]"
 script = ExtResource("4_rjdv1")
+
+[node name="Vircle" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = -19.0
+offset_top = -19.0
+offset_right = 21.0
+offset_bottom = 21.0
+rotation = 9.19364
+pivot_offset = Vector2(20, 20)
+script = ExtResource("6_4p5nw")
+radius = 87.0
+element_size = 80.0
+rotation_speed = 0.03
+
+[node name="Panel" type="Panel" parent="Vircle"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 0
+offset_left = 67.0
+offset_top = -20.0
+offset_right = 147.0
+offset_bottom = 60.0
+rotation = -9.19364
+pivot_offset = Vector2(40, 40)
+
+[node name="Panel2" type="Panel" parent="Vircle"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 0
+offset_left = -20.0
+offset_top = 67.0
+offset_right = 60.0
+offset_bottom = 147.0
+rotation = -9.19364
+pivot_offset = Vector2(40, 40)
+
+[node name="Panel3" type="Panel" parent="Vircle"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 0
+offset_left = -107.0
+offset_top = -20.0
+offset_right = -27.0
+offset_bottom = 60.0
+rotation = -9.19364
+pivot_offset = Vector2(40, 40)
+
+[node name="Panel4" type="Panel" parent="Vircle"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 0
+offset_left = -20.0
+offset_top = -107.0
+offset_right = 60.0
+offset_bottom = -27.0
+rotation = -9.19364
+pivot_offset = Vector2(40, 40)
 
 [connection signal="pressed" from="Icon" to="." method="_on_icon_pressed"]

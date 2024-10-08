@@ -8,11 +8,49 @@ var rader_scene = preload("res://prefebs/CharacterAttr/RadarChartStats.tscn")
 @export var is_fold = false
 
 func _ready() -> void:
+	SignalBus.connect("reset_character_attr", _on_reset_character_attr)
+	set_attr()
+
+func _on_fold_pressed() -> void:
+	is_fold = !is_fold
+	if(is_fold):
+		hide_ui()
+	else:
+		show_ui()
+
+func hide_ui():
+	$BG.hide()
+	$Message.hide()
+	if(is_show_attr and radar_node):
+		$RadarChartStats.hide()
+	$Fold.position = Vector2(0, 0)
+
+func show_ui():
+	$BG.show()
+	$Message.show()
+	if(is_show_attr):
+		$RadarChartStats.show()
+	$Fold.position = Vector2(1048, -32)
+
+func calc_cost(p):
+	if(p >= 90):
+		return 0.3
+	if(p >= 80):
+		return 0.5
+	if(p >= 70):
+		return 0.8
+	else:
+		return 1
+
+func set_attr():
 	if(!name_id):
 		return
 	if(is_show_attr):
+		if(radar_node):
+			$".".remove_child(radar_node)
+			radar_node = null
 		radar_node = rader_scene.instantiate()
-		var character = Global.characters_select[int(name_id)]
+		var character = Global.characters[int(name_id)]
 		var attrs = character.attrs
 		$Message/Head.texture = load(character.headImg)
 		$Message/Name/RichTextLabel.text = Global.set_message_name(character.name)
@@ -34,30 +72,9 @@ func _ready() -> void:
 	if(is_fold):
 		hide_ui()
 
-func _on_fold_pressed() -> void:
-	is_fold = !is_fold
-	if(is_fold):
-		hide_ui()
-	else:
-		$BG.show()
-		$Message.show()
-		if(is_show_attr):
-			$RadarChartStats.show()
-		$Fold.position = Vector2(1048, -32)
-
-func hide_ui():
-	$BG.hide()
-	$Message.hide()
-	if(is_show_attr):
-		$RadarChartStats.hide()
-	$Fold.position = Vector2(0, 0)
-
-func calc_cost(p):
-	if(p >= 90):
-		return 0.3
-	if(p >= 80):
-		return 0.5
-	if(p >= 70):
-		return 0.8
-	else:
-		return 1
+func _on_reset_character_attr(id):
+	name_id = id
+	is_show_attr = true
+	is_fold = false
+	show_ui()
+	set_attr()

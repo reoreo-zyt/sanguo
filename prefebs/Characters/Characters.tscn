@@ -1,0 +1,155 @@
+[gd_scene load_steps=8 format=3 uid="uid://b20ru7gfm8uyq"]
+
+[ext_resource type="Texture2D" uid="uid://b88eisuk3vhxo" path="res://assets/ui/MiniPanel04.jpg" id="1_g8ak3"]
+[ext_resource type="Script" path="res://prefebs/Characters/characters.gd" id="1_t05v5"]
+[ext_resource type="FontFile" uid="uid://ccc7h37nygjqu" path="res://assets/fonts/方正隶书简体.TTF" id="4_pxa2w"]
+[ext_resource type="Texture2D" uid="uid://bwnunbyoifns4" path="res://assets/ui/icons_256/group.png" id="5_fyrnu"]
+[ext_resource type="Texture2D" uid="uid://cdhn1garqbdtb" path="res://assets/ui/img_public_smallicon_bg.png" id="13_vu34l"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cvuet"]
+bg_color = Color(0.121569, 0.160784, 0.192157, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dphs4"]
+
+[node name="Characters" type="Node2D"]
+script = ExtResource("1_t05v5")
+
+[node name="BG" type="TextureRect" parent="."]
+offset_right = 1919.0
+offset_bottom = 377.0
+texture = ExtResource("1_g8ak3")
+
+[node name="Main" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1921.0
+offset_bottom = 385.0
+
+[node name="Panel" type="Panel" parent="Main"]
+layout_mode = 0
+offset_top = 14.0
+offset_right = 1918.0
+offset_bottom = 381.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_cvuet")
+
+[node name="Attr" type="HBoxContainer" parent="Main/Panel"]
+custom_minimum_size = Vector2(1900, 60)
+layout_mode = 2
+offset_left = 6.0
+offset_right = 1906.0
+offset_bottom = 60.0
+
+[node name="Panel" type="Panel" parent="Main/Panel/Attr"]
+custom_minimum_size = Vector2(65, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_dphs4")
+
+[node name="Name" type="Label" parent="Main/Panel/Attr"]
+custom_minimum_size = Vector2(180, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_pxa2w")
+theme_override_font_sizes/font_size = 34
+text = "姓名 "
+horizontal_alignment = 1
+
+[node name="Tong" type="Label" parent="Main/Panel/Attr"]
+custom_minimum_size = Vector2(180, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_pxa2w")
+theme_override_font_sizes/font_size = 34
+text = "统率"
+horizontal_alignment = 1
+
+[node name="Wu" type="Label" parent="Main/Panel/Attr"]
+custom_minimum_size = Vector2(180, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_pxa2w")
+theme_override_font_sizes/font_size = 34
+text = "武力"
+horizontal_alignment = 1
+
+[node name="Zhi" type="Label" parent="Main/Panel/Attr"]
+custom_minimum_size = Vector2(180, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_pxa2w")
+theme_override_font_sizes/font_size = 34
+text = "智力"
+horizontal_alignment = 1
+
+[node name="Zheng" type="Label" parent="Main/Panel/Attr"]
+custom_minimum_size = Vector2(180, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_pxa2w")
+theme_override_font_sizes/font_size = 34
+text = "政治"
+horizontal_alignment = 1
+
+[node name="Ti" type="Label" parent="Main/Panel/Attr"]
+custom_minimum_size = Vector2(180, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_pxa2w")
+theme_override_font_sizes/font_size = 34
+text = "体力"
+horizontal_alignment = 1
+
+[node name="Zhong" type="Label" parent="Main/Panel/Attr"]
+custom_minimum_size = Vector2(180, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_pxa2w")
+theme_override_font_sizes/font_size = 34
+text = "忠诚
+"
+horizontal_alignment = 1
+
+[node name="MaxBing" type="Label" parent="Main/Panel/Attr"]
+custom_minimum_size = Vector2(260, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_pxa2w")
+theme_override_font_sizes/font_size = 34
+text = "最大兵力"
+horizontal_alignment = 1
+
+[node name="Bing" type="Label" parent="Main/Panel/Attr"]
+custom_minimum_size = Vector2(260, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_pxa2w")
+theme_override_font_sizes/font_size = 34
+text = "当前兵力"
+horizontal_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Main/Panel"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 46.0
+offset_right = 1913.0
+offset_bottom = 358.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Main/Panel/ScrollContainer"]
+custom_minimum_size = Vector2(1900, 291)
+layout_mode = 2
+
+[node name="Fold" type="TextureButton" parent="."]
+offset_left = 953.0
+offset_top = -66.0
+offset_right = 1019.0
+texture_normal = ExtResource("13_vu34l")
+
+[node name="TextureButton" type="TextureButton" parent="Fold"]
+modulate = Color(0.898039, 0.815686, 0.623529, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -12.0
+offset_top = -12.0
+offset_right = 244.0
+offset_bottom = 244.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.1, 0.1)
+mouse_filter = 2
+texture_normal = ExtResource("5_fyrnu")
+
+[connection signal="pressed" from="Fold" to="." method="_on_fold_pressed"]

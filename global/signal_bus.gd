@@ -31,3 +31,7 @@ signal recover_city_select()
 signal change_city_size(zoom)
 
 signal focus_map_city(city_id)
+
+signal open_characters_list(city_id)
+
+signal reset_character_attr(name_id)

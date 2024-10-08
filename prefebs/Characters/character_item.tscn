@@ -1,0 +1,134 @@
+[gd_scene load_steps=5 format=3 uid="uid://8s566cl71b7e"]
+
+[ext_resource type="Script" path="res://prefebs/Characters/character_item.gd" id="1_w8upa"]
+[ext_resource type="Texture2D" uid="uid://dj4biec7lvp3g" path="res://assets/ui/icons_256/profile.png" id="2_wasnm"]
+[ext_resource type="FontFile" uid="uid://ccc7h37nygjqu" path="res://assets/fonts/方正隶书简体.TTF" id="2_wl5xq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b1ohe"]
+bg_color = Color(0.312995, 0.386784, 0.394226, 0.972549)
+
+[node name="CharacterItem" type="TextureButton"]
+custom_minimum_size = Vector2(1890, 69)
+script = ExtResource("1_w8upa")
+
+[node name="Panel" type="Panel" parent="."]
+visible = false
+layout_mode = 2
+offset_right = 167.0
+offset_bottom = 36.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_b1ohe")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 300.0
+offset_bottom = 67.0
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer"]
+modulate = Color(0.898039, 0.815686, 0.623529, 1)
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("2_wasnm")
+expand_mode = 2
+
+[node name="Name" type="RichTextLabel" parent="HBoxContainer"]
+custom_minimum_size = Vector2(180, 45)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("2_wl5xq")
+theme_override_font_sizes/normal_font_size = 36
+bbcode_enabled = true
+text = "[center][color=#91c2d5][u][url]刘备"
+
+[node name="Tong" type="RichTextLabel" parent="HBoxContainer"]
+custom_minimum_size = Vector2(180, 45)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("2_wl5xq")
+theme_override_font_sizes/normal_font_size = 36
+bbcode_enabled = true
+text = "[center][color=#91c2d5][u][url]100"
+
+[node name="Wu" type="RichTextLabel" parent="HBoxContainer"]
+custom_minimum_size = Vector2(180, 45)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("2_wl5xq")
+theme_override_font_sizes/normal_font_size = 36
+bbcode_enabled = true
+text = "[center][color=#91c2d5][u][url]100"
+
+[node name="Zhi" type="RichTextLabel" parent="HBoxContainer"]
+custom_minimum_size = Vector2(180, 45)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("2_wl5xq")
+theme_override_font_sizes/normal_font_size = 36
+bbcode_enabled = true
+text = "[center][color=#91c2d5][u][url]100"
+
+[node name="Zheng" type="RichTextLabel" parent="HBoxContainer"]
+custom_minimum_size = Vector2(180, 45)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("2_wl5xq")
+theme_override_font_sizes/normal_font_size = 36
+bbcode_enabled = true
+text = "[center][color=#91c2d5][u][url]100"
+
+[node name="Mei" type="RichTextLabel" parent="HBoxContainer"]
+custom_minimum_size = Vector2(180, 45)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("2_wl5xq")
+theme_override_font_sizes/normal_font_size = 36
+bbcode_enabled = true
+text = "[center][color=#91c2d5][u][url]100"
+
+[node name="Zhong" type="RichTextLabel" parent="HBoxContainer"]
+custom_minimum_size = Vector2(180, 45)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("2_wl5xq")
+theme_override_font_sizes/normal_font_size = 36
+bbcode_enabled = true
+text = "[center][color=#91c2d5][u][url]--"
+
+[node name="MaxBing" type="RichTextLabel" parent="HBoxContainer"]
+custom_minimum_size = Vector2(260, 45)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("2_wl5xq")
+theme_override_font_sizes/normal_font_size = 36
+bbcode_enabled = true
+text = "[center][color=#91c2d5][u][url]3000"
+
+[node name="Bing" type="RichTextLabel" parent="HBoxContainer"]
+custom_minimum_size = Vector2(260, 45)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("2_wl5xq")
+theme_override_font_sizes/normal_font_size = 36
+bbcode_enabled = true
+text = "[center][color=#91c2d5][u][url]3000"
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

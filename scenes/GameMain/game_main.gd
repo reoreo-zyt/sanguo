@@ -2,6 +2,7 @@ extends Node2D
 
 var character_attr = preload("res://prefebs/CharacterAttr/CharacterAttr.tscn")
 var button = preload("res://scenes/GameMain/button.tscn")
+var character_message = preload("res://prefebs/Characters/Characters.tscn")
 
 func _ready() -> void:
 	var character_attr_instance = character_attr.instantiate()
@@ -13,3 +14,8 @@ func _ready() -> void:
 	var button_instance = button.instantiate()
 	button_instance.position = Vector2(0, 52)
 	$CanvasLayer/Main/Control.add_child(button_instance)
+	
+	var character_message_instance = character_message.instantiate()
+	character_message_instance.position = Vector2(-58, 550)
+	$CanvasLayer/Main/Control.add_child(character_message_instance)
+	character_message_instance.hide()

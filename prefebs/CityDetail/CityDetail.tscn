@@ -590,4 +590,5 @@ scale = Vector2(0.1, 0.1)
 mouse_filter = 2
 texture_normal = ExtResource("3_s5eb8")
 
+[connection signal="meta_clicked" from="Main/Jiang/RichTextLabel" to="." method="_on_rich_text_label_meta_clicked"]
 [connection signal="pressed" from="Fold" to="." method="_on_fold_pressed"]

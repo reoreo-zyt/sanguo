@@ -471,7 +471,7 @@ func _ready():
 
 # 公用方法
 func set_name_text(name):
-	return "[center][color=#91c2d5][u][url]" + name + "[/url][/u][/color]"
+	return "[center][color=#91c2d5][u][url]" + str(name) + "[/url][/u][/color]"
 
 func set_text(str):
 	return "[center][color=#91c2d5]" + str(str) + "[/color]"
@@ -529,8 +529,8 @@ func set_message_name(text):
 
 func get_skill_desc(nameId):
 	var skillsDesc = ""
-	var skillIds = Global.characters_select[int(nameId)].skillIds
-	for i in Global.characters_select[int(nameId)].skillIds:
+	var skillIds = Global.characters[int(nameId)].skillIds
+	for i in Global.characters[int(nameId)].skillIds:
 		if(Global.skills[i].type == "normal"):
 			skillsDesc += "[color=#91c2d5][u][url]"+  Global.skills[i].name +"[/url][/u][/color]" + " "
 		if(Global.skills[i].type == "self"):
