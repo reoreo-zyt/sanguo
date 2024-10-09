@@ -71,8 +71,8 @@ var save_hire_jiang = []
 # 人物性格
 # AI 个性，基于以下属性和玩家交互，值在 -100 到 100 之间
 var personalitiesRange = {
-	'Very Negative': [ - 100, - 76],
-	'Negative': [ - 75, - 1],
+	'Very Negative': [-100, -76],
+	'Negative': [-75, -1],
 	'Positive': [1, 75],
 	'Very Positive': [76, 100],
 }
@@ -81,50 +81,50 @@ var personalities = {
 	# 胆量
 	'Boldness': [
 			{
-				'adj': '没骨气的',
-				'noun': '胆小鬼',
+				'adj': '胆小如鼠的',
+				'noun': '鼷鼠',
 				'range': personalitiesRange['Very Negative']
 			},
 			{
-				'adj': '怯懦的',
+				'adj': '唯唯诺诺的',
 				'noun': '懦夫',
 				'range': personalitiesRange['Negative']
 			},
 			{
-				'adj': '大胆的',
-				'noun': '赌徒',
+				'adj': '胆大如斗的',
+				'noun': '勇士',
 				'range': personalitiesRange['Positive']
 			},
 			{
-				'adj': '无畏的',
-				'noun': '冒险家',
+				'adj': '浑身是胆的',
+				'noun': '无畏者',
 				'range': personalitiesRange['Very Positive']
 			}
 	],
-	# 同理心
+	# 忠心
 	'Compassion': [
 			{
-				'adj': '邪恶的',
-				'noun': '恶棍',
+				'adj': '反骨的',
+				'noun': '反骨者',
 				'range': personalitiesRange['Very Negative']
 			},
 			{
 				'adj': '铁石心肠的',
-				'noun': '禽兽',
+				'noun': '宵小',
 				'range': personalitiesRange['Negative']
 			},
 			{
-				'adj': '富有同情心的',
-				'noun': '利他主义者',
+				'adj': '忠心的',
+				'noun': '忠臣',
 				'range': personalitiesRange['Positive']
 			},
 			{
-				'adj': '仁慈的',
-				'noun': '感同身受者',
+				'adj': '忠心耿耿的',
+				'noun': '义绝者',
 				'range': personalitiesRange['Very Positive']
 			}
 	],
-	# 贪婪
+	# 名声
 	'Greed': [
 			{
 				'adj': '安于现状的',
@@ -150,23 +150,23 @@ var personalities = {
 	# 荣誉
 	'Honor': [
 			{
-				'adj': '奸诈的',
-				'noun': '流氓',
+				'adj': '残暴不仁的',
+				'noun': '臭名昭著者',
 				'range': personalitiesRange['Very Negative']
 			},
 			{
-				'adj': '卑鄙的',
-				'noun': '无赖',
+				'adj': '嫉恨贤能的',
+				'noun': '正直者',
 				'range': personalitiesRange['Negative']
 			},
 			{
-				'adj': '正直的',
-				'noun': '绅士',
+				'adj': '刚正耿直的',
+				'noun': '正直者',
 				'range': personalitiesRange['Positive']
 			},
 			{
-				'adj': '仁慈的',
-				'noun': '感同身受者',
+				'adj': '声名显赫的',
+				'noun': '名门望族',
 				'range': personalitiesRange['Very Positive']
 			}
 	],
@@ -196,8 +196,8 @@ var personalities = {
 	# 仁慈
 	'Vengefulness': [
 			{
-				'adj': '宽宏大量的',
-				'noun': '宽恕者',
+				'adj': '宽厚仁慈的',
+				'noun': '仁者',
 				'range': personalitiesRange['Very Negative']
 			},
 			{
@@ -207,11 +207,11 @@ var personalities = {
 			},
 			{
 				'adj': '忿忿不平的',
-				'noun': '吵闹者',
+				'noun': '记仇者',
 				'range': personalitiesRange['Positive']
 			},
 			{
-				'adj': '记仇的',
+				'adj': '残忍的',
 				'noun': '复仇者',
 				'range': personalitiesRange['Very Positive']
 			}
@@ -287,6 +287,52 @@ var personalities = {
 	]
 }
 
+# 内政事件
+var characters_event = {
+	0: {
+		"name": "休息",
+		"cost": {
+			"jin": 0,
+		}
+	},
+	1: {
+		"name": "发展商业",
+		"cost": {
+			"jin": 50,
+		}
+	},
+	2: {
+		"name": "开垦梯田",
+		"cost": {
+			"jin": 50,
+		}
+	},
+	3: {
+		"name": "人口巡查",
+		"cost": {
+			"jin": 50,
+		}
+	},
+	4: {
+		"name": "治水",
+		"cost": {
+			"jin": 50,
+		}
+	},
+	5: {
+		"name": "募兵",
+		"cost": {
+			"jin": 100,
+		}
+	},
+	6: {
+		"name": "搜索登用",
+		"cost": {
+			"jin": 0,
+		}
+	}
+}
+
 # 读取 xlsx 文件
 func _ready():
 	var excel = ExcelFile.open_file("res://data/311_data.xlsx")
@@ -297,14 +343,14 @@ func _ready():
 	var text_data = text_sheet.get_table_data()
 	current_message_title = text_data[2][1]
 	for i in text_data:
-		if(i!=1):
+		if (i != 1):
 			text_message[text_data[i][1]] = text_data[i][2]
 	
 	# 获取武器
 	var weapon_sheet = workbook.get_sheet(1)
 	var weapon_data = weapon_sheet.get_table_data()
 	for i in weapon_data:
-		if(i!=1):
+		if (i != 1):
 			weapons[weapon_data[i][2]] = {
 				"name": weapon_data[i][1],
 			}
@@ -313,7 +359,7 @@ func _ready():
 	var armor_sheet = workbook.get_sheet(2)
 	var armors_data = armor_sheet.get_table_data()
 	for i in armors_data:
-		if(i!=1):
+		if (i != 1):
 			armors[armors_data[i][2]] = {
 				"name": armors_data[i][1],
 			}
@@ -321,8 +367,8 @@ func _ready():
 	var skill_sheet = workbook.get_sheet(5)
 	var skills_data = skill_sheet.get_table_data()
 	# TODO: 技能暂时写死
-	for i in skills_data: 
-		if(i!=1):
+	for i in skills_data:
+		if (i != 1):
 			skills[skills_data[i][2]] = {
 				"name": skills_data[i][1],
 				"desc": text_message[skills_data[i][1]],
@@ -336,10 +382,11 @@ func _ready():
 		"name": '无人占领城池',
 	}
 	for i in hero_data:
-		if(i!=1):
+		if (i != 1):
 			characters[i] = {
 				"name": hero_data[i][1],
 				"headImg": "res://assets/texture/profile/" + hero_data[i][1] + ".jpg",
+				"event_type": 0,
 				"attrs": {
 					"level": hero_data[i][14],
 					"speed": Tool.get_random_num(10, 100),
@@ -373,7 +420,7 @@ func _ready():
 
 	# 将角色数据加入兵力等信息
 	for i in characters:
-		if(i!=0):
+		if (i != 0):
 			# 根据统御计算最大兵力
 			characters[i].attrs.max_bing = get_bing_by_command(characters[i].attrs.command)
 			characters[i].attrs.bing = Tool.get_random_num(800, 1000)
@@ -401,7 +448,7 @@ func _ready():
 		"color": "#fff",
 	}
 	for i in character_data:
-		if(i!=1):
+		if (i != 1):
 			characters_select[int(character_data[i][3])] = {
 				"name": character_data[i][1],
 				"city_material": {
@@ -445,7 +492,7 @@ func _ready():
 	var city_data = city_sheet.get_table_data()
 	cur_city = city_data[2][2]
 	for i in city_data:
-		if(i!=1):
+		if (i != 1):
 			citys[city_data[i][2]] = {
 				"name": city_data[i][1],
 				"ownerId": city_data[i][3],
@@ -483,10 +530,10 @@ func clear_children(parent: Node):
 func findAllCharacters(city_code, heros, year = 10000):
 	var heros_codes = []
 	for i in heros:
-		if(i!=1):
-			if(!characters[i].cityId):
+		if (i != 1):
+			if (!characters[i].cityId):
 				continue
-			if(characters[i].cityId == city_code && characters[i].work <= year):
+			if (characters[i].cityId == city_code && characters[i].work <= year):
 				heros_codes.push_back(i)
 	return heros_codes
 
@@ -500,43 +547,43 @@ func get_array_diff(a, b):
 	var is_append = true
 	for i in b:
 		for j in a:
-			if(i == j):
+			if (i == j):
 				is_append = false
-		if(is_append):
+		if (is_append):
 			temparray.append(i)
 		else:
 			is_append = true
 	return temparray
 
 func get_skill_array(skill_text):
-	if(!skill_text):
+	if (!skill_text):
 		return []
 	else:
 		return skill_text.split(",")
 
 func get_bing_by_command(command):
-	if(command <= 50):
+	if (command <= 50):
 		return 1000
-	elif(command <= 70):
+	elif (command <= 70):
 		return 1000 + (50 * (command - 50))
-	elif(command <= 90):
+	elif (command <= 90):
 		return 1000 + (80 * (command - 50))
 	else:
 		return 1000 + (100 * (command - 50))
 
 func set_message_name(text):
-	return "[color=#91c2d5][u][url]"+  text +"[/url][/u][/color]"
+	return "[color=#91c2d5][u][url]" + text + "[/url][/u][/color]"
 
 func get_skill_desc(nameId):
 	var skillsDesc = ""
 	var skillIds = Global.characters[int(nameId)].skillIds
 	for i in Global.characters[int(nameId)].skillIds:
-		if(Global.skills[i].type == "normal"):
-			skillsDesc += "[color=#91c2d5][u][url]"+  Global.skills[i].name +"[/url][/u][/color]" + " "
-		if(Global.skills[i].type == "self"):
-			skillsDesc += "[color=#ffe219][u][url]"+  Global.skills[i].name +"[/url][/u][/color]" + " "
-		if(Global.skills[i].type == "self_bad"):
-			skillsDesc += "[color=#ff5437][u][url]"+  Global.skills[i].name +"[/url][/u][/color]" + " "
+		if (Global.skills[i].type == "normal"):
+			skillsDesc += "[color=#91c2d5][u][url]" + Global.skills[i].name + "[/url][/u][/color]" + " "
+		if (Global.skills[i].type == "self"):
+			skillsDesc += "[color=#ffe219][u][url]" + Global.skills[i].name + "[/url][/u][/color]" + " "
+		if (Global.skills[i].type == "self_bad"):
+			skillsDesc += "[color=#ff5437][u][url]" + Global.skills[i].name + "[/url][/u][/color]" + " "
 	return skillsDesc
 
 # 设置随机性格
@@ -571,7 +618,7 @@ func judgeNum(num, data, name):
 	for item in data:
 		var minNum = item.range[0]
 		var maxNum = item.range[1]
-		if (num >= minNum&&num <= maxNum):
+		if (num >= minNum && num <= maxNum):
 			if (name == 'adj'):
 				adj = item.adj
 			else:

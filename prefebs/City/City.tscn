@@ -73,7 +73,7 @@ offset_left = -19.0
 offset_top = -19.0
 offset_right = 21.0
 offset_bottom = 21.0
-rotation = 9.19364
+rotation = 9.53808
 pivot_offset = Vector2(20, 20)
 script = ExtResource("6_4p5nw")
 radius = 87.0
@@ -87,7 +87,7 @@ offset_left = 67.0
 offset_top = -20.0
 offset_right = 147.0
 offset_bottom = 60.0
-rotation = -9.19364
+rotation = -9.53808
 pivot_offset = Vector2(40, 40)
 
 [node name="Panel2" type="Panel" parent="Vircle"]
@@ -97,7 +97,7 @@ offset_left = -20.0
 offset_top = 67.0
 offset_right = 60.0
 offset_bottom = 147.0
-rotation = -9.19364
+rotation = -9.53808
 pivot_offset = Vector2(40, 40)
 
 [node name="Panel3" type="Panel" parent="Vircle"]
@@ -107,7 +107,7 @@ offset_left = -107.0
 offset_top = -20.0
 offset_right = -27.0
 offset_bottom = 60.0
-rotation = -9.19364
+rotation = -9.53808
 pivot_offset = Vector2(40, 40)
 
 [node name="Panel4" type="Panel" parent="Vircle"]
@@ -117,7 +117,7 @@ offset_left = -20.0
 offset_top = -107.0
 offset_right = 60.0
 offset_bottom = -27.0
-rotation = -9.19364
+rotation = -9.53808
 pivot_offset = Vector2(40, 40)
 
 [connection signal="pressed" from="Icon" to="." method="_on_icon_pressed"]

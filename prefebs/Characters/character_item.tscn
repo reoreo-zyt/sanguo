@@ -1,11 +1,52 @@
-[gd_scene load_steps=5 format=3 uid="uid://8s566cl71b7e"]
+[gd_scene load_steps=17 format=3 uid="uid://8s566cl71b7e"]
 
 [ext_resource type="Script" path="res://prefebs/Characters/character_item.gd" id="1_w8upa"]
-[ext_resource type="Texture2D" uid="uid://dj4biec7lvp3g" path="res://assets/ui/icons_256/profile.png" id="2_wasnm"]
+[ext_resource type="Texture2D" uid="uid://3gnu0wl6dgnf" path="res://assets/ui/icons_256/thumbnail_list.png" id="2_r7udj"]
 [ext_resource type="FontFile" uid="uid://ccc7h37nygjqu" path="res://assets/fonts/方正隶书简体.TTF" id="2_wl5xq"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b1ohe"]
 bg_color = Color(0.312995, 0.386784, 0.394226, 0.972549)
+
+[sub_resource type="Theme" id="Theme_sp40b"]
+default_font = ExtResource("2_wl5xq")
+default_font_size = 26
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_muha6"]
+bg_color = Color(0.290196, 0.360784, 0.419608, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hgbdd"]
+bg_color = Color(0.290196, 0.360784, 0.419608, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_okqxc"]
+bg_color = Color(0.290196, 0.360784, 0.419608, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0j18a"]
+bg_color = Color(0.290196, 0.360784, 0.419608, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3wvpp"]
+bg_color = Color(0.290196, 0.360784, 0.419608, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mb1j6"]
+bg_color = Color(0.290196, 0.360784, 0.419608, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0vhda"]
+bg_color = Color(0.290196, 0.360784, 0.419608, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_speli"]
+bg_color = Color(0.290196, 0.360784, 0.419608, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ibmhw"]
+bg_color = Color(0.290196, 0.360784, 0.419608, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vtec7"]
+bg_color = Color(0.290196, 0.360784, 0.419608, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l38d7"]
+bg_color = Color(0.28991, 0.362082, 0.419941, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
 
 [node name="CharacterItem" type="TextureButton"]
 custom_minimum_size = Vector2(1890, 69)
@@ -29,7 +70,7 @@ modulate = Color(0.898039, 0.815686, 0.623529, 1)
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 mouse_filter = 2
-texture = ExtResource("2_wasnm")
+texture = ExtResource("2_r7udj")
 expand_mode = 2
 
 [node name="Name" type="RichTextLabel" parent="HBoxContainer"]
@@ -98,16 +139,39 @@ theme_override_font_sizes/normal_font_size = 36
 bbcode_enabled = true
 text = "[center][color=#91c2d5][u][url]100"
 
-[node name="Zhong" type="RichTextLabel" parent="HBoxContainer"]
-custom_minimum_size = Vector2(180, 45)
+[node name="Event" type="OptionButton" parent="HBoxContainer"]
+custom_minimum_size = Vector2(180, 0)
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-mouse_filter = 2
-theme_override_fonts/normal_font = ExtResource("2_wl5xq")
-theme_override_font_sizes/normal_font_size = 36
-bbcode_enabled = true
-text = "[center][color=#91c2d5][u][url]--"
+theme = SubResource("Theme_sp40b")
+theme_override_fonts/font = ExtResource("2_wl5xq")
+theme_override_font_sizes/font_size = 26
+theme_override_styles/focus = SubResource("StyleBoxFlat_muha6")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_hgbdd")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_okqxc")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_0j18a")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_3wvpp")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_mb1j6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_0vhda")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_speli")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ibmhw")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_vtec7")
+theme_override_styles/normal = SubResource("StyleBoxFlat_l38d7")
+alignment = 1
+selected = 0
+item_count = 7
+popup/item_0/text = "休息"
+popup/item_1/text = "发展商业"
+popup/item_1/id = 1
+popup/item_2/text = "开垦梯田"
+popup/item_2/id = 2
+popup/item_3/text = "人口巡查"
+popup/item_3/id = 3
+popup/item_4/text = "治水"
+popup/item_4/id = 4
+popup/item_5/text = "募兵"
+popup/item_5/id = 5
+popup/item_6/text = "搜索登用"
+popup/item_6/id = 6
 
 [node name="MaxBing" type="RichTextLabel" parent="HBoxContainer"]
 custom_minimum_size = Vector2(260, 45)
@@ -132,3 +196,4 @@ bbcode_enabled = true
 text = "[center][color=#91c2d5][u][url]3000"
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]
+[connection signal="item_selected" from="HBoxContainer/Event" to="." method="_on_event_item_selected"]

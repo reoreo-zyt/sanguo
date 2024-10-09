@@ -376,7 +376,7 @@ offset_bottom = 152.0
 layout_mode = 0
 offset_left = -58.0
 offset_top = 9.0
-offset_right = 101.0
+offset_right = 135.0
 offset_bottom = 70.0
 
 [node name="Fold" type="TextureButton" parent="Message/ZiYuan/Bing"]
@@ -411,9 +411,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -0.5
+offset_left = -10.5
 offset_top = -16.5
-offset_right = 72.5
+offset_right = 85.5
 offset_bottom = 17.5
 grow_horizontal = 2
 grow_vertical = 2
@@ -423,10 +423,11 @@ bbcode_enabled = true
 text = "[color=#91c2d5][u][url]0[/url][/u][/color] "
 
 [node name="Jin" type="Panel" parent="Message/ZiYuan"]
+visible = false
 layout_mode = 0
-offset_left = 122.0
+offset_left = 148.0
 offset_top = 9.0
-offset_right = 342.0
+offset_right = 328.0
 offset_bottom = 70.0
 
 [node name="Fold" type="TextureButton" parent="Message/ZiYuan/Jin"]
@@ -461,9 +462,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -33.0
+offset_left = -13.0
 offset_top = -16.5
-offset_right = 99.0
+offset_right = 104.0
 offset_bottom = 17.5
 grow_horizontal = 2
 grow_vertical = 2
@@ -473,10 +474,11 @@ bbcode_enabled = true
 text = "[color=#91c2d5][u][url]0[/url][/u][/color] "
 
 [node name="Liang" type="Panel" parent="Message/ZiYuan"]
+visible = false
 layout_mode = 0
 offset_left = 351.0
 offset_top = 9.0
-offset_right = 559.0
+offset_right = 548.0
 offset_bottom = 70.0
 
 [node name="Fold" type="TextureButton" parent="Message/ZiYuan/Liang"]
@@ -511,9 +513,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -26.0
+offset_left = -16.5
 offset_top = -16.5
-offset_right = 98.0
+offset_right = 94.5
 offset_bottom = 17.5
 grow_horizontal = 2
 grow_vertical = 2

@@ -28,7 +28,7 @@ func hide_ui():
 func show_ui():
 	$BG.show()
 	$Message.show()
-	if(is_show_attr):
+	if(is_show_attr and radar_node):
 		$RadarChartStats.show()
 	$Fold.position = Vector2(1048, -32)
 
@@ -61,8 +61,8 @@ func set_attr():
 		$Message/ZiYuan/Bing/RichTextLabel.text = Global.set_message_name(str(attrs.bing) + "兵")
 		var cost_jin = round((attrs.bing / 100) * calc_cost(attrs.politics))
 		var cost_liang = round((attrs.bing / 50) * calc_cost(attrs.politics))
-		$Message/ZiYuan/Jin/RichTextLabel.text = Global.set_message_name(str(attrs.jin) + " - " + str(cost_jin) + "金")
-		$Message/ZiYuan/Liang/RichTextLabel.text = Global.set_message_name(str(attrs.liang) + " - " + str(cost_liang) + "粮")
+		$Message/ZiYuan/Jin/RichTextLabel.text = Global.set_message_name(str(attrs.jin))
+		$Message/ZiYuan/Liang/RichTextLabel.text = Global.set_message_name(str(attrs.liang))
 		radar_node.position = Vector2(653, 280)
 		radar_node.scale = Vector2(1.6, 1.6)
 		$Message/Level.text = Global.set_message_name("LV " + str(attrs["level"]))

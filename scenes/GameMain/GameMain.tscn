@@ -1,10 +1,19 @@
-[gd_scene load_steps=6 format=3 uid="uid://ccpolo20cr5qp"]
+[gd_scene load_steps=12 format=3 uid="uid://ccpolo20cr5qp"]
 
 [ext_resource type="Texture2D" uid="uid://b1w483uyt4gnh" path="res://assets/maps/sanguo.jpg" id="1_4ckgs"]
 [ext_resource type="Script" path="res://scenes/GameMain/game_main.gd" id="1_7uyeb"]
 [ext_resource type="Script" path="res://scenes/GameMain/camera_2d.gd" id="2_s1a3x"]
+[ext_resource type="Texture2D" uid="uid://dsxdhuxuisime" path="res://assets/decorations/d1.png" id="2_vhw7f"]
 [ext_resource type="PackedScene" uid="uid://de7cj247faoxo" path="res://prefebs/CharacterSelect/city_container.tscn" id="2_vmsst"]
+[ext_resource type="Texture2D" uid="uid://s5v3i64k0cdm" path="res://assets/ui/icons_256/timer.png" id="3_obrr4"]
+[ext_resource type="FontFile" uid="uid://ccc7h37nygjqu" path="res://assets/fonts/方正隶书简体.TTF" id="3_y6n5g"]
 [ext_resource type="PackedScene" uid="uid://bsggmbbtr35iy" path="res://prefebs/CityDetail/CityDetail.tscn" id="4_haqky"]
+[ext_resource type="Texture2D" uid="uid://cdhn1garqbdtb" path="res://assets/ui/img_public_smallicon_bg.png" id="4_hdq66"]
+[ext_resource type="Texture2D" uid="uid://cyn3fh4bok768" path="res://assets/ui/btn_back.png" id="5_35fn4"]
+
+[sub_resource type="Theme" id="Theme_vhjel"]
+default_font = ExtResource("3_y6n5g")
+default_font_size = 32
 
 [node name="GameMain" type="Node2D"]
 script = ExtResource("1_7uyeb")
@@ -17,6 +26,111 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
+
+[node name="Top" type="Control" parent="CanvasLayer/Main"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Panel" type="Panel" parent="CanvasLayer/Main/Top"]
+layout_mode = 0
+offset_left = 246.0
+offset_right = 550.0
+offset_bottom = 65.0
+
+[node name="TimeControl" type="Control" parent="CanvasLayer/Main/Top"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Time" type="TextureButton" parent="CanvasLayer/Main/Top/TimeControl"]
+layout_mode = 0
+offset_left = 272.0
+offset_right = 338.0
+offset_bottom = 66.0
+texture_normal = ExtResource("4_hdq66")
+
+[node name="TextureButton" type="TextureButton" parent="CanvasLayer/Main/Top/TimeControl/Time"]
+modulate = Color(0.898039, 0.815686, 0.623529, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -12.0
+offset_top = -12.0
+offset_right = 244.0
+offset_bottom = 244.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.1, 0.1)
+mouse_filter = 2
+texture_normal = ExtResource("3_obrr4")
+
+[node name="TimeLabel" type="RichTextLabel" parent="CanvasLayer/Main/Top/TimeControl"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 330.0
+offset_top = -4.5
+offset_right = 522.0
+offset_bottom = 35.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_vhjel")
+bbcode_enabled = true
+text = "[center]190 年 1 月"
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Main/Top"]
+layout_mode = 0
+offset_right = 269.0
+offset_bottom = 68.0
+texture = ExtResource("2_vhw7f")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Main/Top/TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -80.0
+offset_top = -19.5
+offset_right = 112.0
+offset_bottom = 20.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_vhjel")
+bbcode_enabled = true
+text = "[center]势力：刘备"
+
+[node name="Dectation" type="TextureButton" parent="CanvasLayer/Main/Top"]
+layout_mode = 0
+offset_left = 1856.0
+offset_right = 1922.0
+offset_bottom = 66.0
+texture_normal = ExtResource("4_hdq66")
+
+[node name="TextureButton" type="TextureButton" parent="CanvasLayer/Main/Top/Dectation"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -12.0
+offset_top = -11.0
+offset_right = 44.0
+offset_bottom = 33.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+mouse_filter = 2
+texture_normal = ExtResource("5_35fn4")
 
 [node name="Control" type="Control" parent="CanvasLayer/Main"]
 layout_mode = 3
@@ -66,3 +180,5 @@ metadata/_edit_use_anchors_ = true
 position = Vector2(960, 540)
 limit_smoothed = true
 script = ExtResource("2_s1a3x")
+
+[connection signal="pressed" from="CanvasLayer/Main/Top/Dectation" to="." method="_on_dectation_pressed"]

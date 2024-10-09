@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://bsggmbbtr35iy"]
+[gd_scene load_steps=20 format=3 uid="uid://bsggmbbtr35iy"]
 
 [ext_resource type="Texture2D" uid="uid://b88eisuk3vhxo" path="res://assets/ui/MiniPanel04.jpg" id="1_opvkm"]
 [ext_resource type="Script" path="res://prefebs/CityDetail/city_detail.gd" id="1_q5hdc"]
@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://cdhn1garqbdtb" path="res://assets/ui/img_public_smallicon_bg.png" id="11_kyhxs"]
 [ext_resource type="Texture2D" uid="uid://dohaxbiwcf0ye" path="res://assets/texture/force/fcacf8df-6f81-8c6f-350b-fa9e4cc6525c.png" id="12_g1yo4"]
 [ext_resource type="Texture2D" uid="uid://dor1lq83o5e5i" path="res://assets/texture/force/Jin.png" id="13_71cv0"]
+[ext_resource type="Texture2D" uid="uid://br3y7a3whqp8" path="res://assets/texture/force/e88dd331-d8cb-4827-90b5-f4fa4626acc1.png" id="14_xoexn"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rv44i"]
 bg_color = Color(0.121569, 0.160784, 0.192157, 1)
@@ -543,7 +544,7 @@ offset_right = 13.0
 offset_bottom = 13.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("13_71cv0")
+texture = ExtResource("14_xoexn")
 expand_mode = 2
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Main/Liang"]
@@ -563,6 +564,25 @@ theme_override_fonts/normal_font = ExtResource("4_nw0gu")
 theme_override_font_sizes/normal_font_size = 26
 bbcode_enabled = true
 text = "[color=#91c2d5]0"
+
+[node name="EventCost" type="Panel" parent="Main"]
+layout_mode = 0
+offset_left = 186.0
+offset_top = 382.0
+offset_right = 626.0
+offset_bottom = 626.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_rv44i")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Main/EventCost"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 17.0
+offset_right = 424.0
+offset_bottom = 227.0
+theme_override_fonts/normal_font = ExtResource("4_nw0gu")
+theme_override_font_sizes/normal_font_size = 26
+bbcode_enabled = true
+text = " "
 
 [node name="Fold" type="TextureButton" parent="."]
 layout_mode = 0

@@ -4,10 +4,14 @@ var is_fold = false
 var city_item = preload("res://prefebs/CityDetail/city_item.tscn")
 
 var city_item_instances = []
+var cur_character_id = 0
+var cur_event_id = 0
+var recover_before_event = true
 
 func _ready() -> void:
 	city_item_instances = []
 	SignalBus.connect("recover_city_select", _on_recover_city_select)
+	SignalBus.connect("send_characters_event", _on_send_characters_event)
 	# 获取到所有城市
 	for city_number in Global.characters_select[int(Global.cur_hero_id)].citys:
 		var city_item_instance = city_item.instantiate()
@@ -44,6 +48,7 @@ func _on_recover_city_select():
 	for city_item_instance in city_item_instances:
 		if(Global.cur_city != city_item_instance.city_id):
 			city_item_instance.recover_select = true
+	calc_cost()
 
 func calc_bing():
 	var city = Global.citys[Global.cur_city]
@@ -51,6 +56,31 @@ func calc_bing():
 	for jiang in city.curent_jiang:
 		num += Global.characters[jiang].attrs.bing
 	return num
+	
+func calc_cost():
+	var city = Global.citys[Global.cur_city]
+	# 获取到这个城市的武将事件，统计消耗
+	var event_cost = 0
+	for jiang in city.curent_jiang:
+		#print(Global.characters[jiang].event_type)
+		event_cost += Global.characters_event[Global.characters[jiang].event_type].cost.jin
+	$Main/EventCost/RichTextLabel.text = "下个月需要花费金 " + str(event_cost)
+	if(is_cost_over(event_cost) and recover_before_event):
+		$Main/EventCost/RichTextLabel.text = "超过城市拥有金，请重新分配事件。"
+		Global.characters[cur_character_id].event_type = cur_event_id
 
 func _on_rich_text_label_meta_clicked(meta: Variant) -> void:
 	SignalBus.emit_signal("open_characters_list", Global.cur_city)
+
+func _on_send_characters_event(character_id, event_id):
+	Global.characters[character_id].event_type = event_id
+	cur_event_id = event_id
+	cur_character_id = character_id
+	#print(character_id, "==character_id==event_id==", event_id)
+	calc_cost()
+
+func is_cost_over(event_cost):
+	if(event_cost <= Global.citys[Global.cur_city].jin):
+		return false
+	else:
+		return true

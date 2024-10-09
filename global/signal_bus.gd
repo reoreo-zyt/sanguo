@@ -35,3 +35,5 @@ signal focus_map_city(city_id)
 signal open_characters_list(city_id)
 
 signal reset_character_attr(name_id)
+
+signal send_characters_event(character_id, event_index)

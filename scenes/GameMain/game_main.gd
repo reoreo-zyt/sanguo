@@ -5,6 +5,8 @@ var button = preload("res://scenes/GameMain/button.tscn")
 var character_message = preload("res://prefebs/Characters/Characters.tscn")
 
 func _ready() -> void:
+	$CanvasLayer/Main/Top/TextureRect/RichTextLabel.text = "势力：" + Global.characters[int(Global.cur_hero_id)].name
+
 	var character_attr_instance = character_attr.instantiate()
 	character_attr_instance.name_id = int(Global.cur_hero_id)
 	character_attr_instance.is_show_attr = true
@@ -19,3 +21,6 @@ func _ready() -> void:
 	character_message_instance.position = Vector2(-58, 550)
 	$CanvasLayer/Main/Control.add_child(character_message_instance)
 	character_message_instance.hide()
+
+func _on_dectation_pressed() -> void:
+	SignalBus.emit_signal("return_start")

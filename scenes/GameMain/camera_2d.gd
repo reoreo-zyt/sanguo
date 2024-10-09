@@ -32,6 +32,9 @@ func zoom(zoom_direction):
 	zoom_value += zoom_direction * 0.1 # 假设每次缩放增加或减少0.1
 	# 确保缩放值不低于1.0
 	zoom_value = max(zoom_value, 1.0)
+	if(zoom_value >= 4):
+		zoom_value = 4
+		return
 	if(zoom_value == 1):
 		$".".position = Vector2(960, 540)
 	# 设置相机的缩放
