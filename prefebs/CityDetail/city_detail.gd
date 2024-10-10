@@ -58,6 +58,7 @@ func calc_bing():
 	return num
 	
 func calc_cost():
+	Global.is_finish_next = true
 	var city = Global.citys[Global.cur_city]
 	# 获取到这个城市的武将事件，统计消耗
 	var event_cost = 0
@@ -66,6 +67,7 @@ func calc_cost():
 		event_cost += Global.characters_event[Global.characters[jiang].event_type].cost.jin
 	$Main/EventCost/RichTextLabel.text = "下个月需要花费金 " + str(event_cost)
 	if(is_cost_over(event_cost) and recover_before_event):
+		Global.is_finish_next = false
 		$Main/EventCost/RichTextLabel.text = "超过城市拥有金，请重新分配事件。"
 		Global.characters[cur_character_id].event_type = cur_event_id
 

@@ -46,7 +46,7 @@ var polities_times = 3
 var cur_character = 2
 
 # 初始年月
-var year = 189
+var year = 190
 var month = 1
 
 # 内政相关
@@ -67,6 +67,8 @@ var save_move_jiang = []
 
 # 维护一个出仕的武将列表
 var save_hire_jiang = []
+
+var hero_data = null
 
 # 人物性格
 # AI 个性，基于以下属性和玩家交互，值在 -100 到 100 之间
@@ -298,19 +300,19 @@ var characters_event = {
 	1: {
 		"name": "发展商业",
 		"cost": {
-			"jin": 50,
+			"jin": 10,
 		}
 	},
 	2: {
 		"name": "开垦梯田",
 		"cost": {
-			"jin": 50,
+			"jin": 10,
 		}
 	},
 	3: {
 		"name": "人口巡查",
 		"cost": {
-			"jin": 50,
+			"jin": 10,
 		}
 	},
 	4: {
@@ -322,7 +324,7 @@ var characters_event = {
 	5: {
 		"name": "募兵",
 		"cost": {
-			"jin": 100,
+			"jin": 50,
 		}
 	},
 	6: {
@@ -332,6 +334,9 @@ var characters_event = {
 		}
 	}
 }
+
+# 是否完成内政事件
+var is_finish_next = true
 
 # 读取 xlsx 文件
 func _ready():
@@ -377,7 +382,7 @@ func _ready():
 
 	# 获取英雄数据
 	var hero_sheet = workbook.get_sheet(0)
-	var hero_data = hero_sheet.get_table_data()
+	hero_data = hero_sheet.get_table_data()
 	characters[0] = {
 		"name": '无人占领城池',
 	}

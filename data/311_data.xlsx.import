@@ -3,11 +3,12 @@
 importer="zhangxuetu.excelreader"
 type="Resource"
 uid="uid://d2hyiry2j1dhg"
-valid=false
+path="res://.godot/imported/311_data.xlsx-2d233f08e5e439b500a03de9f2a2241b.res"
 
 [deps]
 
 source_file="res://data/311_data.xlsx"
+dest_files=["res://.godot/imported/311_data.xlsx-2d233f08e5e439b500a03de9f2a2241b.res"]
 
 [params]
 
