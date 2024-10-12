@@ -3,7 +3,11 @@ extends TextureButton
 @export var character_id = 0
 @export var is_show_city = true
 
+var last_event_id = 0
+
 func _ready() -> void:
+	SignalBus.connect("battle_set_select_disabled", _on_battle_set_select_disabled)
+	
 	var character_attr = Global.characters[int(character_id)].attrs
 	$HBoxContainer/Name.text = Global.set_name_text(Global.characters[int(character_id)].name)
 	$HBoxContainer/Tong.text = Global.set_name_text(character_attr.command)
@@ -19,41 +23,7 @@ func _ready() -> void:
 		for event_id in Global.characters_event:
 			$HBoxContainer/Event.add_item(Global.characters_event[event_id].name, event_id)
 	else:
-		var battle_event = {
-			0: {
-				"name": "暂未选择"
-			},
-			1: {
-				"name": "(0, 0)"
-			},
-			2: {
-				"name": "(0, 1)"
-			},
-			3: {
-				"name": "(0, 2)"
-			},
-			4: {
-				"name": "(0, 3)"
-			},
-			5: {
-				"name": "(0, 4)"
-			},
-			6: {
-				"name": "(1, 0)"
-			},
-			7: {
-				"name": "(1, 1)"
-			},
-			8: {
-				"name": "(1, 2)"
-			},
-			9: {
-				"name": "(1, 3)"
-			},
-			10: {
-				"name": "(1, 4)"
-			}
-		}
+		var battle_event = Global.battle_event
 		for event_id in battle_event:
 			$HBoxContainer/Event.add_item(battle_event[event_id].name, event_id)
 	# 设置默认选中的选项（如果需要）
@@ -66,5 +36,21 @@ func _on_pressed() -> void:
 	SignalBus.emit_signal("reset_character_attr", character_id)
 
 func _on_event_item_selected(index: int) -> void:
+	SignalBus.emit_signal("battle_send_character_location", character_id, index)
 	SignalBus.emit_signal("send_characters_event", character_id, index)
 	Global.characters[int(character_id)].event_type = index
+
+func _on_battle_set_select_disabled(event_id):
+	# 禁用当前
+	$HBoxContainer/Event.set_item_disabled(event_id, true)
+	if(last_event_id):
+		Global.had_selectd_battle_location.remove_at(last_event_id)
+	last_event_id = event_id
+	# 当前缓存的禁用项
+	if(Global.had_selectd_battle_location.has(event_id)):
+		Global.had_selectd_battle_location.append(event_id)
+	for battle_event_id in Global.battle_event:
+		# TODO: 未实现禁用
+		#$HBoxContainer/Event.set_item_disabled(battle_event_id, false)
+		if(Global.had_selectd_battle_location.has(battle_event_id)):
+			$HBoxContainer/Event.set_item_disabled(battle_event_id, true)

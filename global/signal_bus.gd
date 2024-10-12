@@ -37,3 +37,7 @@ signal open_characters_list(city_id)
 signal reset_character_attr(name_id)
 
 signal send_characters_event(character_id, event_index)
+
+signal battle_send_character_location(character_id, event_index)
+
+signal battle_set_select_disabled(event_id)

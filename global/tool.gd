@@ -12,3 +12,15 @@ func get_random_item(array, attr):
 func get_random_num(min, max):
 	var rng = RandomNumberGenerator.new()
 	return rng.randi_range(min, max)
+
+# 通过位置计算像素位置
+func calc_px(position, gird_width = 238, gird_height = 208):
+	var width = 0
+	var height = 0
+	if(position[0] % 2 == 0):
+		width = gird_width / 2 + position[0] * gird_width
+		height = gird_height / 2 + position[1] * gird_height
+	else:
+		width = gird_width / 4 + position[0] * gird_width
+		height = gird_height + position[1] * gird_height
+	return Vector2(width, height)

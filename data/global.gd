@@ -25,7 +25,7 @@ var characters = {}
 var cur_city = ""
 
 # 当前选择的人物
-var cur_hero_id = 24
+var cur_hero_id = 42
 
 # 是否已经选择人物
 var is_select_hero = false
@@ -69,6 +69,8 @@ var save_move_jiang = []
 var save_hire_jiang = []
 
 var hero_data = null
+
+var had_selectd_battle_location = []
 
 # 人物性格
 # AI 个性，基于以下属性和玩家交互，值在 -100 到 100 之间
@@ -332,6 +334,52 @@ var characters_event = {
 		"cost": {
 			"jin": 0,
 		}
+	}
+}
+
+var battle_event = {
+	0: {
+		"name": "暂未选择",
+	},
+	1: {
+		"name": "(0, 0)",
+		"position": Vector2i(0, 0)
+	},
+	2: {
+		"name": "(0, 1)",
+		"position": Vector2i(0, 1)
+	},
+	3: {
+		"name": "(0, 2)",
+		"position": Vector2i(0, 2)
+	},
+	4: {
+		"name": "(0, 3)",
+		"position": Vector2i(0, 3)
+	},
+	5: {
+		"name": "(0, 4)",
+		"position": Vector2i(0, 4)
+	},
+	6: {
+		"name": "(1, 0)",
+		"position": Vector2i(1, 0)
+	},
+	7: {
+		"name": "(1, 1)",
+		"position": Vector2i(1, 1)
+	},
+	8: {
+		"name": "(1, 2)",
+		"position": Vector2i(1, 2)
+	},
+	9: {
+		"name": "(1, 3)",
+		"position": Vector2i(1, 3)
+	},
+	10: {
+		"name": "(1, 4)",
+		"position": Vector2i(1, 4)
 	}
 }
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=63 format=4 uid="uid://ca0vmfd3i2k0d"]
+[gd_scene load_steps=62 format=4 uid="uid://ca0vmfd3i2k0d"]
 
 [ext_resource type="Script" path="res://scenes/BattleMain/battle_main.gd" id="1_03yg4"]
 [ext_resource type="Script" path="res://scenes/BattleMain/camera_2d.gd" id="1_4sj6t"]
@@ -31,7 +31,6 @@
 [ext_resource type="Texture2D" uid="uid://ceevhpxydsqx" path="res://assets/battle/greenlands/8-greenlands_portal.png" id="27_ipmob"]
 [ext_resource type="Texture2D" uid="uid://drayrn5oddib8" path="res://assets/battle/greenlands/9-greenlands_mountains.png" id="28_lte3k"]
 [ext_resource type="Texture2D" uid="uid://bh7wsoolvlmln" path="res://assets/battle/greenlands/10-greenlands_lake.png" id="29_8anab"]
-[ext_resource type="PackedScene" uid="uid://cd2uwoojp2vrr" path="res://scenes/BattleMain/character_item.tscn" id="30_1yvxt"]
 [ext_resource type="Script" path="res://scenes/BattleMain/character_place.gd" id="30_elxj0"]
 
 [sub_resource type="Theme" id="Theme_0vn0b"]
@@ -267,6 +266,4 @@ offset_bottom = 1738.0
 [node name="CharacterPlace" type="Node2D" parent="."]
 script = ExtResource("30_elxj0")
 
-[node name="CharacterItem" parent="CharacterPlace" instance=ExtResource("30_1yvxt")]
-visible = false
-colors = [Color(0.281, 0.703, 0.94, 0.838), Color(1, 0.498039, 0.313726, 1), Color(1, 0.498039, 0.313726, 1), Color(1, 0.498039, 0.313726, 1), Color(1, 0.498039, 0.313726, 1), Color(1, 0.498039, 0.313726, 1), Color(1, 0.498039, 0.313726, 1)]
+[node name="Characters" type="Node2D" parent="."]

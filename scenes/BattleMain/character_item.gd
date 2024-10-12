@@ -1,13 +1,24 @@
-extends Node2D
+extends Control
 
 @export var width = 238 / 2
 @export var height = 208 / 2
 @export var length = 100
+@export var is_member = false
+@export var character_id = 0
+@export var control_position = Vector2(0, 0)
 
 # 顶点颜色集合
 @export var colors:PackedColorArray = [Color.CORAL,Color.CORAL,Color.CORAL,Color.CORAL,Color.CORAL,Color.CORAL,Color.CORAL]
 var border_width := 1.0                 # 边线宽度
 var antialiased := false                # 抗锯齿
+
+func _ready() -> void:
+	if(is_member):
+		$Control.position = control_position
+		$Control/Name.show()
+		$Control/Bing.show()
+		$Control/Name.text = "[center]" + Global.characters[int(character_id)].name
+		$Control/Bing.text = "[center]" + str(Global.characters[int(character_id)].attrs.bing)
 
 # 正多边形点求取函数
 func regular_polygon(center:Vector2,r:float,edges:=3,strat_angle:float=0,close:=false):

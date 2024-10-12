@@ -5,10 +5,23 @@
 [ext_resource type="Script" path="res://addons/better_vircle/vircle_node.gd" id="3_b23rq"]
 [ext_resource type="Texture2D" uid="uid://cdhn1garqbdtb" path="res://assets/ui/img_public_smallicon_bg.png" id="4_o3wnf"]
 
-[node name="CharacterItem" type="Node2D"]
+[node name="CharacterItem" type="Control"]
+layout_mode = 3
+anchors_preset = 0
 script = ExtResource("1_u6fdd")
 
-[node name="Name" type="RichTextLabel" parent="."]
+[node name="Control" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Name" type="RichTextLabel" parent="Control"]
 visible = false
 offset_left = 53.0
 offset_top = 51.0
@@ -17,9 +30,8 @@ offset_bottom = 89.0
 theme_override_fonts/normal_font = ExtResource("2_nf23x")
 theme_override_font_sizes/normal_font_size = 32
 bbcode_enabled = true
-text = "[center]刘备"
 
-[node name="Bing" type="RichTextLabel" parent="."]
+[node name="Bing" type="RichTextLabel" parent="Control"]
 visible = false
 offset_left = 40.0
 offset_top = 108.0
@@ -28,9 +40,8 @@ offset_bottom = 152.0
 theme_override_fonts/normal_font = ExtResource("2_nf23x")
 theme_override_font_sizes/normal_font_size = 36
 bbcode_enabled = true
-text = "[center]5043"
 
-[node name="Vircle" type="Control" parent="."]
+[node name="Vircle" type="Control" parent="Control"]
 visible = false
 layout_mode = 3
 anchors_preset = 0
@@ -38,22 +49,22 @@ offset_left = 119.0
 offset_top = 104.0
 offset_right = 119.0
 offset_bottom = 104.0
-rotation = 35.0216
+rotation = 52.2722
 script = ExtResource("3_b23rq")
 radius = 150.0
 rotation_speed = 0.01
 
-[node name="TextureButton2" type="TextureButton" parent="Vircle"]
+[node name="TextureButton2" type="TextureButton" parent="Control/Vircle"]
 layout_mode = 0
 offset_left = 117.0
 offset_top = -33.0
 offset_right = 183.0
 offset_bottom = 33.0
-rotation = -35.0216
+rotation = -52.2722
 pivot_offset = Vector2(33, 33)
 texture_normal = ExtResource("4_o3wnf")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Vircle/TextureButton2"]
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/Vircle/TextureButton2"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -70,17 +81,17 @@ theme_override_fonts/normal_font = ExtResource("2_nf23x")
 bbcode_enabled = true
 text = "[center]火计"
 
-[node name="TextureButton3" type="TextureButton" parent="Vircle"]
+[node name="TextureButton3" type="TextureButton" parent="Control/Vircle"]
 layout_mode = 0
 offset_left = -108.0
 offset_top = 96.9037
 offset_right = -42.0
 offset_bottom = 162.904
-rotation = -35.0216
+rotation = -52.2722
 pivot_offset = Vector2(33, 33.0002)
 texture_normal = ExtResource("4_o3wnf")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Vircle/TextureButton3"]
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/Vircle/TextureButton3"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -97,17 +108,17 @@ theme_override_fonts/normal_font = ExtResource("2_nf23x")
 bbcode_enabled = true
 text = "[center]要击"
 
-[node name="TextureButton4" type="TextureButton" parent="Vircle"]
+[node name="TextureButton4" type="TextureButton" parent="Control/Vircle"]
 layout_mode = 0
 offset_left = -108.0
 offset_top = -162.904
 offset_right = -42.0
 offset_bottom = -96.9037
-rotation = -35.0216
+rotation = -52.2722
 pivot_offset = Vector2(33, 33.0002)
 texture_normal = ExtResource("4_o3wnf")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Vircle/TextureButton4"]
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/Vircle/TextureButton4"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
