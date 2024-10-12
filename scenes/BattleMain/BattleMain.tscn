@@ -1,0 +1,272 @@
+[gd_scene load_steps=63 format=4 uid="uid://ca0vmfd3i2k0d"]
+
+[ext_resource type="Script" path="res://scenes/BattleMain/battle_main.gd" id="1_03yg4"]
+[ext_resource type="Script" path="res://scenes/BattleMain/camera_2d.gd" id="1_4sj6t"]
+[ext_resource type="Texture2D" uid="uid://dsxdhuxuisime" path="res://assets/decorations/d1.png" id="2_ipyuf"]
+[ext_resource type="Texture2D" uid="uid://cldu53jms2df3" path="res://assets/battle/greenlands/1-greenlands_vulcano.png" id="3_66ch3"]
+[ext_resource type="FontFile" uid="uid://ccc7h37nygjqu" path="res://assets/fonts/方正隶书简体.TTF" id="3_nps80"]
+[ext_resource type="Texture2D" uid="uid://l84brtwxrkm" path="res://assets/battle/greenlands/2-greenlands_forest.png" id="4_n2mla"]
+[ext_resource type="Texture2D" uid="uid://dkfvetsnt0qj" path="res://assets/battle/greenlands/11-greenlands_village.png" id="5_potq3"]
+[ext_resource type="Texture2D" uid="uid://c3rkprmhhpyx4" path="res://assets/battle/greenlands/12-greenlands_city.png" id="6_cpwps"]
+[ext_resource type="Texture2D" uid="uid://0whj73t1xqs7" path="res://assets/battle/greenlands/13-greenlands_tower.png" id="7_ugsoy"]
+[ext_resource type="Texture2D" uid="uid://cvi1n052hl022" path="res://assets/battle/greenlands/14-greenlands_community.png" id="8_q7gu0"]
+[ext_resource type="Texture2D" uid="uid://0ak2u3gnvagj" path="res://assets/battle/greenlands/15-greenlands_cave.png" id="9_sse8u"]
+[ext_resource type="Texture2D" uid="uid://d24lpmikkmuuc" path="res://assets/battle/greenlands/16-greenlands_hole.png" id="10_detlg"]
+[ext_resource type="Texture2D" uid="uid://d2421h5i6vh84" path="res://assets/battle/greenlands/17-greenlands_dead-Trees.png" id="11_lkkho"]
+[ext_resource type="Texture2D" uid="uid://balk3ep4i0nu3" path="res://assets/battle/greenlands/18-greenlands_ruins.png" id="12_0w8v5"]
+[ext_resource type="Texture2D" uid="uid://y82n2gt862wa" path="res://assets/battle/greenlands/19-greenlands_graveyard.png" id="13_vjrcw"]
+[ext_resource type="Texture2D" uid="uid://b5op85ijtkrts" path="res://assets/battle/greenlands/20-greenlands_swamp.png" id="14_ha12u"]
+[ext_resource type="Texture2D" uid="uid://dnxjlak5ppv4i" path="res://assets/battle/greenlands/3-greenlands_tundra.png" id="15_sdajg"]
+[ext_resource type="Texture2D" uid="uid://dmphtxrhooy6t" path="res://assets/battle/greenlands/21-greenlands_floating-Island.png" id="16_y48hi"]
+[ext_resource type="Texture2D" uid="uid://bkuwj505h4j3g" path="res://assets/battle/greenlands/22-greenlands_keep.png" id="17_vxp0e"]
+[ext_resource type="Texture2D" uid="uid://82altvky16o7" path="res://assets/battle/greenlands/23-greenlands_wonder.png" id="18_2g1ky"]
+[ext_resource type="Texture2D" uid="uid://chk8vby61il5w" path="res://assets/battle/greenlands/24-greenlands_cristals.png" id="19_gp1tv"]
+[ext_resource type="Texture2D" uid="uid://n01ml24fvsbd" path="res://assets/battle/greenlands/25-greenlands_stones.png" id="20_yhy3a"]
+[ext_resource type="Texture2D" uid="uid://gmsgksihxlx5" path="res://assets/battle/greenlands/26-greenlands_farms.png" id="21_8kc7u"]
+[ext_resource type="Texture2D" uid="uid://dyir38t7now5q" path="res://assets/battle/greenlands/27-greenlands_fog.png" id="22_a70gy"]
+[ext_resource type="Texture2D" uid="uid://7c23176x7oi3" path="res://assets/battle/greenlands/4-greenlands_trees.png" id="23_gr36t"]
+[ext_resource type="Texture2D" uid="uid://1x8shor8mgc2" path="res://assets/battle/greenlands/5-greenlands_water.png" id="24_jaent"]
+[ext_resource type="Texture2D" uid="uid://b2qmtwvc1swsy" path="res://assets/battle/greenlands/6-greenlands_hills.png" id="25_ej2iw"]
+[ext_resource type="Texture2D" uid="uid://bt8x1ma7aa5ci" path="res://assets/battle/greenlands/7-greenlands_river.png" id="26_dxws6"]
+[ext_resource type="Texture2D" uid="uid://ceevhpxydsqx" path="res://assets/battle/greenlands/8-greenlands_portal.png" id="27_ipmob"]
+[ext_resource type="Texture2D" uid="uid://drayrn5oddib8" path="res://assets/battle/greenlands/9-greenlands_mountains.png" id="28_lte3k"]
+[ext_resource type="Texture2D" uid="uid://bh7wsoolvlmln" path="res://assets/battle/greenlands/10-greenlands_lake.png" id="29_8anab"]
+[ext_resource type="PackedScene" uid="uid://cd2uwoojp2vrr" path="res://scenes/BattleMain/character_item.tscn" id="30_1yvxt"]
+[ext_resource type="Script" path="res://scenes/BattleMain/character_place.gd" id="30_elxj0"]
+
+[sub_resource type="Theme" id="Theme_0vn0b"]
+default_font = ExtResource("3_nps80")
+default_font_size = 32
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_b7xpw"]
+texture = ExtResource("3_66ch3")
+texture_region_size = Vector2i(238, 207)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_37b7c"]
+texture = ExtResource("4_n2mla")
+texture_region_size = Vector2i(238, 207)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v8s6t"]
+texture = ExtResource("5_potq3")
+texture_region_size = Vector2i(238, 207)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xcylh"]
+texture = ExtResource("6_cpwps")
+texture_region_size = Vector2i(238, 207)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_atmdy"]
+texture = ExtResource("7_ugsoy")
+texture_region_size = Vector2i(238, 207)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o5j5e"]
+texture = ExtResource("8_q7gu0")
+texture_region_size = Vector2i(238, 207)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2h67p"]
+texture = ExtResource("9_sse8u")
+texture_region_size = Vector2i(238, 207)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lq38i"]
+texture = ExtResource("10_detlg")
+texture_region_size = Vector2i(238, 207)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cxbj5"]
+texture = ExtResource("11_lkkho")
+texture_region_size = Vector2i(238, 207)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tp2x1"]
+texture = ExtResource("12_0w8v5")
+texture_region_size = Vector2i(238, 207)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rimbr"]
+texture = ExtResource("13_vjrcw")
+texture_region_size = Vector2i(238, 207)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5kf1g"]
+texture = ExtResource("14_ha12u")
+texture_region_size = Vector2i(238, 207)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rb21q"]
+texture = ExtResource("15_sdajg")
+texture_region_size = Vector2i(238, 207)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hjrf1"]
+texture = ExtResource("16_y48hi")
+texture_region_size = Vector2i(238, 207)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_34v15"]
+texture = ExtResource("17_vxp0e")
+texture_region_size = Vector2i(238, 207)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wg5np"]
+texture = ExtResource("18_2g1ky")
+texture_region_size = Vector2i(238, 207)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xb2hc"]
+texture = ExtResource("19_gp1tv")
+texture_region_size = Vector2i(238, 207)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vcojs"]
+texture = ExtResource("20_yhy3a")
+texture_region_size = Vector2i(238, 207)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8l52x"]
+texture = ExtResource("21_8kc7u")
+texture_region_size = Vector2i(238, 207)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_stuo4"]
+texture = ExtResource("22_a70gy")
+texture_region_size = Vector2i(238, 207)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c8awf"]
+texture = ExtResource("23_gr36t")
+texture_region_size = Vector2i(238, 207)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q07x3"]
+texture = ExtResource("24_jaent")
+texture_region_size = Vector2i(238, 207)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_r6ciq"]
+texture = ExtResource("25_ej2iw")
+texture_region_size = Vector2i(238, 207)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t6qvk"]
+texture = ExtResource("26_dxws6")
+texture_region_size = Vector2i(238, 207)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cypmn"]
+texture = ExtResource("27_ipmob")
+texture_region_size = Vector2i(238, 207)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_53et5"]
+texture = ExtResource("28_lte3k")
+texture_region_size = Vector2i(238, 207)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dy6yl"]
+texture = ExtResource("29_8anab")
+texture_region_size = Vector2i(238, 207)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_okbqj"]
+tile_shape = 3
+tile_offset_axis = 1
+tile_size = Vector2i(238, 207)
+sources/0 = SubResource("TileSetAtlasSource_b7xpw")
+sources/1 = SubResource("TileSetAtlasSource_37b7c")
+sources/2 = SubResource("TileSetAtlasSource_rb21q")
+sources/3 = SubResource("TileSetAtlasSource_c8awf")
+sources/4 = SubResource("TileSetAtlasSource_q07x3")
+sources/5 = SubResource("TileSetAtlasSource_r6ciq")
+sources/6 = SubResource("TileSetAtlasSource_t6qvk")
+sources/7 = SubResource("TileSetAtlasSource_cypmn")
+sources/8 = SubResource("TileSetAtlasSource_53et5")
+sources/9 = SubResource("TileSetAtlasSource_dy6yl")
+sources/10 = SubResource("TileSetAtlasSource_v8s6t")
+sources/11 = SubResource("TileSetAtlasSource_xcylh")
+sources/12 = SubResource("TileSetAtlasSource_atmdy")
+sources/13 = SubResource("TileSetAtlasSource_o5j5e")
+sources/14 = SubResource("TileSetAtlasSource_2h67p")
+sources/15 = SubResource("TileSetAtlasSource_lq38i")
+sources/16 = SubResource("TileSetAtlasSource_cxbj5")
+sources/17 = SubResource("TileSetAtlasSource_tp2x1")
+sources/18 = SubResource("TileSetAtlasSource_rimbr")
+sources/19 = SubResource("TileSetAtlasSource_5kf1g")
+sources/20 = SubResource("TileSetAtlasSource_hjrf1")
+sources/21 = SubResource("TileSetAtlasSource_34v15")
+sources/22 = SubResource("TileSetAtlasSource_wg5np")
+sources/23 = SubResource("TileSetAtlasSource_xb2hc")
+sources/24 = SubResource("TileSetAtlasSource_vcojs")
+sources/25 = SubResource("TileSetAtlasSource_8l52x")
+sources/26 = SubResource("TileSetAtlasSource_stuo4")
+
+[node name="BattleMain" type="Node2D"]
+script = ExtResource("1_03yg4")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Main" type="Control" parent="CanvasLayer"]
+custom_minimum_size = Vector2(1920, 1080)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Main"]
+layout_mode = 0
+offset_right = 269.0
+offset_bottom = 68.0
+texture = ExtResource("2_ipyuf")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Main/TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -80.0
+offset_top = -19.5
+offset_right = 112.0
+offset_bottom = 20.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_0vn0b")
+bbcode_enabled = true
+text = "[center]配置初始位置"
+
+[node name="Control" type="Control" parent="CanvasLayer/Main"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 58.0
+offset_top = 147.0
+offset_right = 1741.0
+offset_bottom = 949.0
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(960, 540)
+limit_smoothed = true
+editor_draw_limits = true
+script = ExtResource("1_4sj6t")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAAAAAABQAAAAAAAAABAAAABQAAAAAAAAACAAAABQAAAAAAAAD//wEAAgAAAAAAAAD//wAABQAAAAAAAAABAP//AgAAAAAAAAACAAEABAAAAAAAAAADAAAAAwAAAAAAAAADAP//BQAAAAAAAAACAP//AgAAAAAAAAAAAP//AgAAAAAAAAD/////AgAAAAAAAAAAAAIAAgAAAAAAAAD//wIAAgAAAAAAAAD//wMAAgAAAAAAAAD//wQAAgAAAAAAAAAAAAQAAgAAAAAAAAABAAQAAgAAAAAAAAACAAQAAgAAAAAAAAADAAQAAgAAAAAAAAAEAAQAAwAAAAAAAAAFAAQAAgAAAAAAAAAGAAQABAAAAAAAAAAHAAQABAAAAAAAAAAIAAQABAAAAAAAAAAJAAQAAgAAAAAAAAAKAAQAAgAAAAAAAAALAAQAAgAAAAAAAAAAAAMAAgAAAAAAAAAAAP7/AgAAAAAAAAABAP7/AgAAAAAAAAD///7/AgAAAAAAAAABAAIAAgAAAAAAAAABAAMAAgAAAAAAAAACAP7/AgAAAAAAAAACAAIABAAAAAAAAAACAAMAAwAAAAAAAAADAP7/AgAAAAAAAAADAAEAAwAAAAAAAAADAAIABAAAAAAAAAADAAMAAwAAAAAAAAAEAP7/AgAAAAAAAAAEAP//AgAAAAAAAAAEAAAABQAAAAAAAAAEAAEAAQAAAAAAAAAEAAIAAwAAAAAAAAAEAAMABAAAAAAAAAAFAP7/AgAAAAAAAAAFAP//BQAAAAAAAAAFAAAAAQAAAAAAAAAFAAEAAwAAAAAAAAAFAAIAAQAAAAAAAAAFAAMABAAAAAAAAAAGAP7/AgAAAAAAAAAGAP//AgAAAAAAAAAGAAAABQAAAAAAAAAGAAEAAQAAAAAAAAAGAAIAAQAAAAAAAAAGAAMAAQAAAAAAAAAHAP7/AgAAAAAAAAAHAP//AgAAAAAAAAAHAAAABQAAAAAAAAAHAAEABQAAAAAAAAAHAAIAAQAAAAAAAAAHAAMABAAAAAAAAAAIAP7/AgAAAAAAAAAIAP//AgAAAAAAAAAIAAAAAgAAAAAAAAAIAAEABQAAAAAAAAAIAAIABQAAAAAAAAAIAAMABAAAAAAAAAAJAP7/AgAAAAAAAAAJAP//AgAAAAAAAAAJAAAABQAAAAAAAAAJAAEABQAAAAAAAAAJAAIACwAAAAAAAAAJAAMABAAAAAAAAAAKAP7/AgAAAAAAAAAKAP//AgAAAAAAAAAKAAAABQAAAAAAAAAKAAEAAgAAAAAAAAAKAAIAAgAAAAAAAAAKAAMAAgAAAAAAAAALAP7/AgAAAAAAAAALAP//AgAAAAAAAAALAAAAAgAAAAAAAAALAAEAAgAAAAAAAAALAAIAAgAAAAAAAAALAAMAAgAAAAAAAAAAAAUAAgAAAAAAAAABAAUAAgAAAAAAAAACAAUAAgAAAAAAAAADAAUAAgAAAAAAAAAEAAUAAgAAAAAAAAAFAAUAAgAAAAAAAAAHAAUAAgAAAAAAAAAIAAUAAgAAAAAAAAAJAAUAAgAAAAAAAAAKAAUAAgAAAAAAAAALAAUAAgAAAAAAAAD//wUAAgAAAAAAAAAAAAEABAAAAAAAAAABAAEABAAAAAAAAAAGAAUAEAAAAAAAAAAAAAYAEAAAAAAAAAACAAYAEAAAAAAAAAAEAAYAEAAAAAAAAAAGAAYAEAAAAAAAAAAIAAYAEAAAAAAAAAAKAAYAEAAAAAAAAAA=")
+tile_set = SubResource("TileSet_okbqj")
+
+[node name="PrePanel" type="Panel" parent="."]
+offset_left = -857.0
+offset_top = -684.0
+offset_right = 2854.0
+offset_bottom = 1738.0
+
+[node name="CharacterPlace" type="Node2D" parent="."]
+script = ExtResource("30_elxj0")
+
+[node name="CharacterItem" parent="CharacterPlace" instance=ExtResource("30_1yvxt")]
+visible = false
+colors = [Color(0.281, 0.703, 0.94, 0.838), Color(1, 0.498039, 0.313726, 1), Color(1, 0.498039, 0.313726, 1), Color(1, 0.498039, 0.313726, 1), Color(1, 0.498039, 0.313726, 1), Color(1, 0.498039, 0.313726, 1), Color(1, 0.498039, 0.313726, 1)]

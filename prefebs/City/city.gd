@@ -49,3 +49,6 @@ func _on_change_citys_label():
 
 func _on_change_city_size(zoom):
 	$".".scale = Vector2(1 / zoom, 1 / zoom)
+
+func _on_panel_pressed() -> void:
+	$Vircle.show()

@@ -136,8 +136,8 @@ texture_normal = ExtResource("5_35fn4")
 
 [node name="Next" type="TextureButton" parent="CanvasLayer/Main/Top"]
 layout_mode = 0
-offset_left = 555.0
-offset_right = 853.0
+offset_left = 549.0
+offset_right = 847.0
 offset_bottom = 71.0
 texture_normal = ExtResource("7_lsgja")
 script = ExtResource("8_m4j24")

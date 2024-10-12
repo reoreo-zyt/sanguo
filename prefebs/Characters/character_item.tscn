@@ -48,7 +48,7 @@ corner_radius_top_right = 6
 corner_radius_bottom_right = 6
 corner_radius_bottom_left = 6
 
-[node name="CharacterItem" type="TextureButton"]
+[node name="CharacterItem2" type="TextureButton"]
 custom_minimum_size = Vector2(1890, 69)
 script = ExtResource("1_w8upa")
 
@@ -158,20 +158,7 @@ theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_vtec7")
 theme_override_styles/normal = SubResource("StyleBoxFlat_l38d7")
 alignment = 1
 selected = 0
-item_count = 7
-popup/item_0/text = "休息"
-popup/item_1/text = "发展商业"
-popup/item_1/id = 1
-popup/item_2/text = "开垦梯田"
-popup/item_2/id = 2
-popup/item_3/text = "人口巡查"
-popup/item_3/id = 3
-popup/item_4/text = "治水"
-popup/item_4/id = 4
-popup/item_5/text = "募兵"
-popup/item_5/id = 5
-popup/item_6/text = "搜索登用"
-popup/item_6/id = 6
+allow_reselect = true
 
 [node name="MaxBing" type="RichTextLabel" parent="HBoxContainer"]
 custom_minimum_size = Vector2(260, 45)

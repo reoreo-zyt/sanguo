@@ -25,7 +25,7 @@ var characters = {}
 var cur_city = ""
 
 # 当前选择的人物
-var cur_hero_id = 0
+var cur_hero_id = 24
 
 # 是否已经选择人物
 var is_select_hero = false

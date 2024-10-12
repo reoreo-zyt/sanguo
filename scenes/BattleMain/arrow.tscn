@@ -1,0 +1,59 @@
+[gd_scene load_steps=9 format=3 uid="uid://c57wyed2gi5tc"]
+
+[ext_resource type="Texture2D" uid="uid://2rw8to227t1o" path="res://assets/battle/person/Soldier.png" id="1_1yogv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dtl55"]
+atlas = ExtResource("1_1yogv")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wu4vc"]
+atlas = ExtResource("1_1yogv")
+region = Rect2(100, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b6mm6"]
+atlas = ExtResource("1_1yogv")
+region = Rect2(200, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7jgqf"]
+atlas = ExtResource("1_1yogv")
+region = Rect2(300, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p7rr5"]
+atlas = ExtResource("1_1yogv")
+region = Rect2(400, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0gl6y"]
+atlas = ExtResource("1_1yogv")
+region = Rect2(500, 0, 100, 100)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tpf7w"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dtl55")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wu4vc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b6mm6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7jgqf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p7rr5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0gl6y")
+}],
+"loop": true,
+"name": &"arrow-idle",
+"speed": 5.0
+}]
+
+[node name="Arrow" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_tpf7w")
+animation = &"arrow-idle"
+autoplay = "arrow-idle"
+frame_progress = 0.568022

@@ -128,9 +128,9 @@ custom_minimum_size = Vector2(1900, 291)
 layout_mode = 2
 
 [node name="Fold" type="TextureButton" parent="."]
-offset_left = 953.0
+offset_left = 950.0
 offset_top = -66.0
-offset_right = 1019.0
+offset_right = 1016.0
 texture_normal = ExtResource("13_vu34l")
 
 [node name="TextureButton" type="TextureButton" parent="Fold"]

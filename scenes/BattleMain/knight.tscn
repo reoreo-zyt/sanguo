@@ -1,0 +1,60 @@
+[gd_scene load_steps=9 format=3 uid="uid://daddukati77a7"]
+
+[ext_resource type="Texture2D" uid="uid://cmrn6ooxw6xep" path="res://assets/battle/person/Lancer.png" id="1_k6wnh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xjvur"]
+atlas = ExtResource("1_k6wnh")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2g2g5"]
+atlas = ExtResource("1_k6wnh")
+region = Rect2(100, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p3qyj"]
+atlas = ExtResource("1_k6wnh")
+region = Rect2(200, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a7f0g"]
+atlas = ExtResource("1_k6wnh")
+region = Rect2(300, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hqdus"]
+atlas = ExtResource("1_k6wnh")
+region = Rect2(400, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7g76c"]
+atlas = ExtResource("1_k6wnh")
+region = Rect2(500, 0, 100, 100)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wuytk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xjvur")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2g2g5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p3qyj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a7f0g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hqdus")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7g76c")
+}],
+"loop": true,
+"name": &"knight-idle",
+"speed": 5.0
+}]
+
+[node name="Knight" type="AnimatedSprite2D"]
+position = Vector2(46, 4)
+sprite_frames = SubResource("SpriteFrames_wuytk")
+animation = &"knight-idle"
+autoplay = "knight-idle"
+frame_progress = 0.864848

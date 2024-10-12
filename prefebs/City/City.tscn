@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://du6ko4ea4nfh8"]
+[gd_scene load_steps=9 format=3 uid="uid://du6ko4ea4nfh8"]
 
 [ext_resource type="Texture2D" uid="uid://dfeth53ppgt5s" path="res://assets/citys/city_temp.png" id="1_wbngm"]
 [ext_resource type="Script" path="res://prefebs/City/city.gd" id="1_wwiws"]
 [ext_resource type="Shader" path="res://prefebs/City/city_pic.gdshader" id="2_ytyq5"]
 [ext_resource type="FontFile" uid="uid://ccc7h37nygjqu" path="res://assets/fonts/方正隶书简体.TTF" id="3_823vc"]
+[ext_resource type="Texture2D" uid="uid://dsxdhuxuisime" path="res://assets/decorations/d1.png" id="4_dhk76"]
 [ext_resource type="Script" path="res://prefebs/City/rich_text_label.gd" id="4_rjdv1"]
 [ext_resource type="Script" path="res://addons/better_vircle/vircle_node.gd" id="6_4p5nw"]
 
@@ -38,26 +39,32 @@ offset_bottom = 16.0
 texture_normal = ExtResource("1_wbngm")
 stretch_mode = 0
 
-[node name="Panel" type="Panel" parent="."]
-visible = false
-offset_left = -59.0
-offset_top = -43.0
-offset_right = 76.0
-offset_bottom = -3.0
+[node name="Panel" type="TextureButton" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -113.0
+offset_top = -47.5
+offset_right = 113.0
+offset_bottom = -0.5
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("4_dhk76")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Panel"]
 layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -46.5
-offset_top = -35.0
-offset_right = 51.5
-offset_bottom = -6.0
-grow_horizontal = 2
-grow_vertical = 0
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -189.0
+offset_top = -15.5
+offset_bottom = 15.5
+grow_horizontal = 0
+grow_vertical = 2
 size_flags_vertical = 4
 theme_override_fonts/normal_font = ExtResource("3_823vc")
 theme_override_font_sizes/normal_font_size = 24
@@ -73,51 +80,97 @@ offset_left = -19.0
 offset_top = -19.0
 offset_right = 21.0
 offset_bottom = 21.0
-rotation = 9.53808
+rotation = 49.4376
 pivot_offset = Vector2(20, 20)
 script = ExtResource("6_4p5nw")
 radius = 87.0
 element_size = 80.0
 rotation_speed = 0.03
 
-[node name="Panel" type="Panel" parent="Vircle"]
+[node name="WuJiang" type="Panel" parent="Vircle"]
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 0
 offset_left = 67.0
 offset_top = -20.0
 offset_right = 147.0
 offset_bottom = 60.0
-rotation = -9.53808
+rotation = -49.4376
 pivot_offset = Vector2(40, 40)
 
-[node name="Panel2" type="Panel" parent="Vircle"]
+[node name="RichTextLabel" type="RichTextLabel" parent="Vircle/WuJiang"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -33.5
+offset_top = -30.0
+offset_right = 33.5
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("3_823vc")
+theme_override_font_sizes/normal_font_size = 26
+bbcode_enabled = true
+text = "[center]移入武将"
+
+[node name="YuShu" type="Panel" parent="Vircle"]
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 0
-offset_left = -20.0
-offset_top = 67.0
-offset_right = 60.0
-offset_bottom = 147.0
-rotation = -9.53808
+offset_left = -63.5
+offset_top = 55.3442
+offset_right = 16.5
+offset_bottom = 135.344
+rotation = -49.4376
 pivot_offset = Vector2(40, 40)
 
-[node name="Panel3" type="Panel" parent="Vircle"]
+[node name="RichTextLabel" type="RichTextLabel" parent="Vircle/YuShu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -33.5
+offset_top = -30.0
+offset_right = 33.5
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("3_823vc")
+theme_override_font_sizes/normal_font_size = 26
+bbcode_enabled = true
+text = "[center]运输资源"
+
+[node name="JunShi" type="Panel" parent="Vircle"]
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 0
-offset_left = -107.0
-offset_top = -20.0
-offset_right = -27.0
-offset_bottom = 60.0
-rotation = -9.53808
+offset_left = -63.5
+offset_top = -95.3442
+offset_right = 16.5
+offset_bottom = -15.3442
+rotation = -49.4376
 pivot_offset = Vector2(40, 40)
 
-[node name="Panel4" type="Panel" parent="Vircle"]
-custom_minimum_size = Vector2(80, 80)
-layout_mode = 0
-offset_left = -20.0
-offset_top = -107.0
-offset_right = 60.0
-offset_bottom = -27.0
-rotation = -9.53808
-pivot_offset = Vector2(40, 40)
+[node name="RichTextLabel" type="RichTextLabel" parent="Vircle/JunShi"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -33.5
+offset_top = -30.0
+offset_right = 33.5
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("3_823vc")
+theme_override_font_sizes/normal_font_size = 26
+bbcode_enabled = true
+text = "[center]军事攻略"
 
 [connection signal="pressed" from="Icon" to="." method="_on_icon_pressed"]
+[connection signal="pressed" from="Panel" to="." method="_on_panel_pressed"]
+[connection signal="meta_clicked" from="Panel/RichTextLabel" to="." method="_on_rich_text_label_meta_clicked"]
