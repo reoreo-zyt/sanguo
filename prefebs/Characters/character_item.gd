@@ -41,6 +41,7 @@ func _on_event_item_selected(index: int) -> void:
 	Global.characters[int(character_id)].event_type = index
 
 func _on_battle_set_select_disabled(event_id):
+	SignalBus.emit_signal("battle_focus_city", event_id)
 	# 禁用当前
 	$HBoxContainer/Event.set_item_disabled(event_id, true)
 	if(last_event_id):

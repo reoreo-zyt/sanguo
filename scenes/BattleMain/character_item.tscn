@@ -23,6 +23,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Name" type="RichTextLabel" parent="Control"]
 visible = false
+layout_mode = 0
 offset_left = 53.0
 offset_top = 51.0
 offset_right = 177.0
@@ -33,6 +34,7 @@ bbcode_enabled = true
 
 [node name="Bing" type="RichTextLabel" parent="Control"]
 visible = false
+layout_mode = 0
 offset_left = 40.0
 offset_top = 108.0
 offset_right = 198.0

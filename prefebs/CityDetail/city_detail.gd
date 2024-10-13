@@ -63,7 +63,6 @@ func calc_cost():
 	# 获取到这个城市的武将事件，统计消耗
 	var event_cost = 0
 	for jiang in city.curent_jiang:
-		#print(Global.characters[jiang].event_type)
 		event_cost += Global.characters_event[Global.characters[jiang].event_type].cost.jin
 	$Main/EventCost/RichTextLabel.text = "下个月需要花费金 " + str(event_cost)
 	if(is_cost_over(event_cost) and recover_before_event):
@@ -78,7 +77,6 @@ func _on_send_characters_event(character_id, event_id):
 	Global.characters[character_id].event_type = event_id
 	cur_event_id = event_id
 	cur_character_id = character_id
-	#print(character_id, "==character_id==event_id==", event_id)
 	calc_cost()
 
 func is_cost_over(event_cost):

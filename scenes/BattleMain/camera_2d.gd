@@ -9,7 +9,7 @@ var camera_pos = Vector2(0, 0)
 var pre_city = ""
 
 func _ready() -> void:
-	SignalBus.connect("focus_map_city", _on_focus_map_city)
+	SignalBus.connect("battle_focus_city", _on_battle_focus_city)
 
 func _input(event):
 	if event is InputEventMouseButton:
@@ -43,8 +43,7 @@ func zoom(zoom_direction):
 	# 直接改变里面的城市UI大小
 	SignalBus.emit_signal("change_city_size", zoom_value)
 
-func _on_focus_map_city(city_id):
-	if(city_id != pre_city):
-		zoom(4)
-		$".".position = Vector2(Global.citys[city_id].position_x, Global.citys[city_id].position_y)
-	pre_city = city_id
+func _on_battle_focus_city(event_id):
+	if(event_id):
+		var position = Tool.calc_px(Global.battle_event[event_id].position)
+		$".".position = Vector2(position[0], position[1])

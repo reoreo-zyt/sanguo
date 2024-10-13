@@ -157,7 +157,6 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_ibmhw")
 theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_vtec7")
 theme_override_styles/normal = SubResource("StyleBoxFlat_l38d7")
 alignment = 1
-selected = 0
 allow_reselect = true
 
 [node name="MaxBing" type="RichTextLabel" parent="HBoxContainer"]

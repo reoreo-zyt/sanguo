@@ -38,8 +38,9 @@ func _on_battle_send_character_location(character_id, event_id) -> void:
 	if(character_slice_instance_cach):
 		for cach in character_slice_instance_cach:
 			if(cach == character_id):
-				character_slice_instance_cach[character_id].queue_free()
-				character_slice_instance_cach[character_id] = null
+				if(character_slice_instance_cach[character_id]):
+					character_slice_instance_cach[character_id].queue_free()
+					character_slice_instance_cach[character_id] = null
 
 	if(event_id == 0):
 		return
