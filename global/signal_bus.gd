@@ -45,3 +45,5 @@ signal battle_set_select_disabled(character_id, event_id)
 signal battle_focus_city(event_id)
 
 signal battle_main()
+
+signal batlle_show_actions(character_id)

@@ -57,7 +57,8 @@ func _on_battle_send_character_location(character_id, event_id) -> void:
 	$Characters.add_child(character_slice_instance)
 	character_slice_instance_cach[character_id] = character_slice_instance
 	SignalBus.emit_signal("battle_set_select_disabled", character_id, event_id)
-
+	
+	
 func _on_next_pressed() -> void:
 	var is_set_location = true
 	for troop in self_troop:
@@ -88,11 +89,12 @@ func _on_next_pressed() -> void:
 			Vector2i(9, 4),
 		]
 		
-		var color = Color(1, 0.5, 0.3, 0.838)
+		var color = Color(0.875, 0.239, 0.188, 1)
 		var colors:PackedColorArray = [color, color, color, color, color, color, color]
+		var i = 0
 		# 绘制敌方武将
 		for troop in emery_troop:
-			var i = 0
+			Global.characters[troop].battle_location = position[i]
 			var troop_position = position[i]
 			i += 1
 			var character_emery_instance = character_slice.instantiate()
@@ -104,3 +106,21 @@ func _on_next_pressed() -> void:
 			character_emery_instance.colors = colors
 			character_emery_instance.control_position = Vector2(Tool.calc_px(troop_position)[0] - 238 / 2, Tool.calc_px(troop_position)[1] - 208 / 2)
 			$Characters.add_child(character_emery_instance)
+		# 进入战棋模式
+		$Camera2D.zoom(-1)
+		var merge_array = self_troop + emery_troop
+		var action_list = []
+		print(merge_array)
+		for character in merge_array:
+			var list_item = {}
+			list_item.id = character
+			list_item.speed = Global.characters[character].attrs.speed
+			action_list.append(list_item)
+		action_list.sort_custom(func(a, b): return a['speed'] > b['speed'])
+		
+		SignalBus.emit_signal("batlle_show_actions", action_list[0].id)
+		$Camera2D.position = Tool.calc_px(Global.characters[action_list[0].id].battle_location)
+		var TextPanel = text_panel.instantiate()
+		TextPanel.label_text = Global.set_name_text("[center]轮到" + Global.characters[action_list[0].id].name + "行动")
+		$CanvasLayer/Main/PopupPanel.add_child(TextPanel)
+		$CanvasLayer/Main/PopupPanel.popup()

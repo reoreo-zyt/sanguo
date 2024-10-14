@@ -13,7 +13,7 @@ var border_width := 1.0                 # 边线宽度
 var antialiased := true                # 抗锯齿
 
 func _ready() -> void:
-	pass
+	SignalBus.connect("batlle_show_actions", _on_batlle_show_actions)
 
 # 正多边形点求取函数
 func regular_polygon(center:Vector2,r:float,edges:=3,strat_angle:float=0,close:=false):
@@ -31,7 +31,6 @@ func regular_polygon(center:Vector2,r:float,edges:=3,strat_angle:float=0,close:=
 	var T:= Transform2D().rotated(strat_angle).translated(center)
 	return T * points
 
-
 func _draw() -> void:
 	var regular = regular_polygon(Vector2(width, height),length,6,0,true)
 	# 绘制空心正多边形和边框
@@ -43,3 +42,8 @@ func _draw() -> void:
 		$Control/Bing.show()
 		$Control/Name.text = "[center]" + Global.characters[int(character_id)].name
 		$Control/Bing.text = "[center]" + str(Global.characters[int(character_id)].attrs.bing)
+
+func _on_batlle_show_actions(id):
+	if(character_id == id):
+		#$Control/Vircle.show()
+		pass
