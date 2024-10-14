@@ -276,10 +276,20 @@ theme_override_font_sizes/normal_font_size = 30
 bbcode_enabled = true
 text = "[center]开始战斗"
 
+[node name="PopupPanel" type="PopupPanel" parent="CanvasLayer/Main"]
+position = Vector2i(0, 520)
+size = Vector2i(1920, 70)
+
 [node name="Camera2D" type="Camera2D" parent="."]
+z_index = 999
+y_sort_enabled = true
 position = Vector2(960, 540)
+process_callback = 0
 limit_smoothed = true
+position_smoothing_enabled = true
+rotation_smoothing_enabled = true
 editor_draw_limits = true
+editor_draw_drag_margin = true
 script = ExtResource("1_4sj6t")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
@@ -296,3 +306,5 @@ offset_bottom = 1738.0
 script = ExtResource("30_elxj0")
 
 [node name="Characters" type="Node2D" parent="."]
+
+[connection signal="pressed" from="CanvasLayer/Main/Next" to="." method="_on_next_pressed"]

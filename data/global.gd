@@ -340,6 +340,7 @@ var characters_event = {
 var battle_event = {
 	0: {
 		"name": "暂未选择",
+		"position": null
 	},
 	1: {
 		"name": "(0, 0)",

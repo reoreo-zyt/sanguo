@@ -40,6 +40,8 @@ signal send_characters_event(character_id, event_index)
 
 signal battle_send_character_location(character_id, event_index)
 
-signal battle_set_select_disabled(event_id)
+signal battle_set_select_disabled(character_id, event_id)
 
 signal battle_focus_city(event_id)
+
+signal battle_main()

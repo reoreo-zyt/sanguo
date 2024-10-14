@@ -10,15 +10,10 @@ extends Control
 # 顶点颜色集合
 @export var colors:PackedColorArray = [Color.CORAL,Color.CORAL,Color.CORAL,Color.CORAL,Color.CORAL,Color.CORAL,Color.CORAL]
 var border_width := 1.0                 # 边线宽度
-var antialiased := false                # 抗锯齿
+var antialiased := true                # 抗锯齿
 
 func _ready() -> void:
-	if(is_member):
-		$Control.position = control_position
-		$Control/Name.show()
-		$Control/Bing.show()
-		$Control/Name.text = "[center]" + Global.characters[int(character_id)].name
-		$Control/Bing.text = "[center]" + str(Global.characters[int(character_id)].attrs.bing)
+	pass
 
 # 正多边形点求取函数
 func regular_polygon(center:Vector2,r:float,edges:=3,strat_angle:float=0,close:=false):
@@ -42,3 +37,9 @@ func _draw() -> void:
 	# 绘制空心正多边形和边框
 	draw_polygon(regular,colors)
 	#draw_polyline(regular,Color.CHOCOLATE, 10)
+	if(is_member):
+		$Control.position = control_position
+		$Control/Name.show()
+		$Control/Bing.show()
+		$Control/Name.text = "[center]" + Global.characters[int(character_id)].name
+		$Control/Bing.text = "[center]" + str(Global.characters[int(character_id)].attrs.bing)

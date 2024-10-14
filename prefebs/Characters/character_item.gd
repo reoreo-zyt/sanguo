@@ -6,6 +6,8 @@ extends TextureButton
 var last_event_id = 0
 
 func _ready() -> void:
+	Global.characters[int(character_id)].battle_location = null
+
 	SignalBus.connect("battle_set_select_disabled", _on_battle_set_select_disabled)
 	
 	var character_attr = Global.characters[int(character_id)].attrs
@@ -40,8 +42,13 @@ func _on_event_item_selected(index: int) -> void:
 	SignalBus.emit_signal("send_characters_event", character_id, index)
 	Global.characters[int(character_id)].event_type = index
 
-func _on_battle_set_select_disabled(event_id):
-	SignalBus.emit_signal("battle_focus_city", event_id)
+func _on_battle_set_select_disabled(character, event_id):
+	if(character_id == character):
+		# 存储位置
+		Global.characters[int(character_id)].battle_location = Global.battle_event[event_id].position
+		SignalBus.emit_signal("battle_focus_city", event_id)
+
+	# TODO: 未实现禁用
 	# 禁用当前
 	$HBoxContainer/Event.set_item_disabled(event_id, true)
 	if(last_event_id):
@@ -51,7 +58,6 @@ func _on_battle_set_select_disabled(event_id):
 	if(Global.had_selectd_battle_location.has(event_id)):
 		Global.had_selectd_battle_location.append(event_id)
 	for battle_event_id in Global.battle_event:
-		# TODO: 未实现禁用
 		#$HBoxContainer/Event.set_item_disabled(battle_event_id, false)
 		if(Global.had_selectd_battle_location.has(battle_event_id)):
 			$HBoxContainer/Event.set_item_disabled(battle_event_id, true)

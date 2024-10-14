@@ -40,6 +40,7 @@ func _on_fold_pressed() -> void:
 		open_panel()
 
 func open_panel():
+	$".".show()
 	$BG.show()
 	$Main.show()
 	$Fold.position = Vector2(950, -66)

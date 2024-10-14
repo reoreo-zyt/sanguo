@@ -51,7 +51,7 @@ offset_left = 119.0
 offset_top = 104.0
 offset_right = 119.0
 offset_bottom = 104.0
-rotation = 52.2722
+rotation = 153.74
 script = ExtResource("3_b23rq")
 radius = 150.0
 rotation_speed = 0.01
@@ -62,7 +62,7 @@ offset_left = 117.0
 offset_top = -33.0
 offset_right = 183.0
 offset_bottom = 33.0
-rotation = -52.2722
+rotation = -153.74
 pivot_offset = Vector2(33, 33)
 texture_normal = ExtResource("4_o3wnf")
 
@@ -89,7 +89,7 @@ offset_left = -108.0
 offset_top = 96.9037
 offset_right = -42.0
 offset_bottom = 162.904
-rotation = -52.2722
+rotation = -153.74
 pivot_offset = Vector2(33, 33.0002)
 texture_normal = ExtResource("4_o3wnf")
 
@@ -116,7 +116,7 @@ offset_left = -108.0
 offset_top = -162.904
 offset_right = -42.0
 offset_bottom = -96.9037
-rotation = -52.2722
+rotation = -153.74
 pivot_offset = Vector2(33, 33.0002)
 texture_normal = ExtResource("4_o3wnf")
 
