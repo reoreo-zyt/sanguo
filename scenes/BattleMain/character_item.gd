@@ -46,4 +46,8 @@ func _draw() -> void:
 func _on_batlle_show_actions(id):
 	if(character_id == id):
 		#$Control/Vircle.show()
+		# 生成移动色块
 		pass
+
+func _on_texture_button_move_pressed() -> void:
+	print(111)

@@ -4,6 +4,7 @@ var character_attr = preload("res://prefebs/CharacterAttr/CharacterAttr.tscn")
 var character_message = preload("res://prefebs/Characters/Characters.tscn")
 var text_panel = preload("res://prefebs/TextPanel/TextPanel.tscn")
 var character_slice = preload("res://scenes/BattleMain/character_item.tscn")
+var character_item_slice = preload("res://scenes/BattleMain/character_item.tscn")
 
 var character_slice_instance_cach = {}
 var self_troop = [43, 3, 15]
@@ -73,7 +74,7 @@ func _on_next_pressed() -> void:
 		$CanvasLayer/Main/Next.hide()
 		$CanvasLayer/Main/TextureRect/RichTextLabel.text = "战斗阶段"
 		$PrePanel.hide()
-		$CharacterPlace.hide()
+		$CharacterPlace.queue_free()
 		character_message_instance_save.queue_free()
 		
 		var position = [
@@ -110,17 +111,41 @@ func _on_next_pressed() -> void:
 		$Camera2D.zoom(-1)
 		var merge_array = self_troop + emery_troop
 		var action_list = []
-		print(merge_array)
 		for character in merge_array:
 			var list_item = {}
 			list_item.id = character
 			list_item.speed = Global.characters[character].attrs.speed
 			action_list.append(list_item)
 		action_list.sort_custom(func(a, b): return a['speed'] > b['speed'])
-		
+
 		SignalBus.emit_signal("batlle_show_actions", action_list[0].id)
 		$Camera2D.position = Tool.calc_px(Global.characters[action_list[0].id].battle_location)
 		var TextPanel = text_panel.instantiate()
 		TextPanel.label_text = Global.set_name_text("[center]轮到" + Global.characters[action_list[0].id].name + "行动")
 		$CanvasLayer/Main/PopupPanel.add_child(TextPanel)
 		$CanvasLayer/Main/PopupPanel.popup()
+		# 开始移动逻辑
+		SignalBus.emit_signal("batlle_show_actions", action_list[0].id)
+		# 将这个格子临近的格子全部涂色	
+		var slices = get_nerber_positions(Global.characters[action_list[0].id].battle_location)
+		var color_silce = Color(0.281, 0.703, 0.94, 0.838)
+		var colors_slice:PackedColorArray = [color_silce, color_silce, color_silce, color_silce, color_silce, color_silce, color_silce]
+
+		for slice in slices:
+			var character_item_slice_instance = character_item_slice.instantiate()
+			var position_slice = Tool.calc_px(slice)
+			character_item_slice_instance.width = position_slice[0]
+			character_item_slice_instance.height = position_slice[1]
+			character_item_slice_instance.length = 116
+			character_item_slice_instance.colors = colors_slice
+			$".".add_child(character_item_slice_instance)
+
+func get_nerber_positions(position):
+	var slices = []
+	slices.append(Vector2i(position[0], position[1] - 1))
+	slices.append(Vector2i(position[0] + 1, position[1] - 1))
+	slices.append(Vector2i(position[0] + 1, position[1]))
+	slices.append(Vector2i(position[0], position[1] + 1))
+	slices.append(Vector2i(position[0] - 1, position[1]))
+	slices.append(Vector2i(position[0] - 1, position[1] - 1))
+	return slices
