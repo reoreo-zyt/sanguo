@@ -1,3 +1,8 @@
+## 实现思路及参考资料
+
+* [godot-4.2中文文档](https://www.bookstack.cn/read/godot-4.2-zh/%e5%85%b3%e4%ba%8e.md)
+* [hexagons 地图算法相关](https://www.redblobgames.com/grids/hexagons/#distances)
+
 ## 完成的功能
 
 * 主页界面
