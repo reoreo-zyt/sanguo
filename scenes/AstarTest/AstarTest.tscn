@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dac43pbfepxeu"]
+
+[ext_resource type="Script" path="res://scenes/AstarTest/astar_test.gd" id="1_62qq2"]
+
+[node name="AstarTest" type="Node2D"]
+script = ExtResource("1_62qq2")

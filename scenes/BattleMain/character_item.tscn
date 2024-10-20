@@ -1,12 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://cd2uwoojp2vrr"]
+[gd_scene load_steps=5 format=3 uid="uid://cd2uwoojp2vrr"]
 
 [ext_resource type="Script" path="res://scenes/BattleMain/character_item.gd" id="1_u6fdd"]
 [ext_resource type="FontFile" uid="uid://ccc7h37nygjqu" path="res://assets/fonts/方正隶书简体.TTF" id="2_nf23x"]
+[ext_resource type="Texture2D" uid="uid://beecrdjspcp6h" path="res://assets/battle/hero.png" id="3_fcxch"]
+[ext_resource type="Texture2D" uid="uid://d3ee6w6ocv5v0" path="res://assets/ui/icons_256/arrow_down.png" id="4_et6a5"]
 
 [node name="CharacterItem" type="Control"]
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_u6fdd")
+member_type = 2
+character_id = 42
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 1
@@ -18,6 +22,14 @@ anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
+
+[node name="TextureButton" type="TextureButton" parent="Control"]
+modulate = Color(0.239, 0.319, 0.957, 0.941)
+show_behind_parent = true
+layout_mode = 0
+offset_right = 238.0
+offset_bottom = 207.0
+texture_normal = ExtResource("3_fcxch")
 
 [node name="Name" type="RichTextLabel" parent="Control"]
 layout_mode = 0
@@ -38,3 +50,15 @@ offset_bottom = 152.0
 theme_override_fonts/normal_font = ExtResource("2_nf23x")
 theme_override_font_sizes/normal_font_size = 36
 bbcode_enabled = true
+
+[node name="icon" type="TextureRect" parent="Control"]
+visible = false
+modulate = Color(0.341603, 0.611265, 0.883888, 1)
+layout_mode = 1
+offset_left = 96.0
+offset_top = 82.0
+offset_right = 352.0
+offset_bottom = 338.0
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("4_et6a5")
+expand_mode = 2

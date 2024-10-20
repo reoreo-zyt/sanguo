@@ -1,4 +1,4 @@
-[gd_scene load_steps=64 format=4 uid="uid://ca0vmfd3i2k0d"]
+[gd_scene load_steps=67 format=4 uid="uid://ca0vmfd3i2k0d"]
 
 [ext_resource type="Script" path="res://scenes/BattleMain/battle_main.gd" id="1_03yg4"]
 [ext_resource type="Script" path="res://scenes/BattleMain/camera_2d.gd" id="1_4sj6t"]
@@ -6,7 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://cldu53jms2df3" path="res://assets/battle/greenlands/1-greenlands_vulcano.png" id="3_66ch3"]
 [ext_resource type="FontFile" uid="uid://ccc7h37nygjqu" path="res://assets/fonts/方正隶书简体.TTF" id="3_nps80"]
 [ext_resource type="Texture2D" uid="uid://8js5x1rrptd" path="res://assets/button/button.png" id="4_4dpe3"]
+[ext_resource type="Texture2D" uid="uid://cdhn1garqbdtb" path="res://assets/ui/img_public_smallicon_bg.png" id="4_ahe3c"]
 [ext_resource type="Texture2D" uid="uid://l84brtwxrkm" path="res://assets/battle/greenlands/2-greenlands_forest.png" id="4_n2mla"]
+[ext_resource type="Texture2D" uid="uid://s5v3i64k0cdm" path="res://assets/ui/icons_256/timer.png" id="5_d3o3g"]
 [ext_resource type="Script" path="res://scenes/GameMain/next.gd" id="5_je2vf"]
 [ext_resource type="Texture2D" uid="uid://dkfvetsnt0qj" path="res://assets/battle/greenlands/11-greenlands_village.png" id="5_potq3"]
 [ext_resource type="Texture2D" uid="uid://c3rkprmhhpyx4" path="res://assets/battle/greenlands/12-greenlands_city.png" id="6_cpwps"]
@@ -34,6 +36,7 @@
 [ext_resource type="Texture2D" uid="uid://drayrn5oddib8" path="res://assets/battle/greenlands/9-greenlands_mountains.png" id="28_lte3k"]
 [ext_resource type="Texture2D" uid="uid://bh7wsoolvlmln" path="res://assets/battle/greenlands/10-greenlands_lake.png" id="29_8anab"]
 [ext_resource type="Script" path="res://scenes/BattleMain/character_place.gd" id="30_elxj0"]
+[ext_resource type="PackedScene" uid="uid://dac43pbfepxeu" path="res://scenes/AstarTest/AstarTest.tscn" id="37_nidjt"]
 
 [sub_resource type="Theme" id="Theme_0vn0b"]
 default_font = ExtResource("3_nps80")
@@ -231,10 +234,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -80.0
-offset_top = -19.5
-offset_right = 112.0
-offset_bottom = 20.5
+offset_left = -79.5
+offset_top = -19.0
+offset_right = 142.5
+offset_bottom = 21.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_0vn0b")
@@ -248,6 +251,57 @@ offset_left = 58.0
 offset_top = 147.0
 offset_right = 1741.0
 offset_bottom = 949.0
+
+[node name="Time" type="TextureButton" parent="CanvasLayer/Main/Control"]
+visible = false
+layout_mode = 0
+offset_top = 59.0
+offset_right = 66.0
+offset_bottom = 125.0
+texture_normal = ExtResource("4_ahe3c")
+
+[node name="TextureButton" type="TextureButton" parent="CanvasLayer/Main/Control/Time"]
+modulate = Color(0.898039, 0.815686, 0.623529, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -12.0
+offset_top = -12.0
+offset_right = 244.0
+offset_bottom = 244.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.1, 0.1)
+mouse_filter = 2
+texture_normal = ExtResource("5_d3o3g")
+
+[node name="Panel" type="Panel" parent="CanvasLayer/Main/Control/Time"]
+layout_mode = 0
+offset_left = 63.0
+offset_top = 14.0
+offset_right = 182.0
+offset_bottom = 54.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Main/Control/Time/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -58.5
+offset_top = -17.5
+offset_right = 58.5
+offset_bottom = 17.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("3_nps80")
+theme_override_font_sizes/normal_font_size = 26
+bbcode_enabled = true
+text = "[center]结束阶段"
 
 [node name="Next" type="TextureButton" parent="CanvasLayer/Main"]
 layout_mode = 0
@@ -293,7 +347,7 @@ editor_draw_drag_margin = true
 script = ExtResource("1_4sj6t")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray("AAAAAAAABQAAAAAAAAABAAAABQAAAAAAAAACAAAABQAAAAAAAAACAAEABAAAAAAAAAADAAAAAwAAAAAAAAAAAAIAAgAAAAAAAAAAAAQAAgAAAAAAAAABAAQAAgAAAAAAAAACAAQAAgAAAAAAAAADAAQAAgAAAAAAAAAEAAQAAwAAAAAAAAAFAAQAAgAAAAAAAAAGAAQABAAAAAAAAAAHAAQABAAAAAAAAAAIAAQABAAAAAAAAAAJAAQAAgAAAAAAAAAKAAQAAgAAAAAAAAAAAAMAAgAAAAAAAAABAAIAAgAAAAAAAAABAAMAAgAAAAAAAAACAAIABAAAAAAAAAACAAMAAwAAAAAAAAADAAEAAwAAAAAAAAADAAIABAAAAAAAAAADAAMAAwAAAAAAAAAEAAAABQAAAAAAAAAEAAEAAQAAAAAAAAAEAAIAAwAAAAAAAAAEAAMABAAAAAAAAAAFAAAAAQAAAAAAAAAFAAEAAwAAAAAAAAAFAAIAAQAAAAAAAAAFAAMABAAAAAAAAAAGAAAABQAAAAAAAAAGAAEAAQAAAAAAAAAGAAIAAQAAAAAAAAAGAAMAAQAAAAAAAAAHAAAABQAAAAAAAAAHAAEABQAAAAAAAAAHAAIAAQAAAAAAAAAHAAMABAAAAAAAAAAIAAAAAgAAAAAAAAAIAAEABQAAAAAAAAAIAAIABQAAAAAAAAAIAAMABAAAAAAAAAAJAAAABQAAAAAAAAAJAAEABQAAAAAAAAAJAAIACwAAAAAAAAAJAAMABAAAAAAAAAAKAAAABQAAAAAAAAAKAAEAAgAAAAAAAAAKAAIAAgAAAAAAAAAKAAMAAgAAAAAAAAAAAAUAAgAAAAAAAAACAAUAAgAAAAAAAAAEAAUAAgAAAAAAAAAIAAUAAgAAAAAAAAAKAAUAAgAAAAAAAAAAAAEABAAAAAAAAAABAAEABAAAAAAAAAAGAAUAEAAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAAAAAAABQAAAAAAAAABAAAABQAAAAAAAAACAAAABQAAAAAAAAACAAEABAAAAAAAAAADAAAAAwAAAAAAAAAAAAIAAgAAAAAAAAAAAAQAAgAAAAAAAAABAAQAAgAAAAAAAAACAAQAAgAAAAAAAAADAAQAAgAAAAAAAAAEAAQAAwAAAAAAAAAFAAQAAgAAAAAAAAAGAAQABAAAAAAAAAAHAAQABAAAAAAAAAAIAAQABAAAAAAAAAAJAAQAAgAAAAAAAAAAAAMAAgAAAAAAAAABAAIAAgAAAAAAAAABAAMAAgAAAAAAAAACAAIABAAAAAAAAAACAAMAAwAAAAAAAAADAAEAAwAAAAAAAAADAAIABAAAAAAAAAADAAMAAwAAAAAAAAAEAAAABQAAAAAAAAAEAAEAAQAAAAAAAAAEAAIAAwAAAAAAAAAEAAMABAAAAAAAAAAFAAAAAQAAAAAAAAAFAAEAAwAAAAAAAAAFAAIAAQAAAAAAAAAFAAMABAAAAAAAAAAGAAAABQAAAAAAAAAGAAEAAQAAAAAAAAAGAAIAAQAAAAAAAAAGAAMAAQAAAAAAAAAHAAAABQAAAAAAAAAHAAEABQAAAAAAAAAHAAIAAQAAAAAAAAAHAAMABAAAAAAAAAAIAAAAAgAAAAAAAAAIAAEABQAAAAAAAAAIAAIABQAAAAAAAAAIAAMABAAAAAAAAAAJAAAABQAAAAAAAAAJAAEABQAAAAAAAAAJAAIACwAAAAAAAAAJAAMABAAAAAAAAAAAAAEABAAAAAAAAAABAAEABAAAAAAAAAA=")
 tile_set = SubResource("TileSet_okbqj")
 
 [node name="PrePanel" type="Panel" parent="."]
@@ -306,5 +360,7 @@ offset_bottom = 1738.0
 script = ExtResource("30_elxj0")
 
 [node name="Characters" type="Node2D" parent="."]
+
+[node name="AstarTest" parent="." instance=ExtResource("37_nidjt")]
 
 [connection signal="pressed" from="CanvasLayer/Main/Next" to="." method="_on_next_pressed"]

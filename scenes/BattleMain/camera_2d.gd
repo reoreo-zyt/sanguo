@@ -28,7 +28,7 @@ func _input(event):
 
 # 缩放相机的函数
 func zoom(zoom_direction):
-	print(zoom_direction)
+	# print(zoom_direction)
 	# 计算新的缩放值
 	zoom_value += zoom_direction * 0.1 # 假设每次缩放增加或减少0.1
 	# 确保缩放值不低于1.0

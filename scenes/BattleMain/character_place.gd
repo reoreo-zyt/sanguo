@@ -24,6 +24,6 @@ func _ready() -> void:
 		var position = Tool.calc_px(slice)
 		character_item_slice_instance.width = position[0]
 		character_item_slice_instance.height = position[1]
-		character_item_slice_instance.length = 116
-		character_item_slice_instance.colors = colors
+		character_item_slice_instance.member_type = 2
+		character_item_slice_instance.control_position = Vector2(Tool.calc_px(slice)[0] - 238 / 2, Tool.calc_px(slice)[1] - 208 / 2)
 		$".".add_child(character_item_slice_instance)
