@@ -2,6 +2,7 @@
 
 * [godot-4.2中文文档](https://www.bookstack.cn/read/godot-4.2-zh/%e5%85%b3%e4%ba%8e.md)
 * [hexagons 地图算法相关](https://www.redblobgames.com/grids/hexagons/#distances)
+* [【Godot4.2】2D导航01 - AStar2D及其使用方法](https://blog.csdn.net/graypigen1990/article/details/136856952)
 
 ## 完成的功能
 
